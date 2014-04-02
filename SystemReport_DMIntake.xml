@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="64a0c30c-515c-4cfd-874d-fbe1070f83ce" ReportUseType="2" ReportType="5" ReportName="DM Intake" CreatedDT="2013-03-27T15:24:58" ModifiedDT="2013-09-05T09:43:53.37" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAACSk=" ReportVersion="5" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="64a0c30c-515c-4cfd-874d-fbe1070f83ce" ReportUseType="2" ReportType="5" ReportName="DM Intake" CreatedDT="2013-03-27T15:24:58" ModifiedDT="2013-10-08T16:02:15.577" ModifiedBy="Todd" ConcurrencyTS="AAAAAAAALQE=" ReportVersion="5" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -112,11 +112,7 @@
           join Pen pn on pn.LocationGID = it.FromLocationGID
           join Location dl on dl.LocationGID = it.FromLocationGID
           join Company cmp on cmp.CompanyGID = dl.CompanyGID
-          outer apply (select top 1 [Count] from PenCountChange pcc
-					where pcc.PenGID = pn.PenGID
-					and pcc.InventoryItemType = 3
-					and pcc.CreatedDT &amp;lt;= DATEADD( SECOND, -it.DurationSeconds, it.TransactionDT )
-					order by pcc.CreatedDT desc) pcc
+          join PenCountChange pcc on pcc.PenCountChangeGID = (select top 1 pcc2.PenCountChangeGID from PenCountChange pcc2 where pcc2.PenGID = pn.PenGID and pcc2.InventoryItemType = 3 and pcc2.CreatedDT &amp;lt;= CONVERT( DATE, DATEADD( SECOND, -it.DurationSeconds, it.TransactionDT )) order by pcc2.CreatedDT desc)
           where it.TransactionType = 6
             and pn.PenGID = pen_days.PenGID
             and CONVERT( DATE, DATEADD( SECOND, -it.DurationSeconds, it.TransactionDT )) = pen_days.ReportDate   --CONVERT( date, DATEADD(day, case when convert(time, dateadd(second, -it.durationseconds, it.TransactionDT)) &amp;lt; cmp.DayStartTime then -2 else -1 end, DATEADD(second, -it.DurationSeconds, it.TransactionDT))) = pen_days.ReportDate
@@ -174,6 +170,13 @@ where (1=1)&lt;/QueryText&gt;
 			<DefaultIsOr>false</DefaultIsOr>
 			<FilterOperator>Between</FilterOperator>
 		</ReportFilter>
+		<ReportFilter>
+			<SeqNo>2</SeqNo>
+			<ColumnName>PenTypeName</ColumnName>
+			<PreDefinedFilterOperator>Equal</PreDefinedFilterOperator>
+			<DefaultIsOr>false</DefaultIsOr>
+			<FilterOperator>Equal</FilterOperator>
+		</ReportFilter>
 	</ReportFilters>
 	<ReportColumns />
 	<ForceAsLandscape>false</ForceAsLandscape>
@@ -182,7 +185,7 @@ where (1=1)&lt;/QueryText&gt;
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
 ///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.11.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
@@ -501,7 +504,7 @@ namespace XtraReportSerialization {
             this.line1.LineWidth = 4;
             this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 90.99998F);
             this.line1.Name = "line1";
-            this.line1.SizeF = new System.Drawing.SizeF(961.9999F, 4F);
+            this.line1.SizeF = new System.Drawing.SizeF(893F, 4F);
             this.line1.StylePriority.UseBorderWidth = false;
             // 
             // label24
@@ -528,7 +531,7 @@ namespace XtraReportSerialization {
             this.label21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(775.5416F, 69.99998F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 69.99998F);
             this.label21.Name = "label21";
             this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label21.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -546,7 +549,7 @@ namespace XtraReportSerialization {
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(775.5416F, 54.99999F);
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 54.99999F);
             this.label27.Name = "label27";
             this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label27.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -563,7 +566,7 @@ namespace XtraReportSerialization {
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(775.5416F, 39.99999F);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 39.99999F);
             this.label28.Name = "label28";
             this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label28.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -992,7 +995,7 @@ namespace XtraReportSerialization {
             // 
             this.pageInfo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageInfo1.Format = "Page {0} of {1}";
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(836.5833F, 4.000028F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(767.5833F, 4.000028F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.pageInfo1.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -1021,7 +1024,7 @@ namespace XtraReportSerialization {
             this.line3.LineWidth = 2;
             this.line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.line3.Name = "line3";
-            this.line3.SizeF = new System.Drawing.SizeF(962F, 4F);
+            this.line3.SizeF = new System.Drawing.SizeF(893F, 4F);
             this.line3.StylePriority.UseBorderWidth = false;
             // 
             // line4
@@ -1505,9 +1508,8 @@ namespace XtraReportSerialization {
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(88, 119, 100, 50);
             this.Name = "DMIntake";
-            this.PageHeight = 827;
-            this.PageWidth = 1169;
-            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.PageHeight = 850;
+            this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
                         this.totalsOnly});
             this.RequestParameters = false;
