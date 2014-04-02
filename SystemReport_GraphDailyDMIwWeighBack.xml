@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="402e5318-1e1e-4217-aa86-32de0e997e86" ReportUseType="2" ReportType="5" ReportName="Graph Daily DMI w/ WeighBack" CreatedDT="2013-08-21T14:21:02.93" ModifiedDT="2013-08-21T14:21:02.93" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAARls=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="30fd829f-653c-455e-b323-506d6b3b6243" ReportUseType="2" ReportType="5" ReportName="Graph Daily DMI w/ WeighBack" CreatedDT="2013-08-21T14:21:02.93" ModifiedDT="2014-02-25T14:59:02.487" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAPOk=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -71,7 +71,7 @@ group by ReportDate, PenName, PenNumber&lt;/QueryText&gt;
 /// &lt;/XRTypeInfo&gt;
 namespace XtraReportSerialization {
     
-    public class GraphDailyDMIwWeighBack : DevExpress.XtraReports.UI.XtraReport {
+    public class GraphDailyDMIwWeighBackPortrait : DevExpress.XtraReports.UI.XtraReport {
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.XRPictureBox pictureBox1;
         private DevExpress.XtraReports.UI.XRLabel label24;
@@ -134,7 +134,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.CalculatedField RationDMPct;
         private DevExpress.XtraReports.UI.CalculatedField DMQty_PenCount;
         private System.Resources.ResourceManager _resources;
-        public GraphDailyDMIwWeighBack() {
+        public GraphDailyDMIwWeighBackPortrait() {
             this.InitializeComponent();
             this.LoadSubreportsLayout();
         }
@@ -275,14 +275,14 @@ namespace XtraReportSerialization {
                         this.line1,
                         this.label28,
                         this.label21});
-            this.TopMargin.HeightF = 106.25F;
+            this.TopMargin.HeightF = 123F;
             this.TopMargin.Name = "TopMargin";
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.table2});
-            this.Detail.HeightF = 22F;
+            this.Detail.HeightF = 15F;
             this.Detail.KeepTogetherWithDetailReports = true;
             this.Detail.Name = "Detail";
             // 
@@ -344,7 +344,7 @@ namespace XtraReportSerialization {
                         this.GroupLabel});
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
                         new DevExpress.XtraReports.UI.GroupField("PenName", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader1.HeightF = 44.99999F;
+            this.GroupHeader1.HeightF = 35F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.RepeatEveryPage = true;
             // 
@@ -352,10 +352,9 @@ namespace XtraReportSerialization {
             // 
             this.pictureBox1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Image", null, "AppInfo.ApplicationLogo")});
-            this.pictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 52.25F);
+            this.pictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 49.58329F);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.SizeF = new System.Drawing.SizeF(50F, 50F);
-            this.pictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.pictureBox1.SizeF = new System.Drawing.SizeF(62.91642F, 48.00001F);
             // 
             // label24
             // 
@@ -365,10 +364,10 @@ namespace XtraReportSerialization {
             this.label24.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.ReportName")});
             this.label24.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.LocationFloat = new DevExpress.Utils.PointFloat(100.0001F, 72.24999F);
+            this.label24.LocationFloat = new DevExpress.Utils.PointFloat(90.00002F, 49.58329F);
             this.label24.Name = "label24";
             this.label24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label24.SizeF = new System.Drawing.SizeF(399.9999F, 30F);
+            this.label24.SizeF = new System.Drawing.SizeF(450.5417F, 63F);
             this.label24.StylePriority.UseFont = false;
             this.label24.Text = "label24";
             this.label24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -381,7 +380,7 @@ namespace XtraReportSerialization {
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 57.25F);
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 67.58329F);
             this.label27.Name = "label27";
             this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label27.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -394,9 +393,9 @@ namespace XtraReportSerialization {
             // 
             this.line1.BorderWidth = 1;
             this.line1.LineWidth = 4;
-            this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001907349F, 102.25F);
+            this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001907349F, 114.5833F);
             this.line1.Name = "line1";
-            this.line1.SizeF = new System.Drawing.SizeF(892.9998F, 4F);
+            this.line1.SizeF = new System.Drawing.SizeF(726.9998F, 4F);
             this.line1.StylePriority.UseBorderWidth = false;
             // 
             // label28
@@ -407,7 +406,7 @@ namespace XtraReportSerialization {
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 72.24999F);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 82.58328F);
             this.label28.Name = "label28";
             this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label28.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -426,7 +425,7 @@ namespace XtraReportSerialization {
             this.label21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 87.24999F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 97.5833F);
             this.label21.Name = "label21";
             this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label21.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -440,12 +439,14 @@ namespace XtraReportSerialization {
             // 
             this.table2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
                         | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.table2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.table2.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 0F);
             this.table2.Name = "table2";
             this.table2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
                         this.tableRow2});
-            this.table2.SizeF = new System.Drawing.SizeF(768.5417F, 22F);
+            this.table2.SizeF = new System.Drawing.SizeF(726.9999F, 15F);
             this.table2.StylePriority.UseBorders = false;
+            this.table2.StylePriority.UseFont = false;
             this.table2.StylePriority.UseTextAlignment = false;
             this.table2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
@@ -468,7 +469,7 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.ReportDate", "{0:MM/dd/yyyy}")});
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.Text = "tableCell8";
-            this.tableCell8.Weight = 0.42760381698608396D;
+            this.tableCell8.Weight = 0.35131499189024151D;
             // 
             // tableCell14
             // 
@@ -476,7 +477,7 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.TotalDropAF", "{0:n2}")});
             this.tableCell14.Name = "tableCell14";
             this.tableCell14.Text = "tableCell14";
-            this.tableCell14.Weight = 0.4276047013022683D;
+            this.tableCell14.Weight = 0.40206171521112732D;
             // 
             // tableCell9
             // 
@@ -484,15 +485,15 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.TotalWBAF", "{0:n2}")});
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.Text = "tableCell9";
-            this.tableCell9.Weight = 0.42760389501398266D;
+            this.tableCell9.Weight = 0.43591513453182917D;
             // 
             // tableCell13
             // 
             this.tableCell13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.AvgPenCount", "{0:#.00}")});
             this.tableCell13.Name = "tableCell13";
-            this.tableCell13.Text = "tableCell13";
-            this.tableCell13.Weight = 0.42760441519997333D;
+            this.tableCell13.Text = "[AvgPenCount]";
+            this.tableCell13.Weight = 0.3788105969574227D;
             // 
             // tableCell10
             // 
@@ -500,7 +501,7 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.RationDMPct", "{0:0.00%}")});
             this.tableCell10.Name = "tableCell10";
             this.tableCell10.Text = "tableCell10";
-            this.tableCell10.Weight = 0.42849690697409887D;
+            this.tableCell10.Weight = 0.39596729772728911D;
             // 
             // tableCell12
             // 
@@ -509,8 +510,8 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.WAvgDMHd", "{0:#.00}")});
             this.tableCell12.Name = "tableCell12";
             this.tableCell12.StylePriority.UseBackColor = false;
-            this.tableCell12.Text = "tableCell12";
-            this.tableCell12.Weight = 0.43348262960260564D;
+            this.tableCell12.Text = "[WAvgDMHd]";
+            this.tableCell12.Weight = 0.44161497235154168D;
             // 
             // tableCell11
             // 
@@ -520,7 +521,7 @@ namespace XtraReportSerialization {
             this.tableCell11.Name = "tableCell11";
             this.tableCell11.StylePriority.UseBackColor = false;
             this.tableCell11.Text = "tableCell11";
-            this.tableCell11.Weight = 0.42760363492098719D;
+            this.tableCell11.Weight = 0.43216328381515673D;
             // 
             // subReportFilters
             // 
@@ -548,7 +549,7 @@ namespace XtraReportSerialization {
             this.label32.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.ApplicationCopyright")});
             this.label32.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.LocationFloat = new DevExpress.Utils.PointFloat(318.7917F, 4F);
+            this.label32.LocationFloat = new DevExpress.Utils.PointFloat(235.7917F, 4F);
             this.label32.Name = "label32";
             this.label32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label32.SizeF = new System.Drawing.SizeF(350F, 10F);
@@ -562,7 +563,7 @@ namespace XtraReportSerialization {
             // 
             this.pageInfo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageInfo1.Format = "Page {0} of {1}";
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(767.5833F, 4.000028F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(601.5833F, 4.000028F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.pageInfo1.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -591,7 +592,7 @@ namespace XtraReportSerialization {
             this.line3.LineWidth = 2;
             this.line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.line3.Name = "line3";
-            this.line3.SizeF = new System.Drawing.SizeF(893F, 4F);
+            this.line3.SizeF = new System.Drawing.SizeF(727F, 4F);
             this.line3.StylePriority.UseBorderWidth = false;
             // 
             // line4
@@ -657,7 +658,11 @@ namespace XtraReportSerialization {
             xYDiagram1.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
                         secondaryAxisY1});
             this.chart1.Diagram = xYDiagram1;
-            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.chart1.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
+            this.chart1.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
+            this.chart1.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
+            this.chart1.Legend.EquallySpacedItems = false;
+            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 0F);
             this.chart1.Name = "chart1";
             this.chart1.PaletteRepository.Add("Palette 1", new DevExpress.XtraCharts.Palette("Palette 1", DevExpress.XtraCharts.PaletteScaleMode.Repeat, new DevExpress.XtraCharts.PaletteEntry[] {
                             new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))))),
@@ -687,19 +692,19 @@ namespace XtraReportSerialization {
             pointSeriesLabel3.LineVisible = true;
             this.chart1.SeriesTemplate.Label = pointSeriesLabel3;
             this.chart1.SeriesTemplate.View = lineSeriesView3;
-            this.chart1.SizeF = new System.Drawing.SizeF(882.9999F, 250F);
+            this.chart1.SizeF = new System.Drawing.SizeF(726.9999F, 250F);
             // 
             // table3
             // 
             this.table3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
                         | DevExpress.XtraPrinting.BorderSide.Right) 
                         | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.table3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.table3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.table3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.table3.Name = "table3";
             this.table3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
                         this.tableRow3});
-            this.table3.SizeF = new System.Drawing.SizeF(768.5416F, 22F);
+            this.table3.SizeF = new System.Drawing.SizeF(727F, 20F);
             this.table3.StylePriority.UseBorders = false;
             this.table3.StylePriority.UseFont = false;
             this.table3.StylePriority.UseTextAlignment = false;
@@ -727,7 +732,7 @@ namespace XtraReportSerialization {
             // 
             this.tableCell15.Name = "tableCell15";
             this.tableCell15.Text = "[PenName] Avgs.";
-            this.tableCell15.Weight = 0.42760381698608396D;
+            this.tableCell15.Weight = 0.37138928354276557D;
             // 
             // tableCell16
             // 
@@ -739,7 +744,7 @@ namespace XtraReportSerialization {
             summary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.tableCell16.Summary = summary1;
             this.tableCell16.Text = "tableCell16";
-            this.tableCell16.Weight = 0.4276047013022683D;
+            this.tableCell16.Weight = 0.425035119814075D;
             // 
             // tableCell17
             // 
@@ -751,7 +756,7 @@ namespace XtraReportSerialization {
             summary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.tableCell17.Summary = summary2;
             this.tableCell17.Text = "tableCell17";
-            this.tableCell17.Weight = 0.42760389501398266D;
+            this.tableCell17.Weight = 0.46082265302571446D;
             // 
             // tableCell18
             // 
@@ -763,7 +768,7 @@ namespace XtraReportSerialization {
             summary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.tableCell18.Summary = summary3;
             this.tableCell18.Text = "tableCell18";
-            this.tableCell18.Weight = 0.42760441519997333D;
+            this.tableCell18.Weight = 0.4004555689097436D;
             // 
             // tableCell19
             // 
@@ -775,7 +780,7 @@ namespace XtraReportSerialization {
             summary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.tableCell19.Summary = summary4;
             this.tableCell19.Text = "tableCell19";
-            this.tableCell19.Weight = 0.42849690697409887D;
+            this.tableCell19.Weight = 0.41859241379067869D;
             // 
             // tableCell20
             // 
@@ -789,8 +794,8 @@ namespace XtraReportSerialization {
             summary5.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom;
             summary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.tableCell20.Summary = summary5;
-            this.tableCell20.Text = "tableCell20";
-            this.tableCell20.Weight = 0.43348262960260564D;
+            this.tableCell20.Text = "[DMQty_PenCount]";
+            this.tableCell20.Weight = 0.46684815193730128D;
             // 
             // tableCell21
             // 
@@ -804,7 +809,7 @@ namespace XtraReportSerialization {
             summary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.tableCell21.Summary = summary6;
             this.tableCell21.Text = "tableCell21";
-            this.tableCell21.Weight = 0.42760363492098719D;
+            this.tableCell21.Weight = 0.45685680897972147D;
             // 
             // table1
             // 
@@ -812,13 +817,13 @@ namespace XtraReportSerialization {
             this.table1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
                         | DevExpress.XtraPrinting.BorderSide.Right) 
                         | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.table1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001907349F, 22.99999F);
+            this.table1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001907349F, 20F);
             this.table1.Name = "table1";
             this.table1.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 100F);
             this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
                         this.tableRow1});
-            this.table1.SizeF = new System.Drawing.SizeF(768.5416F, 22F);
+            this.table1.SizeF = new System.Drawing.SizeF(726.9998F, 15F);
             this.table1.StylePriority.UseBackColor = false;
             this.table1.StylePriority.UseBorders = false;
             this.table1.StylePriority.UseFont = false;
@@ -832,11 +837,11 @@ namespace XtraReportSerialization {
                         | DevExpress.XtraPrinting.BorderSide.Right) 
                         | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.GroupLabel.BorderWidth = 1;
-            this.GroupLabel.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupLabel.LocationFloat = new DevExpress.Utils.PointFloat(0.0001907349F, 0F);
+            this.GroupLabel.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupLabel.LocationFloat = new DevExpress.Utils.PointFloat(0.0002543131F, 0F);
             this.GroupLabel.Name = "GroupLabel";
             this.GroupLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 100F);
-            this.GroupLabel.SizeF = new System.Drawing.SizeF(768.5418F, 22.99999F);
+            this.GroupLabel.SizeF = new System.Drawing.SizeF(726.9998F, 20F);
             this.GroupLabel.StylePriority.UseBackColor = false;
             this.GroupLabel.StylePriority.UseBorderColor = false;
             this.GroupLabel.StylePriority.UseBorders = false;
@@ -866,7 +871,7 @@ namespace XtraReportSerialization {
             this.tableCell1.StylePriority.UseTextAlignment = false;
             this.tableCell1.Text = "Date";
             this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell1.Weight = 0.42760425180523859D;
+            this.tableCell1.Weight = 0.35131477151896562D;
             // 
             // tableCell6
             // 
@@ -874,7 +879,7 @@ namespace XtraReportSerialization {
             this.tableCell6.StylePriority.UseTextAlignment = false;
             this.tableCell6.Text = "Drop AF Qty";
             this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell6.Weight = 0.42760461066499894D;
+            this.tableCell6.Weight = 0.40206174369939074D;
             // 
             // tableCell2
             // 
@@ -882,7 +887,7 @@ namespace XtraReportSerialization {
             this.tableCell2.StylePriority.UseTextAlignment = false;
             this.tableCell2.Text = "WB Pickup AF";
             this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell2.Weight = 0.42760386032186382D;
+            this.tableCell2.Weight = 0.43591480202587829D;
             // 
             // tableCell5
             // 
@@ -890,7 +895,7 @@ namespace XtraReportSerialization {
             this.tableCell5.StylePriority.UseTextAlignment = false;
             this.tableCell5.Text = "Avg Cow Count";
             this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell5.Weight = 0.42760461066499883D;
+            this.tableCell5.Weight = 0.37881073285968186D;
             // 
             // tableCell3
             // 
@@ -898,7 +903,7 @@ namespace XtraReportSerialization {
             this.tableCell3.StylePriority.UseTextAlignment = false;
             this.tableCell3.Text = "Ration DM%";
             this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell3.Weight = 0.42849654028742368D;
+            this.tableCell3.Weight = 0.39596716929167952D;
             // 
             // tableCell4
             // 
@@ -908,7 +913,7 @@ namespace XtraReportSerialization {
             this.tableCell4.StylePriority.UseTextAlignment = false;
             this.tableCell4.Text = "DMI";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell4.Weight = 0.4334824834243764D;
+            this.tableCell4.Weight = 0.44161500486161165D;
             // 
             // tableCell7
             // 
@@ -918,7 +923,7 @@ namespace XtraReportSerialization {
             this.tableCell7.StylePriority.UseTextAlignment = false;
             this.tableCell7.Text = "% of WB";
             this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell7.Weight = 0.42760364283109992D;
+            this.tableCell7.Weight = 0.43216352997633511D;
             // 
             // HeaderLabelStyle
             // 
@@ -987,7 +992,7 @@ namespace XtraReportSerialization {
             this.DMQty_PenCount.Expression = "[TotalDM] + \'|\' + [AvgPenCount]";
             this.DMQty_PenCount.Name = "DMQty_PenCount";
             // 
-            // GraphDailyDMIwWeighBack
+            // GraphDailyDMIwWeighBackPortrait
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.TopMargin,
@@ -1004,11 +1009,10 @@ namespace XtraReportSerialization {
                         this.DMQty_PenCount});
             this.DataMember = "ReportData";
             this.Font = new System.Drawing.Font("Arial", 9F);
-            this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(88, 119, 106, 50);
-            this.Name = "GraphDailyDMIwWeighBack";
-            this.PageHeight = 850;
-            this.PageWidth = 1100;
+            this.Margins = new System.Drawing.Printing.Margins(50, 73, 123, 50);
+            this.Name = "GraphDailyDMIwWeighBackPortrait";
+            this.PageHeight = 1100;
+            this.PageWidth = 850;
             this.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic;
             this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
