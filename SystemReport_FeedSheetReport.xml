@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="5" ReportName="Feed Sheet Report" CreatedDT="7/10/2012 10:17:04 AM" ModifiedDT="1/8/2013 2:46:56 PM" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKu0=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="5" ReportName="Feed Sheet Report" CreatedDT="2012-07-10T10:17:04" ModifiedDT="2013-11-18T13:58:17.073" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAJzT8=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -196,7 +196,8 @@ select new
 			<QueryGID>00000000-0000-0000-0000-000000000000</QueryGID>
 			<ReportQueryName>Drops</ReportQueryName>
 			<ReportQueryDescription />
-			<ReportQueryText>from o in
+			<ReportQueryText>&lt;QueryBundle&gt;
+	&lt;QueryText&gt;from o in
 (
 	from fp in FeedingPeriodFactory.Instance.GetAll(null)
 	where fp.FeedingPeriodType != FeedingPeriodTypes.System
@@ -214,7 +215,8 @@ select new
 		d.Pen.PenName,
 		d.PenCount,
 		d.PlanAF,
-		RemainingAF = m.TargetAF - m.FeedingScheduleDrops.Where(x =&gt; x.Sequence &lt;= d.Sequence).Sum(z =&gt; z.PlanAF)
+                d.Sequence,
+		RemainingAF = m.TargetAF - m.FeedingScheduleDrops.Where(x =&amp;gt; x.Sequence &amp;lt;= d.Sequence).Sum(z =&amp;gt; z.PlanAF)
 	}
 )
 {where}
@@ -229,8 +231,11 @@ select new
 	o.PenName,
 	o.PenCount,
 	o.PlanAF,
+        o.Sequence,
 	o.RemainingAF
-}</ReportQueryText>
+}&lt;/QueryText&gt;
+	&lt;PreQueryText /&gt;
+&lt;/QueryBundle&gt;</ReportQueryText>
 			<ReportQueryType>Linq</ReportQueryType>
 			<QueryID>3</QueryID>
 			<ParentQueryID>1</ParentQueryID>
@@ -1275,6 +1280,8 @@ namespace XtraReportSerialization {
             this.label13.BorderColor = System.Drawing.Color.White;
             this.label13.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label13.BorderWidth = 2;
+            this.label13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.Drops.Sequence", "{0:#}")});
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 0F);
             this.label13.Name = "label13";
@@ -1284,8 +1291,8 @@ namespace XtraReportSerialization {
             this.label13.StylePriority.UseTextAlignment = false;
             summary1.FormatString = "{0:#}";
             summary1.Func = DevExpress.XtraReports.UI.SummaryFunc.RecordNumber;
-            summary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.label13.Summary = summary1;
+            this.label13.Text = "label13";
             this.label13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // label14
