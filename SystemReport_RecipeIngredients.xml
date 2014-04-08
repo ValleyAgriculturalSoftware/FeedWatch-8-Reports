@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="076be94a-050a-4247-9897-65d11bb4aab7" ReportUseType="2" ReportType="5" ReportName="Recipe Ingredients" CreatedDT="7/9/2012 1:18:07 PM" ModifiedDT="1/30/2013 4:06:54 PM" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAE2kM=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="076be94a-050a-4247-9897-65d11bb4aab7" ReportUseType="2" ReportType="5" ReportName="Recipe Ingredients" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-01-22T16:37:26.657" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAGM8=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -95,7 +95,7 @@ select new
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
 ///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.11.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
@@ -251,7 +251,7 @@ namespace XtraReportSerialization {
             this.label21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(765.5416F, 74.99998F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 74.99998F);
             this.label21.Name = "label21";
             this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label21.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -269,7 +269,7 @@ namespace XtraReportSerialization {
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(765.5416F, 59.99999F);
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 59.99999F);
             this.label27.Name = "label27";
             this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label27.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -286,7 +286,7 @@ namespace XtraReportSerialization {
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(765.5416F, 44.99999F);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 44.99999F);
             this.label28.Name = "label28";
             this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label28.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -303,14 +303,14 @@ namespace XtraReportSerialization {
             this.line1.LineWidth = 4;
             this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 96F);
             this.line1.Name = "line1";
-            this.line1.SizeF = new System.Drawing.SizeF(951.9999F, 4F);
+            this.line1.SizeF = new System.Drawing.SizeF(893F, 4F);
             this.line1.StylePriority.UseBorderWidth = false;
             // 
             // pageInfo1
             // 
             this.pageInfo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageInfo1.Format = "Page {0} of {1}";
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(826.5833F, 4F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(767.5833F, 4F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.pageInfo1.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -339,7 +339,7 @@ namespace XtraReportSerialization {
             this.line3.LineWidth = 2;
             this.line3.LocationFloat = new DevExpress.Utils.PointFloat(3.051758E-05F, 0F);
             this.line3.Name = "line3";
-            this.line3.SizeF = new System.Drawing.SizeF(951.9999F, 4F);
+            this.line3.SizeF = new System.Drawing.SizeF(892.9999F, 4F);
             this.line3.StylePriority.UseBorderWidth = false;
             // 
             // label36
@@ -493,9 +493,8 @@ namespace XtraReportSerialization {
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(88, 119, 100, 75);
             this.Name = "RecipeIngredients";
-            this.PageHeight = 827;
-            this.PageWidth = 1169;
-            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.PageHeight = 850;
+            this.PageWidth = 1100;
             this.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic;
             this.ScriptsSource = "\r\nPrivate Sub pivotGrid1_BeforePrint(ByVal sender As Object, ByVal e As System.Dr" +
                 "awing.Printing.PrintEventArgs)\r\n\r\n\tsender.BestFit()\r\n\r\nEnd Sub\r\n";
