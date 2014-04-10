@@ -501,6 +501,7 @@ namespace XtraReportSerialization {
                         this.label66,
                         this.label60});
             this.GroupFooter2.HeightF = 37.58338F;
+            this.GroupFooter2.KeepTogether = true;
             this.GroupFooter2.Level = 1;
             this.GroupFooter2.Name = "GroupFooter2";
             // 
