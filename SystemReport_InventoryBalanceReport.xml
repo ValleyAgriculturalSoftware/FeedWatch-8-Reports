@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="bd2e1f43-3cf7-4101-9523-b6169e9e7ac6" ReportUseType="2" ReportType="5" ReportName="Inventory Balance Report" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2014-04-14T08:55:21.78" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALcs=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="bd2e1f43-3cf7-4101-9523-b6169e9e7ac6" ReportUseType="2" ReportType="5" ReportName="Inventory Balance Report" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2014-04-14T08:55:21.78" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAT8A=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -14,10 +14,10 @@
    ,it2.InventoryItemName
    ,it.UnitQuantity
    ,'AFLbs' = case when l.locationtype = 0 then -1 else 1 end * dbo.getmeasurementvalue(it.unitquantity,c.MediumMeasurementType)
-   ,'AFTons' = case when l.locationtype = 0 then -1 else 1 end * dbo.getmeasurementvalue(it.unitquantity,c.LargeMeasurementType)
-   ,'Cost' = isnull(dbo.GetFIFOCost(it.unitquantity, it.inventoryitemgid, case when l.locationtype = 0 then l.locationgid else l2.locationgid end, it.transactiondt)/nullif(dbo.getmeasurementvalue(it.unitquantity,c.LargeMeasurementType),0),0)
-   ,'Total' = dbo.GetFIFOCost(it.unitquantity, it.inventoryitemgid,
-  case when l.locationtype = 0 then l.locationgid else l2.locationgid end, it.transactiondt)
+   ,'AFTons' = case when l.locationtype = 0 then -1 else 1 end * round(dbo.getmeasurementvalue(it.unitquantity,c.LargeMeasurementType),2)
+   ,'Cost' = isnull(round(dbo.GetFIFOCost(it.unitquantity, it.inventoryitemgid, case when l.locationtype = 0 then l.locationgid else l2.locationgid end, it.transactiondt)/nullif(dbo.getmeasurementvalue(it.unitquantity,c.LargeMeasurementType),0),0),2)
+   ,'Total' = case when l.locationtype = 0 then -1 else 1 end * round(dbo.GetFIFOCost(it.unitquantity, it.inventoryitemgid,
+  case when l.locationtype = 0 then l.locationgid else l2.locationgid end, it.transactiondt),2)
   ,itl.TrackingStartDT
 FROM InventoryTransaction it
 
@@ -56,24 +56,24 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private DevExpress.XtraReports.UI.XRLabel label34;
-        private DevExpress.XtraReports.UI.XRLabel label35;
-        private DevExpress.XtraReports.UI.XRLabel label26;
-        private DevExpress.XtraReports.UI.XRLabel label33;
-        private DevExpress.XtraReports.UI.XRLabel label37;
-        private DevExpress.XtraReports.UI.XRLabel label40;
-        private DevExpress.XtraReports.UI.XRLabel label41;
-        private DevExpress.XtraReports.UI.XRLabel label38;
-        private DevExpress.XtraReports.UI.XRLabel label39;
-        private DevExpress.XtraReports.UI.XRLabel label17;
-        private DevExpress.XtraReports.UI.XRLabel label18;
-        private DevExpress.XtraReports.UI.XRLabel label15;
-        private DevExpress.XtraReports.UI.XRLabel label16;
-        private DevExpress.XtraReports.UI.XRLabel label19;
-        private DevExpress.XtraReports.UI.XRLabel label23;
-        private DevExpress.XtraReports.UI.XRLabel label25;
         private DevExpress.XtraReports.UI.XRLabel label20;
-        private DevExpress.XtraReports.UI.XRLabel label22;
+        private DevExpress.XtraReports.UI.XRLabel label14;
+        private DevExpress.XtraReports.UI.XRLabel label15;
+        private DevExpress.XtraReports.UI.XRLabel label12;
+        private DevExpress.XtraReports.UI.XRLabel label13;
+        private DevExpress.XtraReports.UI.XRLabel label18;
+        private DevExpress.XtraReports.UI.XRLabel label19;
+        private DevExpress.XtraReports.UI.XRLabel label16;
+        private DevExpress.XtraReports.UI.XRLabel label17;
+        private DevExpress.XtraReports.UI.XRLabel label11;
+        private DevExpress.XtraReports.UI.XRLabel label4;
+        private DevExpress.XtraReports.UI.XRLabel label6;
+        private DevExpress.XtraReports.UI.XRLabel label2;
+        private DevExpress.XtraReports.UI.XRLabel label3;
+        private DevExpress.XtraReports.UI.XRLabel label9;
+        private DevExpress.XtraReports.UI.XRLabel label10;
+        private DevExpress.XtraReports.UI.XRLabel label7;
+        private DevExpress.XtraReports.UI.XRLabel label8;
         private DevExpress.XtraReports.UI.XRLabel label28;
         private DevExpress.XtraReports.UI.XRLabel label27;
         private DevExpress.XtraReports.UI.XRLabel label21;
@@ -245,24 +245,24 @@ namespace XtraReportSerialization {
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.label34 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label35 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label26 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label33 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label37 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label40 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label41 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label38 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label39 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label17 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label18 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label15 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label16 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label19 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label23 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label25 = new DevExpress.XtraReports.UI.XRLabel();
             this.label20 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label22 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label14 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label18 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label19 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label16 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label11 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label8 = new DevExpress.XtraReports.UI.XRLabel();
             this.label28 = new DevExpress.XtraReports.UI.XRLabel();
             this.label27 = new DevExpress.XtraReports.UI.XRLabel();
             this.label21 = new DevExpress.XtraReports.UI.XRLabel();
@@ -354,24 +354,24 @@ namespace XtraReportSerialization {
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-                        this.label34,
-                        this.label35,
-                        this.label26,
-                        this.label33,
-                        this.label37,
-                        this.label40,
-                        this.label41,
-                        this.label38,
-                        this.label39,
-                        this.label17,
-                        this.label18,
-                        this.label15,
-                        this.label16,
-                        this.label19,
-                        this.label23,
-                        this.label25,
                         this.label20,
-                        this.label22,
+                        this.label14,
+                        this.label15,
+                        this.label12,
+                        this.label13,
+                        this.label18,
+                        this.label19,
+                        this.label16,
+                        this.label17,
+                        this.label11,
+                        this.label4,
+                        this.label6,
+                        this.label2,
+                        this.label3,
+                        this.label9,
+                        this.label10,
+                        this.label7,
+                        this.label8,
                         this.label28,
                         this.label27,
                         this.label21,
@@ -459,413 +459,413 @@ namespace XtraReportSerialization {
             this.GroupFooter1.HeightF = 22F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
-            // label34
-            // 
-            this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label34.BorderColor = System.Drawing.Color.Black;
-            this.label34.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label34.BorderWidth = 1;
-            this.label34.CanGrow = false;
-            this.label34.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.LocationFloat = new DevExpress.Utils.PointFloat(331.9999F, 168.5737F);
-            this.label34.Name = "label34";
-            this.label34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label34.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label34.StylePriority.UseBorderColor = false;
-            this.label34.StylePriority.UseBorders = false;
-            this.label34.StylePriority.UseBorderWidth = false;
-            this.label34.StylePriority.UseFont = false;
-            this.label34.StylePriority.UsePadding = false;
-            this.label34.StylePriority.UseTextAlignment = false;
-            this.label34.Text = "VALUE";
-            this.label34.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label34.WordWrap = false;
-            // 
-            // label35
-            // 
-            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label35.BorderColor = System.Drawing.Color.Black;
-            this.label35.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label35.BorderWidth = 1;
-            this.label35.CanGrow = false;
-            this.label35.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.LocationFloat = new DevExpress.Utils.PointFloat(278F, 168.5737F);
-            this.label35.Name = "label35";
-            this.label35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label35.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label35.StylePriority.UseBorderColor = false;
-            this.label35.StylePriority.UseBorders = false;
-            this.label35.StylePriority.UseBorderWidth = false;
-            this.label35.StylePriority.UseFont = false;
-            this.label35.StylePriority.UsePadding = false;
-            this.label35.StylePriority.UseTextAlignment = false;
-            this.label35.Text = "COST";
-            this.label35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label35.WordWrap = false;
-            // 
-            // label26
-            // 
-            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label26.BorderColor = System.Drawing.Color.Black;
-            this.label26.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label26.BorderWidth = 1;
-            this.label26.CanGrow = false;
-            this.label26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.LocationFloat = new DevExpress.Utils.PointFloat(436F, 168.5737F);
-            this.label26.Name = "label26";
-            this.label26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label26.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label26.StylePriority.UseBorderColor = false;
-            this.label26.StylePriority.UseBorders = false;
-            this.label26.StylePriority.UseBorderWidth = false;
-            this.label26.StylePriority.UseFont = false;
-            this.label26.StylePriority.UsePadding = false;
-            this.label26.StylePriority.UseTextAlignment = false;
-            this.label26.Text = "COST";
-            this.label26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label26.WordWrap = false;
-            // 
-            // label33
-            // 
-            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label33.BorderColor = System.Drawing.Color.Black;
-            this.label33.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label33.BorderWidth = 1;
-            this.label33.CanGrow = false;
-            this.label33.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.LocationFloat = new DevExpress.Utils.PointFloat(386F, 168.5737F);
-            this.label33.Name = "label33";
-            this.label33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label33.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
-            this.label33.StylePriority.UseBorderColor = false;
-            this.label33.StylePriority.UseBorders = false;
-            this.label33.StylePriority.UseBorderWidth = false;
-            this.label33.StylePriority.UseFont = false;
-            this.label33.StylePriority.UsePadding = false;
-            this.label33.StylePriority.UseTextAlignment = false;
-            this.label33.Text = "QTY";
-            this.label33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label33.WordWrap = false;
-            // 
-            // label37
-            // 
-            this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label37.BorderColor = System.Drawing.Color.Black;
-            this.label37.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label37.BorderWidth = 1;
-            this.label37.CanGrow = false;
-            this.label37.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.LocationFloat = new DevExpress.Utils.PointFloat(228F, 168.5737F);
-            this.label37.Name = "label37";
-            this.label37.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label37.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
-            this.label37.StylePriority.UseBorderColor = false;
-            this.label37.StylePriority.UseBorders = false;
-            this.label37.StylePriority.UseBorderWidth = false;
-            this.label37.StylePriority.UseFont = false;
-            this.label37.StylePriority.UsePadding = false;
-            this.label37.StylePriority.UseTextAlignment = false;
-            this.label37.Text = "QTY";
-            this.label37.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label37.WordWrap = false;
-            // 
-            // label40
-            // 
-            this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label40.BorderColor = System.Drawing.Color.Black;
-            this.label40.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label40.BorderWidth = 1;
-            this.label40.CanGrow = false;
-            this.label40.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.LocationFloat = new DevExpress.Utils.PointFloat(70.00002F, 168.5737F);
-            this.label40.Name = "label40";
-            this.label40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label40.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
-            this.label40.StylePriority.UseBorderColor = false;
-            this.label40.StylePriority.UseBorders = false;
-            this.label40.StylePriority.UseBorderWidth = false;
-            this.label40.StylePriority.UseFont = false;
-            this.label40.StylePriority.UsePadding = false;
-            this.label40.StylePriority.UseTextAlignment = false;
-            this.label40.Text = "QTY";
-            this.label40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label40.WordWrap = false;
-            // 
-            // label41
-            // 
-            this.label41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label41.BorderColor = System.Drawing.Color.Black;
-            this.label41.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label41.BorderWidth = 1;
-            this.label41.CanGrow = false;
-            this.label41.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.LocationFloat = new DevExpress.Utils.PointFloat(0F, 168.5737F);
-            this.label41.Name = "label41";
-            this.label41.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label41.SizeF = new System.Drawing.SizeF(70F, 22.00003F);
-            this.label41.StylePriority.UseBorderColor = false;
-            this.label41.StylePriority.UseBorders = false;
-            this.label41.StylePriority.UseBorderWidth = false;
-            this.label41.StylePriority.UseFont = false;
-            this.label41.StylePriority.UsePadding = false;
-            this.label41.StylePriority.UseTextAlignment = false;
-            this.label41.Text = "Feed";
-            this.label41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.label41.WordWrap = false;
-            // 
-            // label38
-            // 
-            this.label38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label38.BorderColor = System.Drawing.Color.Black;
-            this.label38.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label38.BorderWidth = 1;
-            this.label38.CanGrow = false;
-            this.label38.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.LocationFloat = new DevExpress.Utils.PointFloat(173.9999F, 168.5737F);
-            this.label38.Name = "label38";
-            this.label38.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label38.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label38.StylePriority.UseBorderColor = false;
-            this.label38.StylePriority.UseBorders = false;
-            this.label38.StylePriority.UseBorderWidth = false;
-            this.label38.StylePriority.UseFont = false;
-            this.label38.StylePriority.UsePadding = false;
-            this.label38.StylePriority.UseTextAlignment = false;
-            this.label38.Text = "VALUE";
-            this.label38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label38.WordWrap = false;
-            // 
-            // label39
-            // 
-            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label39.BorderColor = System.Drawing.Color.Black;
-            this.label39.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label39.BorderWidth = 1;
-            this.label39.CanGrow = false;
-            this.label39.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.LocationFloat = new DevExpress.Utils.PointFloat(120F, 168.5737F);
-            this.label39.Name = "label39";
-            this.label39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label39.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label39.StylePriority.UseBorderColor = false;
-            this.label39.StylePriority.UseBorders = false;
-            this.label39.StylePriority.UseBorderWidth = false;
-            this.label39.StylePriority.UseFont = false;
-            this.label39.StylePriority.UsePadding = false;
-            this.label39.StylePriority.UseTextAlignment = false;
-            this.label39.Text = "COST";
-            this.label39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label39.WordWrap = false;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label17.BorderColor = System.Drawing.Color.Black;
-            this.label17.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label17.BorderWidth = 1;
-            this.label17.CanGrow = false;
-            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.LocationFloat = new DevExpress.Utils.PointFloat(386F, 132.5736F);
-            this.label17.Multiline = true;
-            this.label17.Name = "label17";
-            this.label17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label17.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
-            this.label17.StylePriority.UseBorderColor = false;
-            this.label17.StylePriority.UseBorders = false;
-            this.label17.StylePriority.UseBorderWidth = false;
-            this.label17.StylePriority.UseFont = false;
-            this.label17.StylePriority.UsePadding = false;
-            this.label17.StylePriority.UseTextAlignment = false;
-            this.label17.Text = "Usage Between\r\n[Parameters.previousDate!MM/dd/yyyy] and [Parameters.cutoffDate!MM" +
-                "/dd/yyyy]";
-            this.label17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.label17.WordWrap = false;
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label18.BorderColor = System.Drawing.Color.Black;
-            this.label18.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label18.BorderWidth = 1;
-            this.label18.CanGrow = false;
-            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.LocationFloat = new DevExpress.Utils.PointFloat(228F, 132.5736F);
-            this.label18.Multiline = true;
-            this.label18.Name = "label18";
-            this.label18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label18.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
-            this.label18.StylePriority.UseBorderColor = false;
-            this.label18.StylePriority.UseBorders = false;
-            this.label18.StylePriority.UseBorderWidth = false;
-            this.label18.StylePriority.UseFont = false;
-            this.label18.StylePriority.UsePadding = false;
-            this.label18.StylePriority.UseTextAlignment = false;
-            this.label18.Text = "Purchases Between\r\n[Parameters.previousDate!MM/dd/yyyy] and [Parameters.cutoffDat" +
-                "e!MM/dd/yyyy]";
-            this.label18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.label18.WordWrap = false;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label15.BorderColor = System.Drawing.Color.Black;
-            this.label15.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label15.BorderWidth = 1;
-            this.label15.CanGrow = false;
-            this.label15.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.LocationFloat = new DevExpress.Utils.PointFloat(0F, 132.5736F);
-            this.label15.Name = "label15";
-            this.label15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label15.SizeF = new System.Drawing.SizeF(70F, 36.00007F);
-            this.label15.StylePriority.UseBorderColor = false;
-            this.label15.StylePriority.UseBorders = false;
-            this.label15.StylePriority.UseBorderWidth = false;
-            this.label15.StylePriority.UseFont = false;
-            this.label15.StylePriority.UsePadding = false;
-            this.label15.StylePriority.UseTextAlignment = false;
-            this.label15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.label15.WordWrap = false;
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label16.BorderColor = System.Drawing.Color.Black;
-            this.label16.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-                        | DevExpress.XtraPrinting.BorderSide.Right) 
-                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label16.BorderWidth = 1;
-            this.label16.CanGrow = false;
-            this.label16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.LocationFloat = new DevExpress.Utils.PointFloat(544F, 132.5736F);
-            this.label16.Multiline = true;
-            this.label16.Name = "label16";
-            this.label16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label16.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
-            this.label16.StylePriority.UseBorderColor = false;
-            this.label16.StylePriority.UseBorders = false;
-            this.label16.StylePriority.UseBorderWidth = false;
-            this.label16.StylePriority.UseFont = false;
-            this.label16.StylePriority.UsePadding = false;
-            this.label16.StylePriority.UseTextAlignment = false;
-            this.label16.Text = "Inventory Balance\r\nEnding [Parameters.cutoffDate!MM/dd/yyyy]";
-            this.label16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.label16.WordWrap = false;
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label19.BorderColor = System.Drawing.Color.Black;
-            this.label19.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label19.BorderWidth = 1;
-            this.label19.CanGrow = false;
-            this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.LocationFloat = new DevExpress.Utils.PointFloat(70.00002F, 132.5736F);
-            this.label19.Multiline = true;
-            this.label19.Name = "label19";
-            this.label19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label19.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
-            this.label19.StylePriority.UseBorderColor = false;
-            this.label19.StylePriority.UseBorders = false;
-            this.label19.StylePriority.UseBorderWidth = false;
-            this.label19.StylePriority.UseFont = false;
-            this.label19.StylePriority.UsePadding = false;
-            this.label19.StylePriority.UseTextAlignment = false;
-            this.label19.Text = "Inventory Balance\r\nBefore [Parameters.previousDate!MM/dd/yyyy]";
-            this.label19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.label19.WordWrap = false;
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label23.BorderColor = System.Drawing.Color.Black;
-            this.label23.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label23.BorderWidth = 1;
-            this.label23.CanGrow = false;
-            this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.LocationFloat = new DevExpress.Utils.PointFloat(544F, 168.5737F);
-            this.label23.Name = "label23";
-            this.label23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label23.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
-            this.label23.StylePriority.UseBorderColor = false;
-            this.label23.StylePriority.UseBorders = false;
-            this.label23.StylePriority.UseBorderWidth = false;
-            this.label23.StylePriority.UseFont = false;
-            this.label23.StylePriority.UsePadding = false;
-            this.label23.StylePriority.UseTextAlignment = false;
-            this.label23.Text = "QTY";
-            this.label23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label23.WordWrap = false;
-            // 
-            // label25
-            // 
-            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label25.BorderColor = System.Drawing.Color.Black;
-            this.label25.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label25.BorderWidth = 1;
-            this.label25.CanGrow = false;
-            this.label25.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.LocationFloat = new DevExpress.Utils.PointFloat(490F, 168.5737F);
-            this.label25.Name = "label25";
-            this.label25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label25.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label25.StylePriority.UseBorderColor = false;
-            this.label25.StylePriority.UseBorders = false;
-            this.label25.StylePriority.UseBorderWidth = false;
-            this.label25.StylePriority.UseFont = false;
-            this.label25.StylePriority.UsePadding = false;
-            this.label25.StylePriority.UseTextAlignment = false;
-            this.label25.Text = "VALUE";
-            this.label25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label25.WordWrap = false;
-            // 
             // label20
             // 
             this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label20.BorderColor = System.Drawing.Color.Black;
-            this.label20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            this.label20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
                         | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.label20.BorderWidth = 1;
             this.label20.CanGrow = false;
             this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.LocationFloat = new DevExpress.Utils.PointFloat(647.9999F, 168.5737F);
+            this.label20.LocationFloat = new DevExpress.Utils.PointFloat(0.4999595F, 129.4486F);
             this.label20.Name = "label20";
             this.label20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label20.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label20.SizeF = new System.Drawing.SizeF(70F, 36.00007F);
             this.label20.StylePriority.UseBorderColor = false;
             this.label20.StylePriority.UseBorders = false;
             this.label20.StylePriority.UseBorderWidth = false;
             this.label20.StylePriority.UseFont = false;
             this.label20.StylePriority.UsePadding = false;
             this.label20.StylePriority.UseTextAlignment = false;
-            this.label20.Text = "VALUE";
-            this.label20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.label20.WordWrap = false;
             // 
-            // label22
+            // label14
             // 
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label22.BorderColor = System.Drawing.Color.Black;
-            this.label22.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.label22.BorderWidth = 1;
-            this.label22.CanGrow = false;
-            this.label22.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.LocationFloat = new DevExpress.Utils.PointFloat(594F, 168.5737F);
-            this.label22.Name = "label22";
-            this.label22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label22.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
-            this.label22.StylePriority.UseBorderColor = false;
-            this.label22.StylePriority.UseBorders = false;
-            this.label22.StylePriority.UseBorderWidth = false;
-            this.label22.StylePriority.UseFont = false;
-            this.label22.StylePriority.UsePadding = false;
-            this.label22.StylePriority.UseTextAlignment = false;
-            this.label22.Text = "COST";
-            this.label22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label22.WordWrap = false;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label14.BorderColor = System.Drawing.Color.Black;
+            this.label14.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label14.BorderWidth = 1;
+            this.label14.CanGrow = false;
+            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.LocationFloat = new DevExpress.Utils.PointFloat(284.4999F, 165.4487F);
+            this.label14.Name = "label14";
+            this.label14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label14.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label14.StylePriority.UseBorderColor = false;
+            this.label14.StylePriority.UseBorders = false;
+            this.label14.StylePriority.UseBorderWidth = false;
+            this.label14.StylePriority.UseFont = false;
+            this.label14.StylePriority.UsePadding = false;
+            this.label14.StylePriority.UseTextAlignment = false;
+            this.label14.Text = "COST";
+            this.label14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label14.WordWrap = false;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label15.BorderColor = System.Drawing.Color.Black;
+            this.label15.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label15.BorderWidth = 1;
+            this.label15.CanGrow = false;
+            this.label15.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.LocationFloat = new DevExpress.Utils.PointFloat(234.4999F, 165.4487F);
+            this.label15.Name = "label15";
+            this.label15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label15.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label15.StylePriority.UseBorderColor = false;
+            this.label15.StylePriority.UseBorders = false;
+            this.label15.StylePriority.UseBorderWidth = false;
+            this.label15.StylePriority.UseFont = false;
+            this.label15.StylePriority.UsePadding = false;
+            this.label15.StylePriority.UseTextAlignment = false;
+            this.label15.Text = "QTY";
+            this.label15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label15.WordWrap = false;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label12.BorderColor = System.Drawing.Color.Black;
+            this.label12.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label12.BorderWidth = 1;
+            this.label12.CanGrow = false;
+            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.LocationFloat = new DevExpress.Utils.PointFloat(398.4999F, 165.4487F);
+            this.label12.Name = "label12";
+            this.label12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label12.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label12.StylePriority.UseBorderColor = false;
+            this.label12.StylePriority.UseBorders = false;
+            this.label12.StylePriority.UseBorderWidth = false;
+            this.label12.StylePriority.UseFont = false;
+            this.label12.StylePriority.UsePadding = false;
+            this.label12.StylePriority.UseTextAlignment = false;
+            this.label12.Text = "QTY";
+            this.label12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label12.WordWrap = false;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label13.BorderColor = System.Drawing.Color.Black;
+            this.label13.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label13.BorderWidth = 1;
+            this.label13.CanGrow = false;
+            this.label13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.LocationFloat = new DevExpress.Utils.PointFloat(334.4999F, 165.4487F);
+            this.label13.Name = "label13";
+            this.label13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label13.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
+            this.label13.StylePriority.UseBorderColor = false;
+            this.label13.StylePriority.UseBorders = false;
+            this.label13.StylePriority.UseBorderWidth = false;
+            this.label13.StylePriority.UseFont = false;
+            this.label13.StylePriority.UsePadding = false;
+            this.label13.StylePriority.UseTextAlignment = false;
+            this.label13.Text = "VALUE";
+            this.label13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label13.WordWrap = false;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label18.BorderColor = System.Drawing.Color.Black;
+            this.label18.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label18.BorderWidth = 1;
+            this.label18.CanGrow = false;
+            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.LocationFloat = new DevExpress.Utils.PointFloat(70.49996F, 165.4487F);
+            this.label18.Name = "label18";
+            this.label18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label18.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label18.StylePriority.UseBorderColor = false;
+            this.label18.StylePriority.UseBorders = false;
+            this.label18.StylePriority.UseBorderWidth = false;
+            this.label18.StylePriority.UseFont = false;
+            this.label18.StylePriority.UsePadding = false;
+            this.label18.StylePriority.UseTextAlignment = false;
+            this.label18.Text = "QTY";
+            this.label18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label18.WordWrap = false;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label19.BorderColor = System.Drawing.Color.Black;
+            this.label19.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label19.BorderWidth = 1;
+            this.label19.CanGrow = false;
+            this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.LocationFloat = new DevExpress.Utils.PointFloat(0.499939F, 165.4487F);
+            this.label19.Name = "label19";
+            this.label19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label19.SizeF = new System.Drawing.SizeF(70F, 22.00003F);
+            this.label19.StylePriority.UseBorderColor = false;
+            this.label19.StylePriority.UseBorders = false;
+            this.label19.StylePriority.UseBorderWidth = false;
+            this.label19.StylePriority.UseFont = false;
+            this.label19.StylePriority.UsePadding = false;
+            this.label19.StylePriority.UseTextAlignment = false;
+            this.label19.Text = "Feed";
+            this.label19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.label19.WordWrap = false;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label16.BorderColor = System.Drawing.Color.Black;
+            this.label16.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label16.BorderWidth = 1;
+            this.label16.CanGrow = false;
+            this.label16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.LocationFloat = new DevExpress.Utils.PointFloat(170.5F, 165.4487F);
+            this.label16.Name = "label16";
+            this.label16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label16.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
+            this.label16.StylePriority.UseBorderColor = false;
+            this.label16.StylePriority.UseBorders = false;
+            this.label16.StylePriority.UseBorderWidth = false;
+            this.label16.StylePriority.UseFont = false;
+            this.label16.StylePriority.UsePadding = false;
+            this.label16.StylePriority.UseTextAlignment = false;
+            this.label16.Text = "VALUE";
+            this.label16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label16.WordWrap = false;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label17.BorderColor = System.Drawing.Color.Black;
+            this.label17.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label17.BorderWidth = 1;
+            this.label17.CanGrow = false;
+            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.LocationFloat = new DevExpress.Utils.PointFloat(120.4999F, 165.4487F);
+            this.label17.Name = "label17";
+            this.label17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label17.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label17.StylePriority.UseBorderColor = false;
+            this.label17.StylePriority.UseBorders = false;
+            this.label17.StylePriority.UseBorderWidth = false;
+            this.label17.StylePriority.UseFont = false;
+            this.label17.StylePriority.UsePadding = false;
+            this.label17.StylePriority.UseTextAlignment = false;
+            this.label17.Text = "COST";
+            this.label17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label17.WordWrap = false;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label11.BorderColor = System.Drawing.Color.Black;
+            this.label11.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label11.BorderWidth = 1;
+            this.label11.CanGrow = false;
+            this.label11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.LocationFloat = new DevExpress.Utils.PointFloat(448.4999F, 165.4487F);
+            this.label11.Name = "label11";
+            this.label11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label11.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label11.StylePriority.UseBorderColor = false;
+            this.label11.StylePriority.UseBorders = false;
+            this.label11.StylePriority.UseBorderWidth = false;
+            this.label11.StylePriority.UseFont = false;
+            this.label11.StylePriority.UsePadding = false;
+            this.label11.StylePriority.UseTextAlignment = false;
+            this.label11.Text = "COST";
+            this.label11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label11.WordWrap = false;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.BorderColor = System.Drawing.Color.Black;
+            this.label4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label4.BorderWidth = 1;
+            this.label4.CanGrow = false;
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(234.5F, 129.4487F);
+            this.label4.Multiline = true;
+            this.label4.Name = "label4";
+            this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label4.SizeF = new System.Drawing.SizeF(163.9999F, 36.00007F);
+            this.label4.StylePriority.UseBorderColor = false;
+            this.label4.StylePriority.UseBorders = false;
+            this.label4.StylePriority.UseBorderWidth = false;
+            this.label4.StylePriority.UseFont = false;
+            this.label4.StylePriority.UsePadding = false;
+            this.label4.StylePriority.UseTextAlignment = false;
+            this.label4.Text = "Purchases Between\r\n[Parameters.previousDate!MM/dd/yyyy] and [Parameters.cutoffDat" +
+                "e!MM/dd/yyyy]";
+            this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.label4.WordWrap = false;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.BorderColor = System.Drawing.Color.Black;
+            this.label6.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label6.BorderWidth = 1;
+            this.label6.CanGrow = false;
+            this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.LocationFloat = new DevExpress.Utils.PointFloat(70.49996F, 129.4487F);
+            this.label6.Multiline = true;
+            this.label6.Name = "label6";
+            this.label6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label6.SizeF = new System.Drawing.SizeF(164F, 36.00007F);
+            this.label6.StylePriority.UseBorderColor = false;
+            this.label6.StylePriority.UseBorders = false;
+            this.label6.StylePriority.UseBorderWidth = false;
+            this.label6.StylePriority.UseFont = false;
+            this.label6.StylePriority.UsePadding = false;
+            this.label6.StylePriority.UseTextAlignment = false;
+            this.label6.Text = "Inventory Balance\r\nBefore [Parameters.previousDate!MM/dd/yyyy]";
+            this.label6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.label6.WordWrap = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.BorderColor = System.Drawing.Color.Black;
+            this.label2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+                        | DevExpress.XtraPrinting.BorderSide.Right) 
+                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label2.BorderWidth = 1;
+            this.label2.CanGrow = false;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(562.4999F, 129.4487F);
+            this.label2.Multiline = true;
+            this.label2.Name = "label2";
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label2.SizeF = new System.Drawing.SizeF(164.0002F, 36.00007F);
+            this.label2.StylePriority.UseBorderColor = false;
+            this.label2.StylePriority.UseBorders = false;
+            this.label2.StylePriority.UseBorderWidth = false;
+            this.label2.StylePriority.UseFont = false;
+            this.label2.StylePriority.UsePadding = false;
+            this.label2.StylePriority.UseTextAlignment = false;
+            this.label2.Text = "Inventory Balance\r\nEnding [Parameters.cutoffDate!MM/dd/yyyy]";
+            this.label2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.label2.WordWrap = false;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.BorderColor = System.Drawing.Color.Black;
+            this.label3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label3.BorderWidth = 1;
+            this.label3.CanGrow = false;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(398.4999F, 129.4487F);
+            this.label3.Multiline = true;
+            this.label3.Name = "label3";
+            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label3.SizeF = new System.Drawing.SizeF(164F, 36.00007F);
+            this.label3.StylePriority.UseBorderColor = false;
+            this.label3.StylePriority.UseBorders = false;
+            this.label3.StylePriority.UseBorderWidth = false;
+            this.label3.StylePriority.UseFont = false;
+            this.label3.StylePriority.UsePadding = false;
+            this.label3.StylePriority.UseTextAlignment = false;
+            this.label3.Text = "Usage Between\r\n[Parameters.previousDate!MM/dd/yyyy] and [Parameters.cutoffDate!MM" +
+                "/dd/yyyy]";
+            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.label3.WordWrap = false;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label9.BorderColor = System.Drawing.Color.Black;
+            this.label9.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label9.BorderWidth = 1;
+            this.label9.CanGrow = false;
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(562.4999F, 165.4487F);
+            this.label9.Name = "label9";
+            this.label9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label9.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label9.StylePriority.UseBorderColor = false;
+            this.label9.StylePriority.UseBorders = false;
+            this.label9.StylePriority.UseBorderWidth = false;
+            this.label9.StylePriority.UseFont = false;
+            this.label9.StylePriority.UsePadding = false;
+            this.label9.StylePriority.UseTextAlignment = false;
+            this.label9.Text = "QTY";
+            this.label9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label9.WordWrap = false;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label10.BorderColor = System.Drawing.Color.Black;
+            this.label10.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label10.BorderWidth = 1;
+            this.label10.CanGrow = false;
+            this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.LocationFloat = new DevExpress.Utils.PointFloat(498.4999F, 165.4487F);
+            this.label10.Name = "label10";
+            this.label10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label10.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
+            this.label10.StylePriority.UseBorderColor = false;
+            this.label10.StylePriority.UseBorders = false;
+            this.label10.StylePriority.UseBorderWidth = false;
+            this.label10.StylePriority.UseFont = false;
+            this.label10.StylePriority.UsePadding = false;
+            this.label10.StylePriority.UseTextAlignment = false;
+            this.label10.Text = "VALUE";
+            this.label10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label10.WordWrap = false;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label7.BorderColor = System.Drawing.Color.Black;
+            this.label7.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label7.BorderWidth = 1;
+            this.label7.CanGrow = false;
+            this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.LocationFloat = new DevExpress.Utils.PointFloat(662.5001F, 165.4487F);
+            this.label7.Name = "label7";
+            this.label7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label7.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
+            this.label7.StylePriority.UseBorderColor = false;
+            this.label7.StylePriority.UseBorders = false;
+            this.label7.StylePriority.UseBorderWidth = false;
+            this.label7.StylePriority.UseFont = false;
+            this.label7.StylePriority.UsePadding = false;
+            this.label7.StylePriority.UseTextAlignment = false;
+            this.label7.Text = "VALUE";
+            this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label7.WordWrap = false;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label8.BorderColor = System.Drawing.Color.Black;
+            this.label8.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.label8.BorderWidth = 1;
+            this.label8.CanGrow = false;
+            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.LocationFloat = new DevExpress.Utils.PointFloat(612.4999F, 165.4487F);
+            this.label8.Name = "label8";
+            this.label8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.label8.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
+            this.label8.StylePriority.UseBorderColor = false;
+            this.label8.StylePriority.UseBorders = false;
+            this.label8.StylePriority.UseBorderWidth = false;
+            this.label8.StylePriority.UseFont = false;
+            this.label8.StylePriority.UsePadding = false;
+            this.label8.StylePriority.UseTextAlignment = false;
+            this.label8.Text = "COST";
+            this.label8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.label8.WordWrap = false;
             // 
             // label28
             // 
@@ -875,7 +875,7 @@ namespace XtraReportSerialization {
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 0F);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 0F);
             this.label28.Name = "label28";
             this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label28.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -894,7 +894,7 @@ namespace XtraReportSerialization {
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 15F);
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 15F);
             this.label27.Name = "label27";
             this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label27.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -911,7 +911,7 @@ namespace XtraReportSerialization {
             this.label21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 30F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 30F);
             this.label21.Name = "label21";
             this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label21.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -959,7 +959,7 @@ namespace XtraReportSerialization {
             this.line1.LineWidth = 4;
             this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51F);
             this.line1.Name = "line1";
-            this.line1.SizeF = new System.Drawing.SizeF(702F, 4F);
+            this.line1.SizeF = new System.Drawing.SizeF(727F, 4F);
             this.line1.StylePriority.UseBorderWidth = false;
             // 
             // label44
@@ -1017,7 +1017,7 @@ namespace XtraReportSerialization {
             this.label46.LocationFloat = new DevExpress.Utils.PointFloat(120F, 108.3958F);
             this.label46.Name = "label46";
             this.label46.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label46.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label46.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
             this.label46.StylePriority.UseBorderColor = false;
             this.label46.StylePriority.UseBorders = false;
             this.label46.StylePriority.UseBorderWidth = false;
@@ -1036,10 +1036,10 @@ namespace XtraReportSerialization {
             this.label47.BorderWidth = 1;
             this.label47.CanGrow = false;
             this.label47.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.LocationFloat = new DevExpress.Utils.PointFloat(174F, 108.3958F);
+            this.label47.LocationFloat = new DevExpress.Utils.PointFloat(170F, 108.3958F);
             this.label47.Name = "label47";
             this.label47.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label47.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label47.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
             this.label47.StylePriority.UseBorderColor = false;
             this.label47.StylePriority.UseBorders = false;
             this.label47.StylePriority.UseBorderWidth = false;
@@ -1058,7 +1058,7 @@ namespace XtraReportSerialization {
             this.label48.BorderWidth = 1;
             this.label48.CanGrow = false;
             this.label48.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.LocationFloat = new DevExpress.Utils.PointFloat(228F, 108.3958F);
+            this.label48.LocationFloat = new DevExpress.Utils.PointFloat(233.9999F, 108.3958F);
             this.label48.Name = "label48";
             this.label48.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label48.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
@@ -1080,10 +1080,10 @@ namespace XtraReportSerialization {
             this.label49.BorderWidth = 1;
             this.label49.CanGrow = false;
             this.label49.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.LocationFloat = new DevExpress.Utils.PointFloat(278F, 108.3958F);
+            this.label49.LocationFloat = new DevExpress.Utils.PointFloat(283.9999F, 108.3958F);
             this.label49.Name = "label49";
             this.label49.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label49.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label49.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
             this.label49.StylePriority.UseBorderColor = false;
             this.label49.StylePriority.UseBorders = false;
             this.label49.StylePriority.UseBorderWidth = false;
@@ -1102,10 +1102,10 @@ namespace XtraReportSerialization {
             this.label50.BorderWidth = 1;
             this.label50.CanGrow = false;
             this.label50.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.LocationFloat = new DevExpress.Utils.PointFloat(332F, 108.3958F);
+            this.label50.LocationFloat = new DevExpress.Utils.PointFloat(333.9999F, 108.3958F);
             this.label50.Name = "label50";
             this.label50.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label50.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label50.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
             this.label50.StylePriority.UseBorderColor = false;
             this.label50.StylePriority.UseBorders = false;
             this.label50.StylePriority.UseBorderWidth = false;
@@ -1124,7 +1124,7 @@ namespace XtraReportSerialization {
             this.label51.BorderWidth = 1;
             this.label51.CanGrow = false;
             this.label51.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.LocationFloat = new DevExpress.Utils.PointFloat(386F, 108.3958F);
+            this.label51.LocationFloat = new DevExpress.Utils.PointFloat(397.9999F, 108.3958F);
             this.label51.Name = "label51";
             this.label51.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label51.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
@@ -1146,10 +1146,10 @@ namespace XtraReportSerialization {
             this.label52.BorderWidth = 1;
             this.label52.CanGrow = false;
             this.label52.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.LocationFloat = new DevExpress.Utils.PointFloat(436F, 108.3958F);
+            this.label52.LocationFloat = new DevExpress.Utils.PointFloat(447.9999F, 108.3958F);
             this.label52.Name = "label52";
             this.label52.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label52.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label52.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
             this.label52.StylePriority.UseBorderColor = false;
             this.label52.StylePriority.UseBorders = false;
             this.label52.StylePriority.UseBorderWidth = false;
@@ -1168,10 +1168,10 @@ namespace XtraReportSerialization {
             this.label53.BorderWidth = 1;
             this.label53.CanGrow = false;
             this.label53.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.LocationFloat = new DevExpress.Utils.PointFloat(490F, 108.3958F);
+            this.label53.LocationFloat = new DevExpress.Utils.PointFloat(497.9999F, 108.3958F);
             this.label53.Name = "label53";
             this.label53.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label53.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label53.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
             this.label53.StylePriority.UseBorderColor = false;
             this.label53.StylePriority.UseBorders = false;
             this.label53.StylePriority.UseBorderWidth = false;
@@ -1190,7 +1190,7 @@ namespace XtraReportSerialization {
             this.label54.BorderWidth = 1;
             this.label54.CanGrow = false;
             this.label54.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.LocationFloat = new DevExpress.Utils.PointFloat(544F, 108.3958F);
+            this.label54.LocationFloat = new DevExpress.Utils.PointFloat(562F, 108.3958F);
             this.label54.Name = "label54";
             this.label54.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label54.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
@@ -1212,10 +1212,10 @@ namespace XtraReportSerialization {
             this.label55.BorderWidth = 1;
             this.label55.CanGrow = false;
             this.label55.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.LocationFloat = new DevExpress.Utils.PointFloat(594F, 108.3958F);
+            this.label55.LocationFloat = new DevExpress.Utils.PointFloat(612F, 108.3958F);
             this.label55.Name = "label55";
             this.label55.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label55.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label55.SizeF = new System.Drawing.SizeF(50F, 22.00003F);
             this.label55.StylePriority.UseBorderColor = false;
             this.label55.StylePriority.UseBorders = false;
             this.label55.StylePriority.UseBorderWidth = false;
@@ -1235,10 +1235,10 @@ namespace XtraReportSerialization {
             this.label56.BorderWidth = 1;
             this.label56.CanGrow = false;
             this.label56.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.LocationFloat = new DevExpress.Utils.PointFloat(648F, 108.3958F);
+            this.label56.LocationFloat = new DevExpress.Utils.PointFloat(662.0001F, 108.3958F);
             this.label56.Name = "label56";
             this.label56.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label56.SizeF = new System.Drawing.SizeF(54F, 22.00003F);
+            this.label56.SizeF = new System.Drawing.SizeF(64F, 22.00003F);
             this.label56.StylePriority.UseBorderColor = false;
             this.label56.StylePriority.UseBorders = false;
             this.label56.StylePriority.UseBorderWidth = false;
@@ -1258,11 +1258,11 @@ namespace XtraReportSerialization {
             this.label57.BorderWidth = 1;
             this.label57.CanGrow = false;
             this.label57.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.LocationFloat = new DevExpress.Utils.PointFloat(70.00002F, 72.39577F);
+            this.label57.LocationFloat = new DevExpress.Utils.PointFloat(70.00002F, 72.39578F);
             this.label57.Multiline = true;
             this.label57.Name = "label57";
             this.label57.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label57.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
+            this.label57.SizeF = new System.Drawing.SizeF(164F, 36.00007F);
             this.label57.StylePriority.UseBorderColor = false;
             this.label57.StylePriority.UseBorders = false;
             this.label57.StylePriority.UseBorderWidth = false;
@@ -1282,11 +1282,11 @@ namespace XtraReportSerialization {
             this.label58.BorderWidth = 1;
             this.label58.CanGrow = false;
             this.label58.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.LocationFloat = new DevExpress.Utils.PointFloat(228F, 72.39577F);
+            this.label58.LocationFloat = new DevExpress.Utils.PointFloat(234F, 72.39578F);
             this.label58.Multiline = true;
             this.label58.Name = "label58";
             this.label58.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label58.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
+            this.label58.SizeF = new System.Drawing.SizeF(163.9999F, 36.00007F);
             this.label58.StylePriority.UseBorderColor = false;
             this.label58.StylePriority.UseBorders = false;
             this.label58.StylePriority.UseBorderWidth = false;
@@ -1307,11 +1307,11 @@ namespace XtraReportSerialization {
             this.label59.BorderWidth = 1;
             this.label59.CanGrow = false;
             this.label59.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.LocationFloat = new DevExpress.Utils.PointFloat(386F, 72.39577F);
+            this.label59.LocationFloat = new DevExpress.Utils.PointFloat(398F, 72.39578F);
             this.label59.Multiline = true;
             this.label59.Name = "label59";
             this.label59.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label59.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
+            this.label59.SizeF = new System.Drawing.SizeF(164F, 36.00007F);
             this.label59.StylePriority.UseBorderColor = false;
             this.label59.StylePriority.UseBorders = false;
             this.label59.StylePriority.UseBorderWidth = false;
@@ -1333,11 +1333,11 @@ namespace XtraReportSerialization {
             this.label60.BorderWidth = 1;
             this.label60.CanGrow = false;
             this.label60.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.LocationFloat = new DevExpress.Utils.PointFloat(544F, 72.39577F);
+            this.label60.LocationFloat = new DevExpress.Utils.PointFloat(561.9999F, 72.39578F);
             this.label60.Multiline = true;
             this.label60.Name = "label60";
             this.label60.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label60.SizeF = new System.Drawing.SizeF(158F, 36.00007F);
+            this.label60.SizeF = new System.Drawing.SizeF(164.0002F, 36.00007F);
             this.label60.StylePriority.UseBorderColor = false;
             this.label60.StylePriority.UseBorders = false;
             this.label60.StylePriority.UseBorderWidth = false;
@@ -1478,7 +1478,7 @@ namespace XtraReportSerialization {
             // 
             this.pageInfo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageInfo1.Format = "Page {0} of {1}";
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(578.5833F, 4.000028F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(600.5833F, 4.000028F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.pageInfo1.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -1507,7 +1507,7 @@ namespace XtraReportSerialization {
             this.line3.LineWidth = 2;
             this.line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.line3.Name = "line3";
-            this.line3.SizeF = new System.Drawing.SizeF(702F, 4F);
+            this.line3.SizeF = new System.Drawing.SizeF(726F, 4F);
             this.line3.StylePriority.UseBorderWidth = false;
             // 
             // line4
@@ -1515,7 +1515,7 @@ namespace XtraReportSerialization {
             this.line4.BorderWidth = 1;
             this.line4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.line4.Name = "line4";
-            this.line4.SizeF = new System.Drawing.SizeF(702F, 4F);
+            this.line4.SizeF = new System.Drawing.SizeF(726F, 4F);
             this.line4.StylePriority.UseBorderWidth = false;
             // 
             // ReportTotals
@@ -1539,13 +1539,13 @@ namespace XtraReportSerialization {
             this.lblEndingValue.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.endingValue")});
             this.lblEndingValue.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndingValue.LocationFloat = new DevExpress.Utils.PointFloat(648F, 0F);
+            this.lblEndingValue.LocationFloat = new DevExpress.Utils.PointFloat(662F, 0F);
             this.lblEndingValue.Name = "lblEndingValue";
             this.lblEndingValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblEndingValue.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblEndingValue.SizeF = new System.Drawing.SizeF(64F, 22F);
             this.lblEndingValue.StylePriority.UseFont = false;
             this.lblEndingValue.StylePriority.UseTextAlignment = false;
-            summary1.FormatString = "{0:c0}";
+            summary1.FormatString = "{0:c2}";
             summary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblEndingValue.Summary = summary1;
             this.lblEndingValue.Text = "lblEndingValue";
@@ -1556,16 +1556,16 @@ namespace XtraReportSerialization {
             this.lblEndingCost.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.endingCost")});
             this.lblEndingCost.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndingCost.LocationFloat = new DevExpress.Utils.PointFloat(594F, 0F);
+            this.lblEndingCost.LocationFloat = new DevExpress.Utils.PointFloat(612F, 0F);
             this.lblEndingCost.Name = "lblEndingCost";
             this.lblEndingCost.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblEndingCost.Scripts.OnSummaryGetResult = "CostPerTon_SummaryGetResult";
             this.lblEndingCost.Scripts.OnSummaryReset = "CostPerTon_SummaryReset";
             this.lblEndingCost.Scripts.OnSummaryRowChanged = "CostPerTon_SummaryRowChanged";
-            this.lblEndingCost.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblEndingCost.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblEndingCost.StylePriority.UseFont = false;
             this.lblEndingCost.StylePriority.UseTextAlignment = false;
-            summary2.FormatString = "{0:c2}";
+            summary2.FormatString = "{0:c0}";
             summary2.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom;
             summary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblEndingCost.Summary = summary2;
@@ -1577,13 +1577,13 @@ namespace XtraReportSerialization {
             this.lblEndingQty.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.endingQty")});
             this.lblEndingQty.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndingQty.LocationFloat = new DevExpress.Utils.PointFloat(544F, 0F);
+            this.lblEndingQty.LocationFloat = new DevExpress.Utils.PointFloat(562F, 0F);
             this.lblEndingQty.Name = "lblEndingQty";
             this.lblEndingQty.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblEndingQty.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblEndingQty.StylePriority.UseFont = false;
             this.lblEndingQty.StylePriority.UseTextAlignment = false;
-            summary3.FormatString = "{0:n1}";
+            summary3.FormatString = "{0:n2}";
             summary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblEndingQty.Summary = summary3;
             this.lblEndingQty.Text = "lblEndingQty";
@@ -1594,13 +1594,13 @@ namespace XtraReportSerialization {
             this.lblUsageValue.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.usageValue")});
             this.lblUsageValue.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsageValue.LocationFloat = new DevExpress.Utils.PointFloat(490F, 0F);
+            this.lblUsageValue.LocationFloat = new DevExpress.Utils.PointFloat(498F, 0F);
             this.lblUsageValue.Name = "lblUsageValue";
             this.lblUsageValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblUsageValue.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblUsageValue.SizeF = new System.Drawing.SizeF(64F, 22F);
             this.lblUsageValue.StylePriority.UseFont = false;
             this.lblUsageValue.StylePriority.UseTextAlignment = false;
-            summary4.FormatString = "{0:c0}";
+            summary4.FormatString = "{0:c2}";
             summary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblUsageValue.Summary = summary4;
             this.lblUsageValue.Text = "lblUsageValue";
@@ -1611,16 +1611,16 @@ namespace XtraReportSerialization {
             this.lblUsageCost.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.usageCost")});
             this.lblUsageCost.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsageCost.LocationFloat = new DevExpress.Utils.PointFloat(436F, 0F);
+            this.lblUsageCost.LocationFloat = new DevExpress.Utils.PointFloat(448F, 0F);
             this.lblUsageCost.Name = "lblUsageCost";
             this.lblUsageCost.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblUsageCost.Scripts.OnSummaryGetResult = "CostPerTon_SummaryGetResult";
             this.lblUsageCost.Scripts.OnSummaryReset = "CostPerTon_SummaryReset";
             this.lblUsageCost.Scripts.OnSummaryRowChanged = "CostPerTon_SummaryRowChanged";
-            this.lblUsageCost.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblUsageCost.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblUsageCost.StylePriority.UseFont = false;
             this.lblUsageCost.StylePriority.UseTextAlignment = false;
-            summary5.FormatString = "{0:c2}";
+            summary5.FormatString = "{0:c0}";
             summary5.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom;
             summary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblUsageCost.Summary = summary5;
@@ -1632,13 +1632,13 @@ namespace XtraReportSerialization {
             this.lblUsageQty.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.usageQty")});
             this.lblUsageQty.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsageQty.LocationFloat = new DevExpress.Utils.PointFloat(386F, 0F);
+            this.lblUsageQty.LocationFloat = new DevExpress.Utils.PointFloat(398F, 0F);
             this.lblUsageQty.Name = "lblUsageQty";
             this.lblUsageQty.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblUsageQty.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblUsageQty.StylePriority.UseFont = false;
             this.lblUsageQty.StylePriority.UseTextAlignment = false;
-            summary6.FormatString = "{0:n1}";
+            summary6.FormatString = "{0:n2}";
             summary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblUsageQty.Summary = summary6;
             this.lblUsageQty.Text = "lblUsageQty";
@@ -1649,13 +1649,13 @@ namespace XtraReportSerialization {
             this.lblPurchaseValue.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.purchaseValue")});
             this.lblPurchaseValue.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchaseValue.LocationFloat = new DevExpress.Utils.PointFloat(332F, 0F);
+            this.lblPurchaseValue.LocationFloat = new DevExpress.Utils.PointFloat(334F, 0F);
             this.lblPurchaseValue.Name = "lblPurchaseValue";
             this.lblPurchaseValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblPurchaseValue.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblPurchaseValue.SizeF = new System.Drawing.SizeF(64F, 22F);
             this.lblPurchaseValue.StylePriority.UseFont = false;
             this.lblPurchaseValue.StylePriority.UseTextAlignment = false;
-            summary7.FormatString = "{0:c0}";
+            summary7.FormatString = "{0:c2}";
             summary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblPurchaseValue.Summary = summary7;
             this.lblPurchaseValue.Text = "lblPurchaseValue";
@@ -1666,16 +1666,16 @@ namespace XtraReportSerialization {
             this.lblPurchaseCost.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.purchaseCost")});
             this.lblPurchaseCost.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchaseCost.LocationFloat = new DevExpress.Utils.PointFloat(278F, 0F);
+            this.lblPurchaseCost.LocationFloat = new DevExpress.Utils.PointFloat(284F, 0F);
             this.lblPurchaseCost.Name = "lblPurchaseCost";
             this.lblPurchaseCost.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblPurchaseCost.Scripts.OnSummaryGetResult = "CostPerTon_SummaryGetResult";
             this.lblPurchaseCost.Scripts.OnSummaryReset = "CostPerTon_SummaryReset";
             this.lblPurchaseCost.Scripts.OnSummaryRowChanged = "CostPerTon_SummaryRowChanged";
-            this.lblPurchaseCost.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblPurchaseCost.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblPurchaseCost.StylePriority.UseFont = false;
             this.lblPurchaseCost.StylePriority.UseTextAlignment = false;
-            summary8.FormatString = "{0:c2}";
+            summary8.FormatString = "{0:c0}";
             summary8.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom;
             summary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblPurchaseCost.Summary = summary8;
@@ -1687,13 +1687,13 @@ namespace XtraReportSerialization {
             this.lblPurchaseQty.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.purchaseQty")});
             this.lblPurchaseQty.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchaseQty.LocationFloat = new DevExpress.Utils.PointFloat(228F, 0F);
+            this.lblPurchaseQty.LocationFloat = new DevExpress.Utils.PointFloat(234F, 0F);
             this.lblPurchaseQty.Name = "lblPurchaseQty";
             this.lblPurchaseQty.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblPurchaseQty.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblPurchaseQty.StylePriority.UseFont = false;
             this.lblPurchaseQty.StylePriority.UseTextAlignment = false;
-            summary9.FormatString = "{0:n1}";
+            summary9.FormatString = "{0:n2}";
             summary9.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblPurchaseQty.Summary = summary9;
             this.lblPurchaseQty.Text = "lblPurchaseQty";
@@ -1704,13 +1704,13 @@ namespace XtraReportSerialization {
             this.lblPreviousValue.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.previousValue")});
             this.lblPreviousValue.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreviousValue.LocationFloat = new DevExpress.Utils.PointFloat(174F, 0F);
+            this.lblPreviousValue.LocationFloat = new DevExpress.Utils.PointFloat(170F, 0F);
             this.lblPreviousValue.Name = "lblPreviousValue";
             this.lblPreviousValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblPreviousValue.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblPreviousValue.SizeF = new System.Drawing.SizeF(64F, 22F);
             this.lblPreviousValue.StylePriority.UseFont = false;
             this.lblPreviousValue.StylePriority.UseTextAlignment = false;
-            summary10.FormatString = "{0:c0}";
+            summary10.FormatString = "{0:c2}";
             summary10.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblPreviousValue.Summary = summary10;
             this.lblPreviousValue.Text = "lblPreviousValue";
@@ -1727,10 +1727,10 @@ namespace XtraReportSerialization {
             this.lblPreviousCost.Scripts.OnSummaryGetResult = "CostPerTon_SummaryGetResult";
             this.lblPreviousCost.Scripts.OnSummaryReset = "CostPerTon_SummaryReset";
             this.lblPreviousCost.Scripts.OnSummaryRowChanged = "CostPerTon_SummaryRowChanged";
-            this.lblPreviousCost.SizeF = new System.Drawing.SizeF(54F, 22F);
+            this.lblPreviousCost.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblPreviousCost.StylePriority.UseFont = false;
             this.lblPreviousCost.StylePriority.UseTextAlignment = false;
-            summary11.FormatString = "{0:c2}";
+            summary11.FormatString = "{0:c0}";
             summary11.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom;
             summary11.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblPreviousCost.Summary = summary11;
@@ -1745,10 +1745,10 @@ namespace XtraReportSerialization {
             this.lblPreviousQty.LocationFloat = new DevExpress.Utils.PointFloat(70.00002F, 0F);
             this.lblPreviousQty.Name = "lblPreviousQty";
             this.lblPreviousQty.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblPreviousQty.SizeF = new System.Drawing.SizeF(49.99999F, 22F);
+            this.lblPreviousQty.SizeF = new System.Drawing.SizeF(50F, 22F);
             this.lblPreviousQty.StylePriority.UseFont = false;
             this.lblPreviousQty.StylePriority.UseTextAlignment = false;
-            summary12.FormatString = "{0:n1}";
+            summary12.FormatString = "{0:n2}";
             summary12.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.lblPreviousQty.Summary = summary12;
             this.lblPreviousQty.Text = "lblPreviousQty";
