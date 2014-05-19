@@ -25,6 +25,16 @@
 			&lt;Selected&gt;true&lt;/Selected&gt;
 		&lt;/ReportObject&gt;
 		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;ActualDM&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects /&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;System.Single&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
 			&lt;ObjectName&gt;ActualDMLarge&lt;/ObjectName&gt;
 			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
 			&lt;ChildObjects /&gt;
@@ -224,6 +234,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRTableCell tableCell9;
         private DevExpress.XtraReports.UI.XRTableCell _b35f287a_6ebb_4997_8b4a_355940cf27e9;
         private DevExpress.XtraReports.UI.XRTableCell _5a058654_c95e_4fee_ac70_d246572decce;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell13;
         private DevExpress.XtraReports.UI.XRTableCell _082c5b3b_1f07_48f4_80ad_e70006c88c3d;
         private DevExpress.XtraReports.UI.XRTableCell _3363e7cb_9cfe_42cb_80d8_14ee03600b55;
         private DevExpress.XtraReports.UI.PageFooterBand G4NVVWAd4l;
@@ -239,6 +250,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRTableCell tableCell11;
         private DevExpress.XtraReports.UI.XRTableCell _dc1d1ddf_db32_426d_adf2_868b56519250;
         private DevExpress.XtraReports.UI.XRTableCell _ce256b0b_af8d_49a6_9671_a15993ac7003;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell14;
         private DevExpress.XtraReports.UI.XRTableCell tableCell10;
         private DevExpress.XtraReports.UI.XRTableCell _0bf1487e_aef8_4b92_86f8_b7dfad04587b;
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
@@ -247,6 +259,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRTableCell tableCell7;
         private DevExpress.XtraReports.UI.XRTableCell tableCell12;
         private DevExpress.XtraReports.UI.XRTableCell tableCell5;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell15;
         private DevExpress.XtraReports.UI.XRTableCell tableCell8;
         private DevExpress.XtraReports.UI.XRTableCell tableCell2;
         private DevExpress.XtraReports.UI.XRControlStyle LeVR7TL0ex;
@@ -265,6 +278,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRControlStyle _30f8396c_bb81_4ded_aa22_b10756af4fe8;
         private DevExpress.XtraReports.UI.XRControlStyle _ac516a42_294a_4f5f_927b_c5ffae91b723;
         private DevExpress.XtraReports.UI.XRControlStyle _77dd7c0e_1978_4bf6_8c14_dc817abb7644;
+        private DevExpress.XtraReports.UI.XRControlStyle controlStyle1;
         private System.Resources.ResourceManager _resources;
         public _a89089e0_aec0_43dd_a46a_b943f08e1048() {
             this.InitializeComponent();
@@ -274,70 +288,194 @@ namespace XtraReportSerialization {
                 if (_resources == null) {
                     string resourceString = "zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJza" +
                         "W9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4O" +
-                        "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAcAAAAAgAAAGhTeXN0ZW0uRHJhd" +
+                        "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAeAAAAAgAAAGhTeXN0ZW0uRHJhd" +
                         "2luZy5CaXRtYXAsIFN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhb" +
                         "CwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYZYCU3lzdGVtLlR1cGxlYDJbW1N5c3RlbS5Td" +
                         "HJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5V" +
                         "G9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuM" +
                         "C4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dLCBtc" +
                         "2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N" +
-                        "2E1YzU2MTkzNGUwODlQQURQQUQPxYaIso3HpeSA3K5L3tjm0R+S7rxtUPGMSB/1JVjM9UC2mAt5bTwYt" +
-                        "228Hm1hUB/EFzEgYyaOIjk2ckF064BBNRO2QXAMxUFyHOdBM0QcQlRTHUzwnpFMqf3IUmnd/VwC5tJk/" +
-                        "WlGdgBxYHwCgYJ8yAEAAJIEAABxAQAAJQAAAF0EAABaAwAA8QIAAJIFAACxAwAAmgIAAAAAAACxAAAA5" +
-                        "gUAAOoEAABtBgAAGQYAAMUFAADkAwAAcQUAAB0FAAAIAQAABQQAADoGAAAxAgAAPgUAAEgAAAA6BAAAx" +
-                        "wQAAKIJAAAgUQBQAFIAVgBuAEwARgAxAGcAbAAuAEkAbQBhAGcAZQAAAAAAHlMARgBtAFIAWQBSAEsAU" +
-                        "wBtAGkALgBUAGUAeAB0AMcEAABkXwAwADEAYwBhADYAZAAwAGUAXwBkAGEAZAAzAF8ANABiADMAZABfA" +
-                        "GEAZgBkAGIAXwBmADAANABlADEAYwA5ADQAMAA0ADYANwAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzA" +
-                        "LMFAABSXwAwADEAYwBhADYAZAAwAGUAXwBkAGEAZAAzAF8ANABiADMAZABfAGEAZgBkAGIAXwBmADAAN" +
-                        "ABlADEAYwA5ADQAMAA0ADYANwAuAFQAYQBnAIcGAABkXwAwAGIAZgAxADQAOAA3AGUAXwBhAGUAZgA4A" +
-                        "F8ANABiADkAMgBfADgANgBmADgAXwBiADcAZABmAGEAZAAwADQANQA4ADcAYgAuAEQAYQB0AGEAQgBpA" +
-                        "G4AZABpAG4AZwBzAP8HAABSXwAwAGIAZgAxADQAOAA3AGUAXwBhAGUAZgA4AF8ANABiADkAMgBfADgAN" +
-                        "gBmADgAXwBiADcAZABmAGEAZAAwADQANQA4ADcAYgAuAFQAYQBnANQIAABkXwBhADIANABjAGQAOABkA" +
-                        "DkAXwA4ADQAMgBmAF8ANAA5AGIAOQBfAGEANQBkADMAXwAzADkANwBkADYAZQA5ADMAYgA0AGUAYgAuA" +
-                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAE8KAABkXwBjAGUAMgA1ADYAYgAwAGIAXwBhAGYAOABkAF8AN" +
-                        "AA5AGEANgBfADkANgA3ADEAXwBhADEANQA5ADkAMwBhAGMANwAwADAAMwAuAEQAYQB0AGEAQgBpAG4AZ" +
-                        "ABpAG4AZwBzADILAABSXwBjAGUAMgA1ADYAYgAwAGIAXwBhAGYAOABkAF8ANAA5AGEANgBfADkANgA3A" +
-                        "DEAXwBhADEANQA5ADkAMwBhAGMANwAwADAAMwAuAFQAYQBnAAYMAABkXwBkAGMAMQBkADEAZABkAGYAX" +
-                        "wBkAGIAMwAyAF8ANAAyADYAZABfAGEAZABmADIAXwA4ADYAOABiADUANgA1ADEAOQAyADUAMAAuAEQAY" +
-                        "QB0AGEAQgBpAG4AZABpAG4AZwBzAH4NAABSXwBkAGMAMQBkADEAZABkAGYAXwBkAGIAMwAyAF8ANAAyA" +
-                        "DYAZABfAGEAZABmADIAXwA4ADYAOABiADUANgA1ADEAOQAyADUAMAAuAFQAYQBnAE0OAAAudABhAGIAb" +
-                        "ABlAEMAZQBsAGwAMQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAMAPAAAcdABhAGIAbABlAEMAZQBsA" +
-                        "GwAMQAuAFQAYQBnAI8QAAAwdABhAGIAbABlAEMAZQBsAGwAMQAwAC4ARABhAHQAYQBCAGkAbgBkAGkAb" +
-                        "gBnAHMAAhIAAB50AGEAYgBsAGUAQwBlAGwAbAAxADAALgBUAGEAZwDWEgAAMHQAYQBiAGwAZQBDAGUAb" +
-                        "ABsADEAMQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAE4UAAAwdABhAGIAbABlAEMAZQBsAGwAMQAyA" +
-                        "C4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAMRUAAB50AGEAYgBsAGUAQwBlAGwAbAAxADIALgBUAGEAZ" +
-                        "wAAFgAALnQAYQBiAGwAZQBDAGUAbABsADIALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwBzFwAAHHQAY" +
-                        "QBiAGwAZQBDAGUAbABsADIALgBUAGEAZwBIGAAALnQAYQBiAGwAZQBDAGUAbABsADMALgBEAGEAdABhA" +
-                        "EIAaQBuAGQAaQBuAGcAcwDDGQAAHHQAYQBiAGwAZQBDAGUAbABsADMALgBUAGEAZwCXGgAALnQAYQBiA" +
-                        "GwAZQBDAGUAbABsADQALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwAPHAAAHHQAYQBiAGwAZQBDAGUAb" +
-                        "ABsADQALgBUAGEAZwDkHAAALnQAYQBiAGwAZQBDAGUAbABsADUALgBEAGEAdABhAEIAaQBuAGQAaQBuA" +
-                        "GcAcwBfHgAAHHQAYQBiAGwAZQBDAGUAbABsADUALgBUAGEAZwAzHwAALnQAYQBiAGwAZQBDAGUAbABsA" +
-                        "DgALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwCrIAAAHHQAYQBiAGwAZQBDAGUAbABsADgALgBUAGEAZ" +
-                        "wB/IQAAQAABAAAA/////wEAAAAAAAAADAIAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuM" +
-                        "CwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3lzd" +
-                        "GVtLkRyYXdpbmcuQml0bWFwAQAAAAREYXRhBwICAAAACQMAAAAPAwAAACQEAAACiVBORw0KGgoAAAANS" +
-                        "UhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEQAACxEBf2RfkQAAA" +
-                        "Ad0SU1FB90BBBEFBlmGg4EAAAOzSURBVGhD7ZjPaxNREMcD/gU9CEIRf1y8KBZ6Koq96EXwoFCKiCchq" +
-                        "Bc9CEEQwYPSk8eWgihUIiWKh/5AsYciEfFQLESqNrXF2NJKoTGltY399Zxv3Qkvm+9uEkmUJz74lNnZ2" +
-                        "Xkz++bN2zRijHEaqnQJqnQJqnQJqnQJqnQJqnQJqnQJqnQJqnQJ+6JTqNWArz2C7b8uqLB/MZMxXbv31" +
-                        "oQ3dzrEpcGfosnqgQo1TeBtZ5e4NDHPd11R4X8CNmPxR+LSRD3fdUWFfz8BL6hKx7Aw8kssGlnhtmAHE" +
-                        "dT9oLftKCpUlMDqwgK9N59KiQvT7PkCI09Oniqxu3/wMOyyIkeAyIHzQo/7gvqkqNCMIJgjZTr5SsxMm" +
-                        "gX2aWAQ99oE+GrI53IlNoomKzJsY9jwfhvMIQMrqPEFosJxBOh3ZOMlUG5g2duQEPMBNFmRMW/ixcXLJ" +
-                        "TbVdDEVyiZQCd4+eY6DjN0HesiJjHmzKCu/DVZQxlUBjaApdTcSCaKmCXirNBs/cozeB3jjMhICLdv+s" +
-                        "+fMRj5nFlLd26zOj8J+XrgVlkAUb8/vrFqQQG5qit5TdCMLHWylUD5zyZiR4Aq879ppvn2I47mnwgkNH" +
-                        "tQ8gYm+fnrPxuswtFOhfMY6G4oSUD73nd5eHRktcl37BBBY8sbNIh2rcWxk1qlQXrnxBA1e+fLsPBLoE" +
-                        "bkoAdrOFNR0hSPvDxh+mY51KrzEmaEoDdxmcQKVZC6JXFUCk54toO2PNQJsVH+p4Fn2fFj52KR7DiGel" +
-                        "MiFBOiGUkgCNGF0EPtaN+zL2PUiPfz5V6WS8rFZW5qB70YNqNs/iQ05Gcue3ABByUiEra5SafkoyzNJ+" +
-                        "D6qAdGSUPBmZQx5tspkWL8HeuqGncwAq1Fp+SjfZ1/Dd4sGM+RffpuABELLDngnaui3Eai2fMD68hx87" +
-                        "9JgaE9WAhIIfbO+sqOfDAr8ZAbaaKCM9MMm+B4VubCJQycISCD0zaLuZegHWWCJ/k755NKP4TsqciEB6" +
-                        "lwJSAAErpx+Nnt2geWGxJanh2mgjMxgO/z2ilw4yMr+mAlJgAZG2m5guUG/ubZkJhOtNGAbBL+5vgLfr" +
-                        "XJddBKX+6cWgj8jqL2Cf16xZxH8NcG2Dfvp2L61tWGy7+6Z8QcHSgKfiDdr2fQKheCBPcFfQQMReYdwR" +
-                        "fj4IzdlVr6ObOMdWGgGF+zAlRKHfxoWlOj3Cdg/oJHZKCUOXYMqXYIqXYIqXYIqXYIqXYIqXYIqXYIqX" +
-                        "YIq3cFEfgLXR6nl2ViWTwAAAABJRU5ErkJgggsB6QFDb3B5cmlnaHQgwqkgMjAwMC0yMDEyLCBWYWxsZ" +
-                        "XkgQWdyaWN1bHR1cmFsIFNvZnR3YXJlLCBBbGwgcmlnaHRzIHJlc2VydmVkIHdvcmxkd2lkZS4gVGhpc" +
-                        "yBwcm9ncmFtIGlzIHByb3RlY3RlZCBieSBuYXRpb25hbCBhbmQgaW50ZXJuYXRpb25hbCBjb3B5IHByb" +
-                        "3RlY3Rpb24gbGF3cy4gQW55IGR1cGxpY2F0aW9uIG9yIHB1YmxpY2F0aW9uIG9mIHRoaXMgcHJvZ3Jhb" +
-                        "SBpcyBzdHJpY3RseSBwcm9oaWJpdGVkLgHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9yd" +
+                        "2E1YzU2MTkzNGUwODlQQURQQUQPxYaIso3HpeSA3K5L3tjm0R+S7rxtUPGMSB/1JVjM9VWBKgNAtpgLe" +
+                        "W08GLdtvB5tYVAfxBcxIGMmjiI5NnJBdOuAQTUTtkFwDMVBchznQTNEHEJUUx1M8J6RTKn9yFJp3f1cd" +
+                        "AAqYQLm0mT9aUZ2AHFgfAKBgnzIAQAAkgQAAHEBAAAlAAAAXQQAAFoDAADxAgAA/AUAAB8FAACxAwAAm" +
+                        "gIAAAAAAACxAAAAUAYAAFQFAADXBgAAgwYAAC8GAADkAwAA2wUAAIcFAAAIAQAABQQAAKQGAAAxAgAA6" +
+                        "gQAAKgFAABIAAAAOgQAAMcEAAAcCgAAIFEAUABSAFYAbgBMAEYAMQBnAGwALgBJAG0AYQBnAGUAAAAAA" +
+                        "B5TAEYAbQBSAFkAUgBLAFMAbQBpAC4AVABlAHgAdADHBAAAZF8AMAAxAGMAYQA2AGQAMABlAF8AZABhA" +
+                        "GQAMwBfADQAYgAzAGQAXwBhAGYAZABiAF8AZgAwADQAZQAxAGMAOQA0ADAANAA2ADcALgBEAGEAdABhA" +
+                        "EIAaQBuAGQAaQBuAGcAcwCzBQAAUl8AMAAxAGMAYQA2AGQAMABlAF8AZABhAGQAMwBfADQAYgAzAGQAX" +
+                        "wBhAGYAZABiAF8AZgAwADQAZQAxAGMAOQA0ADAANAA2ADcALgBUAGEAZwCHBgAAZF8AMABiAGYAMQA0A" +
+                        "DgANwBlAF8AYQBlAGYAOABfADQAYgA5ADIAXwA4ADYAZgA4AF8AYgA3AGQAZgBhAGQAMAA0ADUAOAA3A" +
+                        "GIALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwD/BwAAUl8AMABiAGYAMQA0ADgANwBlAF8AYQBlAGYAO" +
+                        "ABfADQAYgA5ADIAXwA4ADYAZgA4AF8AYgA3AGQAZgBhAGQAMAA0ADUAOAA3AGIALgBUAGEAZwDUCAAAZ" +
+                        "F8AYQAyADQAYwBkADgAZAA5AF8AOAA0ADIAZgBfADQAOQBiADkAXwBhADUAZAAzAF8AMwA5ADcAZAA2A" +
+                        "GUAOQAzAGIANABlAGIALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwBPCgAAZF8AYwBlADIANQA2AGIAM" +
+                        "ABiAF8AYQBmADgAZABfADQAOQBhADYAXwA5ADYANwAxAF8AYQAxADUAOQA5ADMAYQBjADcAMAAwADMAL" +
+                        "gBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwAyCwAAUl8AYwBlADIANQA2AGIAMABiAF8AYQBmADgAZABfA" +
+                        "DQAOQBhADYAXwA5ADYANwAxAF8AYQAxADUAOQA5ADMAYQBjADcAMAAwADMALgBUAGEAZwAGDAAAZF8AZ" +
+                        "ABjADEAZAAxAGQAZABmAF8AZABiADMAMgBfADQAMgA2AGQAXwBhAGQAZgAyAF8AOAA2ADgAYgA1ADYAN" +
+                        "QAxADkAMgA1ADAALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwB+DQAAUl8AZABjADEAZAAxAGQAZABmA" +
+                        "F8AZABiADMAMgBfADQAMgA2AGQAXwBhAGQAZgAyAF8AOAA2ADgAYgA1ADYANQAxADkAMgA1ADAALgBUA" +
+                        "GEAZwBNDgAALnQAYQBiAGwAZQBDAGUAbABsADEALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwDADwAAH" +
+                        "HQAYQBiAGwAZQBDAGUAbABsADEALgBUAGEAZwCPEAAAMHQAYQBiAGwAZQBDAGUAbABsADEAMAAuAEQAY" +
+                        "QB0AGEAQgBpAG4AZABpAG4AZwBzAAISAAAedABhAGIAbABlAEMAZQBsAGwAMQAwAC4AVABhAGcA1hIAA" +
+                        "DB0AGEAYgBsAGUAQwBlAGwAbAAxADEALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwBOFAAAMHQAYQBiA" +
+                        "GwAZQBDAGUAbABsADEAMgAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzADEVAAAedABhAGIAbABlAEMAZ" +
+                        "QBsAGwAMQAyAC4AVABhAGcAABYAADB0AGEAYgBsAGUAQwBlAGwAbAAxADQALgBEAGEAdABhAEIAaQBuA" +
+                        "GQAaQBuAGcAcwBzFwAAMHQAYQBiAGwAZQBDAGUAbABsADEANQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZ" +
+                        "wBzAEIYAAAudABhAGIAbABlAEMAZQBsAGwAMgAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzABEZAAAcd" +
+                        "ABhAGIAbABlAEMAZQBsAGwAMgAuAFQAYQBnAOYZAAAudABhAGIAbABlAEMAZQBsAGwAMwAuAEQAYQB0A" +
+                        "GEAQgBpAG4AZABpAG4AZwBzAGEbAAAcdABhAGIAbABlAEMAZQBsAGwAMwAuAFQAYQBnADUcAAAudABhA" +
+                        "GIAbABlAEMAZQBsAGwANAAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAK0dAAAcdABhAGIAbABlAEMAZ" +
+                        "QBsAGwANAAuAFQAYQBnAIIeAAAudABhAGIAbABlAEMAZQBsAGwANQAuAEQAYQB0AGEAQgBpAG4AZABpA" +
+                        "G4AZwBzAP0fAAAcdABhAGIAbABlAEMAZQBsAGwANQAuAFQAYQBnANEgAAAudABhAGIAbABlAEMAZQBsA" +
+                        "GwAOAAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAEkiAAAcdABhAGIAbABlAEMAZQBsAGwAOAAuAFQAY" +
+                        "QBnAB0jAABAAAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuM" +
+                        "C4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTe" +
+                        "XN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJAQAAAKJUE5HDQoaCgAAA" +
+                        "A1JSERSAAAAMAAAADAIBgAAAFcC+YcAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsRAAALEQF/ZF+RA" +
+                        "AAAB3RJTUUH3QEEEQUGWYaDgQAAA7NJREFUaEPtmM9rE1EQxwP+BT0IQhF/XLwoFnoqir3oRfCgUIqIJ" +
+                        "yGoFz0IQRDBg9KTx5aCKFQiJYqH/kCxhyIR8VAsRKo2tcXY0kqhMaW1jf31nG/dCS+b724SSZQnPviU2" +
+                        "dnZeTP75s3bNGKMcRqqdAmqdAmqdAmqdAmqdAmqdAmqdAmqdAmqdAn7olOo1YCvPYLtvy6osH8xkzFdu" +
+                        "/fWhDd3OsSlwZ+iyeqBCjVN4G1nl7g0Mc93XVHhfwI2Y/FH4tJEPd91RYV/PwEvqErHsDDySywaWeG2Y" +
+                        "AcR1P2gt+0oKlSUwOrCAr03n0qJC9Ps+QIjT06eKrG7f/Aw7LIiR4DIgfNCj/uC+qSo0IwgmCNlOvlKz" +
+                        "EyaBfZpYBD32gT4asjnciU2iiYrMmxj2PB+G8whAyuo8QWiwnEE6Hdk4yVQbmDZ25AQ8wE0WZExb+LFx" +
+                        "cslNtV0MRXKJlAJ3j55joOM3Qd6yImMebMoK78NVlDGVQGNoCl1NxIJoqYJeKs0Gz9yjN4HeOMyEgIt2" +
+                        "/6z58xGPmcWUt3brM6Pwn5euBWWQBRvz++sWpBAbmqK3lN0IwsdbKVQPnPJmJHgCrzv2mm+fYjjuafCC" +
+                        "Q0e1DyBib5+es/G6zC0U6F8xjobihJQPved3l4dGS1yXfsEEFjyxs0iHatxbGTWqVBeufEEDV758uw8E" +
+                        "ugRuSgB2s4U1HSFI+8PGH6ZjnUqvMSZoSgN3GZxApVkLolcVQKTni2g7Y81AmxUf6ngWfZ8WPnYpHsOI" +
+                        "Z6UyIUE6IZSSAI0YXQQ+1o37MvY9SI9/PlXpZLysVlbmoHvRg2o2z+JDTkZy57cAEHJSIStrlJp+SjLM" +
+                        "0n4PqoB0ZJQ8GZlDHm2ymRYvwd66oadzACrUWn5KN9nX8N3iwYz5F9+m4AEQssOeCdq6LcRqLZ8wPryH" +
+                        "Hzv0mBoT1YCEgh9s76yo58MCvxkBtpooIz0wyb4HhW5sIlDJwhIIPTNou5l6AdZYIn+Tvnk0o/hOypyI" +
+                        "QHqXAlIAASunH42e3aB5YbElqeHaaCMzGA7/PaKXDjIyv6YCUmABkbabmC5Qb+5tmQmE600YBsEv7m+A" +
+                        "t+tcl10Epf7pxaCPyOovYJ/XrFnEfw1wbYN++nYvrW1YbLv7pnxBwdKAp+IN2vZ9AqF4IE9wV9BAxF5h" +
+                        "3BF+PgjN2VWvo5s4x1YaAYX7MCVEod/GhaU6PcJ2D+gkdkoJQ5dgypdgipdgipdgipdgipdgipdgipdg" +
+                        "ipdgirdwUR+AtdHqeXZWJZPAAAAAElFTkSuQmCCCwHpAUNvcHlyaWdodCDCqSAyMDAwLTIwMTIsIFZhb" +
+                        "GxleSBBZ3JpY3VsdHVyYWwgU29mdHdhcmUsIEFsbCByaWdodHMgcmVzZXJ2ZWQgd29ybGR3aWRlLiBUa" +
+                        "GlzIHByb2dyYW0gaXMgcHJvdGVjdGVkIGJ5IG5hdGlvbmFsIGFuZCBpbnRlcm5hdGlvbmFsIGNvcHkgc" +
+                        "HJvdGVjdGlvbiBsYXdzLiBBbnkgZHVwbGljYXRpb24gb3IgcHVibGljYXRpb24gb2YgdGhpcyBwcm9nc" +
+                        "mFtIGlzIHN0cmljdGx5IHByb2hpYml0ZWQuAdEBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb" +
+                        "3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0c" +
+                        "nVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX" +
+                        "01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNTGFyZ2VBA" +
+                        "AEAAAD/////AQAAAAAAAAAEAQAAAMkBU3lzdGVtLlR1cGxlYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29yb" +
+                        "GliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjN" +
+                        "TYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1c" +
+                        "mU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAgAAAAdtX0l0ZW0xB21fS" +
+                        "XRlbTIBAQYCAAAAb3Zhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV" +
+                        "2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE1MY" +
+                        "XJnZQYDAAAABHswOn0LAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX" +
+                        "0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfR" +
+                        "mVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU" +
+                        "1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0QQABAAAA/////wEAA" +
+                        "AAAAAAABAEAAADJAVN5c3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvb" +
+                        "j00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldL" +
+                        "FtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsI" +
+                        "FB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAA" +
+                        "HB2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX" +
+                        "0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0BgMAAAAGe" +
+                        "zA6YzJ9CwHgAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y" +
+                        "2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9JbmdyZWRpZW50X0ludmVudG9yeUl0ZW1OYW1lAdEBdmFzX" +
+                        "0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xM" +
+                        "lNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRha" +
+                        "WxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1pe" +
+                        "Eluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2VBAAEAAAD/////AQAAAAAAAAAEAQAAAMkBU3lzdGVtLlR1c" +
+                        "GxlYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1d" +
+                        "HJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY29yb" +
+                        "GliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjN" +
+                        "TYxOTM0ZTA4OV1dAgAAAAdtX0l0ZW0xB21fSXRlbTIBAQYCAAAAb3Zhc19GZWVkV2F0Y2hfTW9kZWxfS" +
+                        "URldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkd" +
+                        "WxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUZMYXJnZQYDAAAABHswOn0LAcwBdmFzX0ZlZWRXYXRjaF9Nb" +
+                        "2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU" +
+                        "2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91c" +
+                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX" +
+                        "0FjdHVhbEFGQQABAAAA/////wEAAAAAAAAABAEAAADJAVN5c3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3Rya" +
+                        "W5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva" +
+                        "2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuM" +
+                        "C4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHb" +
+                        "V9JdGVtMQdtX0l0ZW0yAQEGAgAAAGp2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91c" +
+                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX" +
+                        "0FjdHVhbEFGBgMAAAAEezA6fQsBzAF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91c" +
+                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uL" +
+                        "nZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfT" +
+                        "GlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUZBAAEAAAD/////AQAAA" +
+                        "AAAAAAEAQAAAMkBU3lzdGVtLlR1cGxlYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uP" +
+                        "TQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW" +
+                        "1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgU" +
+                        "HVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAgAAAAdtX0l0ZW0xB21fSXRlbTIBAQYCAAAAa" +
+                        "nZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfT" +
+                        "GlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUYGAwAAAAR7MDp9CwHRA" +
+                        "XZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfT" +
+                        "GlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JR" +
+                        "GV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1b" +
+                        "GVNaXhJbnN0cnVjdGlvbl9BY3R1YWxETUxhcmdlQQABAAAA/////wEAAAAAAAAABAEAAADJAVN5c3Rlb" +
+                        "S5UdXBsZWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlP" +
+                        "W5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc" +
+                        "2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N" +
+                        "2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAAG92YXNfRmVlZFdhdGNoX01vZ" +
+                        "GVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY" +
+                        "2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNTGFyZ2UGAwAAAAR7MDp9CwHgAXZhc19GZWVkV2F0Y" +
+                        "2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZ" +
+                        "GluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R" +
+                        "3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjd" +
+                        "Glvbl9JbmdyZWRpZW50X0ludmVudG9yeUl0ZW1OYW1lAcwBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0Y" +
+                        "WlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNa" +
+                        "XhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZ" +
+                        "FdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGQ" +
+                        "QABAAAA/////wEAAAAAAAAABAEAAADJAVN5c3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2Nvc" +
+                        "mxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1Y" +
+                        "zU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0d" +
+                        "XJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX" +
+                        "0l0ZW0yAQEGAgAAAGp2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZ" +
+                        "FdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGB" +
+                        "gMAAAAEezA6fQsBzAF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZ" +
+                        "FdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV" +
+                        "2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfR" +
+                        "mVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE0BzAF2YXNfRmVlZFdhdGNoX01vZGVsX" +
+                        "0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZ" +
+                        "HVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc" +
+                        "19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0d" +
+                        "WFsRE0B0gF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX" +
+                        "01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfT" +
+                        "W9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ" +
+                        "1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRmlmb0Nvc3RBAAEAAAD/////AQAAAAAAAAAEAQAAA" +
+                        "MkBU3lzdGVtLlR1cGxlYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsI" +
+                        "EN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5Td" +
+                        "HJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5V" +
+                        "G9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAgAAAAdtX0l0ZW0xB21fSXRlbTIBAQYCAAAAcHZhc19GZWVkV" +
+                        "2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfR" +
+                        "mVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRmlmb0Nvc3QGAwAAAAZ7MDpjMn0LAdEBd" +
+                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
+                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZ" +
+                        "XRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZ" +
+                        "U1peEluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2VBAAEAAAD/////AQAAAAAAAAAEAQAAAMkBU3lzdGVtL" +
+                        "lR1cGxlYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9b" +
+                        "mV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1N5c3RlbS5TdHJpbmcsIG1zY" +
+                        "29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3Y" +
+                        "TVjNTYxOTM0ZTA4OV1dAgAAAAdtX0l0ZW0xB21fSXRlbTIBAQYCAAAAb3Zhc19GZWVkV2F0Y2hfTW9kZ" +
+                        "WxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1Nja" +
+                        "GVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUZMYXJnZQYDAAAABHswOn0LAdIBdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHc" +
+                        "m91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0a" +
+                        "W9uX0FjdHVhbEZpZm9Db3N0QQABAAAA/////wEAAAAAAAAABAEAAADJAVN5c3RlbS5UdXBsZWAyW1tTe" +
+                        "XN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1Y" +
+                        "mxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc" +
+                        "2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwO" +
+                        "DldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAAHB2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
+                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
+                        "3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0BgMAAAAGezA6YzJ9CwHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfS" +
+                        "URldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkd" +
+                        "WxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX" +
+                        "0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1Y" +
+                        "WxBRkxhcmdlQQABAAAA/////wEAAAAAAAAABAEAAADJAVN5c3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3Rya" +
+                        "W5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva" +
+                        "2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuM" +
+                        "C4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHb" +
+                        "V9JdGVtMQdtX0l0ZW0yAQEGAgAAAG92YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91c" +
+                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX" +
+                        "0FjdHVhbEFGTGFyZ2UGAwAAAAR7MDp9CwHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9yd" +
                         "Edyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y" +
                         "3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb" +
                         "2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxETUxhcmdlQQABA" +
@@ -347,122 +485,7 @@ namespace XtraReportSerialization {
                         "W5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0Z" +
                         "W0yAQEGAgAAAG92YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhd" +
                         "GNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNTGFyZ" +
-                        "2UGAwAAAAR7MDp9CwHSAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZ" +
-                        "WVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZ" +
-                        "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
-                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxGaWZvQ29zdEEAAQAAAP////8BAAAAA" +
-                        "AAAAAQBAAAAyQFTeXN0ZW0uVHVwbGVgMltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249N" +
-                        "C4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU" +
-                        "3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQd" +
-                        "WJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CAAAAB21fSXRlbTEHbV9JdGVtMgEBBgIAAABwd" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
-                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxGaWZvQ29zdAYDAAAABnswO" +
-                        "mMyfQsB4AF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX" +
-                        "01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfT" +
-                        "W9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ" +
-                        "1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fSW5ncmVkaWVudF9JbnZlbnRvcnlJdGVtTmFtZQHRAXZhc19GZ" +
-                        "WVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTU" +
-                        "UxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsU" +
-                        "mVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJb" +
-                        "nN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlQQABAAAA/////wEAAAAAAAAABAEAAADJAVN5c3RlbS5UdXBsZ" +
-                        "WAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyY" +
-                        "WwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpY" +
-                        "iwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2M" +
-                        "TkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAAG92YXNfRmVlZFdhdGNoX01vZGVsX0lEZ" +
-                        "XRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZ" +
-                        "U1peEluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2UGAwAAAAR7MDp9CwHMAXZhc19GZWVkV2F0Y2hfTW9kZ" +
-                        "WxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1Nja" +
-                        "GVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfd" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY" +
-                        "3R1YWxBRkEAAQAAAP////8BAAAAAAAAAAQBAAAAyQFTeXN0ZW0uVHVwbGVgMltbU3lzdGVtLlN0cmluZ" +
-                        "ywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlb" +
-                        "j1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuM" +
-                        "CwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CAAAAB21fS" +
-                        "XRlbTEHbV9JdGVtMgEBBgIAAABqdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfd" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY" +
-                        "3R1YWxBRgYDAAAABHswOn0LAcwBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfd" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52Y" +
-                        "XNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpb" +
-                        "nEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGQQABAAAA/////wEAAAAAA" +
-                        "AAABAEAAADJAVN5c3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00L" +
-                        "jAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTe" +
-                        "XN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1Y" +
-                        "mxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAAGp2Y" +
-                        "XNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpb" +
-                        "nEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGBgMAAAAEezA6fQsB0QF2Y" +
-                        "XNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpb" +
-                        "nEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURld" +
-                        "GFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlT" +
-                        "Wl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE1MYXJnZUEAAQAAAP////8BAAAAAAAAAAQBAAAAyQFTeXN0ZW0uV" +
-                        "HVwbGVgMltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZ" +
-                        "XV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb" +
-                        "3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhN" +
-                        "WM1NjE5MzRlMDg5XV0CAAAAB21fSXRlbTEHbV9JdGVtMgEBBgIAAABvdmFzX0ZlZWRXYXRjaF9Nb2Rlb" +
-                        "F9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZ" +
-                        "WR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxETUxhcmdlBgMAAAAEezA6fQsB4AF2YXNfRmVlZFdhdGNoX" +
-                        "01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpb" +
-                        "mdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb" +
-                        "3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb" +
-                        "25fSW5ncmVkaWVudF9JbnZlbnRvcnlJdGVtTmFtZQHMAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpb" +
-                        "FJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4S" +
-                        "W5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
-                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkEAA" +
-                        "QAAAP////8BAAAAAAAAAAQBAAAAyQFTeXN0ZW0uVHVwbGVgMltbU3lzdGVtLlN0cmluZywgbXNjb3Jsa" +
-                        "WIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1N" +
-                        "jE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZ" +
-                        "T1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CAAAAB21fSXRlbTEHbV9Jd" +
-                        "GVtMgEBBgIAAABqdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
-                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRgYDA" +
-                        "AAABHswOn0LAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
-                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhd" +
-                        "GNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZ" +
-                        "WRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0QQABAAAA/////wEAAAAAAAAAB" +
-                        "AEAAADJAVN5c3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuM" +
-                        "C4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0Z" +
-                        "W0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY" +
-                        "0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAAHB2YXNfR" +
-                        "mVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU" +
-                        "1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0BgMAAAAGezA6YzJ9C" +
-                        "wHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZ" +
-                        "WxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2Rlb" +
-                        "F9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZ" +
-                        "WR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlQQABAAAA/////wEAAAAAAAAABAEAAADJAVN5c" +
-                        "3RlbS5UdXBsZWAyW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0d" +
-                        "XJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtTeXN0ZW0uU3RyaW5nL" +
-                        "CBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuP" +
-                        "WI3N2E1YzU2MTkzNGUwODldXQIAAAAHbV9JdGVtMQdtX0l0ZW0yAQEGAgAAAG92YXNfRmVlZFdhdGNoX" +
-                        "01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpb" +
-                        "mdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2UGAwAAAAR7MDp9CwHSAXZhc19GZWVkV" +
-                        "2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfR" +
-                        "mVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb" +
-                        "3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0c" +
-                        "nVjdGlvbl9BY3R1YWxGaWZvQ29zdEEAAQAAAP////8BAAAAAAAAAAQBAAAAyQFTeXN0ZW0uVHVwbGVgM" +
-                        "ltbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsL" +
-                        "CBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsI" +
-                        "FZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5M" +
-                        "zRlMDg5XV0CAAAAB21fSXRlbTEHbV9JdGVtMgEBBgIAAABwdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0Y" +
-                        "WlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNa" +
-                        "XhJbnN0cnVjdGlvbl9BY3R1YWxGaWZvQ29zdAYDAAAABnswOmMyfQsB0QF2YXNfRmVlZFdhdGNoX01vZ" +
-                        "GVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY" +
-                        "2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX" +
-                        "3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQ" +
-                        "WN0dWFsQUZMYXJnZUEAAQAAAP////8BAAAAAAAAAAQBAAAAyQFTeXN0ZW0uVHVwbGVgMltbU3lzdGVtL" +
-                        "lN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZ" +
-                        "XlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249N" +
-                        "C4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CA" +
-                        "AAAB21fSXRlbTEHbV9JdGVtMgEBBgIAAABvdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R" +
-                        "3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjd" +
-                        "Glvbl9BY3R1YWxBRkxhcmdlBgMAAAAEezA6fQsB0QF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
-                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
-                        "3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y" +
-                        "2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE1MYXJnZ" +
-                        "UEAAQAAAP////8BAAAAAAAAAAQBAAAAyQFTeXN0ZW0uVHVwbGVgMltbU3lzdGVtLlN0cmluZywgbXNjb" +
-                        "3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhN" +
-                        "WM1NjE5MzRlMDg5XSxbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3Vsd" +
-                        "HVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0CAAAAB21fSXRlbTEHb" +
-                        "V9JdGVtMgEBBgIAAABvdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZ" +
-                        "WRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxET" +
-                        "UxhcmdlBgMAAAAEezA6fQs=";
+                        "2UGAwAAAAR7MDp9Cw==";
                     this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
                 }
                 return this._resources;
@@ -477,6 +500,8 @@ namespace XtraReportSerialization {
             DevExpress.XtraReports.UI.XRSummary summary6 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary summary7 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary summary8 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary9 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary10 = new DevExpress.XtraReports.UI.XRSummary();
             this.kG0RxyW0oJ = new DevExpress.XtraReports.UI.TopMarginBand();
             this.ilpRwtKOmB = new DevExpress.XtraReports.UI.DetailBand();
             this.YIARkqcqPo = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -506,6 +531,7 @@ namespace XtraReportSerialization {
             this.tableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this._b35f287a_6ebb_4997_8b4a_355940cf27e9 = new DevExpress.XtraReports.UI.XRTableCell();
             this._5a058654_c95e_4fee_ac70_d246572decce = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
             this._082c5b3b_1f07_48f4_80ad_e70006c88c3d = new DevExpress.XtraReports.UI.XRTableCell();
             this._3363e7cb_9cfe_42cb_80d8_14ee03600b55 = new DevExpress.XtraReports.UI.XRTableCell();
             this.SFmRYRKSmi = new DevExpress.XtraReports.UI.XRLabel();
@@ -518,6 +544,7 @@ namespace XtraReportSerialization {
             this.tableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this._dc1d1ddf_db32_426d_adf2_868b56519250 = new DevExpress.XtraReports.UI.XRTableCell();
             this._ce256b0b_af8d_49a6_9671_a15993ac7003 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this._0bf1487e_aef8_4b92_86f8_b7dfad04587b = new DevExpress.XtraReports.UI.XRTableCell();
             this.table2 = new DevExpress.XtraReports.UI.XRTable();
@@ -525,6 +552,7 @@ namespace XtraReportSerialization {
             this.tableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.LeVR7TL0ex = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -543,6 +571,7 @@ namespace XtraReportSerialization {
             this._30f8396c_bb81_4ded_aa22_b10756af4fe8 = new DevExpress.XtraReports.UI.XRControlStyle();
             this._ac516a42_294a_4f5f_927b_c5ffae91b723 = new DevExpress.XtraReports.UI.XRControlStyle();
             this._77dd7c0e_1978_4bf6_8c14_dc817abb7644 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.controlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
             ((System.ComponentModel.ISupportInitialize)(this._8af1a8cd_72d7_49e5_8510_f4f7a034e874)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._6b7b1b9a_9c8e_4a79_bc46_b0003a29b2c4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
@@ -708,7 +737,7 @@ namespace XtraReportSerialization {
             this.BFoRBZ0A0j.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.BFoRBZ0A0j.BorderWidth = 2;
             this.BFoRBZ0A0j.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BFoRBZ0A0j.LocationFloat = new DevExpress.Utils.PointFloat(790.5417F, 30F);
+            this.BFoRBZ0A0j.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 30F);
             this.BFoRBZ0A0j.Name = "BFoRBZ0A0j";
             this.BFoRBZ0A0j.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.BFoRBZ0A0j.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -716,7 +745,7 @@ namespace XtraReportSerialization {
             this.BFoRBZ0A0j.StylePriority.UseFont = false;
             this.BFoRBZ0A0j.StylePriority.UseTextAlignment = false;
             this.BFoRBZ0A0j.Tag = "lblPrintedDateTime";
-            this.BFoRBZ0A0j.Text = "12/10/2013 6:30:09 PM";
+            this.BFoRBZ0A0j.Text = "5/19/2014 2:50:09 PM";
             this.BFoRBZ0A0j.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // QPRVnLF1gl
@@ -747,7 +776,7 @@ namespace XtraReportSerialization {
             this.JfIRQr6WdE.LineWidth = 4;
             this.JfIRQr6WdE.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51F);
             this.JfIRQr6WdE.Name = "JfIRQr6WdE";
-            this.JfIRQr6WdE.SizeF = new System.Drawing.SizeF(977F, 4F);
+            this.JfIRQr6WdE.SizeF = new System.Drawing.SizeF(727F, 4F);
             // 
             // nPBRrIVAVW
             // 
@@ -755,14 +784,14 @@ namespace XtraReportSerialization {
             this.nPBRrIVAVW.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.nPBRrIVAVW.BorderWidth = 2;
             this.nPBRrIVAVW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nPBRrIVAVW.LocationFloat = new DevExpress.Utils.PointFloat(790.5417F, 15F);
+            this.nPBRrIVAVW.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 15F);
             this.nPBRrIVAVW.Name = "nPBRrIVAVW";
             this.nPBRrIVAVW.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.nPBRrIVAVW.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
             this.nPBRrIVAVW.StylePriority.UseFont = false;
             this.nPBRrIVAVW.StylePriority.UseTextAlignment = false;
             this.nPBRrIVAVW.Tag = "lblCompanyName";
-            this.nPBRrIVAVW.Text = "Dalhart Jerseys";
+            this.nPBRrIVAVW.Text = "Sample Dairy";
             this.nPBRrIVAVW.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // DShR1K1AV6
@@ -771,7 +800,7 @@ namespace XtraReportSerialization {
             this.DShR1K1AV6.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.DShR1K1AV6.BorderWidth = 2;
             this.DShR1K1AV6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DShR1K1AV6.LocationFloat = new DevExpress.Utils.PointFloat(790.5417F, 0F);
+            this.DShR1K1AV6.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 0F);
             this.DShR1K1AV6.Name = "DShR1K1AV6";
             this.DShR1K1AV6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.DShR1K1AV6.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -793,7 +822,7 @@ namespace XtraReportSerialization {
             this._6b7b1b9a_9c8e_4a79_bc46_b0003a29b2c4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this._6b7b1b9a_9c8e_4a79_bc46_b0003a29b2c4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
                         this._e41a0a68_437d_4a12_a8ff_ca1226310bb2});
-            this._6b7b1b9a_9c8e_4a79_bc46_b0003a29b2c4.SizeF = new System.Drawing.SizeF(703.9998F, 25F);
+            this._6b7b1b9a_9c8e_4a79_bc46_b0003a29b2c4.SizeF = new System.Drawing.SizeF(726F, 25F);
             this._6b7b1b9a_9c8e_4a79_bc46_b0003a29b2c4.StyleName = "_ac516a42_294a_4f5f_927b_c5ffae91b723";
             // 
             // Eh8VpGMyDQ
@@ -828,6 +857,7 @@ namespace XtraReportSerialization {
                         this.tableCell9,
                         this._b35f287a_6ebb_4997_8b4a_355940cf27e9,
                         this._5a058654_c95e_4fee_ac70_d246572decce,
+                        this.tableCell13,
                         this._082c5b3b_1f07_48f4_80ad_e70006c88c3d,
                         this._3363e7cb_9cfe_42cb_80d8_14ee03600b55});
             this._e41a0a68_437d_4a12_a8ff_ca1226310bb2.Name = "_e41a0a68_437d_4a12_a8ff_ca1226310bb2";
@@ -845,7 +875,7 @@ namespace XtraReportSerialization {
             this._b35f287a_6ebb_4997_8b4a_355940cf27e9.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
             this._b35f287a_6ebb_4997_8b4a_355940cf27e9.Text = "AF Qty";
             this._b35f287a_6ebb_4997_8b4a_355940cf27e9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._b35f287a_6ebb_4997_8b4a_355940cf27e9.Weight = 0.0094953305649583264D;
+            this._b35f287a_6ebb_4997_8b4a_355940cf27e9.Weight = 0.0084261098474398312D;
             // 
             // _5a058654_c95e_4fee_ac70_d246572decce
             // 
@@ -853,7 +883,15 @@ namespace XtraReportSerialization {
             this._5a058654_c95e_4fee_ac70_d246572decce.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
             this._5a058654_c95e_4fee_ac70_d246572decce.Text = "AF Tons";
             this._5a058654_c95e_4fee_ac70_d246572decce.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._5a058654_c95e_4fee_ac70_d246572decce.Weight = 0.010290060554313057D;
+            this._5a058654_c95e_4fee_ac70_d246572decce.Weight = 0.0084261097332349565D;
+            // 
+            // tableCell13
+            // 
+            this.tableCell13.Name = "tableCell13";
+            this.tableCell13.StylePriority.UseTextAlignment = false;
+            this.tableCell13.Text = "DM Qty";
+            this.tableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell13.Weight = 0.00842611044296233D;
             // 
             // _082c5b3b_1f07_48f4_80ad_e70006c88c3d
             // 
@@ -861,7 +899,7 @@ namespace XtraReportSerialization {
             this._082c5b3b_1f07_48f4_80ad_e70006c88c3d.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
             this._082c5b3b_1f07_48f4_80ad_e70006c88c3d.Text = "DM Tons";
             this._082c5b3b_1f07_48f4_80ad_e70006c88c3d.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._082c5b3b_1f07_48f4_80ad_e70006c88c3d.Weight = 0.010210273993701804D;
+            this._082c5b3b_1f07_48f4_80ad_e70006c88c3d.Weight = 0.0084261098585430884D;
             // 
             // _3363e7cb_9cfe_42cb_80d8_14ee03600b55
             // 
@@ -869,7 +907,7 @@ namespace XtraReportSerialization {
             this._3363e7cb_9cfe_42cb_80d8_14ee03600b55.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
             this._3363e7cb_9cfe_42cb_80d8_14ee03600b55.Text = "Cost";
             this._3363e7cb_9cfe_42cb_80d8_14ee03600b55.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._3363e7cb_9cfe_42cb_80d8_14ee03600b55.Weight = 0.010449650633738535D;
+            this._3363e7cb_9cfe_42cb_80d8_14ee03600b55.Weight = 0.0084261118658532D;
             // 
             // SFmRYRKSmi
             // 
@@ -877,7 +915,7 @@ namespace XtraReportSerialization {
             this.SFmRYRKSmi.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.SFmRYRKSmi.BorderWidth = 2;
             this.SFmRYRKSmi.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SFmRYRKSmi.LocationFloat = new DevExpress.Utils.PointFloat(313.5F, 4F);
+            this.SFmRYRKSmi.LocationFloat = new DevExpress.Utils.PointFloat(220F, 4F);
             this.SFmRYRKSmi.Name = "SFmRYRKSmi";
             this.SFmRYRKSmi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.SFmRYRKSmi.SizeF = new System.Drawing.SizeF(350F, 18.00003F);
@@ -892,7 +930,7 @@ namespace XtraReportSerialization {
             // 
             this.ybCRf7MNd6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ybCRf7MNd6.Format = "Page {0} of {1}";
-            this.ybCRf7MNd6.LocationFloat = new DevExpress.Utils.PointFloat(851.5833F, 4.000028F);
+            this.ybCRf7MNd6.LocationFloat = new DevExpress.Utils.PointFloat(601.5833F, 4.000028F);
             this.ybCRf7MNd6.Name = "ybCRf7MNd6";
             this.ybCRf7MNd6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ybCRf7MNd6.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -914,7 +952,7 @@ namespace XtraReportSerialization {
             this.GiYRC5k9RA.StylePriority.UseFont = false;
             this.GiYRC5k9RA.StylePriority.UseTextAlignment = false;
             this.GiYRC5k9RA.Tag = "lblApplicationName";
-            this.GiYRC5k9RA.Text = "FeedWatch v8.0.300.0";
+            this.GiYRC5k9RA.Text = "FeedWatch v8.1.25.0";
             this.GiYRC5k9RA.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // IHpRhkWTTQ
@@ -923,7 +961,7 @@ namespace XtraReportSerialization {
             this.IHpRhkWTTQ.LineWidth = 2;
             this.IHpRhkWTTQ.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.IHpRhkWTTQ.Name = "IHpRhkWTTQ";
-            this.IHpRhkWTTQ.SizeF = new System.Drawing.SizeF(977F, 4F);
+            this.IHpRhkWTTQ.SizeF = new System.Drawing.SizeF(727F, 4F);
             this.IHpRhkWTTQ.StylePriority.UseBorderWidth = false;
             // 
             // _a24cd8d9_842f_49b9_a5d3_397d6e93b4eb
@@ -949,7 +987,7 @@ namespace XtraReportSerialization {
             this.table1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
                         this.tableRow1});
-            this.table1.SizeF = new System.Drawing.SizeF(703.9998F, 25F);
+            this.table1.SizeF = new System.Drawing.SizeF(725.9999F, 25F);
             this.table1.Tag = "vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
                 "leMixInstruction";
             // 
@@ -959,6 +997,7 @@ namespace XtraReportSerialization {
                         this.tableCell11,
                         this._dc1d1ddf_db32_426d_adf2_868b56519250,
                         this._ce256b0b_af8d_49a6_9671_a15993ac7003,
+                        this.tableCell14,
                         this.tableCell10,
                         this._0bf1487e_aef8_4b92_86f8_b7dfad04587b});
             this.tableRow1.Name = "tableRow1";
@@ -970,7 +1009,7 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell11.DataBindings"))});
             this.tableCell11.Name = "tableCell11";
             this.tableCell11.Text = "tableCell7";
-            this.tableCell11.Weight = 0.013481773232943965D;
+            this.tableCell11.Weight = 0.013073224526535957D;
             // 
             // _dc1d1ddf_db32_426d_adf2_868b56519250
             // 
@@ -984,7 +1023,7 @@ namespace XtraReportSerialization {
             this._dc1d1ddf_db32_426d_adf2_868b56519250.Tag = ((object)(resources.GetObject("_dc1d1ddf_db32_426d_adf2_868b56519250.Tag")));
             this._dc1d1ddf_db32_426d_adf2_868b56519250.Text = "_dc1d1ddf_db32_426d_adf2_868b56519250";
             this._dc1d1ddf_db32_426d_adf2_868b56519250.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._dc1d1ddf_db32_426d_adf2_868b56519250.Weight = 0.0094953296589499955D;
+            this._dc1d1ddf_db32_426d_adf2_868b56519250.Weight = 0.0081707712226964241D;
             // 
             // _ce256b0b_af8d_49a6_9671_a15993ac7003
             // 
@@ -998,7 +1037,20 @@ namespace XtraReportSerialization {
             this._ce256b0b_af8d_49a6_9671_a15993ac7003.Tag = ((object)(resources.GetObject("_ce256b0b_af8d_49a6_9671_a15993ac7003.Tag")));
             this._ce256b0b_af8d_49a6_9671_a15993ac7003.Text = "_ce256b0b_af8d_49a6_9671_a15993ac7003";
             this._ce256b0b_af8d_49a6_9671_a15993ac7003.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._ce256b0b_af8d_49a6_9671_a15993ac7003.Weight = 0.010290055799651194D;
+            this._ce256b0b_af8d_49a6_9671_a15993ac7003.Weight = 0.0081707725024138273D;
+            // 
+            // tableCell14
+            // 
+            this.tableCell14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell14.DataBindings"))});
+            this.tableCell14.Name = "tableCell14";
+            this.tableCell14.StylePriority.UseTextAlignment = false;
+            summary3.FormatString = "{0:#,#}";
+            summary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.tableCell14.Summary = summary3;
+            this.tableCell14.Text = "tableCell14";
+            this.tableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell14.Weight = 0.0077250871415239144D;
             // 
             // tableCell10
             // 
@@ -1006,13 +1058,13 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell10.DataBindings"))});
             this.tableCell10.Name = "tableCell10";
             this.tableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
-            summary3.FormatString = "{0:n2}";
-            summary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.tableCell10.Summary = summary3;
+            summary4.FormatString = "{0:n2}";
+            summary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.tableCell10.Summary = summary4;
             this.tableCell10.Tag = ((object)(resources.GetObject("tableCell10.Tag")));
             this.tableCell10.Text = "tableCell3";
             this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell10.Weight = 0.01021026853146734D;
+            this.tableCell10.Weight = 0.0086164529484509915D;
             // 
             // _0bf1487e_aef8_4b92_86f8_b7dfad04587b
             // 
@@ -1020,13 +1072,13 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("_0bf1487e_aef8_4b92_86f8_b7dfad04587b.DataBindings"))});
             this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Name = "_0bf1487e_aef8_4b92_86f8_b7dfad04587b";
             this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
-            summary4.FormatString = "{0:c2}";
-            summary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Summary = summary4;
+            summary5.FormatString = "{0:c2}";
+            summary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Summary = summary5;
             this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Tag = ((object)(resources.GetObject("_0bf1487e_aef8_4b92_86f8_b7dfad04587b.Tag")));
             this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Text = "_0bf1487e_aef8_4b92_86f8_b7dfad04587b";
             this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Weight = 0.010449650987747305D;
+            this._0bf1487e_aef8_4b92_86f8_b7dfad04587b.Weight = 0.008170769869138686D;
             // 
             // table2
             // 
@@ -1039,7 +1091,7 @@ namespace XtraReportSerialization {
             this.table2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.table2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
                         this.tableRow2});
-            this.table2.SizeF = new System.Drawing.SizeF(703.9998F, 25F);
+            this.table2.SizeF = new System.Drawing.SizeF(725.9999F, 25F);
             this.table2.StylePriority.UseBorders = false;
             this.table2.StylePriority.UseFont = false;
             this.table2.Tag = "vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
@@ -1051,6 +1103,7 @@ namespace XtraReportSerialization {
                         this.tableCell7,
                         this.tableCell12,
                         this.tableCell5,
+                        this.tableCell15,
                         this.tableCell8,
                         this.tableCell2});
             this.tableRow2.Name = "tableRow2";
@@ -1060,7 +1113,7 @@ namespace XtraReportSerialization {
             // 
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.Text = "Grand Totals:";
-            this.tableCell7.Weight = 0.013481773232943965D;
+            this.tableCell7.Weight = 0.013073226793373369D;
             // 
             // tableCell12
             // 
@@ -1068,13 +1121,13 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell12.DataBindings"))});
             this.tableCell12.Name = "tableCell12";
             this.tableCell12.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
-            summary5.FormatString = "{0:#,#}";
-            summary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.tableCell12.Summary = summary5;
+            summary6.FormatString = "{0:#,#}";
+            summary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.tableCell12.Summary = summary6;
             this.tableCell12.Tag = ((object)(resources.GetObject("tableCell12.Tag")));
             this.tableCell12.Text = "tableCell9";
             this.tableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell12.Weight = 0.0094953296589499955D;
+            this.tableCell12.Weight = 0.0081707689558590119D;
             // 
             // tableCell5
             // 
@@ -1082,13 +1135,26 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell5.DataBindings"))});
             this.tableCell5.Name = "tableCell5";
             this.tableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
-            summary6.FormatString = "{0:n2}";
-            summary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.tableCell5.Summary = summary6;
+            summary7.FormatString = "{0:n2}";
+            summary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.tableCell5.Summary = summary7;
             this.tableCell5.Tag = ((object)(resources.GetObject("tableCell5.Tag")));
             this.tableCell5.Text = "tableCell10";
             this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell5.Weight = 0.010290055799651194D;
+            this.tableCell5.Weight = 0.0081707725024138273D;
+            // 
+            // tableCell15
+            // 
+            this.tableCell15.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell15.DataBindings"))});
+            this.tableCell15.Name = "tableCell15";
+            this.tableCell15.StylePriority.UseTextAlignment = false;
+            summary8.FormatString = "{0:#,#}";
+            summary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.tableCell15.Summary = summary8;
+            this.tableCell15.Text = "tableCell15";
+            this.tableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell15.Weight = 0.0081707677781500416D;
             // 
             // tableCell8
             // 
@@ -1096,13 +1162,13 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell8.DataBindings"))});
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
-            summary7.FormatString = "{0:n2}";
-            summary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.tableCell8.Summary = summary7;
+            summary9.FormatString = "{0:n2}";
+            summary9.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.tableCell8.Summary = summary9;
             this.tableCell8.Tag = ((object)(resources.GetObject("tableCell8.Tag")));
             this.tableCell8.Text = "tableCell11";
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell8.Weight = 0.01021026853146734D;
+            this.tableCell8.Weight = 0.0081707700449874521D;
             // 
             // tableCell2
             // 
@@ -1110,13 +1176,13 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("tableCell2.DataBindings"))});
             this.tableCell2.Name = "tableCell2";
             this.tableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
-            summary8.FormatString = "{0:c2}";
-            summary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.tableCell2.Summary = summary8;
+            summary10.FormatString = "{0:c2}";
+            summary10.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.tableCell2.Summary = summary10;
             this.tableCell2.Tag = ((object)(resources.GetObject("tableCell2.Tag")));
             this.tableCell2.Text = "tableCell12";
             this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell2.Weight = 0.010449650987747305D;
+            this.tableCell2.Weight = 0.0081707721359760982D;
             // 
             // LeVR7TL0ex
             // 
@@ -1224,6 +1290,11 @@ namespace XtraReportSerialization {
             this._77dd7c0e_1978_4bf6_8c14_dc817abb7644.ForeColor = System.Drawing.Color.Black;
             this._77dd7c0e_1978_4bf6_8c14_dc817abb7644.Name = "_77dd7c0e_1978_4bf6_8c14_dc817abb7644";
             // 
+            // controlStyle1
+            // 
+            this.controlStyle1.Name = "controlStyle1";
+            this.controlStyle1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
             // _a89089e0_aec0_43dd_a46a_b943f08e1048
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1241,11 +1312,10 @@ namespace XtraReportSerialization {
             this.FilterString = "[vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSched" +
                 "uleMixInstruction_ReportDate] Is Not Null";
             this.Font = new System.Drawing.Font("Arial", 9F);
-            this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(50, 73, 50, 50);
             this.Name = "_a89089e0_aec0_43dd_a46a_b943f08e1048";
-            this.PageHeight = 850;
-            this.PageWidth = 1100;
+            this.PageHeight = 1100;
+            this.PageWidth = 850;
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
                         this.LeVR7TL0ex,
                         this.EHBRuHSkkR,
@@ -1262,7 +1332,8 @@ namespace XtraReportSerialization {
                         this._4225be8a_265f_468e_a001_1513b1448a89,
                         this._30f8396c_bb81_4ded_aa22_b10756af4fe8,
                         this._ac516a42_294a_4f5f_927b_c5ffae91b723,
-                        this._77dd7c0e_1978_4bf6_8c14_dc817abb7644});
+                        this._77dd7c0e_1978_4bf6_8c14_dc817abb7644,
+                        this.controlStyle1});
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.Version = "11.2";
             ((System.ComponentModel.ISupportInitialize)(this._8af1a8cd_72d7_49e5_8510_f4f7a034e874)).EndInit();
@@ -1274,6 +1345,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="2f2258a2-9ab5-4f6c-ba4a-7f8609c38782" ReportUseType="2" ReportType="1" ReportName="All Ing AF/DM Usage Summary" CreatedDT="2013-12-10T13:59:57.923" ModifiedDT="2013-12-10T18:26:54.72" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAB2Qk=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="2f2258a2-9ab5-4f6c-ba4a-7f8609c38782" ReportUseType="2" ReportType="1" ReportName="All Ing AF/DM Usage Summary" Description="Ingredient usage summary in AF and DM" CreatedDT="2013-12-10T13:59:57.923" ModifiedDT="2014-05-19T14:54:33.387" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAJy0=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
