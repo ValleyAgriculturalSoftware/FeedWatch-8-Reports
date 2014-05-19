@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="7f0430ac-9f46-4fe6-b7c7-4d79ec9976ba" ReportUseType="2" ReportType="5" ReportName="Current Inventory Summary" CreatedDT="1/29/2013 2:42:07 PM" ModifiedDT="2/5/2013 2:30:02 PM" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAFGLI=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="7f0430ac-9f46-4fe6-b7c7-4d79ec9976ba" ReportUseType="2" ReportType="5" ReportName="Current Inventory Summary" Description="Current Inventory by Pounds/Tons" CreatedDT="2013-01-29T14:42:07" ModifiedDT="2014-05-19T15:00:32.647" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAJ1o=" ReportVersion="2" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
