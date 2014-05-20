@@ -1895,6 +1895,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="7034cfc0-c0f4-4e1c-a9e4-c26b094efaae" ReportUseType="2" ReportType="1" ReportName="Weekly Feeder Summary Report - Totals Only" CreatedDT="2014-02-03T15:44:25.023" ModifiedDT="2014-02-03T15:46:24.103" ModifiedBy="VAS" ConcurrencyTS="AAAAAAABMO8=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="7034cfc0-c0f4-4e1c-a9e4-c26b094efaae" ReportUseType="2" ReportType="1" ReportName="Weekly Feeder Summary Report - Totals Only" Description="Feeder Summary showing only totals with 40lbs of error" CreatedDT="2014-02-03T15:44:25.023" ModifiedDT="2014-05-19T17:27:29.003" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALEM=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
