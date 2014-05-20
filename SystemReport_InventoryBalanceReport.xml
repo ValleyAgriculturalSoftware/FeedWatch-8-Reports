@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="bd2e1f43-3cf7-4101-9523-b6169e9e7ac6" ReportUseType="2" ReportType="5" ReportName="Inventory Balance Report" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2014-04-14T08:55:21.78" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAT8A=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="bd2e1f43-3cf7-4101-9523-b6169e9e7ac6" ReportUseType="2" ReportType="5" ReportName="Inventory Balance Report" Description="Summary of Purchases, Sales and Usage" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2014-05-19T16:50:01.953" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKyI=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

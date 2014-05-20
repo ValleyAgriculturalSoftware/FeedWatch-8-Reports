@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="6333b372-d58d-4b30-906a-b0d42e551146" ReportUseType="2" ReportType="5" ReportName="DM Intake - Monthly Totals by Pen" CreatedDT="2013-12-03T12:43:34.38" ModifiedDT="2013-12-04T06:59:13.253" ModifiedBy="VAS" ConcurrencyTS="AAAAAAANUTg=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="6333b372-d58d-4b30-906a-b0d42e551146" ReportUseType="2" ReportType="5" ReportName="DM Intake - Monthly Totals by Pen" Description="Dry Matter Intake by Month by Pen" CreatedDT="2013-12-03T12:43:34.38" ModifiedDT="2014-05-19T15:41:00.697" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKRI=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="3efc40dc-b5a7-46f0-890d-d715c396b201" ReportUseType="2" ReportType="5" ReportName="Pens by Daily DMI with Weighback" CreatedDT="2013-11-14T09:06:23.557" ModifiedDT="2013-11-14T09:06:23.557" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAIc8=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="3efc40dc-b5a7-46f0-890d-d715c396b201" ReportUseType="2" ReportType="5" ReportName="Pens by Daily DMI with Weighback" Description="Crosstab of Pen's Daily Dry Matter Intake including Weighbacks" CreatedDT="2013-11-14T09:06:23.557" ModifiedDT="2014-05-19T17:18:00.62" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAK/I=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

@@ -830,7 +830,7 @@ namespace XtraReportSerialization {
             this.WbMcg9ejpt.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.WbMcg9ejpt.BorderWidth = 2;
             this.WbMcg9ejpt.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WbMcg9ejpt.LocationFloat = new DevExpress.Utils.PointFloat(790.5417F, 30F);
+            this.WbMcg9ejpt.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 30F);
             this.WbMcg9ejpt.Name = "WbMcg9ejpt";
             this.WbMcg9ejpt.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.WbMcg9ejpt.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -838,7 +838,7 @@ namespace XtraReportSerialization {
             this.WbMcg9ejpt.StylePriority.UseFont = false;
             this.WbMcg9ejpt.StylePriority.UseTextAlignment = false;
             this.WbMcg9ejpt.Tag = "lblPrintedDateTime";
-            this.WbMcg9ejpt.Text = "5/6/2014 4:30:00 PM";
+            this.WbMcg9ejpt.Text = "5/19/2014 5:15:40 PM";
             this.WbMcg9ejpt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // aT19w1QYNA
@@ -869,7 +869,7 @@ namespace XtraReportSerialization {
             this.fOqcKVfAjc.LineWidth = 4;
             this.fOqcKVfAjc.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51F);
             this.fOqcKVfAjc.Name = "fOqcKVfAjc";
-            this.fOqcKVfAjc.SizeF = new System.Drawing.SizeF(977F, 4F);
+            this.fOqcKVfAjc.SizeF = new System.Drawing.SizeF(727F, 4F);
             // 
             // wwUcDKBnpF
             // 
@@ -877,14 +877,14 @@ namespace XtraReportSerialization {
             this.wwUcDKBnpF.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.wwUcDKBnpF.BorderWidth = 2;
             this.wwUcDKBnpF.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wwUcDKBnpF.LocationFloat = new DevExpress.Utils.PointFloat(790.5417F, 15F);
+            this.wwUcDKBnpF.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 15F);
             this.wwUcDKBnpF.Name = "wwUcDKBnpF";
             this.wwUcDKBnpF.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.wwUcDKBnpF.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
             this.wwUcDKBnpF.StylePriority.UseFont = false;
             this.wwUcDKBnpF.StylePriority.UseTextAlignment = false;
             this.wwUcDKBnpF.Tag = "lblCompanyName";
-            this.wwUcDKBnpF.Text = "Aurora Organic - Cold Water";
+            this.wwUcDKBnpF.Text = "Sample Dairy";
             this.wwUcDKBnpF.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // dxXcCRftdr
@@ -893,7 +893,7 @@ namespace XtraReportSerialization {
             this.dxXcCRftdr.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.dxXcCRftdr.BorderWidth = 2;
             this.dxXcCRftdr.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dxXcCRftdr.LocationFloat = new DevExpress.Utils.PointFloat(790.5417F, 0F);
+            this.dxXcCRftdr.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 0F);
             this.dxXcCRftdr.Name = "dxXcCRftdr";
             this.dxXcCRftdr.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.dxXcCRftdr.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -937,7 +937,7 @@ namespace XtraReportSerialization {
             this.xumcL2EfAa.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xumcL2EfAa.BorderWidth = 2;
             this.xumcL2EfAa.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xumcL2EfAa.LocationFloat = new DevExpress.Utils.PointFloat(313.5F, 4F);
+            this.xumcL2EfAa.LocationFloat = new DevExpress.Utils.PointFloat(241.5833F, 4F);
             this.xumcL2EfAa.Name = "xumcL2EfAa";
             this.xumcL2EfAa.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.xumcL2EfAa.SizeF = new System.Drawing.SizeF(350F, 18.00003F);
@@ -952,7 +952,7 @@ namespace XtraReportSerialization {
             // 
             this.W6tcfsPPVK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.W6tcfsPPVK.Format = "Page {0} of {1}";
-            this.W6tcfsPPVK.LocationFloat = new DevExpress.Utils.PointFloat(851.5833F, 4.000028F);
+            this.W6tcfsPPVK.LocationFloat = new DevExpress.Utils.PointFloat(601.5833F, 4.000028F);
             this.W6tcfsPPVK.Name = "W6tcfsPPVK";
             this.W6tcfsPPVK.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.W6tcfsPPVK.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -983,7 +983,7 @@ namespace XtraReportSerialization {
             this.ebZc7F59Lv.LineWidth = 2;
             this.ebZc7F59Lv.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.ebZc7F59Lv.Name = "ebZc7F59Lv";
-            this.ebZc7F59Lv.SizeF = new System.Drawing.SizeF(977F, 4F);
+            this.ebZc7F59Lv.SizeF = new System.Drawing.SizeF(727F, 4F);
             this.ebZc7F59Lv.StylePriority.UseBorderWidth = false;
             // 
             // table2
@@ -1585,11 +1585,10 @@ namespace XtraReportSerialization {
                 "ary_Drops";
             this.ExportOptions.Xlsx.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Text;
             this.Font = new System.Drawing.Font("Arial", 9F);
-            this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(50, 73, 50, 53);
             this.Name = "gridReportTemplate1";
-            this.PageHeight = 850;
-            this.PageWidth = 1100;
+            this.PageHeight = 1100;
+            this.PageWidth = 850;
             this.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic;
             this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
@@ -1624,6 +1623,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="60a840f7-00f4-4ffb-84cc-b7eb702b30a4" ReportUseType="2" ReportType="1" ReportName="Pen Cost / Day Summary" CreatedDT="2014-05-03T07:54:37.103" ModifiedDT="2014-05-06T16:30:06.557" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA7UE=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="60a840f7-00f4-4ffb-84cc-b7eb702b30a4" ReportUseType="2" ReportType="1" ReportName="Pen Cost / Day Summary" Description="Daily summary of Pen Cost" CreatedDT="2014-05-03T07:54:37.103" ModifiedDT="2014-05-19T17:15:55.023" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAK+I=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

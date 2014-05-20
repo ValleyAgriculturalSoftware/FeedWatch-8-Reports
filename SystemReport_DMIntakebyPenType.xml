@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="b998d433-793f-436c-9511-30b8ae2f4e1e" ReportUseType="2" ReportType="5" ReportName="DM Intake by Pen Type" CreatedDT="2013-03-27T15:24:58" ModifiedDT="2014-04-08T11:00:28.49" ModifiedBy="VAS" ConcurrencyTS="AAAAAAABfuE=" ReportVersion="5" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="b998d433-793f-436c-9511-30b8ae2f4e1e" ReportUseType="2" ReportType="5" ReportName="DM Intake by Pen Type" Description="Dry Matter Intake grouped by Pen Type" CreatedDT="2013-03-27T15:24:58" ModifiedDT="2014-05-19T15:56:08.323" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKYI=" ReportVersion="5" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

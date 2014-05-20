@@ -1313,6 +1313,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="8336b671-96da-4d56-b3ed-324d9d6b54d7" ReportUseType="2" ReportType="1" ReportName="Inventory Projections w/Cost" CreatedDT="2014-04-16T10:33:50.76" ModifiedDT="2014-04-16T11:49:16.09" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAZaU=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="8336b671-96da-4d56-b3ed-324d9d6b54d7" ReportUseType="2" ReportType="1" ReportName="Inventory Projections w/Cost" Description="Current Inventory projections with cost" CreatedDT="2014-04-16T10:33:50.76" ModifiedDT="2014-05-19T17:07:07.357" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAK5w=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

@@ -990,7 +990,7 @@ namespace XtraReportSerialization {
             this.B2nNi6y1UE.StylePriority.UseFont = false;
             this.B2nNi6y1UE.StylePriority.UseTextAlignment = false;
             this.B2nNi6y1UE.Tag = "lblPrintedDateTime";
-            this.B2nNi6y1UE.Text = "2/4/2014 11:17:00 AM";
+            this.B2nNi6y1UE.Text = "2/4/2014 11:05:32 AM";
             this.B2nNi6y1UE.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // eBRDr5hUPY
@@ -1827,7 +1827,7 @@ namespace XtraReportSerialization {
             // 
             this.totalsOnly.Name = "totalsOnly";
             this.totalsOnly.Type = typeof(bool);
-            this.totalsOnly.Value = true;
+            this.totalsOnly.Value = false;
             this.totalsOnly.Visible = false;
             // 
             // gridReportTemplate1
@@ -1895,6 +1895,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="7034cfc0-c1d3-4e1c-a9e4-c26b094efaae" ReportUseType="2" ReportType="1" ReportName="Weekly Feeder Summary Report" Description="Feeder Summary showing over 40lbs of error" CreatedDT="2014-02-03T15:44:25.023" ModifiedDT="2014-05-19T17:26:05.673" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALDk=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="7034cfc0-c0f4-4e1c-a9e4-c26b094efaae" ReportUseType="2" ReportType="1" ReportName="Weekly Feeder Summary Report - Totals Only" Description="Feeder Summary showing only totals with 40lbs of error" CreatedDT="2014-02-03T15:44:25.023" ModifiedDT="2014-05-19T17:27:29.003" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALEM=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

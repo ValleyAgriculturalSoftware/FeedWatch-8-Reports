@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="641174cb-34ff-4085-950e-de2a3d85f4f6" ReportUseType="2" ReportType="5" ReportName="Recipe Qty/Cost" CreatedDT="7/9/2012 1:18:07 PM" ModifiedDT="1/30/2013 3:33:37 PM" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAE2js=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="641174cb-34ff-4085-950e-de2a3d85f4f6" ReportUseType="2" ReportType="5" ReportName="Recipe Qty/Cost" Description="Recipe Ingredient quantity with Cost" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-05-19T17:21:22.917" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALBE=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

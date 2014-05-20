@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="5" ReportName="Feed Sheet Report" CreatedDT="2012-07-10T10:17:04" ModifiedDT="2013-11-18T13:58:17.073" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAJzT8=" ReportVersion="3" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="5" ReportName="Feed Sheet Report" Description="Feed Sheets for today's feedings" CreatedDT="2012-07-10T10:17:04" ModifiedDT="2014-05-19T16:08:04.213" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKd8=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

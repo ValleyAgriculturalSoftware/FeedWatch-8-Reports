@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="076be94a-050a-4247-9897-65d11bb4aab7" ReportUseType="2" ReportType="5" ReportName="Recipe Ingredients" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-01-22T16:37:26.657" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAGM8=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="076be94a-050a-4247-9897-65d11bb4aab7" ReportUseType="2" ReportType="5" ReportName="Recipe Ingredients" Description="Crosstab of Ingredient amounts in Recipes" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-05-19T17:20:06.42" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALAY=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

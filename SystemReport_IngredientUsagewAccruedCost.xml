@@ -1617,6 +1617,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="b4e12918-8976-4999-bf95-b57d36219eb7" ReportUseType="2" ReportType="1" ReportName="Ingredient Usage w/Accrued Cost" CreatedDT="2014-01-27T12:04:58.757" ModifiedDT="2014-01-27T13:58:36.06" ModifiedBy="VAS" ConcurrencyTS="AAAAAAACaTM=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="b4e12918-8976-4999-bf95-b57d36219eb7" ReportUseType="2" ReportType="1" ReportName="Ingredient Usage w/Accrued Cost" Description="Ingredient usage with Accrued Cost" CreatedDT="2014-01-27T12:04:58.757" ModifiedDT="2014-05-19T16:45:24.41" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKv8=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

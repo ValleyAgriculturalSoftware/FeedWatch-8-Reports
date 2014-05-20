@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="9c44468e-cd5e-43eb-8859-437974ea04ae" ReportUseType="2" ReportType="5" ReportName="Graph First Feeding Time" CreatedDT="2014-03-24T11:09:22.753" ModifiedDT="2014-03-24T11:37:15.67" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAEo4E=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="9c44468e-cd5e-43eb-8859-437974ea04ae" ReportUseType="2" ReportType="5" ReportName="Graph First Feeding Time" Description="Graph of a Pen's feeding time" CreatedDT="2014-03-24T11:09:22.753" ModifiedDT="2014-05-19T16:30:14.527" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKoc=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

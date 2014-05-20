@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="c80cad3c-fc87-467f-a9a6-f1e00fd45ef2" ReportUseType="2" ReportType="5" ReportName="DMI &amp;amp; AFI by Recipe" CreatedDT="2013-08-22T16:25:35.113" ModifiedDT="2013-08-23T10:39:00.627" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAVtQ=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="c80cad3c-fc87-467f-a9a6-f1e00fd45ef2" ReportUseType="2" ReportType="5" ReportName="DMI &amp;amp; AFI by Recipe" Description="Dry Matter and As Fed Intake grouped by Recipe" CreatedDT="2013-08-22T16:25:35.113" ModifiedDT="2014-05-19T15:58:11.09" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKZM=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

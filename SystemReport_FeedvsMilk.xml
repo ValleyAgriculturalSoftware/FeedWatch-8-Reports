@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="46dce634-7018-4f75-a658-c7001f0ab2a6" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk " CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2014-04-01T12:15:18.737" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAElY=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="46dce634-7018-4f75-a658-c7001f0ab2a6" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk " Description="Dry Matter fed vs Milk produced" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2014-05-19T16:15:34.14" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKhU=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

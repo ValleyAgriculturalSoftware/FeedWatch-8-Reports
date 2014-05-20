@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="de8f051e-1ff2-444c-b353-3167169aec33" ReportUseType="2" ReportType="5" ReportName="Employee Error Overview" CreatedDT="2012-11-14T10:44:10" ModifiedDT="2014-05-19T09:39:27.463" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAJyQ=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="de8f051e-1ff2-444c-b353-3167169aec33" ReportUseType="2" ReportType="5" ReportName="Employee Error Overview" Description="Employee Error Overview for Yesterday and Last Week" CreatedDT="2012-11-14T10:44:10" ModifiedDT="2014-05-19T16:05:59.033" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKc4=" ReportVersion="2" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="feeba34b-d47c-443a-9525-a7fa2753af38" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage by Pen Type" CreatedDT="2012-11-08T13:43:17" ModifiedDT="2014-05-19T10:33:33.303" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAJyk=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="feeba34b-d47c-443a-9525-a7fa2753af38" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage by Pen Type" Description="Ingredient usage grouped by Pen Type" CreatedDT="2012-11-08T13:43:17" ModifiedDT="2014-05-19T16:43:26.087" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKu0=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

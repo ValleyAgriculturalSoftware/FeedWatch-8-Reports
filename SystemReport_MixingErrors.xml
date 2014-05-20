@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="c14b9268-7b07-4892-81af-cf8dd3be6b04" ReportUseType="2" ReportType="5" ReportName="Mixing Errors" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-04-01T11:11:33.253" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAF3M=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="c14b9268-7b07-4892-81af-cf8dd3be6b04" ReportUseType="2" ReportType="5" ReportName="Mixing Errors" Description="Shows ingredient mixing errors over 100lbs" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-05-19T17:09:22.81" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAK7A=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

@@ -1474,6 +1474,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="8b75bc53-d78d-4e1d-8c09-c0e3195d9a8d" ReportUseType="2" ReportType="1" ReportName="Vendor Delivery Report" CreatedDT="2013-10-02T09:18:16.43" ModifiedDT="2014-04-29T09:27:28.71" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAArXk=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="8b75bc53-d78d-4e1d-8c09-c0e3195d9a8d" ReportUseType="2" ReportType="1" ReportName="Vendor Delivery Report" Description="Delivery report by Vendor" CreatedDT="2013-10-02T09:18:16.43" ModifiedDT="2014-05-19T17:24:58.58" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALC8=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

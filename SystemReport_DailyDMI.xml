@@ -1245,6 +1245,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="9134c593-7ba9-4f6c-b54d-903dc6640b2d" ReportUseType="2" ReportType="1" ReportName="Daily DMI" CreatedDT="2013-08-14T11:19:44.68" ModifiedDT="2014-02-05T20:30:28.003" ModifiedBy="VAS" ConcurrencyTS="AAAAAAATKmk=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="9134c593-7ba9-4f6c-b54d-903dc6640b2d" ReportUseType="2" ReportType="1" ReportName="Daily DMI" Description="Daily Overview of Dry Matter Intake" CreatedDT="2013-08-14T11:19:44.68" ModifiedDT="2014-05-19T15:27:20.853" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKB8=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

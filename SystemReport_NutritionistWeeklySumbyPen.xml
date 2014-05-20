@@ -648,8 +648,8 @@ namespace XtraReportSerialization {
                         "QA4ADEAXwA3ADIAMQBmAF8ANAA2ADUAOQBfAGIAOQA4ADAAXwBiADEAOQA0AGEANQAzADUAOABmAGIAN" +
                         "wAuAFQAYQBnADkKAAAibABiAGwAQwBvAHAAeQByAGkAZwBoAHQALgBUAGUAeAB0AHkLAAAccABpAGMAd" +
                         "ABMAG8AZwBvAC4ASQBtAGEAZwBlAGUMAAAudABhAGIAbABlAEMAZQBsAGwAOAAuAEQAYQB0AGEAQgBpA" +
-                        "G4AZABpAG4AZwBzAEsRAAAudABhAGIAbABlAEMAZQBsAGwAOQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZ" +
-                        "wBzABcSAAAB5wJJaWYoSXNOdWxsT3JFbXB0eShbdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JU3VtbWFyeVJlc" +
+                        "G4AZABpAG4AZwBzACwRAAAudABhAGIAbABlAEMAZQBsAGwAOQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZ" +
+                        "wBzAPgRAAAB5wJJaWYoSXNOdWxsT3JFbXB0eShbdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JU3VtbWFyeVJlc" +
                         "G9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfRW50aXRpZXNfUGVuRGFpbHlTdW1tYXJ5X1Bhcmxvc" +
                         "ldhdGNoVHJhbnNhY3Rpb25fVG90YWxNaWxrXSksPyAgLFt2YXNfRmVlZFdhdGNoX01vZGVsX0lTdW1tY" +
                         "XJ5UmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9FbnRpdGllc19QZW5EYWlseVN1bW1hcnlfU" +
@@ -704,32 +704,32 @@ namespace XtraReportSerialization {
                         "2F0aW9uIG9yIHB1YmxpY2F0aW9uIG9mIHRoaXMgcHJvZ3JhbSBpcyBzdHJpY3RseSBwcm9oaWJpdGVkL" +
                         "kEAAQAAAP////8BAAAAAAAAAAwCAAAAUVN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1b" +
                         "HR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUBAAAAFVN5c3RlbS5Ec" +
-                        "mF3aW5nLkJpdG1hcAEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABDBAAAAolQTkcNChoKAAAADUlIRFIAA" +
-                        "AAwAAAAMAgGAAAAVwL5hwAAAAFzUkdCAK7OHOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALD" +
-                        "AE/QCLIAAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH3QEEEQUGWYaDgQAAA7NJREFUaEPtmM9rE1EQx" +
-                        "wP+BT0IQhF/XLwoFnoqir3oRfCgUIqIJyGoFz0IQRDBg9KTx5aCKFQiJYqH/kCxhyIR8VAsRKo2tcXY0" +
-                        "kqhMaW1jf31nG/dCS+b724SSZQnPviU2dnZeTP75s3bNGKMcRqqdAmqdAmqdAmqdAmqdAmqdAmqdAmqd" +
-                        "AmqdAn7olOo1YCvPYLtvy6osH8xkzFdu/fWhDd3OsSlwZ+iyeqBCjVN4G1nl7g0Mc93XVHhfwI2Y/FH4" +
-                        "tJEPd91RYV/PwEvqErHsDDySywaWeG2YAcR1P2gt+0oKlSUwOrCAr03n0qJC9Ps+QIjT06eKrG7f/Aw7" +
-                        "LIiR4DIgfNCj/uC+qSo0IwgmCNlOvlKzEyaBfZpYBD32gT4asjnciU2iiYrMmxj2PB+G8whAyuo8QWiw" +
-                        "nEE6Hdk4yVQbmDZ25AQ8wE0WZExb+LFxcslNtV0MRXKJlAJ3j55joOM3Qd6yImMebMoK78NVlDGVQGNo" +
-                        "Cl1NxIJoqYJeKs0Gz9yjN4HeOMyEgIt2/6z58xGPmcWUt3brM6Pwn5euBWWQBRvz++sWpBAbmqK3lN0I" +
-                        "wsdbKVQPnPJmJHgCrzv2mm+fYjjuafCCQ0e1DyBib5+es/G6zC0U6F8xjobihJQPved3l4dGS1yXfsEE" +
-                        "Fjyxs0iHatxbGTWqVBeufEEDV758uw8EugRuSgB2s4U1HSFI+8PGH6ZjnUqvMSZoSgN3GZxApVkLolcV" +
-                        "QKTni2g7Y81AmxUf6ngWfZ8WPnYpHsOIZ6UyIUE6IZSSAI0YXQQ+1o37MvY9SI9/PlXpZLysVlbmoHvR" +
-                        "g2o2z+JDTkZy57cAEHJSIStrlJp+SjLM0n4PqoB0ZJQ8GZlDHm2ymRYvwd66oadzACrUWn5KN9nX8N3i" +
-                        "wYz5F9+m4AEQssOeCdq6LcRqLZ8wPryHHzv0mBoT1YCEgh9s76yo58MCvxkBtpooIz0wyb4HhW5sIlDJ" +
-                        "whIIPTNou5l6AdZYIn+Tvnk0o/hOypyIQHqXAlIAASunH42e3aB5YbElqeHaaCMzGA7/PaKXDjIyv6YC" +
-                        "UmABkbabmC5Qb+5tmQmE600YBsEv7m+At+tcl10Epf7pxaCPyOovYJ/XrFnEfw1wbYN++nYvrW1YbLv7" +
-                        "pnxBwdKAp+IN2vZ9AqF4IE9wV9BAxF5h3BF+PgjN2VWvo5s4x1YaAYX7MCVEod/GhaU6PcJ2D+gkdkoJ" +
-                        "Q5dgypdgipdgipdgipdgipdgipdgipdgipdgirdwUR+AtdHqeXZWJZPAAAAAElFTkSuQmCCCwHJAXZhc" +
-                        "19GZWVkV2F0Y2hfTW9kZWxfSVN1bW1hcnlSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0Vud" +
-                        "Gl0aWVzX1BlbkRhaWx5U3VtbWFyeS52YXNfRmVlZFdhdGNoX01vZGVsX0lTdW1tYXJ5UmVwb3J0R3Jvd" +
-                        "XBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9FbnRpdGllc19QZW5EYWlseVN1bW1hcnlfUGFybG9yV2F0Y2hUc" +
-                        "mFuc2FjdGlvbl9QZW5Db3VudAHJAXZhc19GZWVkV2F0Y2hfTW9kZWxfSVN1bW1hcnlSZXBvcnRHcm91c" +
-                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0VudGl0aWVzX1BlbkRhaWx5U3VtbWFyeS52YXNfRmVlZFdhdGNoX" +
-                        "01vZGVsX0lTdW1tYXJ5UmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9FbnRpdGllc19QZW5EY" +
-                        "WlseVN1bW1hcnlfUGFybG9yV2F0Y2hUcmFuc2FjdGlvbl9QZW5Db3VudA==";
+                        "mF3aW5nLkJpdG1hcAEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAkBAAAAolQTkcNChoKAAAADUlIRFIAA" +
+                        "AAwAAAAMAgGAAAAVwL5hwAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAHdElNR" +
+                        "QfdAQQRBQZZhoOBAAADs0lEQVRoQ+2Yz2sTURDHA/4FPQhCEX9cvCgWeiqKvehF8KBQiognIagXPQhBE" +
+                        "MGD0pPHloIoVCIliof+QLGHIhHxUCxEqja1xdjSSqExpbWN/fWcb90JL5vvbhJJlCc++JTZ2dl5M/vmz" +
+                        "ds0YoxxGqp0Cap0Cap0Cap0Cap0Cap0Cap0Cap0Cap0CfuiU6jVgK89gu2/LqiwfzGTMV2799aEN3c6x" +
+                        "KXBn6LJ6oEKNU3gbWeXuDQxz3ddUeF/AjZj8Ufi0kQ933VFhX8/AS+oSsewMPJLLBpZ4bZgBxHU/aC37" +
+                        "SgqVJTA6sICvTefSokL0+z5AiNPTp4qsbt/8DDssiJHgMiB80KP+4L6pKjQjCCYI2U6+UrMTJoF9mlgE" +
+                        "PfaBPhqyOdyJTaKJisybGPY8H4bzCEDK6jxBaLCcQTod2TjJVBuYNnbkBDzATRZkTFv4sXFyyU21XQxF" +
+                        "comUAnePnmOg4zdB3rIiYx5sygrvw1WUMZVAY2gKXU3Egmipgl4qzQbP3KM3gd44zISAi3b/rPnzEY+Z" +
+                        "xZS3duszo/Cfl64FZZAFG/P76xakEBuaoreU3QjCx1spVA+c8mYkeAKvO/aab59iOO5p8IJDR7UPIGJv" +
+                        "n56z8brMLRToXzGOhuKElA+953eXh0ZLXJd+wQQWPLGzSIdq3FsZNapUF658QQNXvny7DwS6BG5KAHaz" +
+                        "hTUdIUj7w8YfpmOdSq8xJmhKA3cZnEClWQuiVxVApOeLaDtjzUCbFR/qeBZ9nxY+dikew4hnpTIhQToh" +
+                        "lJIAjRhdBD7Wjfsy9j1Ij38+VelkvKxWVuage9GDajbP4kNORnLntwAQclIhK2uUmn5KMszSfg+qgHRk" +
+                        "lDwZmUMebbKZFi/B3rqhp3MAKtRafko32dfw3eLBjPkX36bgARCyw54J2rotxGotnzA+vIcfO/SYGhPV" +
+                        "gISCH2zvrKjnwwK/GQG2migjPTDJvgeFbmwiUMnCEgg9M2i7mXoB1lgif5O+eTSj+E7KnIhAepcCUgAB" +
+                        "K6cfjZ7doHlhsSWp4dpoIzMYDv89opcOMjK/pgJSYAGRtpuYLlBv7m2ZCYTrTRgGwS/ub4C361yXXQSl" +
+                        "/unFoI/I6i9gn9esWcR/DXBtg376di+tbVhsu/umfEHB0oCn4g3a9n0CoXggT3BX0EDEXmHcEX4+CM3Z" +
+                        "Va+jmzjHVhoBhfswJUSh38aFpTo9wnYP6CR2SglDl2DKl2CKl2CKl2CKl2CKl2CKl2CKl2CKl2CKt3BR" +
+                        "H4C10ep5dlYlk8AAAAASUVORK5CYIILAckBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JU3VtbWFyeVJlcG9yd" +
+                        "Edyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfRW50aXRpZXNfUGVuRGFpbHlTdW1tYXJ5LnZhc19GZWVkV" +
+                        "2F0Y2hfTW9kZWxfSVN1bW1hcnlSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0VudGl0aWVzX" +
+                        "1BlbkRhaWx5U3VtbWFyeV9QYXJsb3JXYXRjaFRyYW5zYWN0aW9uX1BlbkNvdW50AckBdmFzX0ZlZWRXY" +
+                        "XRjaF9Nb2RlbF9JU3VtbWFyeVJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfRW50aXRpZXNfU" +
+                        "GVuRGFpbHlTdW1tYXJ5LnZhc19GZWVkV2F0Y2hfTW9kZWxfSVN1bW1hcnlSZXBvcnRHcm91cF92YXNfR" +
+                        "mVlZFdhdGNoX01vZGVsX0VudGl0aWVzX1BlbkRhaWx5U3VtbWFyeV9QYXJsb3JXYXRjaFRyYW5zYWN0a" +
+                        "W9uX1BlbkNvdW50";
                     this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
                 }
                 return this._resources;
@@ -837,7 +837,7 @@ namespace XtraReportSerialization {
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 50F;
+            this.BottomMargin.HeightF = 51.95834F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // PageHeader
@@ -1031,7 +1031,7 @@ namespace XtraReportSerialization {
             this.lblPrintedDateTime.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
             this.lblPrintedDateTime.StylePriority.UseFont = false;
             this.lblPrintedDateTime.StylePriority.UseTextAlignment = false;
-            this.lblPrintedDateTime.Text = "2/25/2014 3:35:56 PM";
+            this.lblPrintedDateTime.Text = "5/19/2014 5:10:51 PM";
             this.lblPrintedDateTime.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // pictLogo
@@ -1075,7 +1075,7 @@ namespace XtraReportSerialization {
             this.lblCompanyName.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
             this.lblCompanyName.StylePriority.UseFont = false;
             this.lblCompanyName.StylePriority.UseTextAlignment = false;
-            this.lblCompanyName.Text = "Lake Breeze LLC";
+            this.lblCompanyName.Text = "Sample Dairy";
             this.lblCompanyName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // lblPrintedBy
@@ -1160,7 +1160,7 @@ namespace XtraReportSerialization {
             this.lblApplicationName.SizeF = new System.Drawing.SizeF(220F, 17.99998F);
             this.lblApplicationName.StylePriority.UseFont = false;
             this.lblApplicationName.StylePriority.UseTextAlignment = false;
-            this.lblApplicationName.Text = "FeedWatch v8.0.323.0";
+            this.lblApplicationName.Text = "FeedWatch v8.1.25.0";
             this.lblApplicationName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // lineFooter
@@ -1225,7 +1225,7 @@ namespace XtraReportSerialization {
             // _bf383c6c_0e48_4e8d_885c_e5460cde3ea8
             // 
             this._bf383c6c_0e48_4e8d_885c_e5460cde3ea8.Name = "_bf383c6c_0e48_4e8d_885c_e5460cde3ea8";
-            this._bf383c6c_0e48_4e8d_885c_e5460cde3ea8.Text = "Tyoe";
+            this._bf383c6c_0e48_4e8d_885c_e5460cde3ea8.Text = "Type";
             this._bf383c6c_0e48_4e8d_885c_e5460cde3ea8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this._bf383c6c_0e48_4e8d_885c_e5460cde3ea8.Weight = 0.020070767884008602D;
             // 
@@ -1574,7 +1574,7 @@ namespace XtraReportSerialization {
             this.ExportOptions.Xlsx.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Text;
             this.Font = new System.Drawing.Font("Arial", 9F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(50, 73, 50, 50);
+            this.Margins = new System.Drawing.Printing.Margins(50, 73, 50, 52);
             this.Name = "_ee83c637_8123_4f61_94fd_4fe25c8dc304";
             this.PageHeight = 850;
             this.PageWidth = 1100;
@@ -1606,6 +1606,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="0cf63e43-9b89-4493-9832-03faabd55609" ReportUseType="2" ReportType="1" ReportName="Nutritionist Weekly Sum by Pen" CreatedDT="2013-08-14T12:34:16.013" ModifiedDT="2014-02-27T15:35:12.427" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAs7E=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="0cf63e43-9b89-4493-9832-03faabd55609" ReportUseType="2" ReportType="1" ReportName="Nutritionist Weekly Sum by Pen" Description="Daily overview of feedings" CreatedDT="2013-08-14T12:34:16.013" ModifiedDT="2014-05-19T17:12:05.7" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAK8U=" ReportVersion="2" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

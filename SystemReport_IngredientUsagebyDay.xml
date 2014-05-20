@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="71e91cca-a799-43a0-af6c-ea554c74de3b" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage by Day" CreatedDT="7/9/2012 1:18:07 PM" ModifiedDT="3/20/2013 3:14:44 PM" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAc1vM=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="71e91cca-a799-43a0-af6c-ea554c74de3b" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage by Day" Description="Ingredient Usage per day" CreatedDT="2012-07-09T13:18:07" ModifiedDT="2014-05-19T16:42:17.953" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKuU=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

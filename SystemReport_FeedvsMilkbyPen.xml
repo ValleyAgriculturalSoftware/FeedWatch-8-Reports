@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="3d9a2eb0-d52b-4ecd-80ff-52ffcc7a8cfc" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk by Pen" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2014-04-09T15:12:28.65" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAD64=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="3d9a2eb0-d52b-4ecd-80ff-52ffcc7a8cfc" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk by Pen" Description="Dry Matter fed vs Milk produced grouped by Pen" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2014-05-19T16:17:24.263" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKiY=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

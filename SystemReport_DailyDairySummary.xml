@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="67b9b008-be3f-4b47-b8ea-a09991e415d1" ReportUseType="2" ReportType="5" ReportName="Daily Dairy Summary" CreatedDT="2014-02-19T16:16:16.043" ModifiedDT="2014-04-10T16:54:59.827" ModifiedBy="VAS" ConcurrencyTS="AAAAAAASV6o=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="67b9b008-be3f-4b47-b8ea-a09991e415d1" ReportUseType="2" ReportType="5" ReportName="Daily Dairy Summary" Description="Overview of Yesterday, 3 Days, 7 Days and 15 Days" CreatedDT="2014-02-19T16:16:16.043" ModifiedDT="2014-05-19T15:24:31.327" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKAg=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

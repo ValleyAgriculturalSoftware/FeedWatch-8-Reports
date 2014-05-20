@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="30fd829f-653c-455e-b323-506d6b3b6243" ReportUseType="2" ReportType="5" ReportName="Graph Daily DMI w/ WeighBack" CreatedDT="2013-08-21T14:21:02.93" ModifiedDT="2014-02-25T14:59:02.487" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAPOk=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="30fd829f-653c-455e-b323-506d6b3b6243" ReportUseType="2" ReportType="5" ReportName="Graph Daily DMI w/ WeighBack" Description="Graph showing daily Dry Matter Intake with Weighbacks" CreatedDT="2013-08-21T14:21:02.93" ModifiedDT="2014-05-19T16:24:29.653" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKl0=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

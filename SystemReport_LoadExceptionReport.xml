@@ -1214,6 +1214,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="1818ac00-ba65-4451-b120-e38a653c4f75" ReportUseType="2" ReportType="1" ReportName="Load Exception Report" CreatedDT="2013-10-14T10:05:30.093" ModifiedDT="2014-04-11T10:35:41.08" ModifiedBy="VAS" ConcurrencyTS="AAAAAAASW7Q=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="1818ac00-ba65-4451-b120-e38a653c4f75" ReportUseType="2" ReportType="1" ReportName="Load Exception Report" Description="Displays missing or incomplete loads" CreatedDT="2013-10-14T10:05:30.093" ModifiedDT="2014-05-19T17:08:07.457" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAK6M=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
