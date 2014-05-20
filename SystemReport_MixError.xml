@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="8ac047a7-755a-4d8a-a468-beadf4d494f7" ReportUseType="2" ReportType="5" ReportName="Mix Error" CreatedDT="2012-08-17T16:07:38" ModifiedDT="2013-08-27T09:14:41.81" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAARlU=" ReportVersion="3" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="8ac047a7-755a-4d8a-a468-beadf4d494f7" ReportUseType="2" ReportType="5" ReportName="Mix Error" Description="Highlights feeder errors inside of Feeding History report" CreatedDT="2012-08-17T16:07:38" ModifiedDT="2014-05-20T08:21:13.317" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALks=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

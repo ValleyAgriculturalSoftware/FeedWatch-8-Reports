@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="4fb4f707-7d31-45c4-9d2a-9fbe82322bd9" ReportUseType="2" ReportType="5" ReportName="Graph DM Intake" CreatedDT="11/8/2012 10:25:13 AM" ModifiedDT="11/8/2012 1:24:51 PM" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAG/Rw=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="4fb4f707-7d31-45c4-9d2a-9fbe82322bd9" ReportUseType="2" ReportType="5" ReportName="Graph DM Intake" Description="Graphs Dry Matter Intake per day per Pen" CreatedDT="2012-11-08T10:25:13" ModifiedDT="2014-05-20T08:27:15.27" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALng=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>false</IsCustomQuery>
@@ -172,27 +172,24 @@
 			<ColumnName>ReportDate</ColumnName>
 			<PreDefinedFilterOperator>Between</PreDefinedFilterOperator>
 			<PreDefinedFilterValue>y-2wk</PreDefinedFilterValue>
+			<DefaultIsOr>false</DefaultIsOr>
 			<FilterOperator>Between</FilterOperator>
-			<FilterValue>10/22/2012, 10/25/2012</FilterValue>
-			<IsOr>false</IsOr>
 		</ReportFilter>
 		<ReportFilter>
 			<SeqNo>1</SeqNo>
 			<ColumnName>CompanyName</ColumnName>
 			<PreDefinedFilterOperator>Equal</PreDefinedFilterOperator>
 			<PreDefinedFilterValue>$company</PreDefinedFilterValue>
+			<DefaultIsOr>false</DefaultIsOr>
 			<FilterOperator>Equal</FilterOperator>
-			<FilterValue>Rio Blanco Dairy</FilterValue>
-			<IsOr>false</IsOr>
 		</ReportFilter>
 		<ReportFilter>
 			<SeqNo>2</SeqNo>
 			<ColumnName>PrimaryPenTypeName</ColumnName>
 			<PreDefinedFilterOperator>Equal</PreDefinedFilterOperator>
 			<PreDefinedFilterValue />
+			<DefaultIsOr>false</DefaultIsOr>
 			<FilterOperator>Equal</FilterOperator>
-			<FilterValue />
-			<IsOr>false</IsOr>
 		</ReportFilter>
 	</ReportFilters>
 	<ReportColumns />
@@ -202,7 +199,7 @@
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
 ///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.11.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
@@ -348,7 +345,7 @@ namespace XtraReportSerialization {
                         this.pageInfo1,
                         this.label36,
                         this.line3});
-            this.PageFooter.HeightF = 22.00003F;
+            this.PageFooter.HeightF = 22.00005F;
             this.PageFooter.Name = "PageFooter";
             // 
             // GraphGroupHeader
@@ -381,7 +378,7 @@ namespace XtraReportSerialization {
             this.label21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(775.5416F, 75F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 75F);
             this.label21.Name = "label21";
             this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label21.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -399,7 +396,7 @@ namespace XtraReportSerialization {
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(775.5416F, 60F);
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 60F);
             this.label27.Name = "label27";
             this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label27.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -416,7 +413,7 @@ namespace XtraReportSerialization {
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(775.5416F, 45F);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(706.5417F, 45F);
             this.label28.Name = "label28";
             this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label28.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -433,7 +430,7 @@ namespace XtraReportSerialization {
             this.line1.LineWidth = 4;
             this.line1.LocationFloat = new DevExpress.Utils.PointFloat(3.051758E-05F, 96F);
             this.line1.Name = "line1";
-            this.line1.SizeF = new System.Drawing.SizeF(961.9999F, 4F);
+            this.line1.SizeF = new System.Drawing.SizeF(893F, 4F);
             this.line1.StylePriority.UseBorderWidth = false;
             // 
             // label24
@@ -447,7 +444,7 @@ namespace XtraReportSerialization {
             this.label24.LocationFloat = new DevExpress.Utils.PointFloat(100F, 55F);
             this.label24.Name = "label24";
             this.label24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label24.SizeF = new System.Drawing.SizeF(653.1249F, 30F);
+            this.label24.SizeF = new System.Drawing.SizeF(576.0416F, 30F);
             this.label24.StylePriority.UseFont = false;
             this.label24.Text = "label24";
             this.label24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -553,7 +550,7 @@ namespace XtraReportSerialization {
             // 
             this.pageInfo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageInfo1.Format = "Page {0} of {1}";
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(836.5833F, 4.000028F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(767.5833F, 4.000052F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.pageInfo1.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -582,7 +579,7 @@ namespace XtraReportSerialization {
             this.line3.LineWidth = 2;
             this.line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.line3.Name = "line3";
-            this.line3.SizeF = new System.Drawing.SizeF(962F, 4F);
+            this.line3.SizeF = new System.Drawing.SizeF(893.0001F, 4F);
             this.line3.StylePriority.UseBorderWidth = false;
             // 
             // chart1
@@ -603,7 +600,7 @@ namespace XtraReportSerialization {
             xYDiagram1.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
             xYDiagram1.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
             this.chart1.Diagram = xYDiagram1;
-            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 0F);
+            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(6.357829E-05F, 0F);
             this.chart1.Name = "chart1";
             this.chart1.Scripts.OnBeforePrint = "chart1_BeforePrint";
             this.chart1.SeriesDataMember = "PenName";
@@ -617,7 +614,7 @@ namespace XtraReportSerialization {
             this.chart1.SeriesTemplate.Label = pointSeriesLabel1;
             this.chart1.SeriesTemplate.ValueDataMembersSerializable = "TotalDM_MQty_PerHead";
             this.chart1.SeriesTemplate.View = lineSeriesView1;
-            this.chart1.SizeF = new System.Drawing.SizeF(961.9999F, 524.7916F);
+            this.chart1.SizeF = new System.Drawing.SizeF(892.9999F, 514.7916F);
             // 
             // label3
             // 
@@ -777,9 +774,8 @@ namespace XtraReportSerialization {
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(88, 119, 100, 50);
             this.Name = "GraphDMIntake";
-            this.PageHeight = 827;
-            this.PageWidth = 1169;
-            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.PageHeight = 850;
+            this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
                         this.showLegend,
                         this.showGraph,
@@ -1009,4 +1005,5 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportDefinition>
+	<NeedsRedesign>false</NeedsRedesign>
 </ReportBundle>
