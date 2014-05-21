@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="67b9b008-be3f-4b47-b8ea-a09991e415d1" ReportUseType="2" ReportType="5" ReportName="Daily Dairy Summary" Description="Overview of Yesterday, 3 Days, 7 Days and 15 Days" CreatedDT="2014-02-19T16:16:16.043" ModifiedDT="2014-05-19T15:24:31.327" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKAg=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="67b9b008-be3f-4b47-b8ea-a09991e415d1" ReportUseType="2" ReportType="5" ReportName="Daily Dairy Summary" Description="Overview of Yesterday, 3 Days, 7 Days and 15 Days" CreatedDT="2014-02-19T16:16:16.043" ModifiedDT="2014-05-21T15:59:14.763" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAZZk=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -33,9 +33,9 @@ left join
   SumDM = sum(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType)),
   SumCost = sum(cst.FIFOCost),
   AvgPenCount = avg(pcc.penCount),
-  AvgCostHd = SUM(cst.FIFOCost) / nullif(AVG(pcc.penCount), 0),
-  AFHd = SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount, 0)),
-  DMHd = SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount,0))
+  AvgCostHd = isnull(SUM(cst.FIFOCost) / nullif(AVG(pcc.penCount), 0),0),
+  AFHd = isnull(SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0),
+  DMHd = isnull(SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0)
  from Location l
  join Pen p on p.LocationGID = l.LocationGID
  join FeedingScheduleDrop fsd on fsd.LocationGID = p.LocationGID
@@ -75,10 +75,10 @@ select p.PenGID
         ,SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType)) as 'DropAF'
         ,SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType)) as 'DropDM'
         ,AVG(pcc.penCount) as 'AvgPenCount'
-        ,SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount,0)) as 'AvgAFHd'
-        ,SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount,0)) as 'AvgDMHd'
+        ,isnull(SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0) as 'AvgAFHd'
+        ,ISNULL(SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0) as 'AvgDMHd'
         ,SUM(cst.FIFOCost) as 'SumCost'
-        ,SUM(cst.FIFOCost) / nullif(AVG(pcc.penCount), 0) as 'AvgCostHd'
+        ,isnull(SUM(cst.FIFOCost) / nullif(AVG(pcc.penCount), 0),0) as 'AvgCostHd'
     from Location l
     join Pen p on p.LocationGID = l.LocationGID
     join FeedingScheduleDrop fsd on fsd.LocationGID = p.LocationGID
@@ -122,10 +122,10 @@ select p.PenGID
         ,SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType)) as 'DropAF'
         ,SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType)) as 'DropDM'
         ,AVG(pcc.penCount) as 'AvgPenCount'
-        ,SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount,0)) as 'AvgAFHd'
-        ,SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount,0)) as 'AvgDMHd'
+        ,isnull(SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0) as 'AvgAFHd'
+        ,ISNULL(SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0) as 'AvgDMHd'
         ,SUM(cst.FIFOCost) as 'SumCost'
-        ,SUM(cst.FIFOCost) / NULLIF(AVG(pcc.penCount), 0) as 'AvgCostHd'
+        ,isNULL(SUM(cst.FIFOCost) /NULLIF(AVG(pcc.penCount), 0), 0) as 'AvgCostHd'
     from Location l
     join Pen p on p.LocationGID = l.LocationGID
     join FeedingScheduleDrop fsd on fsd.LocationGID = p.LocationGID
@@ -167,10 +167,10 @@ select p.PenGID
         ,SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType)) as 'DropAF'
         ,SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType)) as 'DropDM'
         ,AVG(pcc.penCount) as 'AvgPenCount'
-        ,SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / nullif(pcc.penCount,0)) as 'AvgAFHd'
-        ,SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount,0)) as 'AvgDMHd'
+        ,isnull(SUM(dbo.GetMeasurementValue(UnitQuantity, c.MediumMeasurementType) / Nullif(pcc.penCount, 0)), 0) as 'AvgAFHd'
+        ,ISNULL(SUM(dbo.GetMeasurementValue(UnitQuantity * DMPct, c.MediumMeasurementType) / nullif(pcc.penCount, 0)), 0) as 'AvgDMHd'
         ,SUM(cst.FIFOCost) as 'SumCost'
-        ,SUM(cst.FIFOCost) / NULLIF(AVG(pcc.penCount), 0) as 'AvgCostHd'
+        ,isNull(SUM(cst.FIFOCost) / NULLIF(AVG(pcc.penCount), 0), 0) as 'AvgCostHd'
     from Location l
     join Pen p on p.LocationGID = l.LocationGID
     join FeedingScheduleDrop fsd on fsd.LocationGID = p.LocationGID
