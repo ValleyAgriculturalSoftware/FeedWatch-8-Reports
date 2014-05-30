@@ -1321,6 +1321,8 @@ namespace XtraReportSerialization {
             this.Active_Recipe_Instructions.DataMember = "vas_FeedWatch_Model_IListReportGroup_vas_FeedWatch_Model_Entities_Recipe.vas_Feed" +
                 "Watch_Model_IListReportGroup_vas_FeedWatch_Model_Entities_Recipe_ActiveRecipeIns" +
                 "tructions";
+            this.Active_Recipe_Instructions.FilterString = "Not IsNullOrEmpty([vas_FeedWatch_Model_IListReportGroup_vas_FeedWatch_Model_Entit" +
+                "ies_Recipe_ActiveRecipeInstructions_Location_LocationName])";
             this.Active_Recipe_Instructions.Level = 1;
             this.Active_Recipe_Instructions.Name = "Active_Recipe_Instructions";
             // 
@@ -1780,7 +1782,7 @@ namespace XtraReportSerialization {
             this.yTPS99y1we.StylePriority.UseFont = false;
             this.yTPS99y1we.StylePriority.UseTextAlignment = false;
             this.yTPS99y1we.Tag = "lblPrintedDateTime";
-            this.yTPS99y1we.Text = "5/30/2014 11:41:59 AM";
+            this.yTPS99y1we.Text = "5/30/2014 1:12:18 PM";
             this.yTPS99y1we.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // JieeuonnrG
@@ -1826,7 +1828,7 @@ namespace XtraReportSerialization {
             this.il9SG7JDwJ.StylePriority.UseFont = false;
             this.il9SG7JDwJ.StylePriority.UseTextAlignment = false;
             this.il9SG7JDwJ.Tag = "lblCompanyName";
-            this.il9SG7JDwJ.Text = "Rio Blanco Dairy";
+            this.il9SG7JDwJ.Text = "Aurora Organic - Cold Water";
             this.il9SG7JDwJ.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // EORSTL0MWV
@@ -2852,6 +2854,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="ff4c7f1f-efea-4533-a22f-585524b6941b" ReportUseType="2" ReportType="1" ReportName="Recipe Feeding Summary" Description="Summary of Recipes currently being fed" CreatedDT="2014-05-30T09:26:52.48" ModifiedDT="2014-05-30T11:43:14.377" ModifiedBy="VAS" ConcurrencyTS="AAAAAAABMSc=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="ff4c7f1f-efea-4533-a22f-585524b6941b" ReportUseType="2" ReportType="1" ReportName="Recipe Feeding Summary" Description="Summary of Recipes currently being fed" CreatedDT="2014-05-30T09:26:52.48" ModifiedDT="2014-05-30T13:07:18.39" ModifiedBy="VAS" ConcurrencyTS="AAAAAAABQHA=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
