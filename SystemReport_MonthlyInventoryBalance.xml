@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="d1a47e48-45c8-45e2-a024-f5e4ea680744" ReportUseType="2" ReportType="5" ReportName="Monthly Inventory Balance" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2014-05-29T14:34:01.773" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAdTQ=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="d1a47e48-45c8-45e2-a024-f5e4ea680744" ReportUseType="2" ReportType="5" ReportName="Monthly Inventory Balance" Description="Inventory report showing Starting Inventory, Purchases, Usage and Ending per Month." CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2014-05-30T15:10:25.603" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAhNE=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
