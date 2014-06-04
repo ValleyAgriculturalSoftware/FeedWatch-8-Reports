@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="cae07dc8-161e-4fd9-9ca4-f9aea7f7a455" ReportUseType="2" ReportType="5" ReportName="Feeding History" Description="History of feedings per day" CreatedDT="2012-08-17T16:07:38" ModifiedDT="2014-05-19T16:22:25.823" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKkw=" ReportVersion="10" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="cae07dc8-161e-4fd9-9ca4-f9aea7f7a455" ReportUseType="2" ReportType="5" ReportName="Feeding History" CreatedDT="2012-08-17T16:07:38" ModifiedDT="2014-06-04T15:05:42.467" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAUxQ=" ReportVersion="12" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -22,16 +22,18 @@
           ,hfp.FeedingPeriodName
           ,usr.UserID as 'UserName'
           ,cmp.CompanyName
-          ,z.IngCount
-          ,z.IngLoaded
-          ,MixIsComplete = convert(bit, case when z.IngLoaded = z.IngCount then 1 else 0 end)
-          ,MixIsPartial = CONVERT(bit, case when z.IngLoaded &amp;gt; 0 and z.IngLoaded &amp;lt; z.IngCount then 1 else 0 end)
-          ,MixIsMissing = CONVERT(bit, case when z.IngCount &amp;gt; 0 and z.IngLoaded = 0 then 1 else 0 end)
+          ,z.IngCount    
+          ,z.IngLoaded    
+          ,MixIsComplete = convert(bit, case when z.IngLoaded = z.IngCount then 1 else 0 end)     
+          ,MixIsPartial = CONVERT(bit, case when z.IngLoaded &amp;gt; 0 and z.IngLoaded &amp;lt; z.IngCount then 1 else 0 end)    
+          ,MixIsMissing = CONVERT(bit, case when z.IngCount &amp;gt; 0 and z.IngLoaded = 0 then 1 else 0 end) 
       from (
         select fsm.FeedingScheduleMixGID
               --,first_mi.TransactionDT as 'StartDT'
               --,dateadd(second, last_drop.DurationSeconds, last_drop.TransactionDT) as 'StopDT'
-              ,DATEADD(second, -first_mi.DurationSeconds, first_mi.TransactionDT) as 'StartDT'
+     ,case when map.CreatedDT is null or map.CreatedDT &amp;gt; DATEADD(second, -first_mi.DurationSeconds, first_mi.TransactionDT) 
+    then DATEADD(second, -first_mi.DurationSeconds, first_mi.TransactionDT)
+    else map.CreatedDT end as StartDT
               ,last_drop.TransactionDT as 'StopDT'
               ,TargetAF_Oz = (select SUM(mi.TargetAFOz)
                                 from FeedingScheduleMixInstruction mi
@@ -39,21 +41,24 @@
               ,ActualAF_Oz = (select SUM( case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end )
                                 from FeedingScheduleMixInstruction mi
                                 join InventoryTransaction it on it.TransactionSourceGID = mi.FeedingScheduleMixInstructionGID
-                                join Ingredient ing on ing.InventoryItemGID = it.InventoryItemGID
+                                join Ingredient ing on ing.InventoryItemGID = it.InventoryItemGID 
                                 where mi.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID)
-              ,IngCount = (select COUNT(1)
-                             from FeedingScheduleMixInstruction fsmi
-                             left join InventoryTransaction it on it.TransactionSourceGID = fsmi.FeedingScheduleMixInstructionGID
-                             left join RecipeInstruction ri on ri.RecipeInstructionGID = fsmi.RecipeInstructionGID
-                             where fsmi.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID
-                               and fsmi.InventoryItemGID is not null and fsmi.SourceLocationGID is not null
-                               and case when it.InventoryTransactionGID is null and ri.Inactive = 1 and ri.ModifiedDT &amp;lt;= fsmi.ModifiedDT then 0 else 1 end = 1)
-              ,IngLoaded = (select COUNT(1)
-                              from FeedingScheduleMixInstruction fsmi
-                              join InventoryTransaction it on it.TransactionSourceGID = fsmi.FeedingScheduleMixInstructionGID
-                              where fsmi.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID
-                                and fsmi.InventoryItemGID is not null and fsmi.SourceLocationGID is not null)
+                                ,IngCount = (select COUNT(1)    
+                             from FeedingScheduleMixInstruction fsmi    
+                             left join InventoryTransaction it on it.TransactionSourceGID = fsmi.FeedingScheduleMixInstructionGID     
+                             left join RecipeInstruction ri on ri.RecipeInstructionGID = fsmi.RecipeInstructionGID    
+                             where fsmi.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID     
+                               and fsmi.InventoryItemGID is not null and fsmi.SourceLocationGID is not null     
+                               and case when it.InventoryTransactionGID is null and ri.Inactive = 1 and ri.ModifiedDT &amp;lt;= fsmi.ModifiedDT then 0 else 1 end = 1)     
+              ,IngLoaded = (select COUNT(1)     
+                              from FeedingScheduleMixInstruction fsmi     
+                              join InventoryTransaction it on it.TransactionSourceGID = fsmi.FeedingScheduleMixInstructionGID     
+                              where fsmi.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID    
+                                and fsmi.InventoryItemGID is not null and fsmi.SourceLocationGID is not null) 
           from FeedingScheduleMix fsm
+
+  outer apply (select top  1 CreatedDT from FeedingScheduleMixMap map
+                where map.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID) map
           
           outer apply (select top  1 it.*
                          from FeedingScheduleMixInstruction mi
@@ -71,48 +76,50 @@
                                         order by row_num desc) drop_trans
                          where fsm2.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID
                          
-                         ) last_drop	
+                         ) last_drop
+                         
+          
       ) z
       join FeedingScheduleMix fsm on fsm.FeedingScheduleMixGID = z.FeedingScheduleMixGID
       join FeedingSchedule fs on fs.FeedingScheduleGID = fsm.FeedingScheduleGID
       join Recipe rec on rec.RecipeGID = coalesce(fsm.ActualRecipeGID, fsm.PlanRecipeGID)
       left join Company cmp on cmp.CompanyGID = rec.CompanyGID
       outer apply (select top 1 hr.* from HistoryRecipe hr where hr.RecipeGID = rec.RecipeGID and hr.CreatedDT &amp;lt;= coalesce(z.StartDT, fs.InstanceDate)) hr
-      outer apply (select top 1 he.* from HistoryLocation he where he.LocationGID = fsm.LocationGID and he.CreatedDT &amp;lt;= coalesce(z.StartDT, fs.InstanceDate)) he
+      outer apply (select top 1 he.* from HistoryLocation he where he.LocationGID = coalesce(fsm.ActualLocationGID, fsm.LocationGID) and he.CreatedDT &amp;lt;= coalesce(z.StartDT, fs.InstanceDate)) he
       outer apply (select top 1 hfp.* from HistoryFeedingPeriod hfp where hfp.FeedingPeriodGID = fs.FeedingPeriodGID and hfp.CreatedDT &amp;lt;= coalesce(z.StartDT, fs.InstanceDate)) hfp
       left join [User] usr on usr.UserGID = fsm.ByUserGID
-      union all
-      select 
-			ManualFeedingGID as FeedingScheduleMixGID,
-			convert(date, mf.CreatedDT) as ReportDate,
-			dateadd(second, -it.DurationSeconds, it.TransactionDT) as StartDT,
-			it.TransactionDT as StopDT,
-			dbo.GetMeasurementValue(it.TargetUnitQuantity, cmp.MediumMeasurementType) as TargetAF_MQty,
-			dbo.GetMeasurementValue(it.UnitQuantity, cmp.MediumMeasurementType) as ActualAF_MQty,
-			dbo.GetMeasurementValue(it.UnitQuantity - it.TargetUnitQuantity, cmp.MediumMeasurementType) as TargetAF_MQty_Error,
-			case when it.TargetUnitQuantity = 0 then 0 else
-				it.UnitQuantity - it.TargetUnitQuantity / it.TargetUnitQuantity end as TargetAF_ErrorPct,
-			ii.InventoryItemName as LoadDescription,
-			'' as RecipeName,
-			l.LocationName as MixEquipmentName,
-			'SYSTEM' as FeedingPeriodName,
-			u.UserID as UserName,
-			cmp.CompanyName,
-			1 as IngCount,
-			1 as IngLoaded,
-			convert(bit, 1) as MixIsComplete,
-			0 as MixIsPartial,
-			0 as MixIsMissing
-	  from ManualFeeding mf
-	  join InventoryTransaction it on it.TransactionSourceGID = mf.ManualFeedingGID
-	  join InventoryItem ii on ii.InventoryItemGID = it.InventoryItemGID
-	  join Company cmp on cmp.CompanyGID = ii.CompanyGID
-	  join Location l on l.LocationGID = it.ToLocationGID
-	  join EquipmentLocation el on el.LocationGID = l.LocationGID
-	  join Equipment eq on eq.EquipmentGID = el.EquipmentGID
-	  join EquipmentType eqt on eqt.EquipmentTypeGID = eq.EquipmentTypeGID
-		and eqt.OperationType &amp;lt;&amp;gt; 2
-	  join [User] u on u.UserGID = mf.UserGID
+      union all     
+     select      
+     ManualFeedingGID as FeedingScheduleMixGID,    
+     convert(date, mf.CreatedDT) as ReportDate,    
+     dateadd(second, -it.DurationSeconds, it.TransactionDT) as StartDT,    
+     it.TransactionDT as StopDT,     
+     dbo.GetMeasurementValue(it.TargetUnitQuantity, cmp.MediumMeasurementType) as TargetAF_MQty,     
+     dbo.GetMeasurementValue(it.UnitQuantity, cmp.MediumMeasurementType) as ActualAF_MQty,     
+     dbo.GetMeasurementValue(it.UnitQuantity - it.TargetUnitQuantity, cmp.MediumMeasurementType) as TargetAF_MQty_Error,     
+     case when it.TargetUnitQuantity = 0 then 0 else     
+       it.UnitQuantity - it.TargetUnitQuantity / it.TargetUnitQuantity end as TargetAF_ErrorPct,     
+     ii.InventoryItemName as LoadDescription,    
+     '' as RecipeName,     
+     l.LocationName as MixEquipmentName,     
+     'SYSTEM' as FeedingPeriodName,    
+     u.UserID as UserName,     
+     cmp.CompanyName,    
+     1 as IngCount,    
+     1 as IngLoaded,     
+     convert(bit, 1) as MixIsComplete,     
+     0 as MixIsPartial,    
+     0 as MixIsMissing     
+     from ManualFeeding mf     
+     join InventoryTransaction it on it.TransactionSourceGID = mf.ManualFeedingGID     
+     join InventoryItem ii on ii.InventoryItemGID = it.InventoryItemGID    
+     join Company cmp on cmp.CompanyGID = ii.CompanyGID    
+     join Location l on l.LocationGID = it.ToLocationGID     
+     join EquipmentLocation el on el.LocationGID = l.LocationGID     
+     join Equipment eq on eq.EquipmentGID = el.EquipmentGID    
+     join EquipmentType eqt on eqt.EquipmentTypeGID = eq.EquipmentTypeGID    
+     and eqt.OperationType &amp;lt;&amp;gt; 2    
+     join [User] u on u.UserGID = mf.UserGID 
 ) mixsum
 where (1=1)&lt;/QueryText&gt;
 	&lt;PreQueryText /&gt;
@@ -557,8 +564,8 @@ where (1=1)&lt;/QueryText&gt;
 	<CrossTabHidePivotHeaders>false</CrossTabHidePivotHeaders>
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
-///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.10.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
@@ -1248,12 +1255,12 @@ namespace XtraReportSerialization {
             this.label22.BorderWidth = 2;
             this.label22.CanGrow = false;
             this.label22.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label22.LocationFloat = new DevExpress.Utils.PointFloat(526.0424F, 51.375F);
+            this.label22.LocationFloat = new DevExpress.Utils.PointFloat(526.0425F, 51.375F);
             this.label22.Multiline = true;
             this.label22.Name = "label22";
             this.label22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label22.Scripts.OnBeforePrint = "setHeaderBackground";
-            this.label22.SizeF = new System.Drawing.SizeF(85F, 33F);
+            this.label22.SizeF = new System.Drawing.SizeF(83.95776F, 33F);
             this.label22.StylePriority.UseBackColor = false;
             this.label22.StylePriority.UseBorderColor = false;
             this.label22.StylePriority.UseBorders = false;
@@ -2868,7 +2875,7 @@ namespace XtraReportSerialization {
             this.label61.Name = "label61";
             this.label61.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.label61.Scripts.OnBeforePrint = "setTransparentBackground";
-            this.label61.SizeF = new System.Drawing.SizeF(89.00021F, 18F);
+            this.label61.SizeF = new System.Drawing.SizeF(84.99931F, 18F);
             this.label61.StylePriority.UseBorderColor = false;
             this.label61.StylePriority.UseBorders = false;
             this.label61.StylePriority.UseBorderWidth = false;
@@ -2887,7 +2894,7 @@ namespace XtraReportSerialization {
             this.label62.Name = "label62";
             this.label62.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.label62.Scripts.OnBeforePrint = "setTransparentBackground";
-            this.label62.SizeF = new System.Drawing.SizeF(88.99997F, 18F);
+            this.label62.SizeF = new System.Drawing.SizeF(84.99924F, 18F);
             this.label62.StylePriority.UseBorderColor = false;
             this.label62.StylePriority.UseBorders = false;
             this.label62.StylePriority.UseBorderWidth = false;
@@ -2903,7 +2910,7 @@ namespace XtraReportSerialization {
             this.label71.Name = "label71";
             this.label71.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.label71.Scripts.OnBeforePrint = "setTransparentBackground";
-            this.label71.SizeF = new System.Drawing.SizeF(89.00024F, 18F);
+            this.label71.SizeF = new System.Drawing.SizeF(84.99933F, 18F);
             this.label71.StylePriority.UseBorderColor = false;
             this.label71.StylePriority.UseBorders = false;
             this.label71.StylePriority.UseBorderWidth = false;
@@ -3159,7 +3166,7 @@ namespace XtraReportSerialization {
             this.label15.Name = "label15";
             this.label15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.label15.Scripts.OnBeforePrint = "setTransparentBackground";
-            this.label15.SizeF = new System.Drawing.SizeF(88.99997F, 18F);
+            this.label15.SizeF = new System.Drawing.SizeF(84.99924F, 18F);
             this.label15.StylePriority.UseBorderColor = false;
             this.label15.StylePriority.UseBorders = false;
             this.label15.StylePriority.UseBorderWidth = false;
