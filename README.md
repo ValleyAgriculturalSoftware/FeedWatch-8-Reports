@@ -11,7 +11,7 @@ Or using the GitHub app for [Windows](https://windows.github.com/) or [Mac](http
 ##### Importing Into FeedWatch
 
 1. Open up Reports screen
-1. Right click in the empty space and select `Import Reports` or in the toolbar.
+1. Right click in the empty space and select `Import From Disk` or click the icon in the toolbar.
 1. Navigate to your report folder
 1. Select the reports and click `Import`
 
@@ -23,7 +23,7 @@ Or using the GitHub app for [Windows](https://windows.github.com/) or [Mac](http
 1. Make your changes then commit and push them
 1. Open a [Pull Request](https://github.com/ValleyAgriculturalSoftware/FeedWatch-8-Reports/compare/)
 
-After being reviewed, your changes will be added or a modifications may be requested.
+After being reviewed, your changes will be added or modifications may be requested.
 
 ##### VAS Employees
 
