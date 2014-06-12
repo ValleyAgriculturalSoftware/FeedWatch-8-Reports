@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="d38642b7-f620-417d-9516-ff1329d394b9" ReportUseType="2" ReportType="5" ReportName="Load Accuracy Graph" CreatedDT="2014-05-16T14:47:59.297" ModifiedDT="2014-05-22T16:55:33.857" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAoWQ=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="d38642b7-f620-417d-9516-ff1329d394b9" ReportUseType="2" ReportType="5" ReportName="Load Accuracy Graph" Description="Feeder Accuracy Graph per day" CreatedDT="2014-05-16T14:47:59.297" ModifiedDT="2014-06-12T10:05:55.317" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA0wg=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>

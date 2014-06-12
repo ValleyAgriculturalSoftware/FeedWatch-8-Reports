@@ -1648,6 +1648,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="b37e982a-f6a8-4aa0-a69f-fb5bdb77f958" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage by Date" CreatedDT="2014-06-03T08:24:13.29" ModifiedDT="2014-06-04T11:10:40.21" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAUfY=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="b37e982a-f6a8-4aa0-a69f-fb5bdb77f958" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage by Date" Description="AF Ingredient Usage grouped by date" CreatedDT="2014-06-03T08:24:13.29" ModifiedDT="2014-06-12T10:04:12.92" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA0wc=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>

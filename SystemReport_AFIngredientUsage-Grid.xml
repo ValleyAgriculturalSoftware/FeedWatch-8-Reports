@@ -5,27 +5,6 @@
 	&lt;IsCustom&gt;false&lt;/IsCustom&gt;
 	&lt;ChildObjects&gt;
 		&lt;ReportObject&gt;
-			&lt;ObjectName&gt;FeedingScheduleMix&lt;/ObjectName&gt;
-			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
-			&lt;ChildObjects&gt;
-				&lt;ReportObject&gt;
-					&lt;ObjectName&gt;LoadDescription&lt;/ObjectName&gt;
-					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
-					&lt;ChildObjects /&gt;
-					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
-					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
-					&lt;ObjectTypeName&gt;System.String&lt;/ObjectTypeName&gt;
-					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
-					&lt;Selected&gt;true&lt;/Selected&gt;
-				&lt;/ReportObject&gt;
-			&lt;/ChildObjects&gt;
-			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
-			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
-			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMix&lt;/ObjectTypeName&gt;
-			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
-			&lt;Selected&gt;true&lt;/Selected&gt;
-		&lt;/ReportObject&gt;
-		&lt;ReportObject&gt;
 			&lt;ObjectName&gt;TargetAF&lt;/ObjectName&gt;
 			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
 			&lt;ChildObjects /&gt;
@@ -144,6 +123,27 @@
 			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
 			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
 			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Entities.Ingredient&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;FeedingScheduleMix&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects&gt;
+				&lt;ReportObject&gt;
+					&lt;ObjectName&gt;LoadDescription&lt;/ObjectName&gt;
+					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+					&lt;ChildObjects /&gt;
+					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+					&lt;ObjectTypeName&gt;System.String&lt;/ObjectTypeName&gt;
+					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+					&lt;Selected&gt;true&lt;/Selected&gt;
+				&lt;/ReportObject&gt;
+			&lt;/ChildObjects&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMix&lt;/ObjectTypeName&gt;
 			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
 			&lt;Selected&gt;true&lt;/Selected&gt;
 		&lt;/ReportObject&gt;
@@ -801,7 +801,7 @@ namespace XtraReportSerialization {
             this.VKELXvKscF.StylePriority.UseFont = false;
             this.VKELXvKscF.StylePriority.UseTextAlignment = false;
             this.VKELXvKscF.Tag = "lblPrintedDateTime";
-            this.VKELXvKscF.Text = "6/4/2014 11:51:42 AM";
+            this.VKELXvKscF.Text = "6/12/2014 10:01:35 AM";
             this.VKELXvKscF.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // MCOARDAVLr
@@ -847,7 +847,7 @@ namespace XtraReportSerialization {
             this.QckLIRDvj7.StylePriority.UseFont = false;
             this.QckLIRDvj7.StylePriority.UseTextAlignment = false;
             this.QckLIRDvj7.Tag = "lblCompanyName";
-            this.QckLIRDvj7.Text = "Aurora Organic - Cold Water";
+            this.QckLIRDvj7.Text = "Sample Dairy";
             this.QckLIRDvj7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // NTPLovuj6E
@@ -937,7 +937,7 @@ namespace XtraReportSerialization {
             this.uh2Ls39o4L.StylePriority.UseFont = false;
             this.uh2Ls39o4L.StylePriority.UseTextAlignment = false;
             this.uh2Ls39o4L.Tag = "lblApplicationName";
-            this.uh2Ls39o4L.Text = "FeedWatch v8.1.27.0";
+            this.uh2Ls39o4L.Text = "FeedWatch v8.1.32.0";
             this.uh2Ls39o4L.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // YDbL2VWPxk
@@ -1170,6 +1170,7 @@ namespace XtraReportSerialization {
             this.pivotGrid1.OptionsView.ShowDataHeaders = false;
             this.pivotGrid1.OptionsView.ShowFilterHeaders = false;
             this.pivotGrid1.OptionsView.ShowRowHeaders = false;
+            this.pivotGrid1.Prefilter.CriteriaString = "Not IsNullOrEmpty([pivotGridField3])";
             this.pivotGrid1.SizeF = new System.Drawing.SizeF(979F, 200F);
             // 
             // pivotGridField1
@@ -1419,6 +1420,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="dadfd6db-3752-4393-bf38-3b0d088d2066" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage - Grid" CreatedDT="2014-02-12T09:39:54.96" ModifiedDT="2014-06-04T11:35:25.837" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAUhU=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="dadfd6db-3752-4393-bf38-3b0d088d2066" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage - Grid" Description="AF Ingredient Usage in a pivot grid" CreatedDT="2014-02-12T09:39:54.96" ModifiedDT="2014-06-12T10:02:58.593" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA0wY=" ReportVersion="1" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
