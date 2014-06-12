@@ -1678,6 +1678,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="3d6f1171-c2d0-452a-94e5-440c5ac542ac" ReportUseType="2" ReportType="1" ReportName="DMI &amp;amp; Cost by Pen Type" Description="Dry Matter Intake with Cost grouped by Pen Type" CreatedDT="2014-05-05T10:51:38.183" ModifiedDT="2014-05-19T16:00:05.11" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKaE=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="3d6f1171-c2d0-452a-94e5-440c5ac542ac" ReportUseType="2" ReportType="1" ReportName="DMI and Cost by Pen Type" Description="Dry Matter Intake with Cost grouped by Pen Type" CreatedDT="2014-05-05T10:51:38.183" ModifiedDT="2014-05-19T16:00:05.11" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKaE=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
