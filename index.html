@@ -20,7 +20,7 @@
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
         <i class="icon-reorder"></i>
       </button>
-      <a class="navbar-brand" href="/" ng-click="select()">
+      <a class="navbar-brand" href="/FeedWatch-8-Reports" ng-click="select()">
         FeedWatch 8 Reports Info
       </a>
     </div>
@@ -41,7 +41,7 @@
     <div id="main-wrapper" class="col-md-9 pull-right">
       <div id="main">
         <div class="page-header">
-          <div ng-include="'/intro.html'" ng-hide="selectedReport"></div>
+          <div ng-include="'/FeedWatch-8-Reports/intro.html'" ng-hide="selectedReport"></div>
           <h3 ng-show="selectedReport">{{ selectedReport.name }}</h3>
         </div>
         <div class="row" ng-show="selectedReport">
