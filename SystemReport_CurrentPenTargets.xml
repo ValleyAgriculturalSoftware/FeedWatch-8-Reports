@@ -529,7 +529,7 @@ namespace XtraReportSerialization {
             this.QckLIRDvj7.StylePriority.UseFont = false;
             this.QckLIRDvj7.StylePriority.UseTextAlignment = false;
             this.QckLIRDvj7.Tag = "lblCompanyName";
-            this.QckLIRDvj7.Text = "Aurora Organic - Cold Water";
+            this.QckLIRDvj7.Text = "Sample Dairy";
             this.QckLIRDvj7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // NTPLovuj6E

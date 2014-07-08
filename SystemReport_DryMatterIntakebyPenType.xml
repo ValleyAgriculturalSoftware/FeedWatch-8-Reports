@@ -716,7 +716,7 @@ namespace XtraReportSerialization {
             this.ID7qnV38Ni.StylePriority.UseFont = false;
             this.ID7qnV38Ni.StylePriority.UseTextAlignment = false;
             this.ID7qnV38Ni.Tag = "lblCompanyName";
-            this.ID7qnV38Ni.Text = "Aurora Organic - Cold Water";
+            this.ID7qnV38Ni.Text = "Sample Dairy";
             this.ID7qnV38Ni.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // fm1qwYGI5y
@@ -1235,7 +1235,7 @@ namespace XtraReportSerialization {
             this.label4.StylePriority.UseFont = false;
             this.label4.StylePriority.UseTextAlignment = false;
             this.label4.Tag = "lblCompanyName";
-            this.label4.Text = "Aurora Organic - Cold Water";
+            this.label4.Text = "Sample Dairy";
             this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // line1

@@ -846,7 +846,7 @@ namespace XtraReportSerialization {
             this.S6VscWGvih.StylePriority.UseFont = false;
             this.S6VscWGvih.StylePriority.UseTextAlignment = false;
             this.S6VscWGvih.Tag = "lblCompanyName";
-            this.S6VscWGvih.Text = "Coulee Flats Dairy";
+            this.S6VscWGvih.Text = "Sample Dairy";
             this.S6VscWGvih.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // LfesRo4C0f

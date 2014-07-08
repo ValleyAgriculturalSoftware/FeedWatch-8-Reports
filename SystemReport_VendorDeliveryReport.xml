@@ -892,7 +892,7 @@ namespace XtraReportSerialization {
             this.lblCompanyName.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
             this.lblCompanyName.StylePriority.UseFont = false;
             this.lblCompanyName.StylePriority.UseTextAlignment = false;
-            this.lblCompanyName.Text = "Aurora Organic - Cold Water";
+            this.lblCompanyName.Text = "Sample Dairy";
             this.lblCompanyName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // lblPrintedBy

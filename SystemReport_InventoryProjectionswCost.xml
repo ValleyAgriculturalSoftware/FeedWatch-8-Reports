@@ -1033,7 +1033,7 @@ namespace XtraReportSerialization {
             this.trsZbNcEeE.StylePriority.UseFont = false;
             this.trsZbNcEeE.StylePriority.UseTextAlignment = false;
             this.trsZbNcEeE.Tag = "lblCompanyName";
-            this.trsZbNcEeE.Text = "Ribeiro Dairy Farm";
+            this.trsZbNcEeE.Text = "Sample Dairy";
             this.trsZbNcEeE.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // a5FZhY4rkO

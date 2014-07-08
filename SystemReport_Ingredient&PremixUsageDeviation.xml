@@ -1243,7 +1243,7 @@ namespace XtraReportSerialization {
             this.oVlCBXx87J.StylePriority.UseFont = false;
             this.oVlCBXx87J.StylePriority.UseTextAlignment = false;
             this.oVlCBXx87J.Tag = "lblCompanyName";
-            this.oVlCBXx87J.Text = "Aurora Organic - Cold Water";
+            this.oVlCBXx87J.Text = "Sample Dairy";
             this.oVlCBXx87J.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // VvjCfOTUCA

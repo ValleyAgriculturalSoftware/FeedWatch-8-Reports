@@ -887,7 +887,7 @@ namespace XtraReportSerialization {
             this.AWulkMon7n.StylePriority.UseFont = false;
             this.AWulkMon7n.StylePriority.UseTextAlignment = false;
             this.AWulkMon7n.Tag = "lblCompanyName";
-            this.AWulkMon7n.Text = "Aurora Organic - Cold Water";
+            this.AWulkMon7n.Text = "Sample Dairy";
             this.AWulkMon7n.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // dMolnaUq6b

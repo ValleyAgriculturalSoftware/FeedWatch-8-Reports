@@ -799,7 +799,7 @@ namespace XtraReportSerialization {
             this.oiVOBMI3FY.StylePriority.UseFont = false;
             this.oiVOBMI3FY.StylePriority.UseTextAlignment = false;
             this.oiVOBMI3FY.Tag = "lblCompanyName";
-            this.oiVOBMI3FY.Text = "Diamond H Dairy";
+            this.oiVOBMI3FY.Text = "Sample Dairy";
             this.oiVOBMI3FY.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // tM9piGe7O5

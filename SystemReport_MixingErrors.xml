@@ -1093,7 +1093,7 @@ namespace XtraReportSerialization {
             this.ID7qnV38Ni.StylePriority.UseFont = false;
             this.ID7qnV38Ni.StylePriority.UseTextAlignment = false;
             this.ID7qnV38Ni.Tag = "lblCompanyName";
-            this.ID7qnV38Ni.Text = "Sugar Lane";
+            this.ID7qnV38Ni.Text = "Sample Dairy";
             this.ID7qnV38Ni.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // fm1qwYGI5y

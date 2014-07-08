@@ -1036,7 +1036,7 @@ namespace XtraReportSerialization {
             this.kKRNKeKgK9.StylePriority.UseFont = false;
             this.kKRNKeKgK9.StylePriority.UseTextAlignment = false;
             this.kKRNKeKgK9.Tag = "lblCompanyName";
-            this.kKRNKeKgK9.Text = "Pine Breeze Dairy LLC";
+            this.kKRNKeKgK9.Text = "Sample Dairy";
             this.kKRNKeKgK9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // m7IN9xETdd
