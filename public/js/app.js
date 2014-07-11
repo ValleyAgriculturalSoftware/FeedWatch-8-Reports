@@ -38,7 +38,7 @@ App.Reports = Ember.Object.extend();
 
 App.Reports.reopenClass({
   all: function() {
-      return $.getJSON("/public/reports.json").then(function(response) {
+      return $.getJSON("/FeedWatch-8-Reports/public/reports.json").then(function(response) {
         var items = [];
  
         response.forEach( function (item) {
