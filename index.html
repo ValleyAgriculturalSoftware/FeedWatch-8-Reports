@@ -8,21 +8,23 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.0/ember.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.8/ember-data.min.js"></script>
+
   <script src="public/js/app.js"></script>
-  <script src="public/js/controllers/reportlistctrl.js"></script>
 
 </head>
-<body ng-controller="ReportListController">
+<body>
+
+<div id="wrapper">
+<script type="text/x-handlebars" data-template-name="application">
   <div id="header" class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
         <i class="icon-reorder"></i>
       </button>
-      <a class="navbar-brand" href="/FeedWatch-8-Reports" ng-click="select()">
-        FeedWatch 8 Reports Info
-      </a>
+      {{#link-to 'index' classNames="navbar-brand"}}FeedWatch 8 Reports Info{{/link-to}}
     </div>
     <nav class="collapse navbar-collapse">
         <ul class="nav navbar-nav pull-right">
@@ -30,39 +32,108 @@
         </ul>
     </nav>
   </div>
-  <div id="wrapper">
     <div id="sidebar-wrapper" class="col-md-3">
       <div id="sidebar">
         <div class="list-group">
-          <a ng-repeat="report in reports" class="list-group-item" href="" ng-click="select(report)" ng-class="{active: report == selectedReport}">{{ report.name }}</a>
+          {{#each}}
+            {{#link-to 'report' filename classNames="list-group-item"}}{{name}}{{/link-to}}
+          {{/each}}
         </div>
       </div>
     </div>
-    <div id="main-wrapper" class="col-md-9 pull-right">
+    <div id="main-wrapper" class="col-md-9 col-xs-12 pull-right">
       <div id="main">
-        <div class="page-header">
-          <div ng-include="'/FeedWatch-8-Reports/intro.html'" ng-hide="selectedReport"></div>
-          <h3 ng-show="selectedReport">{{ selectedReport.name }}</h3>
-        </div>
-        <div class="row" ng-show="selectedReport">
-          <div class="col-md-9">
-            <div class="well">
-              <dl class="dl-horizontal">
-                <dt>Name</dt>
-                <dd>{{ selectedReport.name }}</dd>
-                <dt>Description</dt>
-                <dd>{{ selectedReport.description }}</dd>
-                <dt>Filename</dt>
-                <dd>{{ selectedReport.filename }} <a href="https://github.com/ValleyAgriculturalSoftware/FeedWatch-8-Reports/blob/master/{{ selectedReport.filename }}"><i class="fa fa-external-link"></i></a></dd>
-                <dt>Last Updated</dt>
-                <dd>{{ selectedReport.modified }}</dd>
-              </dl>
-            </div>
-          </div>
-          <img src="public/images/{{ selectedReport.image }}" class="img img-rounded center-block" />
-        </div>
+        {{outlet}}
       </div>
     </div>
   </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="index">
+  <div class="jumbotron">
+    <div class="container">
+      <h2>FeedWatch 8 Reports<small> Use this site to quickly preview all FeedWatch8 reports. </small></h2>
+      <p>Select a report to the left to view information and a sample of reports.</p>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    <hr>
+
+    <div class="row">
+      <!-- <div class="col-md-4">
+        <h2>Getting Started</h2>
+        <p>Select a report to the left to view information and a sample of reports.
+      </div> -->
+      <div class="col-md-6">
+        <h2>Importing Reports</h2>
+        <p>Right-click in the Reports window and select <code>Import From Disk</code>. Select the report you wish to import and hit Open or just double-click.</p>
+        <p><a class="btn btn-default btn-sm" role="button" data-toggle="modal" href='#import-gif'><i class="fa fa-search"></i> Show Me</a></p>
+      </div>
+      <div class="col-md-6">
+        <h2>Contributing</h2>
+        <p>Email us a copy of your report to add to the library: <a href="mailto:fwsupport@vas.com">fwsupport@vas.com</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p class="text-muted">&copy; VAS</p>
+    </footer>
+  </div> <!-- /container -->
+
+  <div class="modal fade" id="import-gif">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Importing Reports</h4>
+        </div>
+        <div class="modal-body">
+          <img src="public/images/import-report.gif" class="img img-responsive">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</script>
+
+<script type="text/x-handlebars" data-template-name="reports">
+  <p>123</p>
+</script>
+
+<script type="text/x-handlebars" data-template-name="report">
+  <div class="page-header">
+    <h1>{{name}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="well">
+        <dl class="dl-horizontal">
+          <dt>Name</dt>
+          <dd>{{ name }}</dd>
+          <dt>Description</dt>
+          <dd>{{ description }}</dd>
+          <dt>Filename</dt>
+          <dd>{{ filename }} <a {{bind-attr href=url}}><i class="fa fa-external-link"></i></a></dd>
+          <dt>Last Updated</dt>
+          <dd>{{ modified }}</dd>
+        </dl>
+      </div>
+    </div>
+    <img {{bind-attr src=image}} class="img img-rounded img-responsive center-block" />
+  </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="sidebar">
+  {{#each}}
+        {{#link-to 'report' this classNames="list-group-item"}}{{name}}{{/link-to}}
+    {{/each}}
+</script>
+
 </body>
 </html>
