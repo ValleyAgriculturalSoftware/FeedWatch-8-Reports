@@ -825,7 +825,7 @@ namespace XtraReportSerialization {
             this.lblCompanyName.StylePriority.UseFont = false;
             this.lblCompanyName.StylePriority.UseTextAlignment = false;
             this.lblCompanyName.Tag = "lblCompanyName";
-            this.lblCompanyName.Text = "Blue Sky Dairy";
+            this.lblCompanyName.Text = "lblCompanyName";
             this.lblCompanyName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // NTPLovuj6E
