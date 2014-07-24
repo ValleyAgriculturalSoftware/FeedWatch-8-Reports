@@ -1,4 +1,4 @@
-﻿F<SerializableReport>
+﻿<SerializableReport>
 	<RootObjectName>vas.FeedWatch.Model.IDetailReportGroup</RootObjectName>
 	<ReportObjectXML>&lt;ReportObject&gt;
 	&lt;ObjectName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMixInstruction&lt;/ObjectName&gt;
@@ -1648,6 +1648,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="b37e982a-f6a8-4aa0-a69f-fb5bdb77f958" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage by Date" CreatedDT="2014-06-03T08:24:13.29" ModifiedDT="2014-07-24T11:23:11.433" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA904=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="b37e982a-f6a8-4aa0-a69f-fb5bdb77f958" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage by Date" Description="AF Ingredient Usage by Date" CreatedDT="2014-06-03T08:24:13.29" ModifiedDT="2014-07-24T11:29:47.617" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA93g=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
