@@ -1,41 +1,9 @@
-﻿<SerializableReport>
+﻿F<SerializableReport>
 	<RootObjectName>vas.FeedWatch.Model.IDetailReportGroup</RootObjectName>
 	<ReportObjectXML>&lt;ReportObject&gt;
 	&lt;ObjectName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMixInstruction&lt;/ObjectName&gt;
 	&lt;IsCustom&gt;false&lt;/IsCustom&gt;
 	&lt;ChildObjects&gt;
-		&lt;ReportObject&gt;
-			&lt;ObjectName&gt;FeedingScheduleMix&lt;/ObjectName&gt;
-			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
-			&lt;ChildObjects&gt;
-				&lt;ReportObject&gt;
-					&lt;ObjectName&gt;PlanRecipe&lt;/ObjectName&gt;
-					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
-					&lt;ChildObjects&gt;
-						&lt;ReportObject&gt;
-							&lt;ObjectName&gt;RecipeName&lt;/ObjectName&gt;
-							&lt;IsCustom&gt;false&lt;/IsCustom&gt;
-							&lt;ChildObjects /&gt;
-							&lt;IsChildList&gt;false&lt;/IsChildList&gt;
-							&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
-							&lt;ObjectTypeName&gt;System.String&lt;/ObjectTypeName&gt;
-							&lt;SummaryType&gt;6&lt;/SummaryType&gt;
-							&lt;Selected&gt;true&lt;/Selected&gt;
-						&lt;/ReportObject&gt;
-					&lt;/ChildObjects&gt;
-					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
-					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
-					&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.Recipe&lt;/ObjectTypeName&gt;
-					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
-					&lt;Selected&gt;true&lt;/Selected&gt;
-				&lt;/ReportObject&gt;
-			&lt;/ChildObjects&gt;
-			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
-			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
-			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMix&lt;/ObjectTypeName&gt;
-			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
-			&lt;Selected&gt;true&lt;/Selected&gt;
-		&lt;/ReportObject&gt;
 		&lt;ReportObject&gt;
 			&lt;ObjectName&gt;ActualAF&lt;/ObjectName&gt;
 			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
@@ -165,6 +133,38 @@
 			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
 			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
 			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Entities.Ingredient&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;FeedingScheduleMix&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects&gt;
+				&lt;ReportObject&gt;
+					&lt;ObjectName&gt;PlanRecipe&lt;/ObjectName&gt;
+					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+					&lt;ChildObjects&gt;
+						&lt;ReportObject&gt;
+							&lt;ObjectName&gt;RecipeName&lt;/ObjectName&gt;
+							&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+							&lt;ChildObjects /&gt;
+							&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+							&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+							&lt;ObjectTypeName&gt;System.String&lt;/ObjectTypeName&gt;
+							&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+							&lt;Selected&gt;true&lt;/Selected&gt;
+						&lt;/ReportObject&gt;
+					&lt;/ChildObjects&gt;
+					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+					&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.Recipe&lt;/ObjectTypeName&gt;
+					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+					&lt;Selected&gt;true&lt;/Selected&gt;
+				&lt;/ReportObject&gt;
+			&lt;/ChildObjects&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMix&lt;/ObjectTypeName&gt;
 			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
 			&lt;Selected&gt;true&lt;/Selected&gt;
 		&lt;/ReportObject&gt;
@@ -409,24 +409,24 @@ namespace XtraReportSerialization {
                         "5/iSap94VF0oVRULt95ZgIBAADrAgAAtgEAAEEDAAAAAAAAFgMAAFgAAADAAgAAagIAAOMBAAAvAQAAK" +
                         "wAAANUAAACVAgAAfQAAAFwBAAAZBAAAPQIAAKoAAAB2AwAA4gMAABACAACtAwAAiQEAABgGAAAmJAB0A" +
                         "GgAaQBzAC4AUwBjAHIAaQBwAHQAcwBTAG8AdQByAGMAZQAAAAAAKEEARgBUAG8AbgBDAG8AcwB0AC4AR" +
-                        "QB4AHAAcgBlAHMAcwBpAG8AbgAOBgAAIEoAaQBlAGUAdQBvAG4AbgByAEcALgBJAG0AYQBnAGUA9QYAA" +
-                        "ChXAEEAdgBnAF8AQwBvAHMAdAAuAEUAeABwAHIAZQBzAHMAaQBvAG4AvAsAACZsAGEAYgBlAGwAMQAuA" +
-                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAKsMAAAobABhAGIAZQBsADEAMgAuAEQAYQB0AGEAQgBpAG4AZ" +
-                        "ABpAG4AZwBzAHwNAAAobABhAGIAZQBsADEAMwAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAFEOAAAob" +
-                        "ABhAGIAZQBsADEANQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzACAPAAAobABhAGIAZQBsADIAMgAuA" +
-                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAAMQAAAobABhAGIAZQBsADIAMwAuAEQAYQB0AGEAQgBpAG4AZ" +
-                        "ABpAG4AZwBzANcQAAAobABhAGIAZQBsADIANAAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAKgRAAAob" +
-                        "ABhAGIAZQBsADIANQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAHwSAAAobABhAGIAZQBsADIANwAuA" +
-                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAEsTAAAobABhAGIAZQBsADIAOAAuAEQAYQB0AGEAQgBpAG4AZ" +
-                        "ABpAG4AZwBzAB8UAAAmbABhAGIAZQBsADMALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwDuFAAAJmwAY" +
-                        "QBiAGUAbAA1AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAwxUAACZsAGEAYgBlAGwANwAuAEQAYQB0A" +
-                        "GEAQgBpAG4AZABpAG4AZwBzAJIWAAAmbABhAGIAZQBsADgALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAc" +
-                        "wBnFwAAJmwAYQBiAGUAbAA5AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAShgAADBsAGIAbABBAEYAT" +
-                        "ABiAHMAUwB1AG0ALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwAeGQAAMmwAYgBsAEEARgBUAG8AbgBzA" +
-                        "FMAdQBtAC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMA7RkAADBsAGIAbABEAE0ATABiAHMAUwB1AG0AL" +
-                        "gBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwDBGgAAMmwAYgBsAEQATQBUAG8AbgBzAFMAdQBtAC4ARABhA" +
-                        "HQAYQBCAGkAbgBkAGkAbgBnAHMAkBsAAB51AEIAbgBTAEwAQwBkAFIAZwBIAC4AVABlAHgAdABkHAAAA" +
-                        "YsMSW1wb3J0cyBEZXZFeHByZXNzLlh0cmFFZGl0b3JzDQpJbXBvcnRzIERldkV4cHJlc3MuWHRyYUVka" +
+                        "QB4AHAAcgBlAHMAcwBpAG8AbgAIBgAAIEoAaQBlAGUAdQBvAG4AbgByAEcALgBJAG0AYQBnAGUA7wYAA" +
+                        "ChXAEEAdgBnAF8AQwBvAHMAdAAuAEUAeABwAHIAZQBzAHMAaQBvAG4AtgsAACZsAGEAYgBlAGwAMQAuA" +
+                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAKUMAAAobABhAGIAZQBsADEAMgAuAEQAYQB0AGEAQgBpAG4AZ" +
+                        "ABpAG4AZwBzAHYNAAAobABhAGIAZQBsADEAMwAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAEsOAAAob" +
+                        "ABhAGIAZQBsADEANQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzABoPAAAobABhAGIAZQBsADIAMgAuA" +
+                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAP0PAAAobABhAGIAZQBsADIAMwAuAEQAYQB0AGEAQgBpAG4AZ" +
+                        "ABpAG4AZwBzANEQAAAobABhAGIAZQBsADIANAAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAKIRAAAob" +
+                        "ABhAGIAZQBsADIANQAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAHYSAAAobABhAGIAZQBsADIANwAuA" +
+                        "EQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAEUTAAAobABhAGIAZQBsADIAOAAuAEQAYQB0AGEAQgBpAG4AZ" +
+                        "ABpAG4AZwBzABkUAAAmbABhAGIAZQBsADMALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwDoFAAAJmwAY" +
+                        "QBiAGUAbAA1AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAvRUAACZsAGEAYgBlAGwANwAuAEQAYQB0A" +
+                        "GEAQgBpAG4AZABpAG4AZwBzAIwWAAAmbABhAGIAZQBsADgALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAc" +
+                        "wBhFwAAJmwAYQBiAGUAbAA5AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMARBgAADBsAGIAbABBAEYAT" +
+                        "ABiAHMAUwB1AG0ALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwAYGQAAMmwAYgBsAEEARgBUAG8AbgBzA" +
+                        "FMAdQBtAC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMA5xkAADBsAGIAbABEAE0ATABiAHMAUwB1AG0AL" +
+                        "gBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwC7GgAAMmwAYgBsAEQATQBUAG8AbgBzAFMAdQBtAC4ARABhA" +
+                        "HQAYQBCAGkAbgBkAGkAbgBnAHMAihsAAB51AEIAbgBTAEwAQwBkAFIAZwBIAC4AVABlAHgAdABeHAAAA" +
+                        "YUMSW1wb3J0cyBEZXZFeHByZXNzLlh0cmFFZGl0b3JzDQpJbXBvcnRzIERldkV4cHJlc3MuWHRyYUVka" +
                         "XRvcnMuQ29udHJvbHMNCkltcG9ydHMgRGV2RXhwcmVzcy5YdHJhUmVwb3J0cy5VSQ0KDQpQcml2YXRlI" +
                         "FN1YiBXQXZnX1N1bW1hcnlHZXRSZXN1bHQoQnlWYWwgc2VuZGVyIEFzIE9iamVjdCwgQnlWYWwgZSBBc" +
                         "yBEZXZFeHByZXNzLlh0cmFSZXBvcnRzLlVJLlN1bW1hcnlHZXRSZXN1bHRFdmVudEFyZ3MpDQpEaW0gV" +
@@ -439,119 +439,118 @@ namespace XtraReportSerialization {
                         "HVlDQoJCQlXZWlnaHRUb3RhbCArPSB3ZWlnaHQNCgkJRW5kIElmDQoJRW5kIElmDQoNCk5leHQgaXRlb" +
                         "Q0KDQpJZiBXZWlnaHRUb3RhbCA8PiAwIFRoZW4NCgllLlJlc3VsdCA9IFZhbHVlVG90YWwgLyBXZWlna" +
                         "HRUb3RhbA0KRWxzZQ0KCWUuUmVzdWx0ID0gMC4wDQpFbmQgSWYNCg0KZS5IYW5kbGVkID0gVHJ1ZQ0KR" +
-                        "W5kIFN1Yg0KDQoNClByaXZhdGUgU3ViIEluZ3JlZGllbnRGb290ZXJfQmVmb3JlUHJpbnQoQnlWYWwgc" +
-                        "2VuZGVyIEFzIE9iamVjdCwgQnlWYWwgZSBBcyBTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QcmludEV2Z" +
-                        "W50QXJncykNCiAgRGltIGluZ1R5cGUgPSBHZXRDdXJyZW50Q29sdW1uVmFsdWUoInZhc19GZWVkV2F0Y" +
-                        "2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZ" +
-                        "GluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fSW5ncmVkaWVudF9JbmdyZWRpZW50VHlwZSIpLlRvU3Rya" +
-                        "W5nKCkNCg0KICBJZiBpbmdUeXBlID0gIk1pY3JvYmF0Y2hlciIgVGhlbg0KICAgIGxibEFGTGJzU3VtL" +
-                        "lN1bW1hcnkuRm9ybWF0U3RyaW5nID0gInswOm40fSINCiAgICBsYmxBRlRvbnNTdW0uU3VtbWFyeS5Gb" +
-                        "3JtYXRTdHJpbmcgPSAiezA6bjR9Ig0KICAgIGxibERNTGJzU3VtLlN1bW1hcnkuRm9ybWF0U3RyaW5nI" +
-                        "D0gInswOm40fSINCiAgICBsYmxETVRvbnNTdW0uU3VtbWFyeS5Gb3JtYXRTdHJpbmcgPSAiezA6bjR9I" +
-                        "g0KICBlbHNlDQogICAgbGJsQUZMYnNTdW0uU3VtbWFyeS5Gb3JtYXRTdHJpbmcgPSAiezA6bjB9Ig0KI" +
-                        "CAgIGxibEFGVG9uc1N1bS5TdW1tYXJ5LkZvcm1hdFN0cmluZyA9ICJ7MDpuMn0iDQogICAgbGJsRE1MY" +
-                        "nNTdW0uU3VtbWFyeS5Gb3JtYXRTdHJpbmcgPSAiezA6bjB9Ig0KICAgIGxibERNVG9uc1N1bS5TdW1tY" +
-                        "XJ5LkZvcm1hdFN0cmluZyA9ICJ7MDpuMn0iDQogIEVuZCBJZg0KDQpFbmQgU3ViDQoB5AFbdmFzX0ZlZ" +
+                        "W5kIFN1Yg0KDQpQcml2YXRlIFN1YiBGb3JtYXRXZWlnaHRfU3VtbWFyeUdldFJlc3VsdChCeVZhbCBzZ" +
+                        "W5kZXIgQXMgT2JqZWN0LCBCeVZhbCBlIEFzIERldkV4cHJlc3MuWHRyYVJlcG9ydHMuVUkuU3VtbWFye" +
+                        "UdldFJlc3VsdEV2ZW50QXJncykNCglEaW0gaW5nVHlwZSA9IEdldEN1cnJlbnRDb2x1bW5WYWx1ZSgid" +
+                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
+                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9JbmdyZWRpZW50X0luZ3JlZGllbnRUe" +
+                        "XBlIikuVG9TdHJpbmcoKQ0KDQoJSWYgaW5nVHlwZSA9ICJNaWNyb2JhdGNoZXIiIFRoZW4NCgkJbGJsQ" +
+                        "UZMYnNTdW0uU3VtbWFyeS5Gb3JtYXRTdHJpbmcgPSAiezA6bjR9Ig0KCQlsYmxBRlRvbnNTdW0uU3Vtb" +
+                        "WFyeS5Gb3JtYXRTdHJpbmcgPSAiezA6bjR9Ig0KCQlsYmxETUxic1N1bS5TdW1tYXJ5LkZvcm1hdFN0c" +
+                        "mluZyA9ICJ7MDpuNH0iDQoJCWxibERNVG9uc1N1bS5TdW1tYXJ5LkZvcm1hdFN0cmluZyA9ICJ7MDpuN" +
+                        "H0iDQoJZWxzZQ0KCQlsYmxBRkxic1N1bS5TdW1tYXJ5LkZvcm1hdFN0cmluZyA9ICJ7MDojLCN9Ig0KC" +
+                        "QlsYmxETVRvbnNTdW0uU3VtbWFyeS5Gb3JtYXRTdHJpbmcgPSAiezA6bjJ9Ig0KCQlsYmxETUxic1N1b" +
+                        "S5TdW1tYXJ5LkZvcm1hdFN0cmluZyA9ICJ7MDojLCN9Ig0KCQlsYmxETVRvbnNTdW0uU3VtbWFyeS5Gb" +
+                        "3JtYXRTdHJpbmcgPSAiezA6bjJ9Ig0KCUVuZCBJZg0KDQpFbmQgU3ViDQoB5AFbdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxGaWZvQ29zdF0vW3Zhc19GZWVkV2F0Y2hfTW9kZ" +
+                        "WxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1Nja" +
+                        "GVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUZMYXJnZV1AAAEAAAD/////AQAAAAAAAAAMAgAAAFFTe" +
+                        "XN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva" +
+                        "2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAA" +
+                        "AAJAwAAAA8DAAAAJAQAAAKJUE5HDQoaCgAAAA1JSERSAAAAMAAAADAIBgAAAFcC+YcAAAAEZ0FNQQAAs" +
+                        "Y8L/GEFAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEEEQUGWYaDgQAAA7NJREFUaEPtmM9rE" +
+                        "1EQxwP+BT0IQhF/XLwoFnoqir3oRfCgUIqIJyGoFz0IQRDBg9KTx5aCKFQiJYqH/kCxhyIR8VAsRKo2t" +
+                        "cXY0kqhMaW1jf31nG/dCS+b724SSZQnPviU2dnZeTP75s3bNGKMcRqqdAmqdAmqdAmqdAmqdAmqdAmqd" +
+                        "AmqdAmqdAn7olOo1YCvPYLtvy6osH8xkzFdu/fWhDd3OsSlwZ+iyeqBCjVN4G1nl7g0Mc93XVHhfwI2Y" +
+                        "/FH4tJEPd91RYV/PwEvqErHsDDySywaWeG2YAcR1P2gt+0oKlSUwOrCAr03n0qJC9Ps+QIjT06eKrG7f" +
+                        "/Aw7LIiR4DIgfNCj/uC+qSo0IwgmCNlOvlKzEyaBfZpYBD32gT4asjnciU2iiYrMmxj2PB+G8whAyuo8" +
+                        "QWiwnEE6Hdk4yVQbmDZ25AQ8wE0WZExb+LFxcslNtV0MRXKJlAJ3j55joOM3Qd6yImMebMoK78NVlDGV" +
+                        "QGNoCl1NxIJoqYJeKs0Gz9yjN4HeOMyEgIt2/6z58xGPmcWUt3brM6Pwn5euBWWQBRvz++sWpBAbmqK3" +
+                        "lN0IwsdbKVQPnPJmJHgCrzv2mm+fYjjuafCCQ0e1DyBib5+es/G6zC0U6F8xjobihJQPved3l4dGS1yX" +
+                        "fsEEFjyxs0iHatxbGTWqVBeufEEDV758uw8EugRuSgB2s4U1HSFI+8PGH6ZjnUqvMSZoSgN3GZxApVkL" +
+                        "olcVQKTni2g7Y81AmxUf6ngWfZ8WPnYpHsOIZ6UyIUE6IZSSAI0YXQQ+1o37MvY9SI9/PlXpZLysVlbm" +
+                        "oHvRg2o2z+JDTkZy57cAEHJSIStrlJp+SjLM0n4PqoB0ZJQ8GZlDHm2ymRYvwd66oadzACrUWn5KN9nX" +
+                        "8N3iwYz5F9+m4AEQssOeCdq6LcRqLZ8wPryHHzv0mBoT1YCEgh9s76yo58MCvxkBtpooIz0wyb4HhW5s" +
+                        "IlDJwhIIPTNou5l6AdZYIn+Tvnk0o/hOypyIQHqXAlIAASunH42e3aB5YbElqeHaaCMzGA7/PaKXDjIy" +
+                        "v6YCUmABkbabmC5Qb+5tmQmE600YBsEv7m+At+tcl10Epf7pxaCPyOovYJ/XrFnEfw1wbYN++nYvrW1Y" +
+                        "bLv7pnxBwdKAp+IN2vZ9AqF4IE9wV9BAxF5h3BF+PgjN2VWvo5s4x1YaAYX7MCVEod/GhaU6PcJ2D+gk" +
+                        "dkoJQ5dgypdgipdgipdgipdgipdgipdgipdgipdgirdwUR+AtdHqeXZWJZPAAAAAElFTkSuQmCCCwHsA" +
+                        "Vt2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX" +
+                        "0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0XSArICd8J" +
+                        "yArIFt2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZ" +
+                        "GVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2VdAc4Bd" +
+                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
+                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZ" +
+                        "XRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZ" +
+                        "U1peEluc3RydWN0aW9uX1JlcG9ydERhdGUB0gF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvc" +
+                        "nRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3Ryd" +
+                        "WN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfT" +
+                        "W9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRmlmb0Nvc3QBz" +
+                        "AF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX" +
+                        "0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfS" +
+                        "URldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkd" +
+                        "WxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUYB4AF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvc" +
+                        "nRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3Ryd" +
+                        "WN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfT" +
+                        "W9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fSW5ncmVkaWVudF9JbnZlb" +
+                        "nRvcnlJdGVtTmFtZQHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZ" +
+                        "WVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZ" +
                         "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
-                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxGaWZvQ29zdF0vW3Zhc19GZWVkV2F0Y" +
+                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlAc4BdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHc" +
+                        "m91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0a" +
+                        "W9uX1JlcG9ydERhdGUB0QF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfR" +
+                        "mVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZ" +
+                        "WVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTU" +
+                        "UxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE1MYXJnZQHMAXZhc19GZWVkV2F0Y" +
                         "2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZ" +
-                        "GluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUZMYXJnZV1AAAEAAAD/////AQAAAAAAAAAMA" +
-                        "gAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY" +
-                        "0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhd" +
-                        "GEHAgIAAAAJAwAAAA8DAAAAJAQAAAKJUE5HDQoaCgAAAA1JSERSAAAAMAAAADAIBgAAAFcC+YcAAAAEZ" +
-                        "0FNQQAAsY8L/GEFAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEEEQUGWYaDgQAAA7NJREFUa" +
-                        "EPtmM9rE1EQxwP+BT0IQhF/XLwoFnoqir3oRfCgUIqIJyGoFz0IQRDBg9KTx5aCKFQiJYqH/kCxhyIR8" +
-                        "VAsRKo2tcXY0kqhMaW1jf31nG/dCS+b724SSZQnPviU2dnZeTP75s3bNGKMcRqqdAmqdAmqdAmqdAmqd" +
-                        "AmqdAmqdAmqdAmqdAn7olOo1YCvPYLtvy6osH8xkzFdu/fWhDd3OsSlwZ+iyeqBCjVN4G1nl7g0Mc93X" +
-                        "VHhfwI2Y/FH4tJEPd91RYV/PwEvqErHsDDySywaWeG2YAcR1P2gt+0oKlSUwOrCAr03n0qJC9Ps+QIjT" +
-                        "06eKrG7f/Aw7LIiR4DIgfNCj/uC+qSo0IwgmCNlOvlKzEyaBfZpYBD32gT4asjnciU2iiYrMmxj2PB+G" +
-                        "8whAyuo8QWiwnEE6Hdk4yVQbmDZ25AQ8wE0WZExb+LFxcslNtV0MRXKJlAJ3j55joOM3Qd6yImMebMoK" +
-                        "78NVlDGVQGNoCl1NxIJoqYJeKs0Gz9yjN4HeOMyEgIt2/6z58xGPmcWUt3brM6Pwn5euBWWQBRvz++sW" +
-                        "pBAbmqK3lN0IwsdbKVQPnPJmJHgCrzv2mm+fYjjuafCCQ0e1DyBib5+es/G6zC0U6F8xjobihJQPved3" +
-                        "l4dGS1yXfsEEFjyxs0iHatxbGTWqVBeufEEDV758uw8EugRuSgB2s4U1HSFI+8PGH6ZjnUqvMSZoSgN3" +
-                        "GZxApVkLolcVQKTni2g7Y81AmxUf6ngWfZ8WPnYpHsOIZ6UyIUE6IZSSAI0YXQQ+1o37MvY9SI9/PlXp" +
-                        "ZLysVlbmoHvRg2o2z+JDTkZy57cAEHJSIStrlJp+SjLM0n4PqoB0ZJQ8GZlDHm2ymRYvwd66oadzACrU" +
-                        "Wn5KN9nX8N3iwYz5F9+m4AEQssOeCdq6LcRqLZ8wPryHHzv0mBoT1YCEgh9s76yo58MCvxkBtpooIz0w" +
-                        "yb4HhW5sIlDJwhIIPTNou5l6AdZYIn+Tvnk0o/hOypyIQHqXAlIAASunH42e3aB5YbElqeHaaCMzGA7/" +
-                        "PaKXDjIyv6YCUmABkbabmC5Qb+5tmQmE600YBsEv7m+At+tcl10Epf7pxaCPyOovYJ/XrFnEfw1wbYN+" +
-                        "+nYvrW1YbLv7pnxBwdKAp+IN2vZ9AqF4IE9wV9BAxF5h3BF+PgjN2VWvo5s4x1YaAYX7MCVEod/GhaU6" +
-                        "PcJ2D+gkdkoJQ5dgypdgipdgipdgipdgipdgipdgipdgipdgirdwUR+AtdHqeXZWJZPAAAAAElFTkSuQ" +
-                        "mCCCwHsAVt2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX" +
-                        "01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0X" +
-                        "SArICd8JyArIFt2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhd" +
-                        "GNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNTGFyZ" +
-                        "2VdAc4BdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb" +
+                        "GluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R" +
+                        "3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjd" +
+                        "Glvbl9BY3R1YWxETQHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZ" +
+                        "WVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZ" +
+                        "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
+                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlAcwBdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHc" +
+                        "m91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0a" +
+                        "W9uX0FjdHVhbEFGAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZ" +
+                        "WRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZ" +
+                        "FdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX" +
+                        "0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0AcwBdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHc" +
+                        "m91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0a" +
+                        "W9uX0FjdHVhbERNAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZ" +
+                        "WRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZ" +
+                        "FdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX" +
+                        "0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0AeABdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHc" +
+                        "m91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0a" +
+                        "W9uX0luZ3JlZGllbnRfSW52ZW50b3J5SXRlbU5hbWUB0QF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRha" +
+                        "WxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1pe" +
+                        "Eluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV" +
+                        "2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE1MY" +
+                        "XJnZQHMAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfT" +
+                        "W9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb" +
+                        "2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU" +
+                        "2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRgHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpb" +
+                        "FJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4S" +
+                        "W5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
+                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhc" +
+                        "mdlAcwBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb" +
                         "2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZ" +
                         "GVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY" +
-                        "2hlZHVsZU1peEluc3RydWN0aW9uX1JlcG9ydERhdGUB0gF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRha" +
-                        "WxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1pe" +
-                        "Eluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV" +
-                        "2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRmlmb" +
-                        "0Nvc3QBzAF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX" +
-                        "01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfT" +
-                        "W9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ" +
-                        "1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUYB4AF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRha" +
-                        "WxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1pe" +
-                        "Eluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV" +
-                        "2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fSW5ncmVkaWVud" +
-                        "F9JbnZlbnRvcnlJdGVtTmFtZQHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX" +
-                        "3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24ud" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
-                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlAc4BdmFzX0ZlZ" +
-                        "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
-                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
-                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
-                        "3RydWN0aW9uX1JlcG9ydERhdGUB0QF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91c" +
-                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uL" +
-                        "nZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfT" +
-                        "GlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsRE1MYXJnZQHMAXZhc19GZ" +
-                        "WVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTU" +
-                        "UxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsU" +
+                        "2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNAdEBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsU" +
                         "mVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJb" +
-                        "nN0cnVjdGlvbl9BY3R1YWxETQHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX" +
-                        "3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24ud" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
-                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlAcwBdmFzX0ZlZ" +
-                        "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
-                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
-                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
-                        "3RydWN0aW9uX0FjdHVhbEFGAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfd" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52Y" +
-                        "XNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpb" +
-                        "nEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0AcwBdmFzX0ZlZ" +
-                        "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
-                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
-                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
-                        "3RydWN0aW9uX0FjdHVhbERNAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfd" +
-                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52Y" +
-                        "XNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpb" +
-                        "nEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0AeABdmFzX0ZlZ" +
-                        "WRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRT" +
-                        "F9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
-                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
-                        "3RydWN0aW9uX0luZ3JlZGllbnRfSW52ZW50b3J5SXRlbU5hbWUB0QF2YXNfRmVlZFdhdGNoX01vZGVsX" +
-                        "0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZ" +
-                        "HVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc" +
-                        "19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0d" +
-                        "WFsRE1MYXJnZQHMAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV" +
-                        "2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXY" +
-                        "XRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZ" +
-                        "WVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRgHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfS" +
-                        "URldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkd" +
-                        "WxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX" +
-                        "0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1Y" +
-                        "WxBRkxhcmdlAcwBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
-                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhd" +
-                        "GNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZ" +
-                        "WRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNAdEBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JR" +
-                        "GV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1b" +
-                        "GVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfR" +
-                        "mVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhb" +
-                        "ERNTGFyZ2UB6QFDb3B5cmlnaHQgwqkgMjAwMC0yMDEyLCBWYWxsZXkgQWdyaWN1bHR1cmFsIFNvZnR3Y" +
-                        "XJlLCBBbGwgcmlnaHRzIHJlc2VydmVkIHdvcmxkd2lkZS4gVGhpcyBwcm9ncmFtIGlzIHByb3RlY3RlZ" +
-                        "CBieSBuYXRpb25hbCBhbmQgaW50ZXJuYXRpb25hbCBjb3B5IHByb3RlY3Rpb24gbGF3cy4gQW55IGR1c" +
-                        "GxpY2F0aW9uIG9yIHB1YmxpY2F0aW9uIG9mIHRoaXMgcHJvZ3JhbSBpcyBzdHJpY3RseSBwcm9oaWJpd" +
-                        "GVkLg==";
+                        "nN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhd" +
+                        "GNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbERNTGFyZ" +
+                        "2UB6QFDb3B5cmlnaHQgwqkgMjAwMC0yMDEyLCBWYWxsZXkgQWdyaWN1bHR1cmFsIFNvZnR3YXJlLCBBb" +
+                        "GwgcmlnaHRzIHJlc2VydmVkIHdvcmxkd2lkZS4gVGhpcyBwcm9ncmFtIGlzIHByb3RlY3RlZCBieSBuY" +
+                        "XRpb25hbCBhbmQgaW50ZXJuYXRpb25hbCBjb3B5IHByb3RlY3Rpb24gbGF3cy4gQW55IGR1cGxpY2F0a" +
+                        "W9uIG9yIHB1YmxpY2F0aW9uIG9mIHRoaXMgcHJvZ3JhbSBpcyBzdHJpY3RseSBwcm9oaWJpdGVkLg==";
                     this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
                 }
                 return this._resources;
@@ -739,7 +738,6 @@ namespace XtraReportSerialization {
                         this.lblAFLbsSum});
             this.IngredientFooter.HeightF = 23F;
             this.IngredientFooter.Name = "IngredientFooter";
-            this.IngredientFooter.Scripts.OnBeforePrint = "IngredientFooter_BeforePrint";
             // 
             // DateFooter
             // 
@@ -867,7 +865,7 @@ namespace XtraReportSerialization {
             this.yTPS99y1we.StylePriority.UseFont = false;
             this.yTPS99y1we.StylePriority.UseTextAlignment = false;
             this.yTPS99y1we.Tag = "lblPrintedDateTime";
-            this.yTPS99y1we.Text = "6/4/2014 4:53:12 PM";
+            this.yTPS99y1we.Text = "7/24/2014 11:23:19 AM";
             this.yTPS99y1we.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // JieeuonnrG
@@ -913,7 +911,7 @@ namespace XtraReportSerialization {
             this.il9SG7JDwJ.StylePriority.UseFont = false;
             this.il9SG7JDwJ.StylePriority.UseTextAlignment = false;
             this.il9SG7JDwJ.Tag = "lblCompanyName";
-            this.il9SG7JDwJ.Text = "Sample Dairy";
+            this.il9SG7JDwJ.Text = "lblCompanyName";
             this.il9SG7JDwJ.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // EORSTL0MWV
@@ -1003,7 +1001,7 @@ namespace XtraReportSerialization {
             this.iQ8SUXps4t.StylePriority.UseFont = false;
             this.iQ8SUXps4t.StylePriority.UseTextAlignment = false;
             this.iQ8SUXps4t.Tag = "lblApplicationName";
-            this.iQ8SUXps4t.Text = "FeedWatch v8.1.27.0";
+            this.iQ8SUXps4t.Text = "FeedWatch v8.1.41.0";
             this.iQ8SUXps4t.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // u7pScwdEAa
@@ -1257,6 +1255,7 @@ namespace XtraReportSerialization {
             this.lblAFTonsSum.LocationFloat = new DevExpress.Utils.PointFloat(238.5417F, 0F);
             this.lblAFTonsSum.Name = "lblAFTonsSum";
             this.lblAFTonsSum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblAFTonsSum.Scripts.OnSummaryGetResult = "FormatWeight_SummaryGetResult";
             this.lblAFTonsSum.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.lblAFTonsSum.StylePriority.UseBorderColor = false;
             this.lblAFTonsSum.StylePriority.UseBorders = false;
@@ -1294,6 +1293,7 @@ namespace XtraReportSerialization {
             this.lblAFLbsSum.LocationFloat = new DevExpress.Utils.PointFloat(138.5417F, 0F);
             this.lblAFLbsSum.Name = "lblAFLbsSum";
             this.lblAFLbsSum.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblAFLbsSum.Scripts.OnSummaryGetResult = "FormatWeight_SummaryGetResult";
             this.lblAFLbsSum.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.lblAFLbsSum.StylePriority.UseBorderColor = false;
             this.lblAFLbsSum.StylePriority.UseBorders = false;
@@ -1648,6 +1648,6 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="b37e982a-f6a8-4aa0-a69f-fb5bdb77f958" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage by Date" Description="AF Ingredient Usage grouped by date" CreatedDT="2014-06-03T08:24:13.29" ModifiedDT="2014-06-12T10:04:12.92" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA0wc=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="b37e982a-f6a8-4aa0-a69f-fb5bdb77f958" ReportUseType="2" ReportType="1" ReportName="AF Ingredient Usage by Date" CreatedDT="2014-06-03T08:24:13.29" ModifiedDT="2014-07-24T11:23:11.433" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAA904=" ReportVersion="0" /&gt;</ReportXML>
 	<DefaultFilterXML />
 </SerializableReport>
