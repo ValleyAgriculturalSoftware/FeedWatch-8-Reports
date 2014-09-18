@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="eb8d2e16-376b-4df9-92dc-877581fbca96" ReportUseType="2" ReportType="5" ReportName="Feed Usage by Pen Type" Description="Ingredient Usage grouped by Pen Type with Cost" CreatedDT="2013-07-18T12:47:23.337" ModifiedDT="2014-05-20T10:22:16.017" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAMdw=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="eb8d2e16-376b-4df9-92dc-877581fbca96" ReportUseType="2" ReportType="5" ReportName="Feed Usage by Pen Type" Description="Ingredient Usage grouped by Pen Type with Cost" CreatedDT="2013-07-18T12:47:23.337" ModifiedDT="2014-09-18T16:24:35.213" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAPVI=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -15,9 +15,20 @@ select PrimaryPenType, convert(date, it.TransactionDT) as ReportDate,
 	coalesce(ch.DMPct, it.DMPct) * dbo.GetMeasurementValue(it.UnitQuantity, c.MediumMeasurementType) as DMQty,
 	dbo.GetMeasurementValue(it.UnitQuantity, c.MediumMeasurementType) as AFQty,
 	dbo.GetMeasurementValue(it.UnitQuantity, c.LargeMeasurementType) as AFTons,
-	case when iil.TrackingEnabled = 1 and iil.TrackingStartDT &amp;lt;= it.TransactionDT then
+	case when i.MadeByRecipeGID is not null then
+	(select sum(iil2.UnitCost * ri.Quantity) / 
+			(select sum(Quantity) from RecipeInstruction ri3
+			join InventoryItemLocation iil3 on iil3.InventoryItemLocationGID = ri3.InventoryItemLocationGID
+			where ri3.Inactive = 0 and ri3.RecipeGID = ri.RecipeGID)
+	from RecipeInstruction ri
+	join InventoryItemLocation iil2 on iil2.InventoryItemLocationGID = ri.InventoryItemLocationGID
+	where ri.Inactive = 0 and ri.RecipeGID = i.MadeByRecipeGID
+	group by ri.RecipeGID
+	) * dbo.GetMeasurementValue(it.UnitQuantity, c.MediumMeasurementType)
+	when iil.TrackingEnabled = 1 and iil.TrackingStartDT &amp;lt;= it.TransactionDT then
 	dbo.GetFifoCost(it.UnitQuantity, it.InventoryItemGID, fsmi.SourceLocationGID, it.TransactionDT)
-	else iil.UnitCost * dbo.GetMeasurementValue(it.UnitQuantity, c.MediumMeasurementType) end as Cost,
+	else iil.UnitCost * dbo.GetMeasurementValue(it.UnitQuantity, c.MediumMeasurementType) end 
+	as Cost,
 	DropRowNum = row_number() over (partition by it.InventoryTransactionGID order by it.UnitQuantity),
 	ii.InventoryItemName
 from InventoryTransaction it
