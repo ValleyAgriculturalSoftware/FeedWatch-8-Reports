@@ -1,5 +1,5 @@
-﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="cae07dc8-161e-4fd9-9ca4-f9aea7f7a455" ReportUseType="2" ReportType="5" ReportName="Feeding History" CreatedDT="2012-08-17T16:07:38" ModifiedDT="2014-06-04T15:05:42.467" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAUxQ=" ReportVersion="12" /&gt;</ReportXML>
+<ReportBundle>
+	<ReportXML>&lt;Report ReportGID="cae07dc8-161e-4fd9-9ca4-f9aea7f7a455" ReportUseType="2" ReportType="5" ReportName="Feeding History" CreatedDT="2012-08-17T16:07:38" ModifiedDT="2014-10-17T11:32:05.43" ModifiedBy="VAS" ConcurrencyTS="AAAAAAADocY=" ReportVersion="13" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -180,24 +180,56 @@ where (1=1)</SQLStatement>
              ,fsm.FeedingScheduleGID
              ,fsm.ByUserGID
              ,c.CompanyName
-             ,fs.InstanceDate as 'ReportDate'
-             ,u.UserID as 'UserName'
+             ,fs.InstanceDate as ReportDate
+             ,u.UserID as UserName
              ,mi.Sequence
-             ,coalesce(hii.InventoryItemName, ii.InventoryItemName) as 'Ingredient'
-             ,coalesce(hfl.LocationName, sl.LocationName, 'UNKNOWN')  as 'Location'
-             ,DATEADD(SECOND, -it.DurationSeconds, it.TransactionDT) as 'StartDT'
-             ,it.TransactionDT as 'StopDT'
-             ,it.TransactionDT - DATEADD(second, -it.DurationSeconds, it.TransactionDT) as 'ElapsedTime'
-             ,dbo.GetMeasurementValue(mi.TargetAFOz, c.MediumMeasurementType) as 'TargetAF_MQty'
-             ,dbo.GetMeasurementValue(case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end, c.MediumMeasurementType) as 'ActualAF_MQty'
-             ,dbo.GetMeasurementValue(case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end - mi.TargetAFOz, c.MediumMeasurementType) as 'TargetAF_MQty_Error'
-             ,isnull( (case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end - mi.TargetAFOz) / nullif(mi.TargetAFOz, 0), 0) as 'TargetErrorPct'
-             ,DATEADD(second, -it.DurationSeconds, it.TransactionDT) - o.LastTransactionDT as 'TimeSinceLast'
+             ,case when ra.RecipeActionType = 1 then 'Delay' else coalesce(hii.InventoryItemName, ii.InventoryItemName) end as Ingredient
+             ,case when ra.RecipeActionType = 1 then '' else coalesce(hfl.LocationName, sl.LocationName, 'UNKNOWN') end as Location
+             ,case when ra.RecipeActionType = 1 then
+				(select min(SnapshotDT) from WeightSnapshotEntry wse
+				join WeightSnapshot ws on ws.WeightSnapshotGID = wse.WeightSnapshotGID
+				where ws.SourceGID = mi.FeedingScheduleMixInstructionGID)
+			 else
+				DATEADD(SECOND, -it.DurationSeconds, it.TransactionDT) 
+			 end as StartDT
+             ,case when ra.RecipeActionType = 1 then
+				(select max(SnapshotDT) from WeightSnapshotEntry wse
+				join WeightSnapshot ws on ws.WeightSnapshotGID = wse.WeightSnapshotGID
+				where ws.SourceGID = mi.FeedingScheduleMixInstructionGID)
+			 else
+				it.TransactionDT 
+			end as StopDT
+             ,case when ra.RecipeActionType = 1 then 
+					DATEADD(second, mi.ActualDurationSeconds, '1900-01-01') 
+			else 
+				it.TransactionDT - DATEADD(second, -it.DurationSeconds, it.TransactionDT) 
+			end as ElapsedTime
+              ,case when ra.RecipeActionType = 1 then 
+				ri.Quantity * 60
+			else 
+				dbo.GetMeasurementValue(mi.TargetAFOz, c.MediumMeasurementType)
+			end as TargetAF_MQty
+             ,case when ra.RecipeActionType = 1 then 
+				mi.ActualDurationSeconds
+			else 
+				dbo.GetMeasurementValue(case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end, c.MediumMeasurementType)
+			end as ActualAF_MQty
+             ,case when ra.RecipeActionType = 1 then 
+				abs(mi.ActualDurationSeconds - ri.Quantity * 60)
+			else 
+				dbo.GetMeasurementValue(case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end - mi.TargetAFOz, c.MediumMeasurementType) 
+			end as TargetAF_MQty_Error
+             ,case when ra.RecipeActionType = 1 then 
+				case when ri.Quantity = 0 then 0 else (mi.ActualDurationSeconds - ri.Quantity * 60) / (ri.Quantity * 60) end
+			else 
+				isnull((case when mi.Sequence = 0 and ing.AllowWeighback = 1 and it.UnitQuantity = 0 then mi.TargetAFOz else it.UnitQuantity end - mi.TargetAFOz) / nullif(mi.TargetAFOz, 0), 0)
+			end as TargetErrorPct
+             ,DATEADD(second, -it.DurationSeconds, it.TransactionDT) - o.LastTransactionDT as TimeSinceLast
              ,IsMissing = convert(bit, case when it.InventoryTransactionGID is null and (ri.Inactive = 1 and ri.ModifiedDT &amp;gt; mi.ModifiedDT) then 1 else 0 end)
-             ,IsFed = CONVERT(bit, case when it.InventoryTransactionGID is null then 0 else 1 end)
+             ,IsFed = CONVERT(bit, case when it.InventoryTransactionGID is null and mi.ActualDurationSeconds = 0 then 0 else 1 end)
          from FeedingScheduleMixInstruction mi with (nolock)
-         join InventoryItem ii on ii.InventoryItemGID = mi.InventoryItemGID
-         join Ingredient ing on ing.InventoryItemGID = ii.InventoryItemGID
+         left join InventoryItem ii on ii.InventoryItemGID = mi.InventoryItemGID
+         left join Ingredient ing on ing.InventoryItemGID = ii.InventoryItemGID
          left join Location sl on sl.LocationGID = mi.SourceLocationGID
          left join InventoryTransaction it with (nolock) on it.TransactionSourceGID = mi.FeedingScheduleMixInstructionGID
          left join HistoryInventoryItem hii with (nolock) on hii.HistoryInventoryItemGID = it.HistoryInventoryItemGID
@@ -208,10 +240,21 @@ where (1=1)</SQLStatement>
          join Company c with (nolock) on c.CompanyGID = fp.CompanyGID
          left join [User] u with (nolock) on u.UserGID = fsm.ByUserGID
          left join RecipeInstruction ri on ri.RecipeInstructionGID = mi.RecipeInstructionGID
-         outer apply (select MAX(it2.TransactionDT) as 'LastTransactionDT'
-                        from InventoryTransaction it2
-                        join FeedingScheduleMixInstruction mi2 on mi2.FeedingScheduleMixInstructionGID = it2.TransactionSourceGID
-                        where mi2.FeedingScheduleMixGID = mi.FeedingScheduleMixGID and mi2.Sequence &amp;lt; mi.Sequence) o
+		 left join RecipeAction ra on ra.RecipeActionGID = ri.RecipeActionGID
+		 outer apply (select max(TransactionDT) as LastTransactionDT from
+				(select case when ra2.RecipeActionType = 1 then
+					(select max(SnapshotDT) from WeightSnapshotEntry wse
+					join WeightSnapshot ws on ws.WeightSnapshotGID = wse.WeightSnapshotGID
+					where ws.SourceGID = mi2.FeedingScheduleMixInstructionGID)
+				 else
+					it2.TransactionDT 
+				end as TransactionDT
+				from FeedingScheduleMixInstruction mi2
+				left join RecipeInstruction ri2 on ri2.RecipeInstructionGID = mi2.RecipeInstructionGID
+				left join RecipeAction ra2 on ra2.RecipeActionGID = ri2.RecipeActionGID
+				left join InventoryTransaction it2 on mi2.FeedingScheduleMixInstructionGID = it2.TransactionSourceGID
+				where mi2.FeedingScheduleMixGID = mi.FeedingScheduleMixGID and mi2.Sequence &amp;lt; mi.Sequence) os
+			) o
 	    ) z
 	    union all
       select 
@@ -547,7 +590,6 @@ where (1=1)&lt;/QueryText&gt;
 			<PreDefinedFilterOperator>Between</PreDefinedFilterOperator>
 			<PreDefinedFilterValue>t-1d</PreDefinedFilterValue>
 			<DefaultIsOr>false</DefaultIsOr>
-			<FilterOperator>Between</FilterOperator>
 		</ReportFilter>
 		<ReportFilter>
 			<SeqNo>1</SeqNo>
@@ -555,7 +597,6 @@ where (1=1)&lt;/QueryText&gt;
 			<PreDefinedFilterOperator>Equal</PreDefinedFilterOperator>
 			<PreDefinedFilterValue>$company</PreDefinedFilterValue>
 			<DefaultIsOr>false</DefaultIsOr>
-			<FilterOperator>Equal</FilterOperator>
 		</ReportFilter>
 	</ReportFilters>
 	<ReportColumns />
@@ -564,8 +605,8 @@ where (1=1)&lt;/QueryText&gt;
 	<CrossTabHidePivotHeaders>false</CrossTabHidePivotHeaders>
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
-///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
+///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.10.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
@@ -725,7 +766,7 @@ namespace XtraReportSerialization {
                     string resourceString = "zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJza" +
                         "W9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4O" +
                         "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAABAAAAAAAAAFBBRFBBRFBIXnLBA" +
-                        "AAAAOcAAAAmJAB0AGgAaQBzAC4AUwBjAHIAaQBwAHQAcwBTAG8AdQByAGMAZQAAAAAAAdwMSW1wb3J0c" +
+                        "AAAAOcAAAAmJAB0AGgAaQBzAC4AUwBjAHIAaQBwAHQAcwBTAG8AdQByAGMAZQAAAAAAAc4QSW1wb3J0c" +
                         "yBTeXN0ZW0uRGF0YQ0KDQpQcml2YXRlIFN1YiBHcm91cExhYmVsX0JlZm9yZVByaW50KEJ5VmFsIHNlb" +
                         "mRlciBBcyBPYmplY3QsIEJ5VmFsIGUgQXMgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVud" +
                         "EFyZ3MpDQoNCglDVHlwZShzZW5kZXIsIFhSTGFiZWwpLlRhZyA9IEdldEN1cnJlbnRSb3coKQ0KDQpFb" +
@@ -753,7 +794,15 @@ namespace XtraReportSerialization {
                         "QoNCkVuZCBTdWINCg0KUHJpdmF0ZSBTdWIgRGV0YWlsUmVwb3J0MV9CZWZvcmVQcmludChCeVZhbCBzZ" +
                         "W5kZXIgQXMgT2JqZWN0LCBCeVZhbCBlIEFzIFN5c3RlbS5EcmF3aW5nLlByaW50aW5nLlByaW50RXZlb" +
                         "nRBcmdzKQ0KDQoJbGJsUGFydGlhbERlc2NyaXB0aW9uLlZpc2libGUgPSBGYWxzZQ0KDQpFbmQgU3ViD" +
-                        "Qo=";
+                        "QoNClByaXZhdGUgU3ViIGRlbGF5X0JlZm9yZVByaW50KEJ5VmFsIHNlbmRlciBBcyBPYmplY3QsIEJ5V" +
+                        "mFsIGUgQXMgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MpDQoJSWYgRGV0YWlsU" +
+                        "mVwb3J0LkdldEN1cnJlbnRDb2x1bW5WYWx1ZSgiSW5ncmVkaWVudCIpID0gIkRlbGF5IiBBbmRBbHNvI" +
+                        "ERldGFpbFJlcG9ydC5HZXRDdXJyZW50Q29sdW1uVmFsdWUoIkxvY2F0aW9uIikgPSAiIiBUaGVuDQoJC" +
+                        "URpbSBsYmwgYXMgWFJMYWJlbCA9IENUeXBlKHNlbmRlciwgWFJMYWJlbCkNCgkJRGltIHNlY3MgQXMgR" +
+                        "G91YmxlDQoJCUlmIERvdWJsZS5UcnlQYXJzZShsYmwuVGV4dCwgc2VjcykgVGhlbg0KCQkJRGltIGR0I" +
+                        "EFzIERhdGVUaW1lID0gRGF0ZVRpbWUuTm93LkRhdGUNCgkJCWR0ID0gZHQuQWRkU2Vjb25kcyhzZWNzK" +
+                        "Q0KCQkJbGJsLlRleHQgPSBzdHJpbmcuRm9ybWF0KCJ7MDpISDptbTpzc30iLCBkdCkNCgkJRW5kIElmD" +
+                        "QoJRW5kIElmDQpFbmQgU3ViDQo=";
                     this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
                 }
                 return this._resources;
@@ -1958,6 +2007,7 @@ namespace XtraReportSerialization {
             this.label54.LocationFloat = new DevExpress.Utils.PointFloat(440F, 0F);
             this.label54.Name = "label54";
             this.label54.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label54.Scripts.OnBeforePrint = "delay_BeforePrint";
             this.label54.SizeF = new System.Drawing.SizeF(85F, 18F);
             this.label54.StylePriority.UseBorderColor = false;
             this.label54.StylePriority.UseBorders = false;
@@ -2094,6 +2144,7 @@ namespace XtraReportSerialization {
             this.label53.LocationFloat = new DevExpress.Utils.PointFloat(355F, 18.00003F);
             this.label53.Name = "label53";
             this.label53.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label53.Scripts.OnBeforePrint = "delay_BeforePrint";
             this.label53.SizeF = new System.Drawing.SizeF(85F, 18F);
             this.label53.StylePriority.UseBorderColor = false;
             this.label53.StylePriority.UseBorders = false;
@@ -2115,6 +2166,7 @@ namespace XtraReportSerialization {
             this.label52.LocationFloat = new DevExpress.Utils.PointFloat(355F, 0F);
             this.label52.Name = "label52";
             this.label52.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label52.Scripts.OnBeforePrint = "delay_BeforePrint";
             this.label52.SizeF = new System.Drawing.SizeF(85F, 18F);
             this.label52.StylePriority.UseBorderColor = false;
             this.label52.StylePriority.UseBorders = false;
