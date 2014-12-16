@@ -1,6 +1,8 @@
 ## FeedWatch V8 Reports
 
-Contained in this repo are the most current and up to date reports available for FeedWatch V8.
+Contained in this repo are the most current and up to date reports available for FeedWatch V8.1.
+
+Reports for 8.0 can be found in the [8.0 branch](https://github.com/ValleyAgriculturalSoftware/FeedWatch-8-Reports/tree/8.0)
 
 ### Usage
 
