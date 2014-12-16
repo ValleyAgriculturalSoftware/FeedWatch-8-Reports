@@ -1,0 +1,1620 @@
+﻿<SerializableReport>
+	<RootObjectName>vas.FeedWatch.Model.IDetailReportGroup</RootObjectName>
+	<ReportObjectXML>&lt;ReportObject&gt;
+	&lt;ObjectName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMixInstruction&lt;/ObjectName&gt;
+	&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+	&lt;ChildObjects&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;DMPct&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects /&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;System.Single&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;ActualAFLarge&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects /&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;System.Single&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;ActualFifoCost&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects /&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;System.Double&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;Ingredient&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects&gt;
+				&lt;ReportObject&gt;
+					&lt;ObjectName&gt;InventoryItem&lt;/ObjectName&gt;
+					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+					&lt;ChildObjects&gt;
+						&lt;ReportObject&gt;
+							&lt;ObjectName&gt;InventoryItemType&lt;/ObjectName&gt;
+							&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+							&lt;ChildObjects /&gt;
+							&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+							&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+							&lt;ObjectTypeName&gt;vas.FeedWatch.Model.InventoryItemTypes&lt;/ObjectTypeName&gt;
+							&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+							&lt;Selected&gt;true&lt;/Selected&gt;
+						&lt;/ReportObject&gt;
+						&lt;ReportObject&gt;
+							&lt;ObjectName&gt;InventoryItemName&lt;/ObjectName&gt;
+							&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+							&lt;ChildObjects /&gt;
+							&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+							&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+							&lt;ObjectTypeName&gt;System.String&lt;/ObjectTypeName&gt;
+							&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+							&lt;Selected&gt;true&lt;/Selected&gt;
+						&lt;/ReportObject&gt;
+					&lt;/ChildObjects&gt;
+					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+					&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Entities.InventoryItem&lt;/ObjectTypeName&gt;
+					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+					&lt;Selected&gt;true&lt;/Selected&gt;
+				&lt;/ReportObject&gt;
+				&lt;ReportObject&gt;
+					&lt;ObjectName&gt;DailyTon&lt;/ObjectName&gt;
+					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+					&lt;ChildObjects /&gt;
+					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+					&lt;ObjectTypeName&gt;System.Single&lt;/ObjectTypeName&gt;
+					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+					&lt;Selected&gt;true&lt;/Selected&gt;
+				&lt;/ReportObject&gt;
+				&lt;ReportObject&gt;
+					&lt;ObjectName&gt;IngredientType&lt;/ObjectName&gt;
+					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+					&lt;ChildObjects /&gt;
+					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+					&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Entities.IngredientType&lt;/ObjectTypeName&gt;
+					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+					&lt;Selected&gt;true&lt;/Selected&gt;
+				&lt;/ReportObject&gt;
+			&lt;/ChildObjects&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Entities.Ingredient&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+		&lt;ReportObject&gt;
+			&lt;ObjectName&gt;Location&lt;/ObjectName&gt;
+			&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+			&lt;ChildObjects&gt;
+				&lt;ReportObject&gt;
+					&lt;ObjectName&gt;LocationType&lt;/ObjectName&gt;
+					&lt;IsCustom&gt;false&lt;/IsCustom&gt;
+					&lt;ChildObjects /&gt;
+					&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+					&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+					&lt;ObjectTypeName&gt;System.Int32&lt;/ObjectTypeName&gt;
+					&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+					&lt;Selected&gt;true&lt;/Selected&gt;
+				&lt;/ReportObject&gt;
+			&lt;/ChildObjects&gt;
+			&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+			&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+			&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.Location&lt;/ObjectTypeName&gt;
+			&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+			&lt;Selected&gt;true&lt;/Selected&gt;
+		&lt;/ReportObject&gt;
+	&lt;/ChildObjects&gt;
+	&lt;IsChildList&gt;false&lt;/IsChildList&gt;
+	&lt;ExcludeFromList&gt;false&lt;/ExcludeFromList&gt;
+	&lt;ObjectTypeName&gt;vas.FeedWatch.Model.Linq2SQL.FeedingScheduleMixInstruction&lt;/ObjectTypeName&gt;
+	&lt;SummaryType&gt;6&lt;/SummaryType&gt;
+	&lt;Selected&gt;true&lt;/Selected&gt;
+&lt;/ReportObject&gt;</ReportObjectXML>
+	<ReportDefinition>
+		<Landscape>true</Landscape>
+		<ReportName />
+		<LogoResourceName>fwicon-50.png</LogoResourceName>
+		<ReportProperties>
+			<item>
+				<key>
+					<string>Basic</string>
+				</key>
+				<value>
+					<ReportProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+						<SerializedEvenRowFont>
+							<FontFamily>Tahoma</FontFamily>
+							<GraphicsUnit>Point</GraphicsUnit>
+							<Size>8</Size>
+							<Style>Regular</Style>
+						</SerializedEvenRowFont>
+						<SerializedEvenRowBackColor>AliceBlue</SerializedEvenRowBackColor>
+						<SerializedEvenRowForeColor>Black</SerializedEvenRowForeColor>
+						<SerializedOddRowBackColor>Beige</SerializedOddRowBackColor>
+						<SerializedOddRowFont>
+							<FontFamily>Tahoma</FontFamily>
+							<GraphicsUnit>Point</GraphicsUnit>
+							<Size>8</Size>
+							<Style>Regular</Style>
+						</SerializedOddRowFont>
+						<SerializedOddRowForeColor>Black</SerializedOddRowForeColor>
+					</ReportProperties>
+				</value>
+			</item>
+		</ReportProperties>
+		<ReportPrintProperties>
+			<item>
+				<key>
+					<string>Basic</string>
+				</key>
+				<value>
+					<ReportPrintProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+						<SerializedColumnHeaderFont>
+							<FontFamily>Tahoma</FontFamily>
+							<GraphicsUnit>Point</GraphicsUnit>
+							<Size>8</Size>
+							<Style>Bold</Style>
+						</SerializedColumnHeaderFont>
+						<SerializedColumnHeaderBackColor>LightGray</SerializedColumnHeaderBackColor>
+						<SerializedColumnHeaderForeColor>Black</SerializedColumnHeaderForeColor>
+						<SerializedGroupHeaderFont>
+							<FontFamily>Tahoma</FontFamily>
+							<GraphicsUnit>Point</GraphicsUnit>
+							<Size>8</Size>
+							<Style>Bold</Style>
+						</SerializedGroupHeaderFont>
+						<SerializedGroupHeaderBackColor>LightGray</SerializedGroupHeaderBackColor>
+						<SerializedGroupHeaderForeColor>Black</SerializedGroupHeaderForeColor>
+						<SerializedGroupFooterFont>
+							<FontFamily>Tahoma</FontFamily>
+							<GraphicsUnit>Point</GraphicsUnit>
+							<Size>8</Size>
+							<Style>Bold</Style>
+						</SerializedGroupFooterFont>
+						<SerializedGroupFooterBackColor>Transparent</SerializedGroupFooterBackColor>
+						<SerializedGroupFooterForeColor>Black</SerializedGroupFooterForeColor>
+						<SerializedReportFooterFont>
+							<FontFamily>Tahoma</FontFamily>
+							<GraphicsUnit>Point</GraphicsUnit>
+							<Size>8</Size>
+							<Style>Bold</Style>
+						</SerializedReportFooterFont>
+						<SerializedReportFooterBackColor>Transparent</SerializedReportFooterBackColor>
+						<SerializedReportFooterForeColor>Black</SerializedReportFooterForeColor>
+						<Landscape>true</Landscape>
+					</ReportPrintProperties>
+				</value>
+			</item>
+		</ReportPrintProperties>
+	</ReportDefinition>
+	<ViewLayouts>
+		<item>
+			<key>
+				<string>ROOT</string>
+			</key>
+			<value>
+				<string>﻿&lt;XtraSerializer version="1.0" application="View"&gt;
+  &lt;property name="#LayoutVersion" /&gt;
+  &lt;property name="ScrollStyle"&gt;LiveVertScroll, LiveHorzScroll&lt;/property&gt;
+  &lt;property name="BestFitMaxRowCount"&gt;-1&lt;/property&gt;
+  &lt;property name="HorzScrollStep"&gt;3&lt;/property&gt;
+  &lt;property name="FocusRectStyle"&gt;CellFocus&lt;/property&gt;
+  &lt;property name="PreviewLineCount"&gt;-1&lt;/property&gt;
+  &lt;property name="NewItemRowText" /&gt;
+  &lt;property name="GroupPanelText" /&gt;
+  &lt;property name="PreviewFieldName" /&gt;
+  &lt;property name="PreviewIndent"&gt;-1&lt;/property&gt;
+  &lt;property name="LevelIndent"&gt;-1&lt;/property&gt;
+  &lt;property name="GroupFooterShowMode"&gt;VisibleIfExpanded&lt;/property&gt;
+  &lt;property name="ActiveFilterEnabled"&gt;true&lt;/property&gt;
+  &lt;property name="SynchronizeClones"&gt;true&lt;/property&gt;
+  &lt;property name="BorderStyle"&gt;Default&lt;/property&gt;
+  &lt;property name="ViewCaption" /&gt;
+  &lt;property name="DetailHeight"&gt;350&lt;/property&gt;
+  &lt;property name="Name"&gt;GridView&lt;/property&gt;
+  &lt;property name="DetailTabHeaderLocation"&gt;Top&lt;/property&gt;
+  &lt;property name="OptionsLayout" isnull="true" iskey="true"&gt;
+    &lt;property name="Columns" isnull="true" iskey="true"&gt;
+      &lt;property name="StoreAppearance"&gt;true&lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="StoreAllOptions"&gt;true&lt;/property&gt;
+    &lt;property name="StoreAppearance"&gt;true&lt;/property&gt;
+  &lt;/property&gt;
+  &lt;property name="Columns" iskey="true" value="6"&gt;
+    &lt;property name="Item1" isnull="true" iskey="true"&gt;
+      &lt;property name="Visible"&gt;true&lt;/property&gt;
+      &lt;property name="VisibleIndex"&gt;1&lt;/property&gt;
+      &lt;property name="Name"&gt;colvas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_DMPct&lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="Item2" isnull="true" iskey="true"&gt;
+      &lt;property name="Visible"&gt;true&lt;/property&gt;
+      &lt;property name="VisibleIndex"&gt;2&lt;/property&gt;
+      &lt;property name="Name"&gt;colvas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_ActualAFLarge&lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="Item3" isnull="true" iskey="true"&gt;
+      &lt;property name="Visible"&gt;true&lt;/property&gt;
+      &lt;property name="VisibleIndex"&gt;3&lt;/property&gt;
+      &lt;property name="Name"&gt;colvas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_ActualFifoCost&lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="Item4" isnull="true" iskey="true"&gt;
+      &lt;property name="Width"&gt;135&lt;/property&gt;
+      &lt;property name="Visible"&gt;true&lt;/property&gt;
+      &lt;property name="VisibleIndex"&gt;0&lt;/property&gt;
+      &lt;property name="Name"&gt;colvas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_Ingredient_InventoryItem_InventoryItemName&lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="Item5" isnull="true" iskey="true"&gt;
+      &lt;property name="Visible"&gt;true&lt;/property&gt;
+      &lt;property name="VisibleIndex"&gt;4&lt;/property&gt;
+      &lt;property name="Name"&gt;colvas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_Ingredient_DailyTon&lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="Item6" isnull="true" iskey="true"&gt;
+      &lt;property name="Visible"&gt;true&lt;/property&gt;
+      &lt;property name="VisibleIndex"&gt;0&lt;/property&gt;
+      &lt;property name="Name"&gt;colvas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_Ingredient_IngredientType&lt;/property&gt;
+    &lt;/property&gt;
+  &lt;/property&gt;
+  &lt;property name="ShowButtonMode"&gt;ShowForFocusedCell&lt;/property&gt;
+  &lt;property name="ViewCaptionHeight"&gt;-1&lt;/property&gt;
+  &lt;property name="VertScrollTipFieldName" /&gt;
+  &lt;property name="OptionsView" isnull="true" iskey="true"&gt;
+    &lt;property name="ColumnAutoWidth"&gt;false&lt;/property&gt;
+  &lt;/property&gt;
+  &lt;property name="RowSeparatorHeight"&gt;0&lt;/property&gt;
+  &lt;property name="FixedLineWidth"&gt;2&lt;/property&gt;
+  &lt;property name="IndicatorWidth"&gt;-1&lt;/property&gt;
+  &lt;property name="ColumnPanelRowHeight"&gt;-1&lt;/property&gt;
+  &lt;property name="GroupRowHeight"&gt;-1&lt;/property&gt;
+  &lt;property name="RowHeight"&gt;-1&lt;/property&gt;
+  &lt;property name="OptionsBehavior" isnull="true" iskey="true"&gt;
+    &lt;property name="AllowAddRows"&gt;False&lt;/property&gt;
+    &lt;property name="EditorShowMode"&gt;Click&lt;/property&gt;
+    &lt;property name="AllowDeleteRows"&gt;False&lt;/property&gt;
+    &lt;property name="Editable"&gt;false&lt;/property&gt;
+    &lt;property name="ImmediateUpdateRowPosition"&gt;false&lt;/property&gt;
+  &lt;/property&gt;
+  &lt;property name="GroupFormat"&gt;{0}: [#image]{1} {2}&lt;/property&gt;
+  &lt;property name="FooterPanelHeight"&gt;-1&lt;/property&gt;
+  &lt;property name="OptionsDetail" isnull="true" iskey="true"&gt;
+    &lt;property name="AllowExpandEmptyDetails"&gt;true&lt;/property&gt;
+  &lt;/property&gt;
+  &lt;property name="ChildGridLevelName" /&gt;
+  &lt;property name="VertScrollVisibility"&gt;Auto&lt;/property&gt;
+  &lt;property name="HorzScrollVisibility"&gt;Auto&lt;/property&gt;
+  &lt;property name="FormatConditions" iskey="true" value="0" /&gt;
+  &lt;property name="GroupSummary" iskey="true" value="0" /&gt;
+  &lt;property name="ActiveFilterString" /&gt;
+  &lt;property name="SortInfo"&gt;~Xtra#Base64AAEAAAD/////AQAAAAAAAAAMAgAAAF5EZXZFeHByZXNzLlh0cmFHcmlkLnYxMS4yLCBWZXJzaW9uPTExLjIuMTEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhBQEAAAA4RGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mb0NvbGxlY3Rpb24EAAAACmdyb3VwQ291bnQFY2xvbmUPY2xvbmVHcm91cENvdW50E0NvbGxlY3Rpb25CYXNlK2xpc3QAAwADCLMBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tEZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvLCBEZXZFeHByZXNzLlh0cmFHcmlkLnYxMS4yLCBWZXJzaW9uPTExLjIuMTEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhXV0IHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QCAAAAAQAAAAkDAAAAAAAAAAkEAAAABAMAAACzAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mbywgRGV2RXhwcmVzcy5YdHJhR3JpZC52MTEuMiwgVmVyc2lvbj0xMS4yLjExLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAAAwRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mb1tdAgAAAAgICQUAAAABAAAAAQAAAAQEAAAAHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgUAAAgICQYAAAACAAAAAwAAAAcFAAAAAAEAAAAEAAAABC5EZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvAgAAAAkHAAAADQMQBgAAAAQAAAAJCAAAAAkJAAAADQIMCgAAABlEZXZFeHByZXNzLlh0cmFHcmlkLnYxMS4yBQcAAAAuRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mbwIAAAAJU29ydE9yZGVyCkNvbHVtbk5hbWUAAQgKAAAAAQAAAAYLAAAAjwFjb2x2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0luZ3JlZGllbnRfSW52ZW50b3J5SXRlbV9JbnZlbnRvcnlJdGVtTmFtZQEIAAAABwAAAAEAAAAGDAAAAH5jb2x2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0luZ3JlZGllbnRfSW5ncmVkaWVudFR5cGUBCQAAAAcAAAABAAAACQsAAAAL&lt;/property&gt;
+  &lt;property name="GroupSummarySortInfoState" /&gt;
+&lt;/XtraSerializer&gt;</string>
+			</value>
+		</item>
+	</ViewLayouts>
+	<GridCustomXML>&lt;GridCustomLayout&gt;
+	&lt;IsFindPanelVisible&gt;false&lt;/IsFindPanelVisible&gt;
+	&lt;CustomDateFilters /&gt;
+	&lt;CustomColumnFormats&gt;
+		&lt;item&gt;
+			&lt;key&gt;
+				&lt;string&gt;vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_DMPct&lt;/string&gt;
+			&lt;/key&gt;
+			&lt;value&gt;
+				&lt;BrowseViewColumnFormatSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+					&lt;FormatString&gt;{0:p2}&lt;/FormatString&gt;
+					&lt;FormatType&gt;Numeric&lt;/FormatType&gt;
+				&lt;/BrowseViewColumnFormatSettings&gt;
+			&lt;/value&gt;
+		&lt;/item&gt;
+		&lt;item&gt;
+			&lt;key&gt;
+				&lt;string&gt;vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingScheduleMixInstruction_ActualAFLarge&lt;/string&gt;
+			&lt;/key&gt;
+			&lt;value&gt;
+				&lt;BrowseViewColumnFormatSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+					&lt;FormatString&gt;{0:n2}&lt;/FormatString&gt;
+					&lt;FormatType&gt;Numeric&lt;/FormatType&gt;
+				&lt;/BrowseViewColumnFormatSettings&gt;
+			&lt;/value&gt;
+		&lt;/item&gt;
+	&lt;/CustomColumnFormats&gt;
+	&lt;GroupSummaries /&gt;
+	&lt;ExpandedItems /&gt;
+	&lt;LastKey&gt;00000000-0000-0000-0000-000000000000&lt;/LastKey&gt;
+	&lt;ReportDefinition&gt;
+		&lt;Landscape&gt;true&lt;/Landscape&gt;
+		&lt;ReportName /&gt;
+		&lt;LogoResourceName&gt;fwicon-50.png&lt;/LogoResourceName&gt;
+		&lt;ReportProperties&gt;
+			&lt;item&gt;
+				&lt;key&gt;
+					&lt;string&gt;Basic&lt;/string&gt;
+				&lt;/key&gt;
+				&lt;value&gt;
+					&lt;ReportProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+						&lt;SerializedEvenRowFont&gt;
+							&lt;FontFamily&gt;Tahoma&lt;/FontFamily&gt;
+							&lt;GraphicsUnit&gt;Point&lt;/GraphicsUnit&gt;
+							&lt;Size&gt;8&lt;/Size&gt;
+							&lt;Style&gt;Regular&lt;/Style&gt;
+						&lt;/SerializedEvenRowFont&gt;
+						&lt;SerializedEvenRowBackColor&gt;AliceBlue&lt;/SerializedEvenRowBackColor&gt;
+						&lt;SerializedEvenRowForeColor&gt;Black&lt;/SerializedEvenRowForeColor&gt;
+						&lt;SerializedOddRowBackColor&gt;Beige&lt;/SerializedOddRowBackColor&gt;
+						&lt;SerializedOddRowFont&gt;
+							&lt;FontFamily&gt;Tahoma&lt;/FontFamily&gt;
+							&lt;GraphicsUnit&gt;Point&lt;/GraphicsUnit&gt;
+							&lt;Size&gt;8&lt;/Size&gt;
+							&lt;Style&gt;Regular&lt;/Style&gt;
+						&lt;/SerializedOddRowFont&gt;
+						&lt;SerializedOddRowForeColor&gt;Black&lt;/SerializedOddRowForeColor&gt;
+					&lt;/ReportProperties&gt;
+				&lt;/value&gt;
+			&lt;/item&gt;
+		&lt;/ReportProperties&gt;
+		&lt;ReportPrintProperties&gt;
+			&lt;item&gt;
+				&lt;key&gt;
+					&lt;string&gt;Basic&lt;/string&gt;
+				&lt;/key&gt;
+				&lt;value&gt;
+					&lt;ReportPrintProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+						&lt;SerializedColumnHeaderFont&gt;
+							&lt;FontFamily&gt;Tahoma&lt;/FontFamily&gt;
+							&lt;GraphicsUnit&gt;Point&lt;/GraphicsUnit&gt;
+							&lt;Size&gt;8&lt;/Size&gt;
+							&lt;Style&gt;Bold&lt;/Style&gt;
+						&lt;/SerializedColumnHeaderFont&gt;
+						&lt;SerializedColumnHeaderBackColor&gt;LightGray&lt;/SerializedColumnHeaderBackColor&gt;
+						&lt;SerializedColumnHeaderForeColor&gt;Black&lt;/SerializedColumnHeaderForeColor&gt;
+						&lt;SerializedGroupHeaderFont&gt;
+							&lt;FontFamily&gt;Tahoma&lt;/FontFamily&gt;
+							&lt;GraphicsUnit&gt;Point&lt;/GraphicsUnit&gt;
+							&lt;Size&gt;8&lt;/Size&gt;
+							&lt;Style&gt;Bold&lt;/Style&gt;
+						&lt;/SerializedGroupHeaderFont&gt;
+						&lt;SerializedGroupHeaderBackColor&gt;LightGray&lt;/SerializedGroupHeaderBackColor&gt;
+						&lt;SerializedGroupHeaderForeColor&gt;Black&lt;/SerializedGroupHeaderForeColor&gt;
+						&lt;SerializedGroupFooterFont&gt;
+							&lt;FontFamily&gt;Tahoma&lt;/FontFamily&gt;
+							&lt;GraphicsUnit&gt;Point&lt;/GraphicsUnit&gt;
+							&lt;Size&gt;8&lt;/Size&gt;
+							&lt;Style&gt;Bold&lt;/Style&gt;
+						&lt;/SerializedGroupFooterFont&gt;
+						&lt;SerializedGroupFooterBackColor&gt;Transparent&lt;/SerializedGroupFooterBackColor&gt;
+						&lt;SerializedGroupFooterForeColor&gt;Black&lt;/SerializedGroupFooterForeColor&gt;
+						&lt;SerializedReportFooterFont&gt;
+							&lt;FontFamily&gt;Tahoma&lt;/FontFamily&gt;
+							&lt;GraphicsUnit&gt;Point&lt;/GraphicsUnit&gt;
+							&lt;Size&gt;8&lt;/Size&gt;
+							&lt;Style&gt;Bold&lt;/Style&gt;
+						&lt;/SerializedReportFooterFont&gt;
+						&lt;SerializedReportFooterBackColor&gt;Transparent&lt;/SerializedReportFooterBackColor&gt;
+						&lt;SerializedReportFooterForeColor&gt;Black&lt;/SerializedReportFooterForeColor&gt;
+						&lt;Landscape&gt;true&lt;/Landscape&gt;
+					&lt;/ReportPrintProperties&gt;
+				&lt;/value&gt;
+			&lt;/item&gt;
+		&lt;/ReportPrintProperties&gt;
+	&lt;/ReportDefinition&gt;
+&lt;/GridCustomLayout&gt;</GridCustomXML>
+	<XtraReportXML>/// &lt;XRTypeInfo&gt;
+///   &lt;AssemblyFullName&gt;vas.ReportEngine, Version=8.0.322.0, Culture=neutral, PublicKeyToken=null&lt;/AssemblyFullName&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.ReportEngine.dll&lt;/AssemblyLocation&gt;
+///   &lt;TypeName&gt;vas.ReportEngine.GridReportTemplate&lt;/TypeName&gt;
+///   &lt;Localization&gt;en-US&lt;/Localization&gt;
+///   &lt;References&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.ReportEngine.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Remoting\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Framework\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Framework.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.ApplicationServices\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.ApplicationServices.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Deployment\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Deployment.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization.Formatters.Soap\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Serialization.Formatters.Soap.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\System.Data.OracleClient\v4.0_4.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.RegularExpressions\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.RegularExpressions.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Utilities.v4.0\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Utilities.v4.0.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Build.Tasks.v4.0\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Build.Tasks.v4.0.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceProcess\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.ServiceProcess.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration.Install\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.Install.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\SMDiagnostics\v4.0_4.0.0.0__b77a5c561934e089\SMDiagnostics.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.Extensions.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraBars.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.Reports.v11.2.Designer.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraCharts.v11.2.Extensions.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraTreeList.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraRichEdit.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.RichEdit.v11.2.Core.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraPrinting.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraNavBar.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraVerticalGrid.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.CodeParser.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Web\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Web.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Runtime.DurableInstancing.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Messaging\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Messaging.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel.Selectors\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.Selectors.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Transactions.Bridge\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.Transactions.Bridge.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Activation\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Activation.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xaml.Hosting\v4.0_4.0.0.0__31bf3856ad364e35\System.Xaml.Hosting.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Activities.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.VisualBasic.Activities.Compiler\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.Activities.Compiler.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Management\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Management.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.JScript\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.JScript.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Activities.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.DurableInstancing.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.Extensions\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.Extensions.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Linq.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.Services.Client\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Services.Client.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.Services.Design\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Services.Design.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.Entity\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Entity.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Channels\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Channels.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraGrid.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraLayout.v11.2.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.Common.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.Core.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.AppServices.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\Microsoft.Practices.Unity.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\Microsoft.Practices.ServiceLocation.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\Ionic.Zip.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.Resources.dll" /&gt;
+///     &lt;Reference Path="C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\vas.Data.dll" /&gt;
+///     &lt;Reference Path="C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll" /&gt;
+///   &lt;/References&gt;
+/// &lt;/XRTypeInfo&gt;
+namespace XtraReportSerialization {
+    
+    public class gridReportTemplate1 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.XRLine RsAObylNqq;
+        private DevExpress.XtraReports.UI.XRLabel oiVOBMI3FY;
+        private DevExpress.XtraReports.UI.XRLabel tM9piGe7O5;
+        private DevExpress.XtraReports.UI.XRLabel hUfOFwgwOX;
+        private DevExpress.XtraReports.UI.PageFooterBand ponpVN7YmW;
+        private DevExpress.XtraReports.UI.XRLabel A2vOWl8yoc;
+        private DevExpress.XtraReports.UI.XRPageInfo QAlOGlErej;
+        private DevExpress.XtraReports.UI.XRLabel MrfOyi6j4A;
+        private DevExpress.XtraReports.UI.XRControlStyle anOpcD65So;
+        private DevExpress.XtraReports.UI.XRControlStyle FuPpXO0sMt;
+        private DevExpress.XtraReports.UI.TopMarginBand RdqO4rV5AH;
+        private DevExpress.XtraReports.UI.XRControlStyle jAmpCukchj;
+        private DevExpress.XtraReports.UI.DetailBand JUeO2XUw9c;
+        private DevExpress.XtraReports.UI.XRLabel label14;
+        private DevExpress.XtraReports.UI.XRLabel label19;
+        private DevExpress.XtraReports.UI.XRLabel label22;
+        private DevExpress.XtraReports.UI.XRLabel label23;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private DevExpress.XtraReports.UI.XRLabel label12;
+        private DevExpress.XtraReports.UI.XRControlStyle YrEpRUAZ49;
+        private DevExpress.XtraReports.UI.XRPictureBox Oabp6Z387T;
+        private DevExpress.XtraReports.UI.XRControlStyle ujSpjGpGV4;
+        private DevExpress.XtraReports.UI.XRControlStyle Oe9pO05318;
+        private DevExpress.XtraReports.UI.PageHeaderBand GGqOk8yBHJ;
+        private DevExpress.XtraReports.UI.XRPanel i1kphTyrNR;
+        private DevExpress.XtraReports.UI.XRLabel TqBpdM3l3c;
+        private DevExpress.XtraReports.UI.XRLabel GmROvo41TO;
+        private DevExpress.XtraReports.UI.XRLine X4FOUFPjGt;
+        private DevExpress.XtraReports.UI.XRLabel VKWOYiJnwa;
+        private DevExpress.XtraReports.UI.XRControlStyle o08pDEuhEH;
+        private DevExpress.XtraReports.UI.BottomMarginBand fqiOT1fy9M;
+        private DevExpress.XtraReports.UI.XRControlStyle cBCpJnA8oD;
+        private DevExpress.XtraReports.UI.XRControlStyle aR0pQAasVT;
+        private DevExpress.XtraReports.UI.XRControlStyle cAPppuiEMd;
+        private DevExpress.XtraReports.UI.XRControlStyle Xflp7E1a27;
+        private DevExpress.XtraReports.UI.XRControlStyle vfUOzDxq9E;
+        private DevExpress.XtraReports.UI.GroupHeaderBand groupHeaderBand1;
+        private DevExpress.XtraReports.UI.XRLabel label21;
+        private DevExpress.XtraReports.UI.XRLabel label11;
+        private DevExpress.XtraReports.UI.XRLabel label18;
+        private DevExpress.XtraReports.UI.XRLabel label10;
+        private DevExpress.XtraReports.UI.XRLabel label3;
+        private DevExpress.XtraReports.UI.XRLabel label17;
+        private DevExpress.XtraReports.UI.XRLabel label20;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
+        private DevExpress.XtraReports.UI.XRLabel label7;
+        private DevExpress.XtraReports.UI.XRLabel label6;
+        private DevExpress.XtraReports.UI.XRLabel label9;
+        private DevExpress.XtraReports.UI.XRLabel label8;
+        private DevExpress.XtraReports.UI.XRLabel label13;
+        private DevExpress.XtraReports.UI.XRLabel label24;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter2;
+        private DevExpress.XtraReports.UI.XRLine line1;
+        private DevExpress.XtraReports.UI.XRLabel label16;
+        private DevExpress.XtraReports.UI.XRLabel label2;
+        private DevExpress.XtraReports.UI.XRLabel label5;
+        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        private DevExpress.XtraReports.UI.XRLine line3;
+        private DevExpress.XtraReports.UI.XRLabel label25;
+        private DevExpress.XtraReports.UI.XRLabel label4;
+        private DevExpress.XtraReports.UI.XRLabel label15;
+        private DevExpress.XtraReports.UI.XRLine line2;
+        private DevExpress.XtraReports.UI.XRControlStyle controlStyle4;
+        private DevExpress.XtraReports.UI.XRControlStyle controlStyle3;
+        private DevExpress.XtraReports.UI.XRControlStyle controlStyle2;
+        private DevExpress.XtraReports.UI.XRControlStyle controlStyle1;
+        private DevExpress.XtraReports.UI.CalculatedField costAFTon;
+        private System.Resources.ResourceManager _resources;
+        public gridReportTemplate1() {
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    string resourceString = "zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJza" +
+                        "W9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4O" +
+                        "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAUAAAAAQAAAGhTeXN0ZW0uRHJhd" +
+                        "2luZy5CaXRtYXAsIFN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhb" +
+                        "CwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYVBBRFBBRF21YojtHbWTF1vdlskPrJqnBDSi9" +
+                        "AgWpk1xRK82HAPOKhtW65sA2vMrqjD/CDyFDOAEPBO6wf8qDx5ULwX1YzY+I5g/Lt95ZtlTynPKKbl0q" +
+                        "AEAAMcAAAAIAwAAWgIAAHsBAAAjAAAA0wEAADMDAAAAAAAAhwIAACEBAABOAQAAbwAAALICAAAAAgAAS" +
+                        "AAAAJwAAAAtAgAA3QIAAPQAAAAaBQAAHkEAMgB2AE8AVwBsADgAeQBvAGMALgBUAGUAeAB0AAAAAAAgT" +
+                        "wBhAGIAcAA2AFoAMwA4ADcAVAAuAEkAbQBhAGcAZQDsAAAAIlgAdAByAGEAUgBlAHAAbwByAHQALgBFA" +
+                        "HYAZQBuAHQAcwCzBQAAKGMAbwBzAHQAQQBGAFQAbwBuAC4ARQB4AHAAcgBlAHMAcwBpAG8AbgDWBQAAJ" +
+                        "mwAYQBiAGUAbAAxAC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAvQYAAChsAGEAYgBlAGwAMQAzAC4AR" +
+                        "ABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAkgcAAChsAGEAYgBlAGwAMQA0AC4ARABhAHQAYQBCAGkAbgBkA" +
+                        "GkAbgBnAHMAXggAAChsAGEAYgBlAGwAMQA1AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMATwkAAChsA" +
+                        "GEAYgBlAGwAMQA2AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAIwoAAChsAGEAYgBlAGwAMQA5AC4AR" +
+                        "ABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAAwsAACZsAGEAYgBlAGwAMgAuAEQAYQB0AGEAQgBpAG4AZABpA" +
+                        "G4AZwBzAM8LAAAobABhAGIAZQBsADIAMAAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAKMMAAAobABhA" +
+                        "GIAZQBsADIAMgAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzAIMNAAAobABhAGIAZQBsADIAMwAuAEQAY" +
+                        "QB0AGEAQgBpAG4AZABpAG4AZwBzAFcOAAAobABhAGIAZQBsADIANAAuAEQAYQB0AGEAQgBpAG4AZABpA" +
+                        "G4AZwBzADEPAAAmbABhAGIAZQBsADQALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwAiEAAAJmwAYQBiA" +
+                        "GUAbAA1AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMA9xAAACZsAGEAYgBlAGwANgAuAEQAYQB0AGEAQ" +
+                        "gBpAG4AZABpAG4AZwBzAMwRAAAmbABhAGIAZQBsADgALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwChE" +
+                        "gAAJmwAYQBiAGUAbAA5AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAdRMAAAHpAUNvcHlyaWdodCDCq" +
+                        "SAyMDAwLTIwMTIsIFZhbGxleSBBZ3JpY3VsdHVyYWwgU29mdHdhcmUsIEFsbCByaWdodHMgcmVzZXJ2Z" +
+                        "WQgd29ybGR3aWRlLiBUaGlzIHByb2dyYW0gaXMgcHJvdGVjdGVkIGJ5IG5hdGlvbmFsIGFuZCBpbnRlc" +
+                        "m5hdGlvbmFsIGNvcHkgcHJvdGVjdGlvbiBsYXdzLiBBbnkgZHVwbGljYXRpb24gb3IgcHVibGljYXRpb" +
+                        "24gb2YgdGhpcyBwcm9ncmFtIGlzIHN0cmljdGx5IHByb2hpYml0ZWQuQAABAAAA/////wEAAAAAAAAAD" +
+                        "AIAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsa" +
+                        "WNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3lzdGVtLkRyYXdpbmcuQml0bWFwAQAAAAREY" +
+                        "XRhBwICAAAACQMAAAAPAwAAACQEAAACiVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAB" +
+                        "GdBTUEAALGPC/xhBQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB90BBBEFBlmGg4EAAAOzSURBV" +
+                        "GhD7ZjPaxNREMcD/gU9CEIRf1y8KBZ6Koq96EXwoFCKiCchqBc9CEEQwYPSk8eWgihUIiWKh/5AsYciE" +
+                        "fFQLESqNrXF2NJKoTGltY399Zxv3Qkvm+9uEkmUJz74lNnZ2Xkz++bN2zRijHEaqnQJqnQJqnQJqnQJq" +
+                        "nQJqnQJqnQJqnQJqnQJ+6JTqNWArz2C7b8uqLB/MZMxXbv31oQ3dzrEpcGfosnqgQo1TeBtZ5e4NDHPd" +
+                        "11R4X8CNmPxR+LSRD3fdUWFfz8BL6hKx7Aw8kssGlnhtmAHEdT9oLftKCpUlMDqwgK9N59KiQvT7PkCI" +
+                        "09Oniqxu3/wMOyyIkeAyIHzQo/7gvqkqNCMIJgjZTr5SsxMmgX2aWAQ99oE+GrI53IlNoomKzJsY9jwf" +
+                        "hvMIQMrqPEFosJxBOh3ZOMlUG5g2duQEPMBNFmRMW/ixcXLJTbVdDEVyiZQCd4+eY6DjN0HesiJjHmzK" +
+                        "Cu/DVZQxlUBjaApdTcSCaKmCXirNBs/cozeB3jjMhICLdv+s+fMRj5nFlLd26zOj8J+XrgVlkAUb8/vr" +
+                        "FqQQG5qit5TdCMLHWylUD5zyZiR4Aq879ppvn2I47mnwgkNHtQ8gYm+fnrPxuswtFOhfMY6G4oSUD73n" +
+                        "d5eHRktcl37BBBY8sbNIh2rcWxk1qlQXrnxBA1e+fLsPBLoEbkoAdrOFNR0hSPvDxh+mY51KrzEmaEoD" +
+                        "dxmcQKVZC6JXFUCk54toO2PNQJsVH+p4Fn2fFj52KR7DiGelMiFBOiGUkgCNGF0EPtaN+zL2PUiPfz5V" +
+                        "6WS8rFZW5qB70YNqNs/iQ05Gcue3ABByUiEra5SafkoyzNJ+D6qAdGSUPBmZQx5tspkWL8HeuqGncwAq" +
+                        "1Fp+SjfZ1/Dd4sGM+RffpuABELLDngnaui3Eai2fMD68hx879JgaE9WAhIIfbO+sqOfDAr8ZAbaaKCM9" +
+                        "MMm+B4VubCJQycISCD0zaLuZegHWWCJ/k755NKP4TsqciEB6lwJSAAErpx+Nnt2geWGxJanh2mgjMxgO" +
+                        "/z2ilw4yMr+mAlJgAZG2m5guUG/ubZkJhOtNGAbBL+5vgLfrXJddBKX+6cWgj8jqL2Cf16xZxH8NcG2D" +
+                        "fvp2L61tWGy7+6Z8QcHSgKfiDdr2fQKheCBPcFfQQMReYdwRfj4IzdlVr6ObOMdWGgGF+zAlRKHfxoWl" +
+                        "Oj3Cdg/oJHZKCUOXYMqXYIqXYIqXYIqXYIqXYIqXYIqXYIqXYIq3cFEfgLXR6nl2ViWTwAAAABJRU5Er" +
+                        "kJgggsBIUdHcU9rOHlCSEosQmVmb3JlUHJpbnQscEc5T05aRjY4UQHkAVt2YXNfRmVlZFdhdGNoX01vZ" +
+                        "GVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY" +
+                        "2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0XS9bdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JR" +
+                        "GV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1b" +
+                        "GVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlXQHSAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpb" +
+                        "FJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4S" +
+                        "W5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
+                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxGaWZvQ" +
+                        "29zdAHJAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfT" +
+                        "W9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb" +
+                        "2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU" +
+                        "2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9ETVBjdAHuAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlc" +
+                        "G9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zd" +
+                        "HJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9JbmdyZWRpZW50X0lud" +
+                        "mVudG9yeUl0ZW1fSW52ZW50b3J5SXRlbU5hbWUB0QF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZ" +
+                        "XBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc" +
+                        "3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y" +
+                        "2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fQWN0dWFsQUZMYXJnZ" +
+                        "QHdAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZ" +
+                        "WxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2Rlb" +
+                        "F9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZ" +
+                        "WR1bGVNaXhJbnN0cnVjdGlvbl9JbmdyZWRpZW50X0luZ3JlZGllbnRUeXBlAckBdmFzX0ZlZWRXYXRja" +
+                        "F9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVka" +
+                        "W5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHc" +
+                        "m91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0a" +
+                        "W9uX0RNUGN0AdEBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
+                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhd" +
+                        "GNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZ" +
+                        "WRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2UB3QF2YXNfRmVlZFdhdGNoX01vZ" +
+                        "GVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY" +
+                        "2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX" +
+                        "3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fS" +
+                        "W5ncmVkaWVudF9JbmdyZWRpZW50VHlwZQHRAXZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9yd" +
+                        "Edyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y" +
+                        "3Rpb24udmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb" +
+                        "2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbl9BY3R1YWxBRkxhcmdlAdcBd" +
+                        "mFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9Ma" +
+                        "W5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZ" +
+                        "XRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZ" +
+                        "U1peEluc3RydWN0aW9uX0luZ3JlZGllbnRfRGFpbHlUb24B7gF2YXNfRmVlZFdhdGNoX01vZGVsX0lEZ" +
+                        "XRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZ" +
+                        "U1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9ydEdyb3VwX3Zhc19GZ" +
+                        "WVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y3Rpb25fSW5ncmVka" +
+                        "WVudF9JbnZlbnRvcnlJdGVtX0ludmVudG9yeUl0ZW1OYW1lAdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JR" +
+                        "GV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1b" +
+                        "GVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfR" +
+                        "mVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhb" +
+                        "EZpZm9Db3N0AdIBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXY" +
+                        "XRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhd" +
+                        "GNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZ" +
+                        "WRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEZpZm9Db3N0AdIBdmFzX0ZlZWRXYXRjaF9Nb" +
+                        "2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU" +
+                        "2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfRmVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91c" +
+                        "F92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX" +
+                        "0FjdHVhbEZpZm9Db3N0AdEBdmFzX0ZlZWRXYXRjaF9Nb2RlbF9JRGV0YWlsUmVwb3J0R3JvdXBfdmFzX" +
+                        "0ZlZWRXYXRjaF9Nb2RlbF9MaW5xMlNRTF9GZWVkaW5nU2NoZWR1bGVNaXhJbnN0cnVjdGlvbi52YXNfR" +
+                        "mVlZFdhdGNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU" +
+                        "1FMX0ZlZWRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uX0FjdHVhbEFGTGFyZ2UB1wF2YXNfRmVlZFdhd" +
+                        "GNoX01vZGVsX0lEZXRhaWxSZXBvcnRHcm91cF92YXNfRmVlZFdhdGNoX01vZGVsX0xpbnEyU1FMX0ZlZ" +
+                        "WRpbmdTY2hlZHVsZU1peEluc3RydWN0aW9uLnZhc19GZWVkV2F0Y2hfTW9kZWxfSURldGFpbFJlcG9yd" +
+                        "Edyb3VwX3Zhc19GZWVkV2F0Y2hfTW9kZWxfTGlucTJTUUxfRmVlZGluZ1NjaGVkdWxlTWl4SW5zdHJ1Y" +
+                        "3Rpb25fSW5ncmVkaWVudF9EYWlseVRvbg==";
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            DevExpress.XtraReports.UI.XRSummary summary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary2 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary3 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary4 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary5 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary6 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary7 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary8 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary9 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary10 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary11 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary12 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary13 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary summary14 = new DevExpress.XtraReports.UI.XRSummary();
+            this.RsAObylNqq = new DevExpress.XtraReports.UI.XRLine();
+            this.oiVOBMI3FY = new DevExpress.XtraReports.UI.XRLabel();
+            this.tM9piGe7O5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.hUfOFwgwOX = new DevExpress.XtraReports.UI.XRLabel();
+            this.ponpVN7YmW = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.anOpcD65So = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.FuPpXO0sMt = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.RdqO4rV5AH = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.jAmpCukchj = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.JUeO2XUw9c = new DevExpress.XtraReports.UI.DetailBand();
+            this.MrfOyi6j4A = new DevExpress.XtraReports.UI.XRLabel();
+            this.YrEpRUAZ49 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.Oabp6Z387T = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.ujSpjGpGV4 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.Oe9pO05318 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.A2vOWl8yoc = new DevExpress.XtraReports.UI.XRLabel();
+            this.GGqOk8yBHJ = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.i1kphTyrNR = new DevExpress.XtraReports.UI.XRPanel();
+            this.o08pDEuhEH = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.GmROvo41TO = new DevExpress.XtraReports.UI.XRLabel();
+            this.QAlOGlErej = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.VKWOYiJnwa = new DevExpress.XtraReports.UI.XRLabel();
+            this.fqiOT1fy9M = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.TqBpdM3l3c = new DevExpress.XtraReports.UI.XRLabel();
+            this.cBCpJnA8oD = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.aR0pQAasVT = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.cAPppuiEMd = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.X4FOUFPjGt = new DevExpress.XtraReports.UI.XRLine();
+            this.Xflp7E1a27 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.vfUOzDxq9E = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.groupHeaderBand1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.GroupFooter2 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.label14 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label19 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label22 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label23 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label21 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label11 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label18 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label20 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label24 = new DevExpress.XtraReports.UI.XRLabel();
+            this.line1 = new DevExpress.XtraReports.UI.XRLine();
+            this.label16 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.line3 = new DevExpress.XtraReports.UI.XRLine();
+            this.label25 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.line2 = new DevExpress.XtraReports.UI.XRLine();
+            this.controlStyle4 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.controlStyle3 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.controlStyle2 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.controlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.costAFTon = new DevExpress.XtraReports.UI.CalculatedField();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // RsAObylNqq
+            // 
+            this.RsAObylNqq.BorderWidth = 1;
+            this.RsAObylNqq.LineWidth = 2;
+            this.RsAObylNqq.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.RsAObylNqq.Name = "RsAObylNqq";
+            this.RsAObylNqq.SizeF = new System.Drawing.SizeF(727F, 4.083333F);
+            this.RsAObylNqq.StylePriority.UseBorderWidth = false;
+            // 
+            // oiVOBMI3FY
+            // 
+            this.oiVOBMI3FY.BorderColor = System.Drawing.Color.White;
+            this.oiVOBMI3FY.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.oiVOBMI3FY.BorderWidth = 2;
+            this.oiVOBMI3FY.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oiVOBMI3FY.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 15F);
+            this.oiVOBMI3FY.Name = "oiVOBMI3FY";
+            this.oiVOBMI3FY.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.oiVOBMI3FY.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
+            this.oiVOBMI3FY.StylePriority.UseFont = false;
+            this.oiVOBMI3FY.StylePriority.UseTextAlignment = false;
+            this.oiVOBMI3FY.Tag = "lblCompanyName";
+            this.oiVOBMI3FY.Text = "Sample Dairy";
+            this.oiVOBMI3FY.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // tM9piGe7O5
+            // 
+            this.tM9piGe7O5.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tM9piGe7O5.LocationFloat = new DevExpress.Utils.PointFloat(50F, 3.999996F);
+            this.tM9piGe7O5.Multiline = true;
+            this.tM9piGe7O5.Name = "tM9piGe7O5";
+            this.tM9piGe7O5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.tM9piGe7O5.SizeF = new System.Drawing.SizeF(653.9998F, 23F);
+            this.tM9piGe7O5.StylePriority.UseFont = false;
+            this.tM9piGe7O5.StylePriority.UseTextAlignment = false;
+            this.tM9piGe7O5.Tag = "lblFilterString";
+            this.tM9piGe7O5.Text = "Filter";
+            this.tM9piGe7O5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // hUfOFwgwOX
+            // 
+            this.hUfOFwgwOX.BorderColor = System.Drawing.Color.White;
+            this.hUfOFwgwOX.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.hUfOFwgwOX.BorderWidth = 2;
+            this.hUfOFwgwOX.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hUfOFwgwOX.LocationFloat = new DevExpress.Utils.PointFloat(100F, 10.00001F);
+            this.hUfOFwgwOX.Name = "hUfOFwgwOX";
+            this.hUfOFwgwOX.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.hUfOFwgwOX.SizeF = new System.Drawing.SizeF(399.9999F, 29.99998F);
+            this.hUfOFwgwOX.StylePriority.UseFont = false;
+            this.hUfOFwgwOX.Tag = "lblReportName";
+            this.hUfOFwgwOX.Text = "Report Name";
+            this.hUfOFwgwOX.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // ponpVN7YmW
+            // 
+            this.ponpVN7YmW.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.A2vOWl8yoc,
+                        this.QAlOGlErej,
+                        this.MrfOyi6j4A,
+                        this.RsAObylNqq});
+            this.ponpVN7YmW.HeightF = 28.25006F;
+            this.ponpVN7YmW.Name = "ponpVN7YmW";
+            // 
+            // anOpcD65So
+            // 
+            this.anOpcD65So.Name = "anOpcD65So";
+            this.anOpcD65So.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
+            // FuPpXO0sMt
+            // 
+            this.FuPpXO0sMt.BackColor = System.Drawing.Color.Transparent;
+            this.FuPpXO0sMt.BorderColor = System.Drawing.Color.White;
+            this.FuPpXO0sMt.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.FuPpXO0sMt.BorderWidth = 2;
+            this.FuPpXO0sMt.Name = "FuPpXO0sMt";
+            this.FuPpXO0sMt.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            // 
+            // RdqO4rV5AH
+            // 
+            this.RdqO4rV5AH.HeightF = 50F;
+            this.RdqO4rV5AH.Name = "RdqO4rV5AH";
+            // 
+            // jAmpCukchj
+            // 
+            this.jAmpCukchj.BackColor = System.Drawing.Color.Transparent;
+            this.jAmpCukchj.BorderColor = System.Drawing.Color.White;
+            this.jAmpCukchj.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.jAmpCukchj.BorderWidth = 2;
+            this.jAmpCukchj.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic);
+            this.jAmpCukchj.Name = "jAmpCukchj";
+            this.jAmpCukchj.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            // 
+            // JUeO2XUw9c
+            // 
+            this.JUeO2XUw9c.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label14,
+                        this.label19,
+                        this.label22,
+                        this.label23,
+                        this.label1,
+                        this.label12});
+            this.JUeO2XUw9c.HeightF = 23F;
+            this.JUeO2XUw9c.KeepTogetherWithDetailReports = true;
+            this.JUeO2XUw9c.Name = "JUeO2XUw9c";
+            this.JUeO2XUw9c.Visible = false;
+            // 
+            // MrfOyi6j4A
+            // 
+            this.MrfOyi6j4A.BorderColor = System.Drawing.Color.White;
+            this.MrfOyi6j4A.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.MrfOyi6j4A.BorderWidth = 2;
+            this.MrfOyi6j4A.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MrfOyi6j4A.LocationFloat = new DevExpress.Utils.PointFloat(0F, 4.083333F);
+            this.MrfOyi6j4A.Name = "MrfOyi6j4A";
+            this.MrfOyi6j4A.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.MrfOyi6j4A.SizeF = new System.Drawing.SizeF(220F, 17.99998F);
+            this.MrfOyi6j4A.StylePriority.UseFont = false;
+            this.MrfOyi6j4A.StylePriority.UseTextAlignment = false;
+            this.MrfOyi6j4A.Tag = "lblApplicationName";
+            this.MrfOyi6j4A.Text = "FeedWatch v8.0.322.0";
+            this.MrfOyi6j4A.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // YrEpRUAZ49
+            // 
+            this.YrEpRUAZ49.Name = "YrEpRUAZ49";
+            this.YrEpRUAZ49.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
+            // Oabp6Z387T
+            // 
+            this.Oabp6Z387T.Image = ((System.Drawing.Image)(resources.GetObject("Oabp6Z387T.Image")));
+            this.Oabp6Z387T.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.Oabp6Z387T.Name = "Oabp6Z387T";
+            this.Oabp6Z387T.SizeF = new System.Drawing.SizeF(50F, 50F);
+            this.Oabp6Z387T.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // ujSpjGpGV4
+            // 
+            this.ujSpjGpGV4.Name = "ujSpjGpGV4";
+            this.ujSpjGpGV4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
+            // Oe9pO05318
+            // 
+            this.Oe9pO05318.Name = "Oe9pO05318";
+            this.Oe9pO05318.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
+            // A2vOWl8yoc
+            // 
+            this.A2vOWl8yoc.BorderColor = System.Drawing.Color.White;
+            this.A2vOWl8yoc.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.A2vOWl8yoc.BorderWidth = 2;
+            this.A2vOWl8yoc.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.A2vOWl8yoc.LocationFloat = new DevExpress.Utils.PointFloat(220F, 4.083282F);
+            this.A2vOWl8yoc.Name = "A2vOWl8yoc";
+            this.A2vOWl8yoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.A2vOWl8yoc.SizeF = new System.Drawing.SizeF(350F, 18.00003F);
+            this.A2vOWl8yoc.StylePriority.UseFont = false;
+            this.A2vOWl8yoc.StylePriority.UseTextAlignment = false;
+            this.A2vOWl8yoc.Tag = "lblCopyright";
+            this.A2vOWl8yoc.Text = resources.GetString("A2vOWl8yoc.Text");
+            this.A2vOWl8yoc.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.A2vOWl8yoc.WordWrap = false;
+            // 
+            // GGqOk8yBHJ
+            // 
+            this.GGqOk8yBHJ.BorderWidth = 2;
+            this.GGqOk8yBHJ.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.i1kphTyrNR,
+                        this.GmROvo41TO,
+                        this.Oabp6Z387T,
+                        this.hUfOFwgwOX,
+                        this.X4FOUFPjGt,
+                        this.oiVOBMI3FY,
+                        this.VKWOYiJnwa});
+            this.GGqOk8yBHJ.HeightF = 117.5833F;
+            this.GGqOk8yBHJ.Name = "GGqOk8yBHJ";
+            this.GGqOk8yBHJ.StylePriority.UseBorderWidth = false;
+            // 
+            // i1kphTyrNR
+            // 
+            this.i1kphTyrNR.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.tM9piGe7O5,
+                        this.TqBpdM3l3c});
+            this.i1kphTyrNR.LocationFloat = new DevExpress.Utils.PointFloat(0F, 58.91664F);
+            this.i1kphTyrNR.Name = "i1kphTyrNR";
+            this.i1kphTyrNR.SizeF = new System.Drawing.SizeF(703.9999F, 31.29167F);
+            // 
+            // o08pDEuhEH
+            // 
+            this.o08pDEuhEH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
+            this.o08pDEuhEH.BorderColor = System.Drawing.Color.Transparent;
+            this.o08pDEuhEH.Name = "o08pDEuhEH";
+            // 
+            // GmROvo41TO
+            // 
+            this.GmROvo41TO.BorderColor = System.Drawing.Color.White;
+            this.GmROvo41TO.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.GmROvo41TO.BorderWidth = 2;
+            this.GmROvo41TO.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GmROvo41TO.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 30F);
+            this.GmROvo41TO.Name = "GmROvo41TO";
+            this.GmROvo41TO.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.GmROvo41TO.Scripts.OnBeforePrint = "label21_BeforePrint";
+            this.GmROvo41TO.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
+            this.GmROvo41TO.StylePriority.UseFont = false;
+            this.GmROvo41TO.StylePriority.UseTextAlignment = false;
+            this.GmROvo41TO.Tag = "lblPrintedDateTime";
+            this.GmROvo41TO.Text = "2/6/2014 10:04:42 AM";
+            this.GmROvo41TO.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // QAlOGlErej
+            // 
+            this.QAlOGlErej.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QAlOGlErej.Format = "Page {0} of {1}";
+            this.QAlOGlErej.LocationFloat = new DevExpress.Utils.PointFloat(601.5833F, 4.08331F);
+            this.QAlOGlErej.Name = "QAlOGlErej";
+            this.QAlOGlErej.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.QAlOGlErej.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
+            this.QAlOGlErej.StylePriority.UseFont = false;
+            this.QAlOGlErej.StylePriority.UseTextAlignment = false;
+            this.QAlOGlErej.Tag = "lblPageNum";
+            this.QAlOGlErej.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // VKWOYiJnwa
+            // 
+            this.VKWOYiJnwa.BorderColor = System.Drawing.Color.White;
+            this.VKWOYiJnwa.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.VKWOYiJnwa.BorderWidth = 2;
+            this.VKWOYiJnwa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VKWOYiJnwa.LocationFloat = new DevExpress.Utils.PointFloat(540.5417F, 0F);
+            this.VKWOYiJnwa.Name = "VKWOYiJnwa";
+            this.VKWOYiJnwa.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            this.VKWOYiJnwa.Scripts.OnBeforePrint = "label28_BeforePrint";
+            this.VKWOYiJnwa.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
+            this.VKWOYiJnwa.StylePriority.UseFont = false;
+            this.VKWOYiJnwa.StylePriority.UseTextAlignment = false;
+            this.VKWOYiJnwa.Tag = "lblPrintedBy";
+            this.VKWOYiJnwa.Text = "Admin User";
+            this.VKWOYiJnwa.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.VKWOYiJnwa.WordWrap = false;
+            // 
+            // fqiOT1fy9M
+            // 
+            this.fqiOT1fy9M.HeightF = 50F;
+            this.fqiOT1fy9M.Name = "fqiOT1fy9M";
+            // 
+            // TqBpdM3l3c
+            // 
+            this.TqBpdM3l3c.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TqBpdM3l3c.LocationFloat = new DevExpress.Utils.PointFloat(0F, 3.999996F);
+            this.TqBpdM3l3c.Name = "TqBpdM3l3c";
+            this.TqBpdM3l3c.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.TqBpdM3l3c.SizeF = new System.Drawing.SizeF(50F, 23F);
+            this.TqBpdM3l3c.StylePriority.UseFont = false;
+            this.TqBpdM3l3c.StylePriority.UseTextAlignment = false;
+            this.TqBpdM3l3c.Text = "Filter:";
+            this.TqBpdM3l3c.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // cBCpJnA8oD
+            // 
+            this.cBCpJnA8oD.Name = "cBCpJnA8oD";
+            this.cBCpJnA8oD.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
+            // aR0pQAasVT
+            // 
+            this.aR0pQAasVT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.aR0pQAasVT.BorderColor = System.Drawing.Color.White;
+            this.aR0pQAasVT.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.aR0pQAasVT.BorderWidth = 2;
+            this.aR0pQAasVT.Name = "aR0pQAasVT";
+            this.aR0pQAasVT.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            // 
+            // cAPppuiEMd
+            // 
+            this.cAPppuiEMd.Name = "cAPppuiEMd";
+            this.cAPppuiEMd.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            // 
+            // X4FOUFPjGt
+            // 
+            this.X4FOUFPjGt.LineWidth = 4;
+            this.X4FOUFPjGt.LocationFloat = new DevExpress.Utils.PointFloat(0F, 54.91664F);
+            this.X4FOUFPjGt.Name = "X4FOUFPjGt";
+            this.X4FOUFPjGt.SizeF = new System.Drawing.SizeF(727F, 4F);
+            // 
+            // Xflp7E1a27
+            // 
+            this.Xflp7E1a27.BackColor = System.Drawing.Color.Transparent;
+            this.Xflp7E1a27.BorderColor = System.Drawing.Color.White;
+            this.Xflp7E1a27.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.Xflp7E1a27.BorderWidth = 2;
+            this.Xflp7E1a27.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Xflp7E1a27.Name = "Xflp7E1a27";
+            this.Xflp7E1a27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            // 
+            // vfUOzDxq9E
+            // 
+            this.vfUOzDxq9E.BackColor = System.Drawing.Color.Transparent;
+            this.vfUOzDxq9E.BorderColor = System.Drawing.Color.White;
+            this.vfUOzDxq9E.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.vfUOzDxq9E.BorderWidth = 2;
+            this.vfUOzDxq9E.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.vfUOzDxq9E.Name = "vfUOzDxq9E";
+            this.vfUOzDxq9E.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
+            // 
+            // groupHeaderBand1
+            // 
+            this.groupHeaderBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label21,
+                        this.label11,
+                        this.label18,
+                        this.label10,
+                        this.label3,
+                        this.label17,
+                        this.label20});
+            this.groupHeaderBand1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
+                                "leMixInstruction_Ingredient_IngredientType", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.groupHeaderBand1.HeightF = 56.83332F;
+            this.groupHeaderBand1.Level = 1;
+            this.groupHeaderBand1.Name = "groupHeaderBand1";
+            this.groupHeaderBand1.RepeatEveryPage = true;
+            // 
+            // GroupHeader1
+            // 
+            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
+                                "leMixInstruction_Ingredient_InventoryItem_InventoryItemName", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeader1.HeightF = 15.625F;
+            this.GroupHeader1.Name = "GroupHeader1";
+            // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label7,
+                        this.label6,
+                        this.label9,
+                        this.label8,
+                        this.label13,
+                        this.label24});
+            this.GroupFooter1.HeightF = 23F;
+            this.GroupFooter1.Name = "GroupFooter1";
+            // 
+            // GroupFooter2
+            // 
+            this.GroupFooter2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.line1,
+                        this.label16,
+                        this.label2,
+                        this.label5});
+            this.GroupFooter2.HeightF = 27.16667F;
+            this.GroupFooter2.Level = 1;
+            this.GroupFooter2.Name = "GroupFooter2";
+            // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.line3,
+                        this.label25,
+                        this.label4,
+                        this.label15,
+                        this.line2});
+            this.ReportFooter.Name = "ReportFooter";
+            // 
+            // label14
+            // 
+            this.label14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label14.DataBindings"))});
+            this.label14.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.label14.Name = "label14";
+            this.label14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label14.SizeF = new System.Drawing.SizeF(188.75F, 23F);
+            this.label14.Text = "label1";
+            // 
+            // label19
+            // 
+            this.label19.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label19.DataBindings"), "{0:0.00%}")});
+            this.label19.LocationFloat = new DevExpress.Utils.PointFloat(188.75F, 0F);
+            this.label19.Name = "label19";
+            this.label19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label19.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label19.StylePriority.UseTextAlignment = false;
+            summary1.FormatString = "{0:0.00%}";
+            summary1.Func = DevExpress.XtraReports.UI.SummaryFunc.Avg;
+            this.label19.Summary = summary1;
+            this.label19.Text = "label15";
+            this.label19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label22
+            // 
+            this.label22.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label22.DataBindings"), "{0:n2}")});
+            this.label22.LocationFloat = new DevExpress.Utils.PointFloat(288.75F, 0F);
+            this.label22.Name = "label22";
+            this.label22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label22.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label22.StylePriority.UseTextAlignment = false;
+            summary2.FormatString = "{0:n2}";
+            this.label22.Summary = summary2;
+            this.label22.Text = "label16";
+            this.label22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label23
+            // 
+            this.label23.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label23.DataBindings"), "{0:n2}")});
+            this.label23.LocationFloat = new DevExpress.Utils.PointFloat(388.75F, 0F);
+            this.label23.Name = "label23";
+            this.label23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label23.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label23.StylePriority.UseTextAlignment = false;
+            summary3.FormatString = "{0:n2}";
+            summary3.Func = DevExpress.XtraReports.UI.SummaryFunc.Avg;
+            this.label23.Summary = summary3;
+            this.label23.Text = "label17";
+            this.label23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label1.DataBindings"), "{0:c2}")});
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(588.7499F, 0F);
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label1.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label1.StylePriority.UseTextAlignment = false;
+            summary4.FormatString = "{0:c2}";
+            this.label1.Summary = summary4;
+            this.label1.Text = "label18";
+            this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
+                                "leMixInstruction.costAFTon", "{0:c2}")});
+            this.label12.LocationFloat = new DevExpress.Utils.PointFloat(488.7499F, 0F);
+            this.label12.Name = "label12";
+            this.label12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label12.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label12.StylePriority.UseTextAlignment = false;
+            summary5.FormatString = "{0:c2}";
+            summary5.Func = DevExpress.XtraReports.UI.SummaryFunc.Avg;
+            this.label12.Summary = summary5;
+            this.label12.Text = "label19";
+            this.label12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Gainsboro;
+            this.label21.BorderColor = System.Drawing.Color.White;
+            this.label21.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.label21.BorderWidth = 2;
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(588.7499F, 33.83332F);
+            this.label21.Name = "label21";
+            this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label21.SizeF = new System.Drawing.SizeF(99.99998F, 23F);
+            this.label21.StylePriority.UseBackColor = false;
+            this.label21.StylePriority.UseBorderColor = false;
+            this.label21.StylePriority.UseBorders = false;
+            this.label21.StylePriority.UseBorderWidth = false;
+            this.label21.StylePriority.UseTextAlignment = false;
+            this.label21.Text = "Total Cost";
+            this.label21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Gainsboro;
+            this.label11.BorderColor = System.Drawing.Color.White;
+            this.label11.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.label11.BorderWidth = 2;
+            this.label11.LocationFloat = new DevExpress.Utils.PointFloat(488.7498F, 33.83332F);
+            this.label11.Name = "label11";
+            this.label11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label11.SizeF = new System.Drawing.SizeF(99.99998F, 23F);
+            this.label11.StylePriority.UseBackColor = false;
+            this.label11.StylePriority.UseBorderColor = false;
+            this.label11.StylePriority.UseBorders = false;
+            this.label11.StylePriority.UseBorderWidth = false;
+            this.label11.StylePriority.UseTextAlignment = false;
+            this.label11.Text = "Cost/Ton";
+            this.label11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Gainsboro;
+            this.label18.BorderColor = System.Drawing.Color.White;
+            this.label18.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.label18.BorderWidth = 2;
+            this.label18.LocationFloat = new DevExpress.Utils.PointFloat(388.75F, 33.83332F);
+            this.label18.Name = "label18";
+            this.label18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label18.SizeF = new System.Drawing.SizeF(99.99998F, 23F);
+            this.label18.StylePriority.UseBackColor = false;
+            this.label18.StylePriority.UseBorderColor = false;
+            this.label18.StylePriority.UseBorders = false;
+            this.label18.StylePriority.UseBorderWidth = false;
+            this.label18.StylePriority.UseTextAlignment = false;
+            this.label18.Text = "Daily Ton";
+            this.label18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Gainsboro;
+            this.label10.BorderColor = System.Drawing.Color.White;
+            this.label10.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.label10.BorderWidth = 2;
+            this.label10.LocationFloat = new DevExpress.Utils.PointFloat(288.75F, 33.83332F);
+            this.label10.Name = "label10";
+            this.label10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label10.SizeF = new System.Drawing.SizeF(99.99998F, 23F);
+            this.label10.StylePriority.UseBackColor = false;
+            this.label10.StylePriority.UseBorderColor = false;
+            this.label10.StylePriority.UseBorders = false;
+            this.label10.StylePriority.UseBorderWidth = false;
+            this.label10.StylePriority.UseTextAlignment = false;
+            this.label10.Text = "AF Tons";
+            this.label10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.BorderColor = System.Drawing.Color.White;
+            this.label3.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.label3.BorderWidth = 2;
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(188.75F, 33.83332F);
+            this.label3.Name = "label3";
+            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label3.SizeF = new System.Drawing.SizeF(99.99998F, 23F);
+            this.label3.StylePriority.UseBackColor = false;
+            this.label3.StylePriority.UseBorderColor = false;
+            this.label3.StylePriority.UseBorders = false;
+            this.label3.StylePriority.UseBorderWidth = false;
+            this.label3.StylePriority.UseTextAlignment = false;
+            this.label3.Text = "DM%";
+            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Gainsboro;
+            this.label17.BorderColor = System.Drawing.Color.White;
+            this.label17.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.label17.BorderWidth = 2;
+            this.label17.LocationFloat = new DevExpress.Utils.PointFloat(0F, 33.83332F);
+            this.label17.Name = "label17";
+            this.label17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label17.SizeF = new System.Drawing.SizeF(188.75F, 23F);
+            this.label17.StylePriority.UseBackColor = false;
+            this.label17.StylePriority.UseBorderColor = false;
+            this.label17.StylePriority.UseBorders = false;
+            this.label17.StylePriority.UseBorderWidth = false;
+            this.label17.Text = "Ingredient";
+            // 
+            // label20
+            // 
+            this.label20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label20.DataBindings"))});
+            this.label20.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.label20.Name = "label20";
+            this.label20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label20.SizeF = new System.Drawing.SizeF(462.5F, 33.83332F);
+            this.label20.StylePriority.UseFont = false;
+            this.label20.Text = "label2";
+            // 
+            // label7
+            // 
+            this.label7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
+                                "leMixInstruction.costAFTon")});
+            this.label7.LocationFloat = new DevExpress.Utils.PointFloat(488.7499F, 0F);
+            this.label7.Name = "label7";
+            this.label7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label7.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label7.StylePriority.UseTextAlignment = false;
+            summary6.FormatString = "{0:c2}";
+            summary6.Func = DevExpress.XtraReports.UI.SummaryFunc.Avg;
+            summary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label7.Summary = summary6;
+            this.label7.Text = "label7";
+            this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label6.DataBindings"))});
+            this.label6.LocationFloat = new DevExpress.Utils.PointFloat(588.7499F, 0F);
+            this.label6.Name = "label6";
+            this.label6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label6.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label6.StylePriority.UseTextAlignment = false;
+            summary7.FormatString = "{0:c2}";
+            summary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label6.Summary = summary7;
+            this.label6.Text = "label6";
+            this.label6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label9.DataBindings"))});
+            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(388.75F, 0F);
+            this.label9.Name = "label9";
+            this.label9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label9.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label9.StylePriority.UseTextAlignment = false;
+            summary8.FormatString = "{0:n2}";
+            summary8.Func = DevExpress.XtraReports.UI.SummaryFunc.Avg;
+            summary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label9.Summary = summary8;
+            this.label9.Text = "label5";
+            this.label9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label8.DataBindings"))});
+            this.label8.LocationFloat = new DevExpress.Utils.PointFloat(288.75F, 0F);
+            this.label8.Name = "label8";
+            this.label8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label8.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label8.StylePriority.UseTextAlignment = false;
+            summary9.FormatString = "{0:n2}";
+            summary9.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label8.Summary = summary9;
+            this.label8.Text = "label4";
+            this.label8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label13.DataBindings"))});
+            this.label13.LocationFloat = new DevExpress.Utils.PointFloat(188.75F, 0F);
+            this.label13.Name = "label13";
+            this.label13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label13.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label13.StylePriority.UseTextAlignment = false;
+            summary10.FormatString = "{0:0.00%}";
+            summary10.Func = DevExpress.XtraReports.UI.SummaryFunc.Avg;
+            summary10.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label13.Summary = summary10;
+            this.label13.Text = "label3";
+            this.label13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label24
+            // 
+            this.label24.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label24.DataBindings"))});
+            this.label24.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.label24.Name = "label24";
+            this.label24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label24.SizeF = new System.Drawing.SizeF(188.75F, 23F);
+            this.label24.Text = "label1";
+            // 
+            // line1
+            // 
+            this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0.04166663F, 0F);
+            this.line1.Name = "line1";
+            this.line1.SizeF = new System.Drawing.SizeF(725.9584F, 4.166667F);
+            // 
+            // label16
+            // 
+            this.label16.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label16.DataBindings"))});
+            this.label16.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label16.LocationFloat = new DevExpress.Utils.PointFloat(0F, 4.166667F);
+            this.label16.Name = "label16";
+            this.label16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label16.SizeF = new System.Drawing.SizeF(188.75F, 23F);
+            this.label16.StylePriority.UseFont = false;
+            this.label16.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label2.DataBindings"))});
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(288.75F, 4.166667F);
+            this.label2.Name = "label2";
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label2.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label2.StylePriority.UseFont = false;
+            this.label2.StylePriority.UseTextAlignment = false;
+            summary11.FormatString = "{0:n2}";
+            summary11.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label2.Summary = summary11;
+            this.label2.Text = "label4";
+            this.label2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label5.DataBindings"))});
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.LocationFloat = new DevExpress.Utils.PointFloat(588.7499F, 4.166667F);
+            this.label5.Name = "label5";
+            this.label5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label5.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label5.StylePriority.UseFont = false;
+            this.label5.StylePriority.UseTextAlignment = false;
+            summary12.FormatString = "{0:c2}";
+            summary12.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.label5.Summary = summary12;
+            this.label5.Text = "label6";
+            this.label5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // line3
+            // 
+            this.line3.LocationFloat = new DevExpress.Utils.PointFloat(0.04164378F, 4.166667F);
+            this.line3.Name = "line3";
+            this.line3.SizeF = new System.Drawing.SizeF(725.9584F, 4.166667F);
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label25.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
+            this.label25.Name = "label25";
+            this.label25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label25.SizeF = new System.Drawing.SizeF(188.75F, 23F);
+            this.label25.StylePriority.UseFont = false;
+            this.label25.Text = "Grand Totals:";
+            // 
+            // label4
+            // 
+            this.label4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label4.DataBindings"))});
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(588.7499F, 10F);
+            this.label4.Name = "label4";
+            this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label4.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label4.StylePriority.UseFont = false;
+            this.label4.StylePriority.UseTextAlignment = false;
+            summary13.FormatString = "{0:c2}";
+            summary13.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.label4.Summary = summary13;
+            this.label4.Text = "label17";
+            this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // label15
+            // 
+            this.label15.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label15.DataBindings"))});
+            this.label15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label15.LocationFloat = new DevExpress.Utils.PointFloat(288.75F, 10F);
+            this.label15.Name = "label15";
+            this.label15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label15.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.label15.StylePriority.UseFont = false;
+            this.label15.StylePriority.UseTextAlignment = false;
+            summary14.FormatString = "{0:n2}";
+            summary14.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.label15.Summary = summary14;
+            this.label15.Text = "label19";
+            this.label15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // line2
+            // 
+            this.line2.LocationFloat = new DevExpress.Utils.PointFloat(0.04164378F, 0F);
+            this.line2.Name = "line2";
+            this.line2.SizeF = new System.Drawing.SizeF(725.9584F, 4.166667F);
+            // 
+            // controlStyle4
+            // 
+            this.controlStyle4.Name = "controlStyle4";
+            // 
+            // controlStyle3
+            // 
+            this.controlStyle3.Name = "controlStyle3";
+            // 
+            // controlStyle2
+            // 
+            this.controlStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.controlStyle2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.controlStyle2.ForeColor = System.Drawing.Color.Black;
+            this.controlStyle2.Name = "controlStyle2";
+            // 
+            // controlStyle1
+            // 
+            this.controlStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.controlStyle1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.controlStyle1.ForeColor = System.Drawing.Color.Black;
+            this.controlStyle1.Name = "controlStyle1";
+            // 
+            // costAFTon
+            // 
+            this.costAFTon.DataMember = "vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
+                "leMixInstruction";
+            this.costAFTon.Expression = resources.GetString("costAFTon.Expression");
+            this.costAFTon.Name = "costAFTon";
+            // 
+            // gridReportTemplate1
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.RdqO4rV5AH,
+                        this.JUeO2XUw9c,
+                        this.fqiOT1fy9M,
+                        this.GGqOk8yBHJ,
+                        this.ponpVN7YmW,
+                        this.groupHeaderBand1,
+                        this.GroupHeader1,
+                        this.GroupFooter1,
+                        this.GroupFooter2,
+                        this.ReportFooter});
+            this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
+                        this.costAFTon});
+            this.DataMember = "vas_FeedWatch_Model_IDetailReportGroup_vas_FeedWatch_Model_Linq2SQL_FeedingSchedu" +
+                "leMixInstruction";
+            this.ExportOptions.Xlsx.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Text;
+            this.Font = new System.Drawing.Font("Arial", 9F);
+            this.Margins = new System.Drawing.Printing.Margins(50, 73, 50, 50);
+            this.Name = "gridReportTemplate1";
+            this.PageHeight = 1100;
+            this.PageWidth = 850;
+            this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
+                        this.vfUOzDxq9E,
+                        this.aR0pQAasVT,
+                        this.FuPpXO0sMt,
+                        this.jAmpCukchj,
+                        this.Xflp7E1a27,
+                        this.o08pDEuhEH,
+                        this.YrEpRUAZ49,
+                        this.Oe9pO05318,
+                        this.cAPppuiEMd,
+                        this.anOpcD65So,
+                        this.ujSpjGpGV4,
+                        this.cBCpJnA8oD,
+                        this.controlStyle4,
+                        this.controlStyle3,
+                        this.controlStyle2,
+                        this.controlStyle1});
+            this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.Version = "11.2";
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}
+</XtraReportXML>
+	<ReportXML>&lt;Report ReportGID="8701c1d1-4cca-49be-83a0-79d329b6bc76" ReportUseType="2" ReportType="1" ReportName="Ingredient Usage w/Cost" Description="Summary of ingredient usage with cost" CreatedDT="2014-02-06T08:58:02.97" ModifiedDT="2014-05-20T08:41:34.467" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAALwM=" ReportVersion="0" /&gt;</ReportXML>
+	<DefaultFilterXML />
+</SerializableReport>
