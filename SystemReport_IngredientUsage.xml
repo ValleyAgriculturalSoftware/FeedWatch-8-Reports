@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="55ccdc2c-2ea2-4430-a9d7-69cd258bf188" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage" Description="Ingredient Usage with AF/DM Qty and Tons and Cost" CreatedDT="2012-09-07T13:18:07" ModifiedDT="2014-12-31T13:02:26.09" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAlmQw=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="55ccdc2c-2ea2-4430-a9d7-69cd258bf188" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage" Description="Ingredient Usage with AF/DM Qty and Tons and Cost" CreatedDT="2012-09-07T13:18:07" ModifiedDT="2014-12-31T13:08:47.05" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAlmRA=" ReportVersion="2" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -8,7 +8,6 @@
 			<ReportQueryDescription />
 			<ReportQueryText>&lt;QueryBundle&gt;
 	&lt;QueryText&gt;select z.*
-      ,test = CAST(z.IsPremix as bit)
  from (
   select hii.InventoryItemName as 'Ingredient'
         ,hfl.LocationName
