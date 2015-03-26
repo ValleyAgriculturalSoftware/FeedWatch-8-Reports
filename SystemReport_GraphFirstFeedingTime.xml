@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="ae2d32a2-72f1-4187-b5f2-058f46f8c254" ReportUseType="2" ReportType="5" ReportName="Graph First Feeding Time by Pen Type" Description="Graph of a Pen's feeding time" CreatedDT="2014-03-24T11:09:22.753" ModifiedDT="2015-03-26T09:24:28.16" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU9o=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="9c44468e-cd5e-43eb-8859-437974ea04ae" ReportUseType="2" ReportType="5" ReportName="Graph First Feeding Time" Description="Graph of a Pen's feeding time" CreatedDT="2014-03-24T11:09:22.753" ModifiedDT="2015-03-26T10:30:45.443" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdcyY=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -66,13 +66,13 @@ where (1 = 1)&lt;/QueryText&gt;
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
 ///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.11.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
 namespace XtraReportSerialization {
     
-    public class GraphFirstFeedingTimebyPenType : DevExpress.XtraReports.UI.XtraReport {
+    public class GraphFirstFeedingTime : DevExpress.XtraReports.UI.XtraReport {
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.XRPictureBox pictureBox1;
         private DevExpress.XtraReports.UI.XRLine line1;
@@ -89,7 +89,6 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRSubreport subReportFilters;
         private DevExpress.XtraReports.UI.XtraReport xtraReport1;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader;
-        private DevExpress.XtraReports.UI.XRLine line2;
         private DevExpress.XtraReports.UI.XRChart chart1;
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
         private DevExpress.XtraReports.UI.XRLabel label32;
@@ -102,9 +101,8 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRControlStyle FooterColumnStyle;
         private DevExpress.XtraReports.UI.XRControlStyle ReportFooterColumnStyle;
         private DevExpress.XtraReports.UI.XRControlStyle GreenBarStyle;
-        private DevExpress.XtraReports.Parameters.Parameter updateChartTitle;
         private System.Resources.ResourceManager _resources;
-        public GraphFirstFeedingTimebyPenType() {
+        public GraphFirstFeedingTime() {
             this.InitializeComponent();
             this.LoadSubreportsLayout();
         }
@@ -113,34 +111,7 @@ namespace XtraReportSerialization {
                 if (_resources == null) {
                     string resourceString = "zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJza" +
                         "W9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4O" +
-                        "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAACAAAAAAAAAFBBRFBBRFBwrnGSS" +
-                        "F5ywSsAAAAAAAAALAEAACYkAHQAaABpAHMALgBTAGMAcgBpAHAAdABzAFMAbwB1AHIAYwBlAAAAAAA4d" +
-                        "QBwAGQAYQB0AGUAQwBoAGEAcgB0AFQAaQB0AGwAZQAuAEQAZQBzAGMAcgBpAHAAdABpAG8AbgC1BAAAA" +
-                        "bIJSW1wb3J0cyBEZXZFeHByZXNzLlh0cmFDaGFydHMNCg0KUHJpdmF0ZSBTdWIgY2hhcnQxX0JlZm9yZ" +
-                        "VByaW50KEJ5VmFsIHNlbmRlciBBcyBPYmplY3QsIEJ5VmFsIGUgQXMgU3lzdGVtLkRyYXdpbmcuUHJpb" +
-                        "nRpbmcuUHJpbnRFdmVudEFyZ3MpDQoJRGltIGNoYXJ0IGFzIFhSQ2hhcnQgPSBDVHlwZShzZW5kZXIsI" +
-                        "FhSQ2hhcnQpDQoJRGltIGN1cnJlbnRQZW5UeXBlIGFzIFN0cmluZyA9IEdldEN1cnJlbnRDb2x1bW5WY" +
-                        "Wx1ZSgiUHJpbWFyeVBlblR5cGUiKQ0KCURpbSBhZGRPclVwZGF0ZVRpdGxlIGFzIEJvb2xlYW4gPSBzZ" +
-                        "W5kZXIuUmVwb3J0LlBhcmFtZXRlcnMoInVwZGF0ZUNoYXJ0VGl0bGUiKS5WYWx1ZQ0KDQoJSWYgKE5vd" +
-                        "CBTdHJpbmcuSXNOdWxsT3JFbXB0eShjdXJyZW50UGVuVHlwZSkpIFRoZW4NCgkJSWYgKGFkZE9yVXBkY" +
-                        "XRlVGl0bGUpIFRoZW4gYWRkT3JVcGRhdGVDaGFydFRpdGxlKGNoYXJ0LCBjdXJyZW50UGVuVHlwZSkNC" +
-                        "gkJY2hhcnQuU2VyaWVzVGVtcGxhdGUuRGF0YUZpbHRlcnMuQ2xlYXIoKQ0KCQljaGFydC5TZXJpZXNUZ" +
-                        "W1wbGF0ZS5EYXRhRmlsdGVycy5BZGQoTmV3IERhdGFGaWx0ZXIoIlByaW1hcnlQZW5UeXBlIiwgR2V0V" +
-                        "HlwZShTdHJpbmcpLkZ1bGxOYW1lLCBEYXRhRmlsdGVyQ29uZGl0aW9uLkVxdWFsLCBjdXJyZW50UGVuV" +
-                        "HlwZSkpDQoJRW5kIElmDQpFbmQgU3ViDQoNClByaXZhdGUgU3ViIGFkZE9yVXBkYXRlQ2hhcnRUaXRsZ" +
-                        "ShCeVZhbCBjaGFydCBhcyBYUkNoYXJ0LCBCeVZhbCB0aXRsZSBhcyBTdHJpbmcpDQoJRGltIGNoYXJ0V" +
-                        "Gl0bGUgYXMgQ2hhcnRUaXRsZQ0KDQoJSWYgKGNoYXJ0LlRpdGxlcy5Db3VudCgpIDwgMSkgVGhlbg0KC" +
-                        "QljaGFydFRpdGxlID0gTmV3IENoYXJ0VGl0bGUoKQ0KCQlXaXRoIGNoYXJ0VGl0bGUNCgkJCS5UZXh0I" +
-                        "D0gdGl0bGUNCgkJCS5BbGlnbm1lbnQgPSBTdHJpbmdBbGlnbm1lbnQuQ2VudGVyDQoJCQkuRG9jayA9I" +
-                        "ENoYXJ0VGl0bGVEb2NrU3R5bGUuVG9wDQoJCQkuQW50aUFsaWFzaW5nID0gVHJ1ZQ0KCQkJLkZvbnQgP" +
-                        "SBOZXcgRm9udCgiVGFob21hIiwgMTQpDQoJCUVuZCBXaXRoDQoNCgkJY2hhcnQuVGl0bGVzLkFkZChja" +
-                        "GFydFRpdGxlKQ0KCUVsc2UNCgkJY2hhcnRUaXRsZSA9IGNoYXJ0LlRpdGxlcygwKQ0KCQljaGFydFRpd" +
-                        "GxlLlRleHQgPSB0aXRsZQ0KCQljaGFydFRpdGxlLlZpc2libGUgPSBUcnVlDQoJRW5kIElmDQoNCkVuZ" +
-                        "CBTdWIB7AFTZXQgeWVzIHRvIHVwZGF0ZSAob3IgYWRkKSBhIGNoYXJ0IHRpdGxlIHdpdGggdGhlIGN1c" +
-                        "nJlbnQgcGVuIHR5cGUuLg0KDQpJZiBlbmFibGVkLCBpdCB3aWxsIG92ZXJ3cml0ZSB0aGUgRklSU1Qgd" +
-                        "Gl0bGUgb2YgdGhlIGNoYXJ0DQp3aXRoIHRoZSBjdXJyZW50IHBlbiB0eXBlIGlmIGl0IGV4aXN0cy4gT" +
-                        "3RoZXJ3aXNlLCBpdCB3aWxsDQphZGQgYSBjaGFydCB0aXRsZSB3aXRoIHRoZSBjdXJyZW50IHBlbiB0e" +
-                        "XBlLg==";
+                        "SNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA";
                     this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
                 }
                 return this._resources;
@@ -150,7 +121,6 @@ namespace XtraReportSerialization {
             DevExpress.XtraCharts.XYDiagram xYDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -168,7 +138,6 @@ namespace XtraReportSerialization {
             this.DetailColumn = new DevExpress.XtraReports.UI.XRLabel();
             this.subReportFilters = new DevExpress.XtraReports.UI.XRSubreport();
             this.xtraReport1 = new DevExpress.XtraReports.UI.XtraReport();
-            this.line2 = new DevExpress.XtraReports.UI.XRLine();
             this.chart1 = new DevExpress.XtraReports.UI.XRChart();
             this.label32 = new DevExpress.XtraReports.UI.XRLabel();
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -180,7 +149,6 @@ namespace XtraReportSerialization {
             this.FooterColumnStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.ReportFooterColumnStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.GreenBarStyle = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.updateChartTitle = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xtraReport1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xYDiagram1)).BeginInit();
@@ -231,14 +199,10 @@ namespace XtraReportSerialization {
             // GroupHeader
             // 
             this.GroupHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-                        this.line2,
                         this.chart1});
-            this.GroupHeader.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-                        new DevExpress.XtraReports.UI.GroupField("PrimaryPenType", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader.HeightF = 564.5415F;
+            this.GroupHeader.HeightF = 529.1249F;
             this.GroupHeader.KeepTogether = true;
             this.GroupHeader.Name = "GroupHeader";
-            this.GroupHeader.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             // 
             // PageFooter
             // 
@@ -279,7 +243,7 @@ namespace XtraReportSerialization {
             this.label24.LocationFloat = new DevExpress.Utils.PointFloat(100F, 58.95834F);
             this.label24.Name = "label24";
             this.label24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label24.SizeF = new System.Drawing.SizeF(553.1249F, 30F);
+            this.label24.SizeF = new System.Drawing.SizeF(399.9999F, 30F);
             this.label24.StylePriority.UseFont = false;
             this.label24.Text = "label24";
             this.label24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -404,12 +368,6 @@ namespace XtraReportSerialization {
             this.xtraReport1.PageWidth = 850;
             this.xtraReport1.Version = "11.2";
             // 
-            // line2
-            // 
-            this.line2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.line2.Name = "line2";
-            this.line2.SizeF = new System.Drawing.SizeF(893F, 2.083333F);
-            // 
             // chart1
             // 
             this.chart1.AppearanceNameSerializable = "Nature Colors";
@@ -429,27 +387,19 @@ namespace XtraReportSerialization {
             xYDiagram1.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
             xYDiagram1.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
             this.chart1.Diagram = xYDiagram1;
-            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 2.083333F);
+            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 0F);
             this.chart1.Name = "chart1";
-            this.chart1.Scripts.OnBeforePrint = "chart1_BeforePrint";
             this.chart1.SeriesDataMember = "PenName";
             this.chart1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.chart1.SeriesTemplate.ArgumentDataMember = "ReportDate";
             this.chart1.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            this.chart1.SeriesTemplate.DataFilters.ClearAndAddRange(new DevExpress.XtraCharts.DataFilter[] {
-                        new DevExpress.XtraCharts.DataFilter("PrimaryPenType", "System.String", DevExpress.XtraCharts.DataFilterCondition.Equal, "Dry Cow")});
             pointSeriesLabel1.LineVisible = true;
             pointSeriesLabel1.Visible = false;
             this.chart1.SeriesTemplate.Label = pointSeriesLabel1;
             this.chart1.SeriesTemplate.SummaryFunction = "MIN([StartTime])";
             this.chart1.SeriesTemplate.ValueScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
             this.chart1.SeriesTemplate.View = lineSeriesView1;
-            this.chart1.SizeF = new System.Drawing.SizeF(883.0001F, 562.4582F);
-            chartTitle1.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle1.Text = "DO NOT REMOVE; THIS WILL BE REPLACED VIA SCRIPTING";
-            chartTitle1.Visible = false;
-            this.chart1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-                        chartTitle1});
+            this.chart1.SizeF = new System.Drawing.SizeF(883F, 529.1249F);
             // 
             // label32
             // 
@@ -559,15 +509,7 @@ namespace XtraReportSerialization {
             this.GreenBarStyle.BorderColor = System.Drawing.Color.Transparent;
             this.GreenBarStyle.Name = "GreenBarStyle";
             // 
-            // updateChartTitle
-            // 
-            this.updateChartTitle.Description = resources.GetString("updateChartTitle.Description");
-            this.updateChartTitle.Name = "updateChartTitle";
-            this.updateChartTitle.Type = typeof(bool);
-            this.updateChartTitle.Value = true;
-            this.updateChartTitle.Visible = false;
-            // 
-            // GraphFirstFeedingTimebyPenType
+            // GraphFirstFeedingTime
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.TopMargin,
@@ -580,13 +522,10 @@ namespace XtraReportSerialization {
             this.Font = new System.Drawing.Font("Arial", 9F);
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(88, 119, 104, 50);
-            this.Name = "GraphFirstFeedingTimebyPenType";
+            this.Name = "GraphFirstFeedingTime";
             this.PageHeight = 850;
             this.PageWidth = 1100;
-            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-                        this.updateChartTitle});
             this.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic;
-            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
                         this.HeaderLabelStyle,
                         this.HeaderColumnStyle,

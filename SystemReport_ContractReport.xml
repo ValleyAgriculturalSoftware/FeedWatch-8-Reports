@@ -1094,7 +1094,7 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="2efb3ee6-2356-470d-8583-d3bb45f74c49" ReportUseType="2" ReportType="1" ReportName="Contract Report" Description="Lists available Contracts" CreatedDT="2014-04-02T10:20:56.797" ModifiedDT="2014-12-15T15:50:35.123" ModifiedBy="VAS" ConcurrencyTS="AAAAAAACqfg=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="2efb3ee6-2356-470d-8583-d3bb45f74c49" ReportUseType="2" ReportType="1" ReportName="Contract Report" Description="Lists available Contracts" CreatedDT="2014-04-02T10:20:56.797" ModifiedDT="2015-03-26T09:24:27.373" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU9E=" ReportVersion="1" /&gt;</ReportXML>
 	<DefaultFilterXML>&lt;BaseReportFilter&gt;
 	&lt;DetailFilterStrings&gt;
 		&lt;item&gt;

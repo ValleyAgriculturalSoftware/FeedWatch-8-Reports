@@ -1,63 +1,39 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="48937f00-27dd-4b56-b35b-1695bdc13a85" ReportUseType="2" ReportType="5" ReportName="Recipe Report" Description="Recipe breakdown with Quantity and Cost" CreatedDT="2013-06-28T15:09:40.74" ModifiedDT="2015-03-26T09:24:28.57" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU90=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="d38642b7-f620-417d-9516-ff1329d394b9" ReportUseType="2" ReportType="5" ReportName="Load Accuracy Graph" Description="Feeder Accuracy Graph per day" CreatedDT="2014-05-16T14:47:59.297" ModifiedDT="2015-03-26T10:30:47.973" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdcy8=" ReportVersion="0" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
 			<QueryGID>00000000-0000-0000-0000-000000000000</QueryGID>
-			<ReportQueryName>RecipeReport</ReportQueryName>
+			<ReportQueryName>OperAcc</ReportQueryName>
 			<ReportQueryDescription />
 			<ReportQueryText>&lt;QueryBundle&gt;
-	&lt;QueryText&gt;from o in
-(
-	from r in dc.Recipes where !r.Inactive
-	from ri in r.RecipeInstructions where !ri.Inactive
-	let chemistry = (from ch in dc.Chemistries
-					 where ch.InventoryItemGID.Equals(ri.InventoryItemLocation.InventoryItemGID) &amp;amp;&amp;amp;
-	                       ch.LocationGID.Equals(ri.InventoryItemLocation.LocationGID) &amp;amp;&amp;amp;
-						   ch.ChemistryUseType == 2
-					 orderby ch.AsOfDT descending
-					 select ch).FirstOrDefault()
-	{false}
-	select new
-	{
-		r.Company.CompanyName,
-		ri.RecipeInstructionGID,
-		ri.InventoryItemLocation.InventoryItemGID,
-		ri.InventoryItemLocation.LocationGID,
-		ri.InventoryItemLocation.PhysicalInventoryDT,
-		r.RecipeName,
-		ri.InventoryItemLocationGID,
-		ri.Sequence,
-		ri.DisplaySequence,
-		ri.InventoryItemLocation.InventoryItem.InventoryItemName,
-		ri.InventoryItemLocation.Location.LocationName,
-		ri.Quantity,
-		AFQuantityOz = (ri.RecipeAction.RecipeActionType == 0 ? ri.Quantity : 0),
-		DMQuantityOz = (ri.RecipeAction.RecipeActionType == 0 ? ri.Quantity * (chemistry == null ? 0.0 : chemistry.DMPct) : 0),
-		DMPct = (chemistry == null ? 0 : chemistry.DMPct),
-	}
-)
-{where}
-select new
-{
-    o.InventoryItemLocationGID,
-	o.CompanyName,
-	o.RecipeName,
-	o.InventoryItemName,
-	o.LocationName,
-	Description = vas.FeedWatch.Model.Entities.RecipeInstructionFactory.Instance.Open(null, o.RecipeInstructionGID).Description,
-	o.DisplaySequence,
-	o.Sequence,
-	o.Quantity,
-	AFQty = o.InventoryItemLocationGID == null ? (float?)null : measurement.GetConvertedValue(vas.Core.MeasurementSizeClasses.Medium, o.AFQuantityOz),
-	DMQty = o.InventoryItemLocationGID == null ? (double?)null : measurement.GetConvertedValue(vas.Core.MeasurementSizeClasses.Medium, o.DMQuantityOz),
-	DMPct = o.InventoryItemLocationGID == null ? (float?)null : o.DMPct,
-	BaseCostPer = o.InventoryItemLocationGID == null  ? (double?)null : vas.FeedWatch.Model.Entities.InventoryItemLocationFactory.Instance.Open(null, o.InventoryItemLocationGID.Value).AFCostPer,
-	FifoCostPer = o.InventoryItemLocationGID == null ? (double?)null :  vas.FeedWatch.Model.Entities.InventoryItemLocationFactory.Instance.Open(null, o.InventoryItemLocationGID.Value).AFFifoCostPer
-};&lt;/QueryText&gt;
-	&lt;PreQueryText&gt;var measurement = vas.AppServices.ServiceLocator.GetService&amp;lt;vas.AppServices.MeasurementConverter&amp;gt;();&lt;/PreQueryText&gt;
+	&lt;QueryText&gt;select * from (
+select fs.InstanceDate as ReportDate, 
+	 LoadAvgErrorPct = avg(case when it2.TargetUnitQuantity = 0 then 0 else
+		100 * ABS(it2.TargetUnitQuantity - it2.UnitQuantity) / it2.TargetUnitQuantity end), 
+	 DropAvgErrorPct = avg(case when it1.TargetUnitQuantity = 0 then 0 else
+		100 * ABS(it1.TargetUnitQuantity - it1.UnitQuantity) / it1.TargetUnitQuantity end), 
+	 l.LocationName as Pen, u.UserID as [User], e.LocationName as Equipment, ii.InventoryItemName as Ingredient, pt.PenTypeName as PenType
+from FeedingSchedule fs
+join FeedingScheduleMix fsm on fsm.FeedingScheduleGID = fs.FeedingScheduleGID
+join FeedingScheduleLoad fsl on fsl.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID
+join FeedingScheduleDrop fsd on fsd.FeedingScheduleLoadGID = fsl.FeedingScheduleLoadGID
+join InventoryTransaction it1 on it1.TransactionSourceGID = fsd.FeedingScheduleDropGID
+join FeedingScheduleMixInstruction fsmi on fsmi.FeedingScheduleMixGID = fsm.FeedingScheduleMixGID
+	and fsmi.InventoryItemGID = it1.InventoryItemGID
+join InventoryTransaction it2 on it2.TransactionSourceGID = fsmi.FeedingScheduleMixInstructionGID
+join InventoryItem ii on ii.InventoryItemGID = it2.InventoryItemGID
+join Location l on l.LocationGID = fsd.LocationGID
+join Pen p on p.LocationGID = l.LocationGID
+join [User] u on u.UserGID = fsd.ByUserGID
+join Location e on e.LocationGID = it2.ToLocationGID
+outer apply(select top 1 PenTypeName from PenType pt
+	join PenPenType ppt on ppt.PenTypeGID = pt.PenTypeGID
+	where ppt.PenGID = p.PenGID and ppt.IsPrimary = 1) pt
+group by fs.InstanceDate, l.LocationName, u.UserID, e.LocationName, pt.PenTypeName, ii.InventoryItemName) z where 1=1&lt;/QueryText&gt;
+	&lt;PreQueryText /&gt;
 &lt;/QueryBundle&gt;</ReportQueryText>
-			<ReportQueryType>Linq</ReportQueryType>
+			<ReportQueryType>Sql</ReportQueryType>
 			<QueryID>1</QueryID>
 			<ParentQueryID>0</ParentQueryID>
 			<SQLStatement />
@@ -66,9 +42,15 @@ select new
 	<ReportFilters>
 		<ReportFilter>
 			<SeqNo>0</SeqNo>
+			<ColumnName>ReportDate</ColumnName>
+			<PreDefinedFilterOperator>Between</PreDefinedFilterOperator>
+			<PreDefinedFilterValue>y-6d</PreDefinedFilterValue>
+			<DefaultIsOr>false</DefaultIsOr>
+		</ReportFilter>
+		<ReportFilter>
+			<SeqNo>1</SeqNo>
 			<ColumnName>CompanyName</ColumnName>
-			<PreDefinedFilterOperator>Equal</PreDefinedFilterOperator>
-			<PreDefinedFilterValue>$company</PreDefinedFilterValue>
+			<PreDefinedFilterOperator>None</PreDefinedFilterOperator>
 			<DefaultIsOr>false</DefaultIsOr>
 		</ReportFilter>
 	</ReportFilters>
@@ -79,19 +61,15 @@ select new
 	<CrossTabTotalsSummaryType>None</CrossTabTotalsSummaryType>
 	<XtraReportDefinition>/// &lt;XRTypeInfo&gt;
 ///   &lt;AssemblyFullName&gt;DevExpress.XtraReports.v11.2, Version=11.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a&lt;/AssemblyFullName&gt;
-///   &lt;AssemblyLocation&gt;C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v11.2\11.2.11.0__b88d1754d700e49a\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
+///   &lt;AssemblyLocation&gt;C:\Program Files (x86)\Valley Agricultural Software\FeedWatch8\DevExpress.XtraReports.v11.2.dll&lt;/AssemblyLocation&gt;
 ///   &lt;TypeName&gt;DevExpress.XtraReports.UI.XtraReport&lt;/TypeName&gt;
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
 namespace XtraReportSerialization {
     
-    public class RecipeReport : DevExpress.XtraReports.UI.XtraReport {
+    public class LoadAccuracyGraph : DevExpress.XtraReports.UI.XtraReport {
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
-        private DevExpress.XtraReports.UI.XRLabel label9;
-        private DevExpress.XtraReports.UI.XRLabel label8;
-        private DevExpress.XtraReports.UI.XRLabel label7;
-        private DevExpress.XtraReports.UI.XRLabel label6;
         private DevExpress.XtraReports.UI.XRLabel DetailColumn;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
@@ -111,36 +89,24 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRLabel label30;
         private DevExpress.XtraReports.UI.XRLabel label29;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader;
-        private DevExpress.XtraReports.UI.XRLabel label4;
-        private DevExpress.XtraReports.UI.XRLabel label3;
         private DevExpress.XtraReports.UI.XRLabel label2;
         private DevExpress.XtraReports.UI.XRLabel label1;
-        private DevExpress.XtraReports.UI.XRLabel GroupLabel;
-        private DevExpress.XtraReports.UI.XRLabel GroupColumnHeader;
+        private DevExpress.XtraReports.UI.XRChart chart1;
+        private DevExpress.XtraReports.UI.XRChart chart2;
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
         private DevExpress.XtraReports.UI.XRLabel label32;
         private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
         private DevExpress.XtraReports.UI.XRLabel label36;
         private DevExpress.XtraReports.UI.XRLine line3;
-        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter;
-        private DevExpress.XtraReports.UI.XRLine line5;
-        private DevExpress.XtraReports.UI.XRLabel GroupTotals;
-        private DevExpress.XtraReports.UI.XRLabel label10;
-        private DevExpress.XtraReports.UI.XRLabel label11;
-        private DevExpress.XtraReports.UI.XRLabel label12;
-        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
-        private DevExpress.XtraReports.UI.XRLine line4;
-        private DevExpress.XtraReports.UI.XRLabel ReportTotals;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.XRControlStyle HeaderLabelStyle;
         private DevExpress.XtraReports.UI.XRControlStyle HeaderColumnStyle;
         private DevExpress.XtraReports.UI.XRControlStyle DetailColumnStyle;
         private DevExpress.XtraReports.UI.XRControlStyle FooterColumnStyle;
         private DevExpress.XtraReports.UI.XRControlStyle ReportFooterColumnStyle;
         private DevExpress.XtraReports.UI.XRControlStyle GreenBarStyle;
-        private DevExpress.XtraReports.UI.CalculatedField Display;
-        private DevExpress.XtraReports.UI.CalculatedField Cost;
         private System.Resources.ResourceManager _resources;
-        public RecipeReport() {
+        public LoadAccuracyGraph() {
             this.InitializeComponent();
             this.LoadSubreportsLayout();
         }
@@ -156,9 +122,12 @@ namespace XtraReportSerialization {
             }
         }
         private void InitializeComponent() {
-            DevExpress.XtraReports.UI.XRSummary summary1 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.XtraReports.UI.XRSummary summary2 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.XtraReports.UI.XRSummary summary3 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraCharts.XYDiagram xYDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.StackedLineSeriesLabel stackedLineSeriesLabel1 = new DevExpress.XtraCharts.StackedLineSeriesLabel();
+            DevExpress.XtraCharts.StackedLineSeriesView stackedLineSeriesView1 = new DevExpress.XtraCharts.StackedLineSeriesView();
+            DevExpress.XtraCharts.XYDiagram xYDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.StackedLineSeriesLabel stackedLineSeriesLabel2 = new DevExpress.XtraCharts.StackedLineSeriesLabel();
+            DevExpress.XtraCharts.StackedLineSeriesView stackedLineSeriesView2 = new DevExpress.XtraCharts.StackedLineSeriesView();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -166,12 +135,7 @@ namespace XtraReportSerialization {
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.GroupHeader = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.GroupFooter = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.label9 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label8 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.DetailColumn = new DevExpress.XtraReports.UI.XRLabel();
             this.label28 = new DevExpress.XtraReports.UI.XRLabel();
             this.label27 = new DevExpress.XtraReports.UI.XRLabel();
@@ -187,32 +151,29 @@ namespace XtraReportSerialization {
             this.line2 = new DevExpress.XtraReports.UI.XRLine();
             this.label30 = new DevExpress.XtraReports.UI.XRLabel();
             this.label29 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
             this.label2 = new DevExpress.XtraReports.UI.XRLabel();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupLabel = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupColumnHeader = new DevExpress.XtraReports.UI.XRLabel();
+            this.chart1 = new DevExpress.XtraReports.UI.XRChart();
+            this.chart2 = new DevExpress.XtraReports.UI.XRChart();
             this.label32 = new DevExpress.XtraReports.UI.XRLabel();
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.label36 = new DevExpress.XtraReports.UI.XRLabel();
             this.line3 = new DevExpress.XtraReports.UI.XRLine();
-            this.line5 = new DevExpress.XtraReports.UI.XRLine();
-            this.GroupTotals = new DevExpress.XtraReports.UI.XRLabel();
-            this.label10 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label11 = new DevExpress.XtraReports.UI.XRLabel();
-            this.label12 = new DevExpress.XtraReports.UI.XRLabel();
-            this.line4 = new DevExpress.XtraReports.UI.XRLine();
-            this.ReportTotals = new DevExpress.XtraReports.UI.XRLabel();
             this.HeaderLabelStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.HeaderColumnStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailColumnStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.FooterColumnStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.ReportFooterColumnStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.GreenBarStyle = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.Display = new DevExpress.XtraReports.UI.CalculatedField();
-            this.Cost = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xtraReport1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xYDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xYDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -223,16 +184,12 @@ namespace XtraReportSerialization {
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-                        this.label9,
-                        this.label8,
-                        this.label7,
-                        this.label6,
                         this.DetailColumn});
+            this.Detail.Expanded = false;
             this.Detail.HeightF = 18F;
             this.Detail.KeepTogetherWithDetailReports = true;
             this.Detail.Name = "Detail";
-            this.Detail.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-                        new DevExpress.XtraReports.UI.GroupField("Sequence", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.Detail.Visible = false;
             // 
             // BottomMargin
             // 
@@ -270,16 +227,13 @@ namespace XtraReportSerialization {
             // GroupHeader
             // 
             this.GroupHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-                        this.label4,
-                        this.label3,
                         this.label2,
                         this.label1,
-                        this.GroupLabel,
-                        this.GroupColumnHeader});
-            this.GroupHeader.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-                        new DevExpress.XtraReports.UI.GroupField("RecipeName", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader.HeightF = 51.00006F;
+                        this.chart1,
+                        this.chart2});
+            this.GroupHeader.HeightF = 602.9166F;
             this.GroupHeader.KeepTogether = true;
+            this.GroupHeader.Level = 1;
             this.GroupHeader.Name = "GroupHeader";
             // 
             // PageFooter
@@ -292,101 +246,22 @@ namespace XtraReportSerialization {
             this.PageFooter.HeightF = 22.00003F;
             this.PageFooter.Name = "PageFooter";
             // 
-            // GroupFooter
+            // GroupHeader1
             // 
-            this.GroupFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-                        this.line5,
-                        this.GroupTotals,
-                        this.label10,
-                        this.label11,
-                        this.label12});
-            this.GroupFooter.HeightF = 27.37503F;
-            this.GroupFooter.Name = "GroupFooter";
-            // 
-            // ReportFooter
-            // 
-            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-                        this.line4,
-                        this.ReportTotals});
-            this.ReportFooter.HeightF = 22F;
-            this.ReportFooter.Name = "ReportFooter";
-            this.ReportFooter.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.BorderColor = System.Drawing.Color.White;
-            this.label9.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label9.BorderWidth = 2;
-            this.label9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.Cost", "{0:c2}")});
-            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(550F, 0F);
-            this.label9.Name = "label9";
-            this.label9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label9.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label9.StylePriority.UsePadding = false;
-            this.label9.StylePriority.UseTextAlignment = false;
-            this.label9.Text = "DetailColumn";
-            this.label9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.BorderColor = System.Drawing.Color.White;
-            this.label8.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label8.BorderWidth = 2;
-            this.label8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.DMQty", "{0:n2}")});
-            this.label8.LocationFloat = new DevExpress.Utils.PointFloat(450F, 0F);
-            this.label8.Name = "label8";
-            this.label8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label8.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label8.StylePriority.UsePadding = false;
-            this.label8.StylePriority.UseTextAlignment = false;
-            this.label8.Text = "DetailColumn";
-            this.label8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.BorderColor = System.Drawing.Color.White;
-            this.label7.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label7.BorderWidth = 2;
-            this.label7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.AFQty", "{0:n2}")});
-            this.label7.LocationFloat = new DevExpress.Utils.PointFloat(350F, 0F);
-            this.label7.Name = "label7";
-            this.label7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label7.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label7.StylePriority.UsePadding = false;
-            this.label7.StylePriority.UseTextAlignment = false;
-            this.label7.Text = "DetailColumn";
-            this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.BorderColor = System.Drawing.Color.White;
-            this.label6.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label6.BorderWidth = 2;
-            this.label6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.Sequence", "{0:n0}")});
-            this.label6.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
-            this.label6.Name = "label6";
-            this.label6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label6.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label6.StylePriority.UsePadding = false;
-            this.label6.StylePriority.UseTextAlignment = false;
-            this.label6.Text = "DetailColumn";
-            this.label6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("User", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeader1.HeightF = 337.5F;
+            this.GroupHeader1.Name = "GroupHeader1";
             // 
             // DetailColumn
             // 
             this.DetailColumn.BorderColor = System.Drawing.Color.White;
             this.DetailColumn.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.DetailColumn.BorderWidth = 2;
-            this.DetailColumn.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.Display")});
             this.DetailColumn.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.DetailColumn.Name = "DetailColumn";
             this.DetailColumn.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.DetailColumn.SizeF = new System.Drawing.SizeF(250F, 18F);
+            this.DetailColumn.SizeF = new System.Drawing.SizeF(100F, 18F);
             this.DetailColumn.StylePriority.UsePadding = false;
             this.DetailColumn.StylePriority.UseTextAlignment = false;
             this.DetailColumn.Text = "DetailColumn";
@@ -400,7 +275,7 @@ namespace XtraReportSerialization {
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 0F);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(706.5416F, 0F);
             this.label28.Name = "label28";
             this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label28.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -419,7 +294,7 @@ namespace XtraReportSerialization {
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 15F);
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(706.5416F, 15F);
             this.label27.Name = "label27";
             this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label27.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -436,7 +311,7 @@ namespace XtraReportSerialization {
             this.label21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 30F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(706.5416F, 30F);
             this.label21.Name = "label21";
             this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label21.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -485,7 +360,7 @@ namespace XtraReportSerialization {
             this.line1.LineWidth = 4;
             this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51F);
             this.line1.Name = "line1";
-            this.line1.SizeF = new System.Drawing.SizeF(702F, 4F);
+            this.line1.SizeF = new System.Drawing.SizeF(892.9999F, 4F);
             this.line1.StylePriority.UseBorderWidth = false;
             // 
             // xtraReport1
@@ -506,7 +381,7 @@ namespace XtraReportSerialization {
             this.label31.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedDateTime")});
             this.label31.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 30F);
+            this.label31.LocationFloat = new DevExpress.Utils.PointFloat(706.5416F, 30F);
             this.label31.Name = "label31";
             this.label31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label31.Scripts.OnBeforePrint = "label21_BeforePrint";
@@ -546,7 +421,7 @@ namespace XtraReportSerialization {
             this.line2.LineWidth = 4;
             this.line2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51F);
             this.line2.Name = "line2";
-            this.line2.SizeF = new System.Drawing.SizeF(702F, 4F);
+            this.line2.SizeF = new System.Drawing.SizeF(892.9999F, 4F);
             // 
             // label30
             // 
@@ -556,7 +431,7 @@ namespace XtraReportSerialization {
             this.label30.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.CompanyName")});
             this.label30.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 15F);
+            this.label30.LocationFloat = new DevExpress.Utils.PointFloat(706.5416F, 15F);
             this.label30.Name = "label30";
             this.label30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label30.SizeF = new System.Drawing.SizeF(186.4583F, 15F);
@@ -573,7 +448,7 @@ namespace XtraReportSerialization {
             this.label29.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportInfo.PrintedBy")});
             this.label29.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.LocationFloat = new DevExpress.Utils.PointFloat(517.5417F, 0F);
+            this.label29.LocationFloat = new DevExpress.Utils.PointFloat(706.5416F, 0F);
             this.label29.Name = "label29";
             this.label29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label29.Scripts.OnBeforePrint = "label28_BeforePrint";
@@ -584,122 +459,79 @@ namespace XtraReportSerialization {
             this.label29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.label29.WordWrap = false;
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.BorderColor = System.Drawing.Color.White;
-            this.label4.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label4.BorderWidth = 2;
-            this.label4.CanGrow = false;
-            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(550F, 29.00003F);
-            this.label4.Name = "label4";
-            this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label4.SizeF = new System.Drawing.SizeF(100F, 22.00003F);
-            this.label4.StylePriority.UseBorderColor = false;
-            this.label4.StylePriority.UseBorders = false;
-            this.label4.StylePriority.UseBorderWidth = false;
-            this.label4.StylePriority.UsePadding = false;
-            this.label4.StylePriority.UseTextAlignment = false;
-            this.label4.Text = "Cost";
-            this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label4.WordWrap = false;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.BorderColor = System.Drawing.Color.White;
-            this.label3.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label3.BorderWidth = 2;
-            this.label3.CanGrow = false;
-            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(450F, 29.00003F);
-            this.label3.Name = "label3";
-            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label3.SizeF = new System.Drawing.SizeF(100F, 22.00003F);
-            this.label3.StylePriority.UseBorderColor = false;
-            this.label3.StylePriority.UseBorders = false;
-            this.label3.StylePriority.UseBorderWidth = false;
-            this.label3.StylePriority.UsePadding = false;
-            this.label3.StylePriority.UseTextAlignment = false;
-            this.label3.Text = "DM Qty";
-            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label3.WordWrap = false;
-            // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.BorderColor = System.Drawing.Color.White;
-            this.label2.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label2.BorderWidth = 2;
-            this.label2.CanGrow = false;
-            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(350F, 29.00003F);
+            this.label2.BackColor = System.Drawing.Color.Gainsboro;
+            this.label2.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 318.4583F);
             this.label2.Name = "label2";
-            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label2.SizeF = new System.Drawing.SizeF(100F, 22.00003F);
-            this.label2.StylePriority.UseBorderColor = false;
-            this.label2.StylePriority.UseBorders = false;
-            this.label2.StylePriority.UseBorderWidth = false;
-            this.label2.StylePriority.UsePadding = false;
-            this.label2.StylePriority.UseTextAlignment = false;
-            this.label2.Text = "AF Qty";
-            this.label2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label2.WordWrap = false;
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.label2.SizeF = new System.Drawing.SizeF(892.9999F, 23F);
+            this.label2.StylePriority.UseBackColor = false;
+            this.label2.StylePriority.UseFont = false;
+            this.label2.Text = "Average Drop Percent";
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.BorderColor = System.Drawing.Color.White;
-            this.label1.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label1.BorderWidth = 2;
-            this.label1.CanGrow = false;
-            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 29.00003F);
+            this.label1.BackColor = System.Drawing.Color.Gainsboro;
+            this.label1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.label1.Name = "label1";
-            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label1.SizeF = new System.Drawing.SizeF(100F, 22.00003F);
-            this.label1.StylePriority.UseBorderColor = false;
-            this.label1.StylePriority.UseBorders = false;
-            this.label1.StylePriority.UseBorderWidth = false;
-            this.label1.StylePriority.UsePadding = false;
-            this.label1.StylePriority.UseTextAlignment = false;
-            this.label1.Text = "SeqNo";
-            this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label1.WordWrap = false;
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.label1.SizeF = new System.Drawing.SizeF(892.9999F, 23F);
+            this.label1.StylePriority.UseBackColor = false;
+            this.label1.StylePriority.UseFont = false;
+            this.label1.Text = "Average Load Percent";
             // 
-            // GroupLabel
+            // chart1
             // 
-            this.GroupLabel.BorderColor = System.Drawing.Color.White;
-            this.GroupLabel.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.GroupLabel.BorderWidth = 2;
-            this.GroupLabel.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.RecipeName")});
-            this.GroupLabel.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupLabel.LocationFloat = new DevExpress.Utils.PointFloat(0F, 6.00001F);
-            this.GroupLabel.Name = "GroupLabel";
-            this.GroupLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.GroupLabel.SizeF = new System.Drawing.SizeF(600.2084F, 22.99999F);
-            this.GroupLabel.StylePriority.UseFont = false;
-            this.GroupLabel.Text = "GroupLabel";
-            this.GroupLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.GroupLabel.WordWrap = false;
+            this.chart1.BorderColor = System.Drawing.Color.Black;
+            this.chart1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            xYDiagram1.AxisX.Range.SideMarginsEnabled = true;
+            xYDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xYDiagram1.AxisY.Range.SideMarginsEnabled = true;
+            xYDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xYDiagram1.DefaultPane.EnableAxisXScrolling = DevExpress.Utils.DefaultBoolean.False;
+            xYDiagram1.DefaultPane.EnableAxisXZooming = DevExpress.Utils.DefaultBoolean.False;
+            xYDiagram1.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
+            xYDiagram1.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
+            this.chart1.Diagram = xYDiagram1;
+            this.chart1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 341.4583F);
+            this.chart1.Name = "chart1";
+            this.chart1.SeriesDataMember = "ReportData.User";
+            this.chart1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chart1.SeriesTemplate.ArgumentDataMember = "ReportData.ReportDate";
+            this.chart1.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            stackedLineSeriesLabel1.LineVisible = true;
+            this.chart1.SeriesTemplate.Label = stackedLineSeriesLabel1;
+            this.chart1.SeriesTemplate.SummaryFunction = "AVERAGE([ReportData.DropAvgErrorPct])";
+            this.chart1.SeriesTemplate.View = stackedLineSeriesView1;
+            this.chart1.SizeF = new System.Drawing.SizeF(892.9998F, 261.4583F);
             // 
-            // GroupColumnHeader
+            // chart2
             // 
-            this.GroupColumnHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.GroupColumnHeader.BorderColor = System.Drawing.Color.White;
-            this.GroupColumnHeader.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.GroupColumnHeader.BorderWidth = 2;
-            this.GroupColumnHeader.CanGrow = false;
-            this.GroupColumnHeader.LocationFloat = new DevExpress.Utils.PointFloat(0F, 28.99996F);
-            this.GroupColumnHeader.Name = "GroupColumnHeader";
-            this.GroupColumnHeader.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.GroupColumnHeader.SizeF = new System.Drawing.SizeF(250F, 22.00003F);
-            this.GroupColumnHeader.StylePriority.UseBorderColor = false;
-            this.GroupColumnHeader.StylePriority.UseBorders = false;
-            this.GroupColumnHeader.StylePriority.UseBorderWidth = false;
-            this.GroupColumnHeader.StylePriority.UsePadding = false;
-            this.GroupColumnHeader.StylePriority.UseTextAlignment = false;
-            this.GroupColumnHeader.Text = "Ingredient - Location";
-            this.GroupColumnHeader.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.GroupColumnHeader.WordWrap = false;
+            this.chart2.BorderColor = System.Drawing.Color.Black;
+            this.chart2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            xYDiagram2.AxisX.Range.SideMarginsEnabled = true;
+            xYDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xYDiagram2.AxisY.Range.SideMarginsEnabled = true;
+            xYDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            xYDiagram2.DefaultPane.EnableAxisXScrolling = DevExpress.Utils.DefaultBoolean.False;
+            xYDiagram2.DefaultPane.EnableAxisXZooming = DevExpress.Utils.DefaultBoolean.False;
+            xYDiagram2.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
+            xYDiagram2.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
+            this.chart2.Diagram = xYDiagram2;
+            this.chart2.LocationFloat = new DevExpress.Utils.PointFloat(0.0001907349F, 23F);
+            this.chart2.Name = "chart2";
+            this.chart2.SeriesDataMember = "ReportData.User";
+            this.chart2.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chart2.SeriesTemplate.ArgumentDataMember = "ReportData.ReportDate";
+            this.chart2.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            stackedLineSeriesLabel2.LineVisible = true;
+            this.chart2.SeriesTemplate.Label = stackedLineSeriesLabel2;
+            this.chart2.SeriesTemplate.SummaryFunction = "AVERAGE([ReportData.LoadAvgErrorPct])";
+            this.chart2.SeriesTemplate.View = stackedLineSeriesView2;
+            this.chart2.SizeF = new System.Drawing.SizeF(892.9998F, 261.4583F);
             // 
             // label32
             // 
@@ -709,7 +541,7 @@ namespace XtraReportSerialization {
             this.label32.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "AppInfo.ApplicationCopyright")});
             this.label32.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.LocationFloat = new DevExpress.Utils.PointFloat(224.2917F, 4F);
+            this.label32.LocationFloat = new DevExpress.Utils.PointFloat(318.7916F, 4F);
             this.label32.Name = "label32";
             this.label32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
             this.label32.SizeF = new System.Drawing.SizeF(350F, 10F);
@@ -723,7 +555,7 @@ namespace XtraReportSerialization {
             // 
             this.pageInfo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageInfo1.Format = "Page {0} of {1}";
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(578.5833F, 4.000028F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(767.5833F, 4.000028F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.pageInfo1.SizeF = new System.Drawing.SizeF(125.4167F, 18F);
@@ -752,117 +584,8 @@ namespace XtraReportSerialization {
             this.line3.LineWidth = 2;
             this.line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.line3.Name = "line3";
-            this.line3.SizeF = new System.Drawing.SizeF(702F, 4F);
+            this.line3.SizeF = new System.Drawing.SizeF(892.9999F, 4F);
             this.line3.StylePriority.UseBorderWidth = false;
-            // 
-            // line5
-            // 
-            this.line5.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.line5.Name = "line5";
-            this.line5.SizeF = new System.Drawing.SizeF(650F, 2.083333F);
-            // 
-            // GroupTotals
-            // 
-            this.GroupTotals.BorderColor = System.Drawing.Color.White;
-            this.GroupTotals.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.GroupTotals.BorderWidth = 2;
-            this.GroupTotals.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.GroupTotals.LocationFloat = new DevExpress.Utils.PointFloat(0F, 6F);
-            this.GroupTotals.Name = "GroupTotals";
-            this.GroupTotals.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.GroupTotals.SizeF = new System.Drawing.SizeF(50F, 18.00003F);
-            this.GroupTotals.StylePriority.UseFont = false;
-            this.GroupTotals.StylePriority.UsePadding = false;
-            this.GroupTotals.StylePriority.UseTextAlignment = false;
-            this.GroupTotals.Text = "Totals:";
-            this.GroupTotals.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // label10
-            // 
-            this.label10.BorderColor = System.Drawing.Color.White;
-            this.label10.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label10.BorderWidth = 2;
-            this.label10.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.AFQty")});
-            this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label10.LocationFloat = new DevExpress.Utils.PointFloat(350F, 6F);
-            this.label10.Name = "label10";
-            this.label10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label10.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label10.StylePriority.UseFont = false;
-            this.label10.StylePriority.UsePadding = false;
-            this.label10.StylePriority.UseTextAlignment = false;
-            summary1.FormatString = "{0:n2}";
-            summary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.label10.Summary = summary1;
-            this.label10.Text = "label10";
-            this.label10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.BorderColor = System.Drawing.Color.White;
-            this.label11.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label11.BorderWidth = 2;
-            this.label11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.DMQty")});
-            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label11.LocationFloat = new DevExpress.Utils.PointFloat(450F, 6F);
-            this.label11.Name = "label11";
-            this.label11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label11.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label11.StylePriority.UseFont = false;
-            this.label11.StylePriority.UsePadding = false;
-            this.label11.StylePriority.UseTextAlignment = false;
-            summary2.FormatString = "{0:n2}";
-            summary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.label11.Summary = summary2;
-            this.label11.Text = "label11";
-            this.label11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // label12
-            // 
-            this.label12.BorderColor = System.Drawing.Color.White;
-            this.label12.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.label12.BorderWidth = 2;
-            this.label12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ReportData.Cost")});
-            this.label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label12.LocationFloat = new DevExpress.Utils.PointFloat(550F, 6F);
-            this.label12.Name = "label12";
-            this.label12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.label12.SizeF = new System.Drawing.SizeF(100F, 18F);
-            this.label12.StylePriority.UseFont = false;
-            this.label12.StylePriority.UsePadding = false;
-            this.label12.StylePriority.UseTextAlignment = false;
-            summary3.FormatString = "{0:c2}";
-            summary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.label12.Summary = summary3;
-            this.label12.Text = "label12";
-            this.label12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // line4
-            // 
-            this.line4.BorderWidth = 1;
-            this.line4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.line4.Name = "line4";
-            this.line4.SizeF = new System.Drawing.SizeF(702F, 4F);
-            this.line4.StylePriority.UseBorderWidth = false;
-            // 
-            // ReportTotals
-            // 
-            this.ReportTotals.BorderColor = System.Drawing.Color.White;
-            this.ReportTotals.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.ReportTotals.BorderWidth = 2;
-            this.ReportTotals.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportTotals.LocationFloat = new DevExpress.Utils.PointFloat(0F, 4F);
-            this.ReportTotals.Name = "ReportTotals";
-            this.ReportTotals.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            this.ReportTotals.SizeF = new System.Drawing.SizeF(90F, 18F);
-            this.ReportTotals.StylePriority.UseFont = false;
-            this.ReportTotals.StylePriority.UsePadding = false;
-            this.ReportTotals.StylePriority.UseTextAlignment = false;
-            this.ReportTotals.Text = "Grand Totals:";
-            this.ReportTotals.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // HeaderLabelStyle
             // 
@@ -918,23 +641,7 @@ namespace XtraReportSerialization {
             this.GreenBarStyle.BorderColor = System.Drawing.Color.Transparent;
             this.GreenBarStyle.Name = "GreenBarStyle";
             // 
-            // Display
-            // 
-            this.Display.DataMember = "ReportData";
-            this.Display.Expression = "Iif(IsNullOrEmpty([InventoryItemLocationGID]), [Description] ,[InventoryItemName]" +
-                " + \' - \' + [LocationName] )";
-            this.Display.FieldType = DevExpress.XtraReports.UI.FieldType.String;
-            this.Display.Name = "Display";
-            // 
-            // Cost
-            // 
-            this.Cost.DataMember = "ReportData";
-            this.Cost.Expression = "Iif(IsNullOrEmpty([FifoCostPer]) Or [FifoCostPer] == 0,  [BaseCostPer], [FifoCost" +
-                "Per]) * [AFQty]";
-            this.Cost.FieldType = DevExpress.XtraReports.UI.FieldType.Double;
-            this.Cost.Name = "Cost";
-            // 
-            // RecipeReport
+            // LoadAccuracyGraph
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.TopMargin,
@@ -944,17 +651,14 @@ namespace XtraReportSerialization {
                         this.PageHeader,
                         this.GroupHeader,
                         this.PageFooter,
-                        this.GroupFooter,
-                        this.ReportFooter});
-            this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
-                        this.Display,
-                        this.Cost});
+                        this.GroupHeader1});
             this.DataMember = "ReportData";
             this.Font = new System.Drawing.Font("Arial", 9F);
-            this.Margins = new System.Drawing.Printing.Margins(50, 73, 50, 50);
-            this.Name = "RecipeReport";
-            this.PageHeight = 1100;
-            this.PageWidth = 850;
+            this.Landscape = true;
+            this.Margins = new System.Drawing.Printing.Margins(88, 119, 50, 50);
+            this.Name = "LoadAccuracyGraph";
+            this.PageHeight = 850;
+            this.PageWidth = 1100;
             this.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic;
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
                         this.HeaderLabelStyle,
@@ -966,6 +670,14 @@ namespace XtraReportSerialization {
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.Version = "11.2";
             ((System.ComponentModel.ISupportInitialize)(this.xtraReport1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xYDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xYDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
         }
         private void LoadSubreportsLayout() {
