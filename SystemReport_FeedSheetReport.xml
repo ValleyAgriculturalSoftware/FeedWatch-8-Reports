@@ -824,7 +824,7 @@
 ///   &lt;Localization&gt;en-US&lt;/Localization&gt;
 /// &lt;/XRTypeInfo&gt;
 namespace XtraReportSerialization {
-    
+
     public class gridReportTemplate1 : DevExpress.XtraReports.UI.XtraReport {
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.XRLabel label1;
@@ -1276,27 +1276,27 @@ namespace XtraReportSerialization {
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField3 = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
-            // 
+            //
             // Detail
-            // 
+            //
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.label1});
             this.Detail.HeightF = 27.16669F;
             this.Detail.KeepTogetherWithDetailReports = true;
             this.Detail.Name = "Detail";
-            // 
+            //
             // TopMargin
-            // 
+            //
             this.TopMargin.HeightF = 50F;
             this.TopMargin.Name = "TopMargin";
-            // 
+            //
             // BottomMargin
-            // 
+            //
             this.BottomMargin.HeightF = 50F;
             this.BottomMargin.Name = "BottomMargin";
-            // 
+            //
             // PageHeader
-            // 
+            //
             this.PageHeader.BorderWidth = 2;
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.FilterPanel,
@@ -1309,9 +1309,9 @@ namespace XtraReportSerialization {
             this.PageHeader.HeightF = 86.29166F;
             this.PageHeader.Name = "PageHeader";
             this.PageHeader.StylePriority.UseBorderWidth = false;
-            // 
+            //
             // PageFooter
-            // 
+            //
             this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.lblCopyright,
                         this.lblPageNum,
@@ -1319,9 +1319,9 @@ namespace XtraReportSerialization {
                         this.lineFooter});
             this.PageFooter.HeightF = 22.00003F;
             this.PageFooter.Name = "PageFooter";
-            // 
+            //
             // MainGroup
-            // 
+            //
             this.MainGroup.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
                         new DevExpress.XtraReports.UI.GroupField("vas_FeedWatch_Model_IListReportGroup_vas_FeedWatch_Model_Entities_FeedingPeriod_R" +
                                 "elativeStartTime", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending),
@@ -1329,9 +1329,9 @@ namespace XtraReportSerialization {
                                 "extSchedule_InstanceDate", DevExpress.XtraReports.UI.XRColumnSortOrder.Descending)});
             this.MainGroup.HeightF = 0F;
             this.MainGroup.Name = "MainGroup";
-            // 
+            //
             // DetailReportBand1
-            // 
+            //
             this.DetailReportBand1.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.DetailBand1,
                         this.DetailReportBand2,
@@ -1342,9 +1342,9 @@ namespace XtraReportSerialization {
                 "extSchedule_FeedingScheduleMixs";
             this.DetailReportBand1.Level = 0;
             this.DetailReportBand1.Name = "DetailReportBand1";
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -1356,18 +1356,18 @@ namespace XtraReportSerialization {
             this.label1.StylePriority.UseTextAlignment = false;
             this.label1.Text = resources.GetString("label1.Text");
             this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
+            //
             // FilterPanel
-            // 
+            //
             this.FilterPanel.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.lblFilterString,
                         this.xrLabel1});
             this.FilterPanel.LocationFloat = new DevExpress.Utils.PointFloat(0F, 54.99999F);
             this.FilterPanel.Name = "FilterPanel";
             this.FilterPanel.SizeF = new System.Drawing.SizeF(703.9999F, 31.29167F);
-            // 
+            //
             // lblPrintedDateTime
-            // 
+            //
             this.lblPrintedDateTime.BorderColor = System.Drawing.Color.White;
             this.lblPrintedDateTime.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblPrintedDateTime.BorderWidth = 2;
@@ -1382,17 +1382,17 @@ namespace XtraReportSerialization {
             this.lblPrintedDateTime.Tag = "lblPrintedDateTime";
             this.lblPrintedDateTime.Text = "3/3/2015 8:39:24 AM";
             this.lblPrintedDateTime.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // pictLogo
-            // 
+            //
             this.pictLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictLogo.Image")));
             this.pictLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.pictLogo.Name = "pictLogo";
             this.pictLogo.SizeF = new System.Drawing.SizeF(50F, 50F);
             this.pictLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-            // 
+            //
             // lblReportName
-            // 
+            //
             this.lblReportName.BorderColor = System.Drawing.Color.White;
             this.lblReportName.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblReportName.BorderWidth = 2;
@@ -1405,16 +1405,16 @@ namespace XtraReportSerialization {
             this.lblReportName.Tag = "lblReportName";
             this.lblReportName.Text = "Report Name";
             this.lblReportName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
+            //
             // lineHeader
-            // 
+            //
             this.lineHeader.LineWidth = 4;
             this.lineHeader.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51F);
             this.lineHeader.Name = "lineHeader";
             this.lineHeader.SizeF = new System.Drawing.SizeF(717F, 4F);
-            // 
+            //
             // lblCompanyName
-            // 
+            //
             this.lblCompanyName.BorderColor = System.Drawing.Color.White;
             this.lblCompanyName.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblCompanyName.BorderWidth = 2;
@@ -1428,9 +1428,9 @@ namespace XtraReportSerialization {
             this.lblCompanyName.Tag = "lblCompanyName";
             this.lblCompanyName.Text = "Aurora Organic - Cold Water";
             this.lblCompanyName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // lblPrintedBy
-            // 
+            //
             this.lblPrintedBy.BorderColor = System.Drawing.Color.White;
             this.lblPrintedBy.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblPrintedBy.BorderWidth = 2;
@@ -1446,9 +1446,9 @@ namespace XtraReportSerialization {
             this.lblPrintedBy.Text = "Admin User";
             this.lblPrintedBy.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblPrintedBy.WordWrap = false;
-            // 
+            //
             // lblFilterString
-            // 
+            //
             this.lblFilterString.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilterString.LocationFloat = new DevExpress.Utils.PointFloat(50F, 3.999996F);
             this.lblFilterString.Multiline = true;
@@ -1460,9 +1460,9 @@ namespace XtraReportSerialization {
             this.lblFilterString.Tag = "lblFilterString";
             this.lblFilterString.Text = "Filter";
             this.lblFilterString.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
+            //
             // xrLabel1
-            // 
+            //
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 3.999996F);
             this.xrLabel1.Name = "xrLabel1";
@@ -1472,9 +1472,9 @@ namespace XtraReportSerialization {
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "Filter:";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
+            //
             // lblCopyright
-            // 
+            //
             this.lblCopyright.BorderColor = System.Drawing.Color.White;
             this.lblCopyright.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblCopyright.BorderWidth = 2;
@@ -1489,9 +1489,9 @@ namespace XtraReportSerialization {
             this.lblCopyright.Text = resources.GetString("lblCopyright.Text");
             this.lblCopyright.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.lblCopyright.WordWrap = false;
-            // 
+            //
             // lblPageNum
-            // 
+            //
             this.lblPageNum.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageNum.Format = "Page {0} of {1}";
             this.lblPageNum.LocationFloat = new DevExpress.Utils.PointFloat(590.0354F, 4.000028F);
@@ -1502,9 +1502,9 @@ namespace XtraReportSerialization {
             this.lblPageNum.StylePriority.UseTextAlignment = false;
             this.lblPageNum.Tag = "lblPageNum";
             this.lblPageNum.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // lblApplicationName
-            // 
+            //
             this.lblApplicationName.BorderColor = System.Drawing.Color.White;
             this.lblApplicationName.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblApplicationName.BorderWidth = 2;
@@ -1518,18 +1518,18 @@ namespace XtraReportSerialization {
             this.lblApplicationName.Tag = "lblApplicationName";
             this.lblApplicationName.Text = "FeedWatch v8.1.51.86";
             this.lblApplicationName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
+            //
             // lineFooter
-            // 
+            //
             this.lineFooter.BorderWidth = 1;
             this.lineFooter.LineWidth = 2;
             this.lineFooter.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.lineFooter.Name = "lineFooter";
             this.lineFooter.SizeF = new System.Drawing.SizeF(717F, 4F);
             this.lineFooter.StylePriority.UseBorderWidth = false;
-            // 
+            //
             // DetailBand1
-            // 
+            //
             this.DetailBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.lblMixCapacityRemaining,
                         this.lblMixTotal,
@@ -1538,9 +1538,9 @@ namespace XtraReportSerialization {
                         this.label8});
             this.DetailBand1.HeightF = 33.41662F;
             this.DetailBand1.Name = "DetailBand1";
-            // 
+            //
             // DetailReportBand2
-            // 
+            //
             this.DetailReportBand2.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.ReportHeaderBand2,
                         this.DetailBand2});
@@ -1548,18 +1548,18 @@ namespace XtraReportSerialization {
             this.DetailReportBand2.Level = 1;
             this.DetailReportBand2.Name = "DetailReportBand2";
             this.DetailReportBand2.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
-            // 
+            //
             // DetailReportBand3
-            // 
+            //
             this.DetailReportBand3.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.ReportHeaderBand3,
                         this.DetailBand3});
             this.DetailReportBand3.DataMember = resources.GetString("DetailReportBand3.DataMember");
             this.DetailReportBand3.Level = 0;
             this.DetailReportBand3.Name = "DetailReportBand3";
-            // 
+            //
             // GroupHeader2
-            // 
+            //
             this.GroupHeader2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.label22,
                         this.label3,
@@ -1572,9 +1572,9 @@ namespace XtraReportSerialization {
                                 "extSchedule_FeedingScheduleMixs_Sequence", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeader2.HeightF = 63.70831F;
             this.GroupHeader2.Name = "GroupHeader2";
-            // 
+            //
             // lblMixCapacityRemaining
-            // 
+            //
             this.lblMixCapacityRemaining.BorderColor = System.Drawing.Color.White;
             this.lblMixCapacityRemaining.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblMixCapacityRemaining.BorderWidth = 2;
@@ -1593,9 +1593,9 @@ namespace XtraReportSerialization {
             this.lblMixCapacityRemaining.StylePriority.UseTextAlignment = false;
             this.lblMixCapacityRemaining.Text = "label8";
             this.lblMixCapacityRemaining.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // lblMixTotal
-            // 
+            //
             this.lblMixTotal.BorderColor = System.Drawing.Color.White;
             this.lblMixTotal.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblMixTotal.BorderWidth = 2;
@@ -1614,9 +1614,9 @@ namespace XtraReportSerialization {
             this.lblMixTotal.StylePriority.UseTextAlignment = false;
             this.lblMixTotal.Text = "label8";
             this.lblMixTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // label9
-            // 
+            //
             this.label9.BorderColor = System.Drawing.Color.White;
             this.label9.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label9.BorderWidth = 2;
@@ -1632,9 +1632,9 @@ namespace XtraReportSerialization {
             this.label9.StylePriority.UseBorderWidth = false;
             this.label9.StylePriority.UseFont = false;
             this.label9.Text = "label8";
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.BorderColor = System.Drawing.Color.White;
             this.label2.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label2.BorderWidth = 2;
@@ -1650,9 +1650,9 @@ namespace XtraReportSerialization {
             this.label2.StylePriority.UseBorderWidth = false;
             this.label2.StylePriority.UseFont = false;
             this.label2.Text = "label8";
-            // 
+            //
             // label8
-            // 
+            //
             this.label8.BorderColor = System.Drawing.Color.White;
             this.label8.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label8.BorderWidth = 2;
@@ -1668,9 +1668,9 @@ namespace XtraReportSerialization {
             this.label8.StylePriority.UseBorderWidth = false;
             this.label8.StylePriority.UseFont = false;
             this.label8.Text = "label8";
-            // 
+            //
             // ReportHeaderBand2
-            // 
+            //
             this.ReportHeaderBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.label26,
                         this.label25,
@@ -1679,9 +1679,9 @@ namespace XtraReportSerialization {
                         this.label6});
             this.ReportHeaderBand2.HeightF = 41.75002F;
             this.ReportHeaderBand2.Name = "ReportHeaderBand2";
-            // 
+            //
             // DetailBand2
-            // 
+            //
             this.DetailBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.lblRunningTotalDropQty,
                         this.lblTargetDropQty,
@@ -1693,9 +1693,9 @@ namespace XtraReportSerialization {
             this.DetailBand2.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
                         new DevExpress.XtraReports.UI.GroupField("vas_FeedWatch_Model_IListReportGroup_vas_FeedWatch_Model_Entities_FeedingPeriod_N" +
                                 "extSchedule_FeedingScheduleMixs_FeedingScheduleDrops_PlanStartTimeDT", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            // 
+            //
             // label26
-            // 
+            //
             this.label26.BackColor = System.Drawing.Color.LightGray;
             this.label26.BorderColor = System.Drawing.Color.White;
             this.label26.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1714,9 +1714,9 @@ namespace XtraReportSerialization {
             this.label26.StylePriority.UseTextAlignment = false;
             this.label26.Text = "Total Qty";
             this.label26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // label25
-            // 
+            //
             this.label25.BackColor = System.Drawing.Color.LightGray;
             this.label25.BorderColor = System.Drawing.Color.White;
             this.label25.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1736,9 +1736,9 @@ namespace XtraReportSerialization {
             this.label25.StylePriority.UseTextAlignment = false;
             this.label25.Text = "Expected\r\nQty";
             this.label25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // label24
-            // 
+            //
             this.label24.BackColor = System.Drawing.Color.LightGray;
             this.label24.BorderColor = System.Drawing.Color.White;
             this.label24.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1757,9 +1757,9 @@ namespace XtraReportSerialization {
             this.label24.StylePriority.UseTextAlignment = false;
             this.label24.Text = "Pen Count";
             this.label24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // label23
-            // 
+            //
             this.label23.BackColor = System.Drawing.Color.LightGray;
             this.label23.BorderColor = System.Drawing.Color.White;
             this.label23.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1778,9 +1778,9 @@ namespace XtraReportSerialization {
             this.label23.StylePriority.UseTextAlignment = false;
             this.label23.Text = "Pen";
             this.label23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // label6
-            // 
+            //
             this.label6.BackColor = System.Drawing.Color.LightGray;
             this.label6.BorderColor = System.Drawing.Color.White;
             this.label6.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1799,9 +1799,9 @@ namespace XtraReportSerialization {
             this.label6.StylePriority.UseTextAlignment = false;
             this.label6.Text = "Sequence";
             this.label6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // lblRunningTotalDropQty
-            // 
+            //
             this.lblRunningTotalDropQty.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("lblRunningTotalDropQty.DataBindings"), "{0:n0}")});
             this.lblRunningTotalDropQty.Font = new System.Drawing.Font("Arial", 11F);
@@ -1814,9 +1814,9 @@ namespace XtraReportSerialization {
             this.lblRunningTotalDropQty.StylePriority.UseTextAlignment = false;
             this.lblRunningTotalDropQty.Text = "label28";
             this.lblRunningTotalDropQty.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // lblTargetDropQty
-            // 
+            //
             this.lblTargetDropQty.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("lblTargetDropQty.DataBindings"), "{0:n0}")});
             this.lblTargetDropQty.Font = new System.Drawing.Font("Arial", 11F);
@@ -1829,9 +1829,9 @@ namespace XtraReportSerialization {
             this.lblTargetDropQty.StylePriority.UseTextAlignment = false;
             this.lblTargetDropQty.Text = "label28";
             this.lblTargetDropQty.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // label28
-            // 
+            //
             this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label28.DataBindings"))});
             this.label28.Font = new System.Drawing.Font("Arial", 11F);
@@ -1843,9 +1843,9 @@ namespace XtraReportSerialization {
             this.label28.StylePriority.UseTextAlignment = false;
             this.label28.Text = "label28";
             this.label28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // label29
-            // 
+            //
             this.label29.BorderColor = System.Drawing.Color.White;
             this.label29.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label29.BorderWidth = 2;
@@ -1864,9 +1864,9 @@ namespace XtraReportSerialization {
             summary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.label29.Summary = summary1;
             this.label29.Text = "label29";
-            // 
+            //
             // label27
-            // 
+            //
             this.label27.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label27.DataBindings"))});
             this.label27.Font = new System.Drawing.Font("Arial", 11F);
@@ -1876,9 +1876,9 @@ namespace XtraReportSerialization {
             this.label27.SizeF = new System.Drawing.SizeF(208.4216F, 23.00002F);
             this.label27.StylePriority.UseFont = false;
             this.label27.Text = "label28";
-            // 
+            //
             // ReportHeaderBand3
-            // 
+            //
             this.ReportHeaderBand3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.label16,
                         this.label15,
@@ -1887,9 +1887,9 @@ namespace XtraReportSerialization {
                         this.label13});
             this.ReportHeaderBand3.HeightF = 41.74998F;
             this.ReportHeaderBand3.Name = "ReportHeaderBand3";
-            // 
+            //
             // DetailBand3
-            // 
+            //
             this.DetailBand3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
                         this.lblRunningTotalMixQty,
                         this.label21,
@@ -1898,9 +1898,9 @@ namespace XtraReportSerialization {
                         this.label18});
             this.DetailBand3.HeightF = 34.375F;
             this.DetailBand3.Name = "DetailBand3";
-            // 
+            //
             // label16
-            // 
+            //
             this.label16.BackColor = System.Drawing.Color.LightGray;
             this.label16.BorderColor = System.Drawing.Color.White;
             this.label16.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1919,9 +1919,9 @@ namespace XtraReportSerialization {
             this.label16.StylePriority.UseTextAlignment = false;
             this.label16.Text = "Total Qty";
             this.label16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // label15
-            // 
+            //
             this.label15.BackColor = System.Drawing.Color.LightGray;
             this.label15.BorderColor = System.Drawing.Color.White;
             this.label15.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1941,9 +1941,9 @@ namespace XtraReportSerialization {
             this.label15.StylePriority.UseTextAlignment = false;
             this.label15.Text = "Expected\r\n Qty";
             this.label15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // label14
-            // 
+            //
             this.label14.BackColor = System.Drawing.Color.LightGray;
             this.label14.BorderColor = System.Drawing.Color.White;
             this.label14.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1962,9 +1962,9 @@ namespace XtraReportSerialization {
             this.label14.StylePriority.UseTextAlignment = false;
             this.label14.Text = "Location";
             this.label14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.BackColor = System.Drawing.Color.LightGray;
             this.label5.BorderColor = System.Drawing.Color.White;
             this.label5.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -1983,9 +1983,9 @@ namespace XtraReportSerialization {
             this.label5.StylePriority.UseTextAlignment = false;
             this.label5.Text = "Ingredient / Instruction";
             this.label5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // label13
-            // 
+            //
             this.label13.BackColor = System.Drawing.Color.LightGray;
             this.label13.BorderColor = System.Drawing.Color.White;
             this.label13.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2004,9 +2004,9 @@ namespace XtraReportSerialization {
             this.label13.StylePriority.UseTextAlignment = false;
             this.label13.Text = "Sequence";
             this.label13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // lblRunningTotalMixQty
-            // 
+            //
             this.lblRunningTotalMixQty.BorderColor = System.Drawing.Color.White;
             this.lblRunningTotalMixQty.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.lblRunningTotalMixQty.BorderWidth = 2;
@@ -2023,9 +2023,9 @@ namespace XtraReportSerialization {
             this.lblRunningTotalMixQty.StylePriority.UseTextAlignment = false;
             this.lblRunningTotalMixQty.Text = resources.GetString("lblRunningTotalMixQty.Text");
             this.lblRunningTotalMixQty.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // label21
-            // 
+            //
             this.label21.BorderColor = System.Drawing.Color.White;
             this.label21.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label21.BorderWidth = 2;
@@ -2041,9 +2041,9 @@ namespace XtraReportSerialization {
             this.label21.StylePriority.UseTextAlignment = false;
             this.label21.Text = resources.GetString("label21.Text");
             this.label21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
+            //
             // label20
-            // 
+            //
             this.label20.BorderColor = System.Drawing.Color.White;
             this.label20.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label20.BorderWidth = 2;
@@ -2059,9 +2059,9 @@ namespace XtraReportSerialization {
             this.label20.StylePriority.UseBorderWidth = false;
             this.label20.StylePriority.UseFont = false;
             this.label20.Text = "label20";
-            // 
+            //
             // label19
-            // 
+            //
             this.label19.BorderColor = System.Drawing.Color.White;
             this.label19.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label19.BorderWidth = 2;
@@ -2076,9 +2076,9 @@ namespace XtraReportSerialization {
             this.label19.StylePriority.UseBorders = false;
             this.label19.StylePriority.UseBorderWidth = false;
             this.label19.StylePriority.UseFont = false;
-            // 
+            //
             // label18
-            // 
+            //
             this.label18.BorderColor = System.Drawing.Color.White;
             this.label18.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.label18.BorderWidth = 2;
@@ -2094,9 +2094,9 @@ namespace XtraReportSerialization {
             this.label18.StylePriority.UseBorderWidth = false;
             this.label18.StylePriority.UseFont = false;
             this.label18.Text = "label18";
-            // 
+            //
             // label22
-            // 
+            //
             this.label22.BackColor = System.Drawing.Color.LightGray;
             this.label22.BorderColor = System.Drawing.Color.White;
             this.label22.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -2113,9 +2113,9 @@ namespace XtraReportSerialization {
             this.label22.StylePriority.UseBorders = false;
             this.label22.StylePriority.UseBorderWidth = false;
             this.label22.StylePriority.UseFont = false;
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.BorderColor = System.Drawing.Color.White;
             this.label3.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2134,9 +2134,9 @@ namespace XtraReportSerialization {
             this.label3.StylePriority.UseTextAlignment = false;
             this.label3.Text = "Start Time";
             this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // label4
-            // 
+            //
             this.label4.BackColor = System.Drawing.Color.LightGray;
             this.label4.BorderColor = System.Drawing.Color.White;
             this.label4.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2155,9 +2155,9 @@ namespace XtraReportSerialization {
             this.label4.StylePriority.UseTextAlignment = false;
             this.label4.Text = "Recipe";
             this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // label12
-            // 
+            //
             this.label12.BackColor = System.Drawing.Color.LightGray;
             this.label12.BorderColor = System.Drawing.Color.White;
             this.label12.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2176,9 +2176,9 @@ namespace XtraReportSerialization {
             this.label12.StylePriority.UseTextAlignment = false;
             this.label12.Text = "Equipment";
             this.label12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
+            //
             // label7
-            // 
+            //
             this.label7.BackColor = System.Drawing.Color.LightGray;
             this.label7.BorderColor = System.Drawing.Color.White;
             this.label7.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2197,9 +2197,9 @@ namespace XtraReportSerialization {
             this.label7.StylePriority.UseTextAlignment = false;
             this.label7.Text = "Mix Total";
             this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // label10
-            // 
+            //
             this.label10.BackColor = System.Drawing.Color.LightGray;
             this.label10.BorderColor = System.Drawing.Color.White;
             this.label10.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2219,9 +2219,9 @@ namespace XtraReportSerialization {
             this.label10.StylePriority.UseTextAlignment = false;
             this.label10.Text = "Capacity\r\nRemaining";
             this.label10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
-            // 
+            //
             // HeaderLabelStyle
-            // 
+            //
             this.HeaderLabelStyle.BackColor = System.Drawing.Color.Transparent;
             this.HeaderLabelStyle.BorderColor = System.Drawing.Color.White;
             this.HeaderLabelStyle.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2229,27 +2229,27 @@ namespace XtraReportSerialization {
             this.HeaderLabelStyle.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.HeaderLabelStyle.Name = "HeaderLabelStyle";
             this.HeaderLabelStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            // 
+            //
             // HeaderColumnStyle
-            // 
+            //
             this.HeaderColumnStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.HeaderColumnStyle.BorderColor = System.Drawing.Color.White;
             this.HeaderColumnStyle.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.HeaderColumnStyle.BorderWidth = 2;
             this.HeaderColumnStyle.Name = "HeaderColumnStyle";
             this.HeaderColumnStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            // 
+            //
             // DetailColumnStyle
-            // 
+            //
             this.DetailColumnStyle.BackColor = System.Drawing.Color.Transparent;
             this.DetailColumnStyle.BorderColor = System.Drawing.Color.White;
             this.DetailColumnStyle.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.DetailColumnStyle.BorderWidth = 2;
             this.DetailColumnStyle.Name = "DetailColumnStyle";
             this.DetailColumnStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            // 
+            //
             // FooterColumnStyle
-            // 
+            //
             this.FooterColumnStyle.BackColor = System.Drawing.Color.Transparent;
             this.FooterColumnStyle.BorderColor = System.Drawing.Color.White;
             this.FooterColumnStyle.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2257,9 +2257,9 @@ namespace XtraReportSerialization {
             this.FooterColumnStyle.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic);
             this.FooterColumnStyle.Name = "FooterColumnStyle";
             this.FooterColumnStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            // 
+            //
             // ReportFooterColumnStyle
-            // 
+            //
             this.ReportFooterColumnStyle.BackColor = System.Drawing.Color.Transparent;
             this.ReportFooterColumnStyle.BorderColor = System.Drawing.Color.White;
             this.ReportFooterColumnStyle.Borders = DevExpress.XtraPrinting.BorderSide.Right;
@@ -2267,144 +2267,144 @@ namespace XtraReportSerialization {
             this.ReportFooterColumnStyle.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.ReportFooterColumnStyle.Name = "ReportFooterColumnStyle";
             this.ReportFooterColumnStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100F);
-            // 
+            //
             // GreenBarStyle
-            // 
+            //
             this.GreenBarStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(248)))), ((int)(((byte)(224)))));
             this.GreenBarStyle.BorderColor = System.Drawing.Color.Transparent;
             this.GreenBarStyle.Name = "GreenBarStyle";
-            // 
+            //
             // xrControlStyle1
-            // 
+            //
             this.xrControlStyle1.Name = "xrControlStyle1";
             this.xrControlStyle1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            // 
+            //
             // xrControlStyle2
-            // 
+            //
             this.xrControlStyle2.Name = "xrControlStyle2";
             this.xrControlStyle2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            // 
+            //
             // xrControlStyle3
-            // 
+            //
             this.xrControlStyle3.Name = "xrControlStyle3";
             this.xrControlStyle3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            // 
+            //
             // controlStyle3
-            // 
+            //
             this.controlStyle3.Name = "controlStyle3";
             this.controlStyle3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            // 
+            //
             // xrControlStyle5
-            // 
+            //
             this.xrControlStyle5.Name = "xrControlStyle5";
             this.xrControlStyle5.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            // 
+            //
             // controlStyle6
-            // 
+            //
             this.controlStyle6.Name = "controlStyle6";
             this.controlStyle6.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            // 
+            //
             // controlStyle1
-            // 
+            //
             this.controlStyle1.Name = "controlStyle1";
-            // 
+            //
             // controlStyle2
-            // 
+            //
             this.controlStyle2.Name = "controlStyle2";
-            // 
+            //
             // controlStyle5
-            // 
+            //
             this.controlStyle5.BackColor = System.Drawing.Color.LightGray;
             this.controlStyle5.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.controlStyle5.ForeColor = System.Drawing.Color.Black;
             this.controlStyle5.Name = "controlStyle5";
-            // 
+            //
             // XRControlStyle4
-            // 
+            //
             this.XRControlStyle4.BackColor = System.Drawing.Color.Transparent;
             this.XRControlStyle4.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.XRControlStyle4.ForeColor = System.Drawing.Color.Black;
             this.XRControlStyle4.Name = "XRControlStyle4";
-            // 
+            //
             // controlStyle4
-            // 
+            //
             this.controlStyle4.Name = "controlStyle4";
-            // 
+            //
             // XRControlStyle6
-            // 
+            //
             this.XRControlStyle6.Name = "XRControlStyle6";
-            // 
+            //
             // XRControlStyle7
-            // 
+            //
             this.XRControlStyle7.BackColor = System.Drawing.Color.LightGray;
             this.XRControlStyle7.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.XRControlStyle7.ForeColor = System.Drawing.Color.Black;
             this.XRControlStyle7.Name = "XRControlStyle7";
-            // 
+            //
             // XRControlStyle8
-            // 
+            //
             this.XRControlStyle8.BackColor = System.Drawing.Color.Transparent;
             this.XRControlStyle8.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.XRControlStyle8.ForeColor = System.Drawing.Color.Black;
             this.XRControlStyle8.Name = "XRControlStyle8";
-            // 
+            //
             // XRControlStyle9
-            // 
+            //
             this.XRControlStyle9.Name = "XRControlStyle9";
-            // 
+            //
             // XRControlStyle10
-            // 
+            //
             this.XRControlStyle10.Name = "XRControlStyle10";
-            // 
+            //
             // XRControlStyle11
-            // 
+            //
             this.XRControlStyle11.BackColor = System.Drawing.Color.LightGray;
             this.XRControlStyle11.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.XRControlStyle11.ForeColor = System.Drawing.Color.Black;
             this.XRControlStyle11.Name = "XRControlStyle11";
-            // 
+            //
             // XRControlStyle12
-            // 
+            //
             this.XRControlStyle12.BackColor = System.Drawing.Color.Transparent;
             this.XRControlStyle12.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.XRControlStyle12.ForeColor = System.Drawing.Color.Black;
             this.XRControlStyle12.Name = "XRControlStyle12";
-            // 
+            //
             // XRControlStyle13
-            // 
+            //
             this.XRControlStyle13.Name = "XRControlStyle13";
-            // 
+            //
             // XRControlStyle14
-            // 
+            //
             this.XRControlStyle14.Name = "XRControlStyle14";
-            // 
+            //
             // XRControlStyle15
-            // 
+            //
             this.XRControlStyle15.BackColor = System.Drawing.Color.LightGray;
             this.XRControlStyle15.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.XRControlStyle15.ForeColor = System.Drawing.Color.Black;
             this.XRControlStyle15.Name = "XRControlStyle15";
-            // 
+            //
             // calculatedField1
-            // 
+            //
             this.calculatedField1.DataMember = resources.GetString("calculatedField1.DataMember");
             this.calculatedField1.Expression = "[vas_FeedWatch_Model_IListReportGroup_vas_FeedWatch_Model_Entities_FeedingPeriod_" +
                 "NextSchedule_FeedingScheduleMixs_FeedingScheduleMixInstructions_RunningTotalTarg" +
                 "etAF]";
             this.calculatedField1.Name = "calculatedField1";
-            // 
+            //
             // calculatedField2
-            // 
+            //
             this.calculatedField2.DataMember = resources.GetString("calculatedField2.DataMember");
             this.calculatedField2.Name = "calculatedField2";
-            // 
+            //
             // calculatedField3
-            // 
+            //
             this.calculatedField3.DataMember = resources.GetString("calculatedField3.DataMember");
             this.calculatedField3.Name = "calculatedField3";
-            // 
+            //
             // gridReportTemplate1
-            // 
+            //
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
                         this.Detail,
                         this.TopMargin,
@@ -2463,7 +2463,7 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="59137bc4-0263-4b2b-943b-325bca92e3ad" ReportUseType="2" ReportType="1" ReportName="Feed Sheet Report" Description="Feed Sheets for today's feedings" CreatedDT="2015-02-06T12:26:11.593" ModifiedDT="2015-03-03T08:47:14.28" ModifiedBy="VAS" ConcurrencyTS="AAAAAAB+bzU=" ReportVersion="5" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="1" ReportName="Feed Sheet Report" Description="Feed Sheets for today's feedings" CreatedDT="2015-02-06T12:26:11.593" ModifiedDT="2015-03-03T08:47:14.28" ModifiedBy="VAS" ConcurrencyTS="AAAAAAB+bzU=" ReportVersion="5" /&gt;</ReportXML>
 	<DefaultFilterXML>&lt;BaseReportFilter&gt;
 	&lt;DetailFilterStrings&gt;
 		&lt;item&gt;
