@@ -2463,7 +2463,7 @@ namespace XtraReportSerialization {
     }
 }
 </XtraReportXML>
-	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="1" ReportName="Feed Sheet Report" Description="Feed Sheets for today's feedings" CreatedDT="2015-02-06T12:26:11.593" ModifiedDT="2015-03-03T08:47:14.28" ModifiedBy="VAS" ConcurrencyTS="AAAAAAB+bzU=" ReportVersion="5" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="83e2da2d-a4d4-429b-bdb6-d441a6ff5eba" ReportUseType="2" ReportType="1" ReportName="Feed Sheet Report" Description="Feed Sheets for today's feedings" CreatedDT="2015-02-06T12:26:11.593" ModifiedDT="2015-03-03T08:47:14.28" ModifiedBy="VAS" ConcurrencyTS="AAAAAAB+bzU=" ReportVersion="6" /&gt;</ReportXML>
 	<DefaultFilterXML>&lt;BaseReportFilter&gt;
 	&lt;DetailFilterStrings&gt;
 		&lt;item&gt;
