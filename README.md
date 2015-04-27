@@ -4,6 +4,8 @@ Contained in this repo are the most current and up to date reports available for
 
 Reports for 8.0 can be found in the [8.0 branch](https://github.com/ValleyAgriculturalSoftware/FeedWatch-8-Reports/tree/8.0)
 
+Reports for 8.1.54.100 (including 8.1.54.84) can be found in the [8.1.54.100 branch](https://github.com/ValleyAgriculturalSoftware/FeedWatch-8-Reports/tree/8.1.51.100)
+
 ### Usage
 
 Either checkout the repo via the command line: `git clone git@github.com:ValleyAgriculturalSoftware/FeedWatch-8-Reports.git`
