@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="d1a47e48-45c8-45e2-a024-f5e4ea680744" ReportUseType="2" ReportType="5" ReportName="Monthly Inventory Balance" Description="Inventory report showing Starting Inventory, Purchases, Usage and Ending per Month." CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2015-03-26T15:12:35.403" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdc3A=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="d1a47e48-45c8-45e2-a024-f5e4ea680744" ReportUseType="2" ReportType="5" ReportName="Monthly Inventory Balance" Description="Inventory report showing Starting Inventory, Purchases, Usage and Ending per Month." CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2015-04-27T08:36:44.093" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0r4=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -25,20 +25,20 @@ select InventoryItemName, convert(date, LastDayOfMonth) as ReportDate,
 		left join Delivery d on d.DeliveryGID = it.TransactionSourceGID
 		join inventoryitemlocation iil on iil.InventoryItemGID = it.InventoryItemGID
 		and (iil.LocationGID = it.FromLocationGID or iil.LocationGID = it.ToLocationGID)
-		and coalesce(d.DeliveryDT, it.TransactionDT) &amp;gt;= iil.PhysicalInventoryDT
+		and coalesce(d.DeliveryDT, it.TransactionDT) &amp;gt;= iil.TrackingStartDT
 		where iil.InventoryItemGID = x.InventoryItemGID
 		and iil.LocationGID = x.LocationGID
 		and coalesce(d.DeliveryDT, it.TransactionDT) &amp;lt;= dateadd(s, -1, dateadd(month, -1, dateadd(s, 1, LastDayOfMonth)))), 0),
 	LastMonthCost = isnull((select sum(case when it.FromLocationGID = iil.LocationGID then -1 else 1 end * 
 			case when d.DeliveryGID is null then
-			it.FifoCost
+			it.ActualCost
 			--coalesce(ic.FifoCost, dbo.GetFIFOCost(it.UnitQuantity, iil.InventoryItemGID, iil.LocationGID, coalesce(d.DeliveryDT, it.TransactionDT)))
 			else dbo.GetCost(it.UnitQuantity, it.DMPct, d.CostPer, d.ServiceCostPer, d.PriceMethod) end)
 		from inventorytransaction it
 		left join Delivery d on d.DeliveryGID = it.TransactionSourceGID
 		join inventoryitemlocation iil on iil.InventoryItemGID = it.InventoryItemGID
 		and (iil.LocationGID = it.FromLocationGID or iil.LocationGID = it.ToLocationGID)
-		and coalesce(d.DeliveryDT, it.TransactionDT) &amp;gt;= iil.PhysicalInventoryDT
+		and coalesce(d.DeliveryDT, it.TransactionDT) &amp;gt;= iil.TrackingStartDT
 		left join InventoryCost ic on ic.SourceGID = it.InventoryTransactionGID
 		where iil.InventoryItemGID = x.InventoryItemGID
 		and iil.LocationGID = x.LocationGID
@@ -52,13 +52,13 @@ from
 select ii.InventoryItemName, ii.InventoryItemGID, iil.LocationGID, Usage = case when it.FromLocationGID = iil.LocationGID then 1 else 0 end,
 	LastDayOfMonth = DATEADD(s,-1,DATEADD(mm, DATEDIFF(m,0,isnull(d.DeliveryDT, it.TransactionDT))+1,0)),
 	case when it.FromLocationGID = iil.LocationGID then -1 else 1 end * it.UnitQuantity / 32000 as NetQuantity,
-	Cost = case when d.DeliveryGID is null then it.FifoCost --coalesce(ic.FifoCost, dbo.GetFIFOCost(it.UnitQuantity, ii.InventoryItemGID, iil.LocationGID, coalesce(d.DeliveryDT, it.TransactionDT)))
+	Cost = case when d.DeliveryGID is null then it.ActualCost --coalesce(ic.FifoCost, dbo.GetFIFOCost(it.UnitQuantity, ii.InventoryItemGID, iil.LocationGID, coalesce(d.DeliveryDT, it.TransactionDT)))
 		else dbo.GetCost(it.UnitQuantity, it.DMPct, d.CostPer, d.ServiceCostPer, d.PriceMethod) end
 from inventorytransaction it
 left join Delivery d on d.DeliveryGID = it.TransactionSourceGID
 join inventoryitemlocation iil on iil.InventoryItemGID = it.InventoryItemGID
 	and (iil.LocationGID = it.FromLocationGID or iil.LocationGID = it.ToLocationGID)
-	and coalesce(d.DeliveryDT, it.TransactionDT) &amp;gt;= iil.PhysicalInventoryDT
+	and coalesce(d.DeliveryDT, it.TransactionDT) &amp;gt;= iil.TrackingStartDT
 join inventoryitem ii on ii.InventoryItemGID = it.InventoryItemGID
 join Company c on c.CompanyGID = ii.CompanyGID
 left join InventoryCost ic on ic.SourceGID = it.InventoryTransactionGID
@@ -74,7 +74,15 @@ where 1 = 1&lt;/QueryText&gt;
 			<SQLStatement />
 		</ReportQuery>
 	</ReportQueries>
-	<ReportFilters />
+	<ReportFilters>
+		<ReportFilter>
+			<SeqNo>0</SeqNo>
+			<ColumnName>ReportDate</ColumnName>
+			<PreDefinedFilterOperator>Between</PreDefinedFilterOperator>
+			<PreDefinedFilterValue>y-2d</PreDefinedFilterValue>
+			<DefaultIsOr>false</DefaultIsOr>
+		</ReportFilter>
+	</ReportFilters>
 	<ReportColumns />
 	<ForceAsLandscape>false</ForceAsLandscape>
 	<IsSummary>false</IsSummary>

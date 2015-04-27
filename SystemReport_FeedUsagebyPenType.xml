@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="eb8d2e16-376b-4df9-92dc-877581fbca96" ReportUseType="2" ReportType="5" ReportName="Feed Usage by Pen Type" Description="Ingredient Usage grouped by Pen Type with Cost" CreatedDT="2013-07-18T12:47:23.337" ModifiedDT="2015-03-26T09:24:27.777" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU9Y=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="eb8d2e16-376b-4df9-92dc-877581fbca96" ReportUseType="2" ReportType="5" ReportName="Feed Usage by Pen Type" Description="Ingredient Usage grouped by Pen Type with Cost" CreatedDT="2013-07-18T12:47:23.337" ModifiedDT="2015-04-27T07:36:57.21" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0qw=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -21,7 +21,7 @@
           ,DMQty = dbo.GetMeasurementValue(SUM(it.UnitQuantity * it.DMPct), c.MediumMeasurementType)
           ,DMTons = dbo.GetMeasurementValue(SUM(it.UnitQuantity * it.DMPct), c.LargeMeasurementType)
           ,DMPct = ISNULL(SUM(it.UnitQuantity * it.DMPct) / NULLIF(SUM(it.UnitQuantity), 0), 0)
-          ,Cost = SUM(it.FifoCost)
+          ,Cost = SUM(it.ActualCost)
       from InventoryTransaction it
       join Pen p on p.LocationGID = it.ToLocationGID
       join Location l on l.LocationGID = p.LocationGID

@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="64a0c30c-515c-4cfd-874d-fbe1070f83ce" ReportUseType="2" ReportType="5" ReportName="DM Intake" Description="Dry Matter Intake" CreatedDT="2013-03-27T15:24:58" ModifiedDT="2015-03-26T10:30:42.503" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdcxw=" ReportVersion="5" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="64a0c30c-515c-4cfd-874d-fbe1070f83ce" ReportUseType="2" ReportType="5" ReportName="DM Intake" Description="Dry Matter Intake" CreatedDT="2013-03-27T15:24:58" ModifiedDT="2015-04-27T08:41:41.82" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0vw=" ReportVersion="6" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -166,12 +166,6 @@ where (1=1)&lt;/QueryText&gt;
 			<ColumnName>ReportDate</ColumnName>
 			<PreDefinedFilterOperator>Between</PreDefinedFilterOperator>
 			<PreDefinedFilterValue>y-6d</PreDefinedFilterValue>
-			<DefaultIsOr>false</DefaultIsOr>
-		</ReportFilter>
-		<ReportFilter>
-			<SeqNo>2</SeqNo>
-			<ColumnName>PenTypeName</ColumnName>
-			<PreDefinedFilterOperator>None</PreDefinedFilterOperator>
 			<DefaultIsOr>false</DefaultIsOr>
 		</ReportFilter>
 	</ReportFilters>

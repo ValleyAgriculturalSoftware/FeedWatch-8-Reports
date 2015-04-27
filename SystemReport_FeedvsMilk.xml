@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="46dce634-7018-4f75-a658-c7001f0ab2a6" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk " Description="Dry Matter fed vs Milk produced" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2015-03-26T09:24:27.83" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU9c=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="46dce634-7018-4f75-a658-c7001f0ab2a6" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk " Description="Dry Matter fed vs Milk produced" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2015-04-27T07:38:50.617" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0q4=" ReportVersion="2" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -37,7 +37,7 @@
                   ,it.UnitQuantity * it.DMPct as UnitQuantityDM
                   ,it.TargetUnitQuantity
                   ,pcc.[Count] as PenCount
-                  ,Cost = it.FifoCost
+                  ,Cost = it.ActualCost
               from FeedingScheduleDrop fsd
               join FeedingScheduleLoad fsl on fsl.FeedingScheduleLoadGID = fsd.FeedingScheduleLoadGID
               join FeedingScheduleMix fsm on fsm.FeedingScheduleMixGID = fsl.FeedingScheduleMixGID

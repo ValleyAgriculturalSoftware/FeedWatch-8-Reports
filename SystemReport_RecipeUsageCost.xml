@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="ee805adc-9761-49b9-82c4-1fc766a87319" ReportUseType="2" ReportType="5" ReportName="Recipe Usage / Cost" Description="Pen Recipe usage with Cost per day" CreatedDT="2012-07-13T10:56:44" ModifiedDT="2015-03-26T09:24:28.663" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU94=" ReportVersion="3" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="ee805adc-9761-49b9-82c4-1fc766a87319" ReportUseType="2" ReportType="5" ReportName="Recipe Usage / Cost" Description="Pen Recipe usage with Cost per day" CreatedDT="2012-07-13T10:56:44" ModifiedDT="2015-04-27T08:21:06.083" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0rY=" ReportVersion="4" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -40,7 +40,7 @@
                              ,StopDT = itd.TransactionDT
                              ,DropIngAF = itd.UnitQuantity
                              ,DropIngDM = itd.UnitQuantity * itd.DMPct
-                             ,DropIngCost = itd.FifoCost
+                             ,DropIngCost = itd.ActualCost
                          from InventoryTransaction itd
                         where itd.TransactionSourceGID = fsd.FeedingScheduleDropGID ) itd -- Inventory transactions for the drop.
          where exists(select 1 from InventoryTransaction it where it.TransactionSourceGID = fsd.FeedingScheduleDropGID)

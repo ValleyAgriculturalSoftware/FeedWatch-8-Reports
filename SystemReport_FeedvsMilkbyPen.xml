@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="3d9a2eb0-d52b-4ecd-80ff-52ffcc7a8cfc" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk by Pen" Description="Dry Matter fed vs Milk produced grouped by Pen" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2014-05-19T16:17:24.263" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAAKiY=" ReportVersion="0" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="3d9a2eb0-d52b-4ecd-80ff-52ffcc7a8cfc" ReportUseType="2" ReportType="5" ReportName="Feed vs Milk by Pen" Description="Dry Matter fed vs Milk produced grouped by Pen" CreatedDT="2013-10-10T22:09:09.627" ModifiedDT="2015-04-27T08:24:15.827" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0ro=" ReportVersion="1" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -37,7 +37,7 @@
                   ,it.UnitQuantity * it.DMPct as UnitQuantityDM
                   ,it.TargetUnitQuantity
                   ,pcc.[Count] as PenCount
-                  ,dbo.GetFifoCost(it.UnitQuantity, it.InventoryItemGID, fsmi.SourceLocationGID, it.TransactionDT) as Cost
+                  ,it.ActualCost as Cost
               from FeedingScheduleDrop fsd
               join FeedingScheduleLoad fsl on fsl.FeedingScheduleLoadGID = fsd.FeedingScheduleLoadGID
               join FeedingScheduleMix fsm on fsm.FeedingScheduleMixGID = fsl.FeedingScheduleMixGID
@@ -85,7 +85,6 @@
 			<PreDefinedFilterOperator>Between</PreDefinedFilterOperator>
 			<PreDefinedFilterValue>y-6d</PreDefinedFilterValue>
 			<DefaultIsOr>false</DefaultIsOr>
-			<FilterOperator>Between</FilterOperator>
 		</ReportFilter>
 	</ReportFilters>
 	<ReportColumns />

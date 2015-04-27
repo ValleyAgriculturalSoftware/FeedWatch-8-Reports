@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="bd2e1f43-3cf7-4101-9523-b6169e9e7ac6" ReportUseType="2" ReportType="5" ReportName="Inventory Balance Report" Description="Summary of Purchases, Sales and Usage" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2015-03-26T11:31:57.9" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdc2g=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="bd2e1f43-3cf7-4101-9523-b6169e9e7ac6" ReportUseType="2" ReportType="5" ReportName="Inventory Balance Report" Description="Summary of Purchases, Sales and Usage" CreatedDT="2014-03-14T14:47:54.747" ModifiedDT="2015-04-27T08:34:02.603" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0rw=" ReportVersion="2" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -18,7 +18,7 @@
    ,'Cost' = isnull(round(dbo.GetFIFOCost(it.unitquantity, it.inventoryitemgid, case when l.locationtype = 0 then l.locationgid else l2.locationgid end, it.transactiondt)/nullif(dbo.getmeasurementvalue(it.unitquantity,c.LargeMeasurementType),0),0),2)
    ,'Total' = case when l.locationtype = 0 then -1 else 1 end * round(dbo.GetFIFOCost(it.unitquantity, it.inventoryitemgid,
   case when l.locationtype = 0 then l.locationgid else l2.locationgid end, it.transactiondt),2)
-  ,itl.[PhysicalInventoryDT]
+  ,itl.[TrackingStartDT]
 FROM InventoryTransaction it
 
 JOIN InventoryItem it2 on it.InventoryItemGID = it2.InventoryItemGID
@@ -28,7 +28,7 @@ JOIN Location l on l.LocationGID = it.FromLocationGID
 JOIN Location l2 on l2.LocationGID = it.ToLocationGID
 LEFT JOIN Delivery d on d.InventoryTransactionGID = it.InventoryTransactionGID
 
-WHERE l.LocationType = 0 or l2.LocationType = 0) z where 1 = 1 and TransactionDT &amp;gt;= ISNULL(z.PhysicalInventoryDT,'01/01/2070')&lt;/QueryText&gt;
+WHERE l.LocationType = 0 or l2.LocationType = 0) z where 1 = 1 and TransactionDT &amp;gt;= ISNULL(z.TrackingStartDT,'01/01/2070')&lt;/QueryText&gt;
 	&lt;PreQueryText /&gt;
 &lt;/QueryBundle&gt;</ReportQueryText>
 			<ReportQueryType>Sql</ReportQueryType>

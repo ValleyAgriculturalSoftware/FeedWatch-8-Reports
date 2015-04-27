@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="cf2f4c4b-3fb6-40f3-9ce6-fd5e49470b60" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage w/ Cost and Type" Description="Ingredient usage with Cost grouped by Type" CreatedDT="2013-08-30T12:14:46.133" ModifiedDT="2015-03-26T09:24:28.477" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU9w=" ReportVersion="1" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="cf2f4c4b-3fb6-40f3-9ce6-fd5e49470b60" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage w/ Cost and Type" Description="Ingredient usage with Cost grouped by Type" CreatedDT="2013-08-30T12:14:46.133" ModifiedDT="2015-04-27T07:44:12.437" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0rQ=" ReportVersion="2" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -22,7 +22,7 @@
           ,ReportDate = CONVERT(date, it.TransactionDT)
           ,TotalAF = SUM(it.UnitQuantity)
           ,TotalDM = SUM(it.UnitQuantity * it.DMPct)
-          ,TotalCost = SUM(it.FifoCost)          
+          ,TotalCost = SUM(it.ActualCost)          
       from InventoryTransaction it
       join InventoryItem ii on ii.InventoryItemGID = it.InventoryItemGID
       join Ingredient i on i.InventoryItemGID = ii.InventoryItemGID -- used as a filter here ...

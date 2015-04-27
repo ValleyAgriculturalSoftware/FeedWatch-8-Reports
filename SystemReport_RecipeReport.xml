@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="48937f00-27dd-4b56-b35b-1695bdc13a85" ReportUseType="2" ReportType="5" ReportName="Recipe Report" Description="Recipe breakdown with Quantity and Cost" CreatedDT="2013-06-28T15:09:40.74" ModifiedDT="2015-03-26T09:24:28.57" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU90=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="48937f00-27dd-4b56-b35b-1695bdc13a85" ReportUseType="2" ReportType="5" ReportName="Recipe Report" Description="Recipe breakdown with Quantity and Cost" CreatedDT="2013-06-28T15:09:40.74" ModifiedDT="2015-04-27T08:43:13.22" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0v0=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -24,7 +24,7 @@
 		ri.RecipeInstructionGID,
 		ri.InventoryItemLocation.InventoryItemGID,
 		ri.InventoryItemLocation.LocationGID,
-		ri.InventoryItemLocation.PhysicalInventoryDT,
+		ri.InventoryItemLocation.TrackingStartDT,
 		r.RecipeName,
 		ri.InventoryItemLocationGID,
 		ri.Sequence,

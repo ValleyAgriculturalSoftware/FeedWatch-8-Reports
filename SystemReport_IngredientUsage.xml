@@ -1,5 +1,5 @@
 ﻿<ReportBundle>
-	<ReportXML>&lt;Report ReportGID="55ccdc2c-2ea2-4430-a9d7-69cd258bf188" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage" Description="Ingredient Usage with AF/DM Qty and Tons and Cost" CreatedDT="2012-09-07T13:18:07" ModifiedDT="2015-03-26T09:24:28.337" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAdU9s=" ReportVersion="2" /&gt;</ReportXML>
+	<ReportXML>&lt;Report ReportGID="55ccdc2c-2ea2-4430-a9d7-69cd258bf188" ReportUseType="2" ReportType="5" ReportName="Ingredient Usage" Description="Ingredient Usage with AF/DM Qty and Tons and Cost" CreatedDT="2012-09-07T13:18:07" ModifiedDT="2015-04-27T07:42:29.327" ModifiedBy="VAS" ConcurrencyTS="AAAAAAAd0rI=" ReportVersion="3" /&gt;</ReportXML>
 	<ReportQueries>
 		<ReportQuery>
 			<IsCustomQuery>true</IsCustomQuery>
@@ -18,7 +18,7 @@
         ,dbo.GetMeasurementValue(it.UnitQuantity * it.DMPct, cmp.LargeMeasurementType) as 'DMTons'
         ,ReportDate = CONVERT(date, it.TransactionDT)
         ,IsPremix = CAST(case when ISNULL(hi.MadeByRecipeGID, ing.MadeByRecipeGID) is null then 0 else 1 end as bit)
-        ,Cost = it.FifoCost
+        ,Cost = it.ActualCost
     from InventoryTransaction it
     join InventoryItem ii on ii.InventoryItemGID = it.InventoryItemGID
     join Company cmp on cmp.CompanyGID = ii.CompanyGID
